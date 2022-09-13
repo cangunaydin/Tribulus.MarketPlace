@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Tribulus.MarketPlace.Orders;
+using Tribulus.MarketPlace.Products;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -52,6 +54,12 @@ public class MarketPlaceDbContext :
 
     #endregion
 
+    #region <Entities from MarketPlace>
+    public DbSet<Product> Products { get; set; }
+
+    public DbSet<Order> Orders { get; set; }
+    #endregion
+
     public MarketPlaceDbContext(DbContextOptions<MarketPlaceDbContext> options)
         : base(options)
     {
@@ -72,6 +80,7 @@ public class MarketPlaceDbContext :
         builder.ConfigureOpenIddict();
         builder.ConfigureFeatureManagement();
         builder.ConfigureTenantManagement();
+        builder.ConfigureMarketPlace();
 
         /* Configure your own tables/entities inside here */
 

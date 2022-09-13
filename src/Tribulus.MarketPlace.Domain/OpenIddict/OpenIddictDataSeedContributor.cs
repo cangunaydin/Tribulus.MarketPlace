@@ -163,6 +163,29 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
         }
 
 
+        // Swagger Admin Client
+        var swaggerAdminClientId = configurationSection["MarketPlaceAdmin_Swagger:ClientId"];
+        if (!swaggerAdminClientId.IsNullOrWhiteSpace())
+        {
+            var swaggerAdminRootUrl = configurationSection["MarketPlaceAdmin_Swagger:RootUrl"].TrimEnd('/');
+
+            await CreateApplicationAsync(
+                name: swaggerAdminClientId,
+                type: OpenIddictConstants.ClientTypes.Public,
+                consentType: OpenIddictConstants.ConsentTypes.Implicit,
+                displayName: "Swagger Admin Application",
+                secret: null,
+                grantTypes: new List<string>
+                {
+                    OpenIddictConstants.GrantTypes.AuthorizationCode,
+                },
+                scopes: commonScopes,
+                redirectUri: $"{swaggerAdminRootUrl}/swagger/oauth2-redirect.html",
+                clientUri: swaggerAdminRootUrl
+            );
+        }
+
+
     }
 
     private async Task CreateApplicationAsync(

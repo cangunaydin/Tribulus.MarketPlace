@@ -11,7 +11,7 @@ namespace Tribulus.MarketPlace.Products
 {
     public class Product:FullAuditedAggregateRoot<Guid>
     {
-        public Guid OwnerId { get; private set; }
+        public Guid OwnerUserId { get; private set; }
 
         public string Name { get; private set; }
 
@@ -33,7 +33,7 @@ namespace Tribulus.MarketPlace.Products
             int stockCount) : base(id)
         {
 
-            OwnerId = ownerId;
+            OwnerUserId = ownerId;
             UpdateName(name);
             UpdatePrice(price);
             UpdateStockCount(stockCount);
@@ -41,13 +41,13 @@ namespace Tribulus.MarketPlace.Products
 
         public void UpdateName(string name)
         {
-            Check.NotNullOrWhiteSpace(name, nameof(name));
+            Check.NotNullOrWhiteSpace(name, nameof(name),ProductConsts.MaxNameLength,ProductConsts.MinNameLength);
             Name = name;
         }
         public void UpdateStockCount(int stockCount)
         {
             if (stockCount<0)
-                throw new ArgumentOutOfRangeException(nameof(stockCount));
+                throw new ArgumentException(nameof(stockCount));
 
             StockCount = stockCount;
             //ADD an EVENT TO BE PUBLISHED

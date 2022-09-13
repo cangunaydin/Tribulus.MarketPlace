@@ -8,9 +8,9 @@ namespace Tribulus.MarketPlace.Admin;
 
 /* Inherit your application services from this class.
  */
-public abstract class AdminAppService : ApplicationService
+public abstract class MarketPlaceAdminAppService : ApplicationService
 {
-    protected AdminAppService()
+    protected MarketPlaceAdminAppService()
     {
         LocalizationResource = typeof(MarketPlaceResource);
     }
