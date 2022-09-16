@@ -34,18 +34,18 @@ public class MarketPlaceTestDataSeedContributor : IDataSeedContributor, ITransie
         /* Seed additional test data... */
         await SeedUsers();
         await SeedProductsAsync();
-        //await SeedOrdersAsync();
+        await SeedOrdersAsync();
     }
 
     public async Task SeedOrdersAsync()
     {
         var order1 = new Order(
                     _marketPlaceTestData.Order1Id,
-                    _marketPlaceTestData.Order1OwnerUserId,
+                    _marketPlaceTestData.UserJohnId,
                     "Order 1"
                 );
 
-        order1.AddOrderItem(_marketPlaceTestData.Order1ItemId, _marketPlaceTestData.ProductIphone13ProId, 1000, 10);
+        order1.AddOrderItem(_marketPlaceTestData.Order1ItemId, _marketPlaceTestData.ProductIphone13ProId, 1000, 8);
         await _orderRepository.InsertAsync(order1);
 
     }

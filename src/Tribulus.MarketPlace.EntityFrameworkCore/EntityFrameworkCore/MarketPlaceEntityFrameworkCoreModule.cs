@@ -12,6 +12,9 @@ using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.DependencyInjection;
+using Tribulus.MarketPlace.Orders;
+using Microsoft.EntityFrameworkCore;
 
 namespace Tribulus.MarketPlace.EntityFrameworkCore;
 
@@ -40,7 +43,8 @@ public class MarketPlaceEntityFrameworkCoreModule : AbpModule
         {
                 /* Remove "includeAllEntities: true" to create
                  * default repositories only for aggregate roots */
-            options.AddDefaultRepositories(includeAllEntities: true);
+            options.AddDefaultRepositories();
+
         });
 
         Configure<AbpDbContextOptions>(options =>
@@ -48,6 +52,17 @@ public class MarketPlaceEntityFrameworkCoreModule : AbpModule
                 /* The main point to change your DBMS.
                  * See also MarketPlaceMigrationsDbContextFactory for EF Core tooling. */
             options.UseSqlServer();
+        });
+
+        Configure<AbpEntityOptions>(options =>
+        {
+            options.Entity<Order>(orderOptions =>
+            {
+                orderOptions.DefaultWithDetailsFunc = query
+                => query
+                .Include(f => f.OrderItems);
+                
+            });
         });
 
     }
