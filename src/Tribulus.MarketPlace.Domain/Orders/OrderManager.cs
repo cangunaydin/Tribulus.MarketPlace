@@ -16,7 +16,7 @@ namespace Tribulus.MarketPlace.Orders
             _productRepository = productRepository;
         }
 
-        public async Task PlaceOrder(Order order)
+        public async Task PlaceOrderAsync(Order order)
         {
             var productIds=order.OrderItems.Select(x => x.ProductId).ToList();
             var products=await _productRepository.GetListAsync(o => productIds.Contains(o.Id));

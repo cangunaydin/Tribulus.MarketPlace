@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Tribulus.MarketPlace.Orders.Events;
 using Volo.Abp;
@@ -25,11 +26,12 @@ namespace Tribulus.MarketPlace.Orders
 
         }
 
-        public Order(Guid id,Guid ownerUserId,string name):base(id)
+        internal Order(Guid id,Guid ownerUserId,string name):base(id)
         {
             OwnerUserId = ownerUserId;
             State = OrderState.Pending;
             UpdateName(name);
+            OrderItems = new Collection<OrderItem>();
         }
         public Order UpdateName(string name)
         {
@@ -44,28 +46,33 @@ namespace Tribulus.MarketPlace.Orders
             decimal price,
             int quantity)
         {
-
+            CheckOrderItemNotExists(orderItemId);
             var newOrderItem = new OrderItem(orderItemId, Id, productId, price, quantity);
             OrderItems.Add(newOrderItem);
             return this;
         }
         public Order UpdateOrderItemQuantity(Guid orderItemId,int quantity)
         {
-            CheckIfOrderItemExists(orderItemId);
+            CheckOrderItemExists(orderItemId);
             var orderItem = OrderItems.First(o => o.Id == orderItemId);
             orderItem.UpdateQuantity(quantity);
             return this;
         }
         public Order RemoveOrderItem(Guid orderItemId)
         {
-            CheckIfOrderItemExists(orderItemId);
+            CheckOrderItemExists(orderItemId);
             var orderItem = OrderItems.First(o => o.Id == orderItemId);
             OrderItems.Remove(orderItem);
             return this;
         }
-        private void CheckIfOrderItemExists(Guid orderItemId)
+        private void CheckOrderItemExists(Guid orderItemId)
         {
             if (!OrderItems.Any(o => o.Id == orderItemId))
+                throw new ArgumentNullException(nameof(orderItemId));
+        }
+        private void CheckOrderItemNotExists(Guid orderItemId)
+        {
+            if (OrderItems.Any(o => o.Id == orderItemId))
                 throw new ArgumentNullException(nameof(orderItemId));
         }
         internal void PlaceOrder()

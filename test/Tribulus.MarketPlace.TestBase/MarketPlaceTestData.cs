@@ -26,5 +26,11 @@ namespace Tribulus.MarketPlace
         public Guid ProductIphone14Id { get; } = Guid.NewGuid();
         public string ProductIphone14Name { get; } = "Iphone 14";
         public string ProductIphone14Description { get; } = "Iphone 14, available starting 9.16";
+
+
+        public Guid Order1Id { get; } = Guid.NewGuid();
+        public Guid Order1ItemId { get; } = Guid.NewGuid();
+
+        public Guid Order1OwnerUserId { get; } = Guid.NewGuid();
     }
 }

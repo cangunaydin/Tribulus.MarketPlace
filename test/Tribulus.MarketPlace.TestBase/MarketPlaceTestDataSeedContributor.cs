@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Tribulus.MarketPlace.Orders;
 using Tribulus.MarketPlace.Products;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
@@ -12,17 +13,20 @@ public class MarketPlaceTestDataSeedContributor : IDataSeedContributor, ITransie
 {
 
     private readonly IRepository<Product, Guid> _productRepository;
+    private readonly IRepository<Order, Guid> _orderRepository;
     private readonly MarketPlaceTestData _marketPlaceTestData;
     private readonly IIdentityUserRepository _userRepository;
 
     public MarketPlaceTestDataSeedContributor(
         IRepository<Product, Guid> productRepository,
         MarketPlaceTestData marketPlaceTestData,
-        IIdentityUserRepository userRepository)
+        IIdentityUserRepository userRepository,
+        IRepository<Order, Guid> orderRepository)
     {
         _productRepository = productRepository;
         _marketPlaceTestData = marketPlaceTestData;
         _userRepository = userRepository;
+        _orderRepository = orderRepository;
     }
 
     public async Task SeedAsync(DataSeedContext context)
@@ -30,7 +34,22 @@ public class MarketPlaceTestDataSeedContributor : IDataSeedContributor, ITransie
         /* Seed additional test data... */
         await SeedUsers();
         await SeedProductsAsync();
+        //await SeedOrdersAsync();
     }
+
+    public async Task SeedOrdersAsync()
+    {
+        var order1 = new Order(
+                    _marketPlaceTestData.Order1Id,
+                    _marketPlaceTestData.Order1OwnerUserId,
+                    "Order 1"
+                );
+
+        order1.AddOrderItem(_marketPlaceTestData.Order1ItemId, _marketPlaceTestData.ProductIphone13ProId, 1000, 10);
+        await _orderRepository.InsertAsync(order1);
+
+    }
+
     public async Task SeedUsers()
     {
         var adminUser = await _userRepository.FindByNormalizedUserNameAsync("ADMIN");
