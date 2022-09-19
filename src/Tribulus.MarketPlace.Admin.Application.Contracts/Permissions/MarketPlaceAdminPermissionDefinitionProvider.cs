@@ -11,12 +11,10 @@ public class MarketPlaceAdminPermissionDefinitionProvider : PermissionDefinition
     {
         var marketPlaceAdminGroup = context.AddGroup(MarketPlaceAdminPermissions.GroupName);
 
-        var productsPermission = marketPlaceAdminGroup.AddPermission(MarketPlaceAdminPermissions.Products.Default, L("Permission:ProductsManagement"));
-        productsPermission.AddChild(MarketPlaceAdminPermissions.Products.Create, L("Permission:Create"));
-        productsPermission.AddChild(MarketPlaceAdminPermissions.Products.Update, L("Permission:Edit"));
+        var productPermissions = marketPlaceAdminGroup.AddPermission(MarketPlaceAdminPermissions.Products.Default, L("Permission:ProductsManagement"));
+        productPermissions.AddChild(MarketPlaceAdminPermissions.Products.Create, L("Permission:Create"));
+        productPermissions.AddChild(MarketPlaceAdminPermissions.Products.Update, L("Permission:Edit"));
 
-        //Define your own permissions here. Example:
-        //myGroup.AddPermission(AdminPermissions.MyPermission1, L("Permission:MyPermission1"));
     }
 
     private static LocalizableString L(string name)

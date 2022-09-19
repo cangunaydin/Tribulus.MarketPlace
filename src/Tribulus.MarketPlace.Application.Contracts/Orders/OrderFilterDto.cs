@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.Application.Dtos;
 
-namespace Tribulus.MarketPlace.Admin.Products
+namespace Tribulus.MarketPlace.Orders
 {
-    public class ProductListFilterDto : PagedAndSortedResultRequestDto
+    public class OrderFilterDto:PagedAndSortedResultRequestDto
     {
         public string Name { get; set; }
     }

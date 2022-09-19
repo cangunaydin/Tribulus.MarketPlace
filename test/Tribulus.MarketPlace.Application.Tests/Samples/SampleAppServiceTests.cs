@@ -19,7 +19,6 @@ public class SampleAppServiceTests : MarketPlaceApplicationTestBase
         _userAppService = GetRequiredService<IIdentityUserAppService>();
     }
 
-    [Fact]
     public async Task Initial_Data_Should_Contain_Admin_User()
     {
         //Act

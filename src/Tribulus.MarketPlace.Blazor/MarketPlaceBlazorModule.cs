@@ -23,11 +23,11 @@ namespace Tribulus.MarketPlace.Blazor;
 [DependsOn(
     typeof(AbpAutofacWebAssemblyModule),
     typeof(MarketPlaceHttpApiClientModule),
-    typeof(AbpAspNetCoreComponentsWebAssemblyBasicThemeModule),
+    typeof(AbpAspNetCoreComponentsWebAssemblyBasicThemeModule)
     //typeof(AbpAspNetCoreComponentsWebAssemblyLeptonXLiteThemeModule),
-    typeof(AbpIdentityBlazorWebAssemblyModule),
-    typeof(AbpTenantManagementBlazorWebAssemblyModule),
-    typeof(AbpSettingManagementBlazorWebAssemblyModule)
+    //typeof(AbpIdentityBlazorWebAssemblyModule),
+    //typeof(AbpTenantManagementBlazorWebAssemblyModule),
+    //typeof(AbpSettingManagementBlazorWebAssemblyModule)
 )]
 public class MarketPlaceBlazorModule : AbpModule
 {

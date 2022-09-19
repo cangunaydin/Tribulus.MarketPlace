@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using Tribulus.MarketPlace.Admin.Products;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace Tribulus.MarketPlace.Products
+namespace Tribulus.MarketPlace.Admin.Products
 {
     public interface IProductAppService : IApplicationService
     {

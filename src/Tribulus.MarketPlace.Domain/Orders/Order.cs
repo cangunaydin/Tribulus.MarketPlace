@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using Tribulus.MarketPlace.Orders.Events;
 using Volo.Abp;
@@ -49,6 +50,8 @@ namespace Tribulus.MarketPlace.Orders
             CheckOrderItemNotExists(orderItemId);
             var newOrderItem = new OrderItem(orderItemId, Id, productId, price, quantity);
             OrderItems.Add(newOrderItem);
+            UpdateTotalValue();
+
             return this;
         }
         public Order UpdateOrderItemQuantity(Guid orderItemId,int quantity)
@@ -56,6 +59,7 @@ namespace Tribulus.MarketPlace.Orders
             CheckOrderItemExists(orderItemId);
             var orderItem = OrderItems.First(o => o.Id == orderItemId);
             orderItem.UpdateQuantity(quantity);
+            UpdateTotalValue();
             return this;
         }
         public Order RemoveOrderItem(Guid orderItemId)
@@ -63,6 +67,7 @@ namespace Tribulus.MarketPlace.Orders
             CheckOrderItemExists(orderItemId);
             var orderItem = OrderItems.First(o => o.Id == orderItemId);
             OrderItems.Remove(orderItem);
+            UpdateTotalValue();
             return this;
         }
         private void CheckOrderItemExists(Guid orderItemId)
@@ -74,6 +79,16 @@ namespace Tribulus.MarketPlace.Orders
         {
             if (OrderItems.Any(o => o.Id == orderItemId))
                 throw new ArgumentNullException(nameof(orderItemId));
+        }
+        private void UpdateTotalValue()
+        {
+            decimal totalValue = 0;
+            foreach (var orderItem in OrderItems)
+            {
+
+                totalValue += orderItem.SubTotal;
+            }
+            TotalValue= totalValue;
         }
         internal void PlaceOrder()
         {

@@ -33,12 +33,13 @@ namespace Tribulus.MarketPlace;
 
 [DependsOn(
     typeof(MarketPlaceHttpApiModule),
+    typeof(MarketPlaceApplicationModule),
+    typeof(MarketPlaceEntityFrameworkCoreModule),
+
     typeof(AbpAutofacModule),
     typeof(AbpCachingStackExchangeRedisModule),
     typeof(AbpDistributedLockingModule),
     typeof(AbpAspNetCoreMvcUiMultiTenancyModule),
-    typeof(MarketPlaceApplicationModule),
-    typeof(MarketPlaceEntityFrameworkCoreModule),
     typeof(AbpAspNetCoreSerilogModule),
     typeof(AbpSwashbuckleModule)
 )]

@@ -33,7 +33,7 @@ namespace Tribulus.MarketPlace.Admin;
 
 [DependsOn(
     typeof(AdminHttpApiModule),
-    typeof(AdminApplicationModule),
+    typeof(MarketPlaceAdminApplicationModule),
     typeof(MarketPlaceEntityFrameworkCoreModule),
     typeof(AbpAutofacModule),
     typeof(AbpCachingStackExchangeRedisModule),
@@ -82,7 +82,7 @@ public class AdminHttpApiHostModule : AbpModule
                 options.FileSets.ReplaceEmbeddedByPhysical<AdminApplicationContractsModule>(
                     Path.Combine(hostingEnvironment.ContentRootPath,
                         $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Admin.Application.Contracts"));
-                options.FileSets.ReplaceEmbeddedByPhysical<AdminApplicationModule>(
+                options.FileSets.ReplaceEmbeddedByPhysical<MarketPlaceAdminApplicationModule>(
                     Path.Combine(hostingEnvironment.ContentRootPath,
                         $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Admin.Application"));
             });
@@ -93,7 +93,7 @@ public class AdminHttpApiHostModule : AbpModule
     {
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
-            options.ConventionalControllers.Create(typeof(AdminApplicationModule).Assembly);
+            options.ConventionalControllers.Create(typeof(MarketPlaceAdminApplicationModule).Assembly);
         });
     }
 

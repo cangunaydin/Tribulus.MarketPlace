@@ -19,13 +19,13 @@ namespace Tribulus.MarketPlace.Admin;
     typeof(AbpFeatureManagementApplicationModule),
     typeof(AbpSettingManagementApplicationModule)
     )]
-public class AdminApplicationModule : AbpModule
+public class MarketPlaceAdminApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         Configure<AbpAutoMapperOptions>(options =>
         {
-            options.AddMaps<AdminApplicationModule>();
+            options.AddMaps<MarketPlaceAdminApplicationModule>();
         });
     }
 }

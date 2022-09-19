@@ -2,7 +2,23 @@
   "culture": "en",
   "texts": {
     "Menu:Home": "Home",
-    "Welcome": "Welcome",
-    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io."
+    "Permission:ProductsManagement": "Products Management",
+    "Permission:OrdersManagement": "Orders Management",
+    "Permission:Create": "Create",
+    "Permission:Edit": "Edit",
+    "Permission:Delete": "Delete",
+    "Permission:PlaceOrder": "Place Order",
+    "Name": "Name",
+    "Desciprtion": "Description",
+    "Price": "Price",
+    "StockCount": "Stock Count",
+    "AddProductToOrder": "Add To Order",
+    "Cancel": "Cancel",
+    "Save": "Save",
+    "UpdateProduct": "Update Product",
+    "Edit": "Edit",
+    "NewProduct": "New Product",
+    "Products": "Products"
+
   }
 }

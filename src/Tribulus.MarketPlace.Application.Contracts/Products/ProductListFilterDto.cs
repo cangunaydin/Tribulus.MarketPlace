@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.Application.Dtos;
 
-namespace Tribulus.MarketPlace.Admin.Products
+namespace Tribulus.MarketPlace.Products
 {
     public class ProductListFilterDto : PagedAndSortedResultRequestDto
     {

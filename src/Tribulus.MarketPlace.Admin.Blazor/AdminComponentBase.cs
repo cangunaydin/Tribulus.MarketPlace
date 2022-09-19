@@ -4,9 +4,9 @@ using Volo.Abp.AspNetCore.Components;
 
 namespace Tribulus.MarketPlace.Admin.Blazor;
 
-public abstract class AdminComponentBase : AbpComponentBase
+public abstract class MarketPlaceAdminComponentBase : AbpComponentBase
 {
-    protected AdminComponentBase()
+    protected MarketPlaceAdminComponentBase()
     {
         LocalizationResource = typeof(MarketPlaceResource);
     }

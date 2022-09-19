@@ -12,13 +12,13 @@ using Volo.Abp.TenantManagement;
 namespace Tribulus.MarketPlace;
 
 [DependsOn(
-    typeof(MarketPlaceApplicationContractsModule),
-    typeof(AbpAccountHttpApiModule),
-    typeof(AbpIdentityHttpApiModule),
-    typeof(AbpPermissionManagementHttpApiModule),
-    typeof(AbpTenantManagementHttpApiModule),
-    typeof(AbpFeatureManagementHttpApiModule),
-    typeof(AbpSettingManagementHttpApiModule)
+    typeof(MarketPlaceApplicationContractsModule)
+    //typeof(AbpAccountHttpApiModule),
+    //typeof(AbpIdentityHttpApiModule),
+    //typeof(AbpPermissionManagementHttpApiModule),
+    //typeof(AbpTenantManagementHttpApiModule),
+    //typeof(AbpFeatureManagementHttpApiModule),
+    //typeof(AbpSettingManagementHttpApiModule)
     )]
 public class MarketPlaceHttpApiModule : AbpModule
 {

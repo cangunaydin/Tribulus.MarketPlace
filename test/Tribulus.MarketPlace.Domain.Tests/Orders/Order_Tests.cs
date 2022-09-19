@@ -1,14 +1,6 @@
-﻿using NSubstitute;
-using Shouldly;
+﻿using Shouldly;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using Tribulus.MarketPlace.Products;
-using Volo.Abp;
-using Volo.Abp.Domain.Repositories;
 using Xunit;
 
 namespace Tribulus.MarketPlace.Orders
@@ -44,6 +36,7 @@ namespace Tribulus.MarketPlace.Orders
 
             //Assert
             order.OrderItems.Count().ShouldBe(1);
+            order.TotalValue.ShouldBe(200);
             order.OrderItems.First().Id.ShouldBe(orderItem1Id);
 
         }
@@ -83,35 +76,35 @@ namespace Tribulus.MarketPlace.Orders
             order.Name.ShouldBe(newName);
 
         }
-        [Fact]
-        public async Task Should_Not_Place_Order_Without_Product_StockCount()
-        {
-            // Arrange
-            var productId1 = Guid.NewGuid();
-            var product1 = new Product(productId1, Guid.NewGuid(), "Product 1", 1000, 2);
-            var orderItem1Id = Guid.NewGuid();
-            var order = new Order(
-                    Guid.NewGuid(),
-                    Guid.NewGuid(),
-                    "test order"
-                );
+        //[Fact]
+        //public async Task Should_Not_Place_Order_Without_Product_StockCount()
+        //{
+        //    // Arrange
+        //    var productId1 = Guid.NewGuid();
+        //    var product1 = new Product(productId1, Guid.NewGuid(), "Product 1", 1000, 2);
+        //    var orderItem1Id = Guid.NewGuid();
+        //    var order = new Order(
+        //            Guid.NewGuid(),
+        //            Guid.NewGuid(),
+        //            "test order"
+        //        );
 
-            order.AddOrderItem(orderItem1Id, productId1, 1000, 5);
+        //    order.AddOrderItem(orderItem1Id, productId1, 1000, 5);
 
-            var productRepository =
-                Substitute.For<IRepository<Product, Guid>>();
+        //    var productRepository =
+        //        Substitute.For<IRepository<Product, Guid>>();
 
-            productRepository.GetListAsync(Arg.Any<Expression<Func<Product, bool>>>())
-                .Returns(Task.FromResult(new List<Product>() { product1 }));
+        //    productRepository.GetListAsync(Arg.Any<Expression<Func<Product, bool>>>())
+        //        .Returns(Task.FromResult(new List<Product>() { product1 }));
 
-            var orderManager = new OrderManager(productRepository);
-            await Assert.ThrowsAsync<BusinessException>(async () =>
-            {
-                await orderManager.PlaceOrderAsync(order);
-            });
+        //    var orderManager = new OrderManager(productRepository);
+        //    await Assert.ThrowsAsync<BusinessException>(async () =>
+        //    {
+        //        await orderManager.PlaceOrderAsync(order);
+        //    });
             
 
-        }
+        //}
 
 
     }

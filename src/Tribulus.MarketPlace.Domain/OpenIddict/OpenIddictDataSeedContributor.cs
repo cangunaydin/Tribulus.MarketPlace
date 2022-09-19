@@ -156,7 +156,7 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                 {
                     OpenIddictConstants.GrantTypes.AuthorizationCode,
                 },
-                scopes: commonScopes,
+                scopes: commonScopes.Union(new[] { "MarketPlace" }).ToList(),
                 redirectUri: $"{swaggerRootUrl}/swagger/oauth2-redirect.html",
                 clientUri: swaggerRootUrl
             );
@@ -179,7 +179,7 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                 {
                     OpenIddictConstants.GrantTypes.AuthorizationCode,
                 },
-                scopes: commonScopes,
+                scopes: commonScopes.Union(new[] { "MarketPlaceAdmin" }).ToList(),
                 redirectUri: $"{swaggerAdminRootUrl}/swagger/oauth2-redirect.html",
                 clientUri: swaggerAdminRootUrl
             );

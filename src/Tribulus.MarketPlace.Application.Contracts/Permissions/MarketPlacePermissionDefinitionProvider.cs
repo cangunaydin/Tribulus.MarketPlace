@@ -8,9 +8,12 @@ public class MarketPlacePermissionDefinitionProvider : PermissionDefinitionProvi
 {
     public override void Define(IPermissionDefinitionContext context)
     {
-        var myGroup = context.AddGroup(MarketPlacePermissions.GroupName);
+        var marketPlaceGroup = context.AddGroup(MarketPlacePermissions.GroupName);
         //Define your own permissions here. Example:
-        //myGroup.AddPermission(MarketPlacePermissions.MyPermission1, L("Permission:MyPermission1"));
+        var orderPermissions=marketPlaceGroup.AddPermission(MarketPlacePermissions.Orders.Default, L("Permission:OrdersManagement"));
+        orderPermissions.AddChild(MarketPlacePermissions.Orders.Create, L("Permission:Create"));
+        orderPermissions.AddChild(MarketPlacePermissions.Orders.Update, L("Permission:Update"));
+        orderPermissions.AddChild(MarketPlacePermissions.Orders.PlaceOrder, L("Permission:PlaceOrder"));
     }
 
     private static LocalizableString L(string name)

@@ -5,14 +5,13 @@ using Tribulus.MarketPlace.Products;
 
 namespace Tribulus.MarketPlace.Admin;
 
-public class AdminApplicationAutoMapperProfile : Profile
+public class MarketPlaceAdminApplicationAutoMapperProfile : Profile
 {
-    public AdminApplicationAutoMapperProfile()
+    public MarketPlaceAdminApplicationAutoMapperProfile()
     {
         /* You can configure your AutoMapper mapping configuration here.
          * Alternatively, you can split your mapping configurations
          * into multiple profile classes for a better organization. */
         CreateMap<Product, ProductDto>();
-        CreateMap<List<Product>, List<ProductDto>>();
     }
 }
