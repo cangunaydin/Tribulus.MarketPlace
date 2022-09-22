@@ -15,4 +15,12 @@ public static class MarketPlacePermissions
         public const string PlaceOrder = Default + ".PlaceOrder";
 
     }
+
+    public static class OrderItems
+    {
+        public const string Default = GroupName + ".OrderItems";
+        public const string Create = Default + ".Create";
+        public const string Update = Default + ".Update";        
+
+    }
 }

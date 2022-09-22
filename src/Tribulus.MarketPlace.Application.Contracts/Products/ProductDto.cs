@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Volo.Abp.Application.Dtos;
 
 namespace Tribulus.MarketPlace.Products
@@ -10,6 +8,8 @@ namespace Tribulus.MarketPlace.Products
         public string Name { get; set; }
 
         public string Description { get; set; }
+
+        public int StockCount{ get; set; }
 
         public decimal Price { get; set; }
     }

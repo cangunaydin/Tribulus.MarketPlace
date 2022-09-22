@@ -2,6 +2,7 @@
   "culture": "en",
   "texts": {
     "Menu:Home": "Home",
+    "MyOrders": "My orders",
     "Permission:ProductsManagement": "Products Management",
     "Permission:OrdersManagement": "Orders Management",
     "Permission:Create": "Create",
@@ -18,7 +19,13 @@
     "UpdateProduct": "Update Product",
     "Edit": "Edit",
     "NewProduct": "New Product",
-    "Products": "Products"
-
+    "Products": "Products",
+    "Order": "Order",
+    "CreateOrder": "Create Order",
+    "OrderCreatedYouCanAddToOrder": "Order created. You can add to order.",
+    "PleaseAddToTheCartBeforePlacingOrder": "Please add to the Cart before placing order.",
+    "ProductAddedToCart": "Product added to the cart.",
+    "OrderHasBeenPlaced": "Order has been placed. Thanks for your purchase.",
+    "OrderItemDeleted": "Order Item deleted."
   }
 }

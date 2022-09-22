@@ -18,8 +18,8 @@ namespace Tribulus.MarketPlace.Orders
 
         public async Task PlaceOrderAsync(Order order)
         {
-            var productIds=order.OrderItems.Select(x => x.ProductId).ToList();
-            var products=await _productRepository.GetListAsync(o => productIds.Contains(o.Id));
+            var productIds = order.OrderItems.Select(x => x.ProductId).ToList();
+            var products = await _productRepository.GetListAsync(o => productIds.Contains(o.Id));
             foreach (var product in products)
             {
                 var orderItem = order.OrderItems.First(o => o.ProductId == product.Id);

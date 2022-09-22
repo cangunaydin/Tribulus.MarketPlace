@@ -102,6 +102,7 @@ public partial class Index
         CreatingProduct = new CreateProductDto();
         await CreateProductModal.Show();
     }
+
     private async Task CreateProductAsync()
     {
         if (await CreateValidationsRef.ValidateAll())

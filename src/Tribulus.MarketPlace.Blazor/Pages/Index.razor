@@ -1,48 +1,81 @@
 ﻿@page "/"
+@using Tribulus.MarketPlace.Localization
+@using Tribulus.MarketPlace.Orders
 @using Tribulus.MarketPlace.Permissions
 @using Tribulus.MarketPlace.Products
-@inherits MarketPlaceComponentBase
 
+@inject IOrderAppService OrderAppService
+@inject NavigationManager UriHelper
+@inherits MarketPlaceComponentBase
+@inject AbpBlazorMessageLocalizerHelper<MarketPlaceResource> LH
 
 <Card>
     <CardHeader>
         @* ************************* PAGE HEADER ************************* *@
-        <h2>@L["Products"]</h2>
+        <Row>
+            <Column ColumnSize="ColumnSize.Is9">
+                <h2>@L["Products"]</h2>
+            </Column>
+            <Column ColumnSize="ColumnSize.Is3" Flex="Flex.JustifyContent.End">
+
+                @if (Order != null && Order.Id != Guid.Empty)
+                {
+                    <Tooltip Text="Shopping Cart">
+                        <Button Type="@ButtonType.Button" Color="Color.Light"
+                            Clicked="OpenOrderDetailModalAsync"
+                            RequiredPolicy="@MarketPlacePermissions.Orders.Create">
+                            <Icon Name="IconName.ShoppingCart" IconSize="IconSize.Large">
+                            </Icon>
+                            <Badge Color="Color.Success">
+                                @if (Order != null && Order.OrderItems.Count() > 0)
+                                {
+                                    @Order.OrderItems.Count()
+                                }
+                                else
+                                {
+                                    <strong>0</strong>
+                                }
+                            </Badge>
+                        </Button>
+                    </Tooltip>
+                }
+                else
+                {
+
+                    <Button Type="@ButtonType.Button" Color="Color.Light"
+                        Clicked="OpenCreateOrderModalAsync"
+                        RequiredPolicy="@MarketPlacePermissions.Orders.Create"
+                        Disabled="!string.IsNullOrEmpty(CreatingOrder.Name)">
+                        @L["CreateOrder"]
+                    </Button>
+                }
+            </Column>
+        </Row>
     </CardHeader>
     <CardBody>
         @* ************************* SEARCH ************************* *@
         @*<Form>*@
-            <div id="FilterSection" class="row mt-3">
+        <div id="FilterSection" class="row mt-3">
 
-                <Column ColumnSize="ColumnSize.Is12">
-                    <Field>
-                        <FieldLabel>@L["Name"]</FieldLabel>
-                        <TextEdit TValue="string" KeyPress="OnKeyPress" @bind-Text="@Filter.Name" />
-                    </Field>
-                </Column>
+            <Column ColumnSize="ColumnSize.Is12">
+                <Field>
+                    <FieldLabel>@L["Name"]</FieldLabel>
+                    <TextEdit TValue="string" KeyPress="OnKeyPress" @bind-Text="@Filter.Name" />
+                </Field>
+            </Column>
 
-            </div>
+        </div>
         @*</Form>*@
         @* ************************* DATA GRID ************************* *@
         <DataGrid TItem="ProductDto"
                   Data="ProductList"
                   ReadData="OnDataGridReadAsync"
+                  @bind-SelectedRow="@SelectedProduct"
                   TotalItems="TotalCount"
                   ShowPager="true"
+                  Responsive
                   PageSize="PageSize">
             <DataGridColumns>
-                @* <DataGridEntityActionsColumn TItem="ProductDto">
-                <DisplayTemplate>
-                <EntityActions TItem="ProductDto">
-                <EntityAction TItem="ProductDto"
-                RequiredPolicy="@MarketPlacePermissions.Orders.Update"
-                Clicked="() => OpenAddOrderItemModalAsync(context)"
-                Text="@L["AddProductToOrder"]">
-                </EntityAction>
-                </EntityActions>
-                </DisplayTemplate>
-                </DataGridEntityActionsColumn>*@
-
                 <DataGridColumn TItem="ProductDto"
                                 Field="Name"
                                 Caption="@L["Name"]">
@@ -57,8 +90,213 @@
                                 Field="Price"
                                 Caption="@L["Price"]">
                 </DataGridColumn>
+
+                <DataGridColumn>
+                    <DisplayTemplate>
+                        <Button Color="Color.Dark" Outline Disabled="string.IsNullOrEmpty(CreatingOrder.Name)"
+                                Clicked="OpenAddToOrderModalAsync"
+                                RequiredPolicy="@MarketPlacePermissions.OrderItems.Create">
+                            @L["AddProductToOrder"]
+                            <Icon Name="IconName.ShoppingCart" IconSize="IconSize.Large">
+                            </Icon>
+                        </Button>
+                    </DisplayTemplate>
+                </DataGridColumn>
             </DataGridColumns>
         </DataGrid>
 
     </CardBody>
 </Card>
+
+
+
+<Modal @ref="CreateOrderModal">
+    <ModalContent IsCentered="true">
+        <Form>
+            <ModalHeader>
+                <ModalTitle>@L["CreateOrder"]</ModalTitle>
+                <CloseButton Clicked="() => CreateOrderModal.Hide()" />
+            </ModalHeader>
+            <ModalBody>
+                <Validations @ref="@CreateOrderValidationsRef" Model="@CreatingOrder" ValidateOnLoad="false">
+                    <Validation MessageLocalizer="@LH.Localize">
+                        <Field>
+                            <FieldLabel>@L["Name"] *</FieldLabel>
+                            <TextEdit @bind-Text="@CreatingOrder.Name">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </TextEdit>
+                        </Field>
+                    </Validation>
+                </Validations>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="() => CreateOrderModal.Hide()">
+                    @L["Cancel"]
+                </Button>
+                <Button Color="Color.Primary"
+                        Type="@ButtonType.Submit"
+                        PreventDefaultOnSubmit="true"
+                        Clicked="CreateOrderAsync">
+                    @L["Save"]
+                </Button>
+            </ModalFooter>
+        </Form>
+    </ModalContent>
+</Modal>
+
+<Modal @ref="CreateOrderItemModal">
+    <ModalContent IsCentered="true">
+        <Form>
+            <ModalHeader>
+                <ModalTitle>@L["AddProductToOrder"] (<strong>@CreatingOrder.Name</strong>)</ModalTitle>
+                <CloseButton Clicked="() => CreateOrderItemModal.Hide()" />
+            </ModalHeader>
+            <ModalBody Class="pt-1">
+                <FieldLabel Class="pb-3 w-100" TextAlignment="TextAlignment.Center">
+                    <strong>@L["Product"]:</strong>
+                    @SelectedProduct.Name
+                </FieldLabel>
+                <Validations @ref="@CreateOrderItemValidationsRef" Model="@CreatingOrderItem" ValidateOnLoad="false">
+                    <Validation MessageLocalizer="@LH.Localize">
+                        <Field>
+                            <FieldLabel>@L["Quantity"] *</FieldLabel>
+                            <NumericEdit @bind-Value="@CreatingOrderItem.Quantity" Min="1" Max="@SelectedProduct.StockCount">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </NumericEdit>
+                        </Field>
+                        <Field>
+                            <FieldLabel>@L["Price"]</FieldLabel>
+                            @{
+                                var price = (CreatingOrderItem.Quantity * SelectedProduct.Price);
+                            }
+                            <NumericEdit @bind-Value="@price" Min="SelectedProduct.Price" ReadOnly>
+                            </NumericEdit>
+                        </Field>
+                    </Validation>
+                </Validations>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="() => CreateOrderItemModal.Hide()">
+                    @L["Cancel"]
+                </Button>
+                <Button Color="Color.Primary"
+                        Type="@ButtonType.Submit"
+                        PreventDefaultOnSubmit="true"
+                        Clicked="CreateOrderItemAsync">
+                    @L["Save"]
+                </Button>
+            </ModalFooter>
+        </Form>
+    </ModalContent>
+</Modal>
+
+
+<Modal @ref="OrderDetailModal">
+    <ModalContent IsCentered="true" Size="ModalSize.Large">
+        <ModalHeader>
+            <ModalTitle Size="HeadingSize.Is3">@CreatingOrder.Name</ModalTitle>
+            <CloseButton Clicked="() => OrderDetailModal.Hide()" />
+        </ModalHeader>
+        <ModalBody>
+            @if (Order != null && Order.OrderItems.Count() > 0)
+            {
+                var idx = 1;
+                <Table Borderless Hoverable Resizable ResizeMode="TableResizeMode.Columns">
+                    <TableHeader>
+                        <TableRow>
+                            <TableHeaderCell><strong>#</strong></TableHeaderCell>
+                            <TableHeaderCell>Product</TableHeaderCell>
+                            <TableHeaderCell>Quantity</TableHeaderCell>
+                            <TableHeaderCell>Price</TableHeaderCell>
+                            <TableHeaderCell>Sub Total</TableHeaderCell>
+                            <TableHeaderCell>Action</TableHeaderCell>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        @foreach (var orderItem in Order.OrderItems)
+                        {
+                            var index = idx++.ToString();
+                            <TableRow>
+                                <TableRowHeader>@index</TableRowHeader>
+                                <TableRowCell>@orderItem.ProductId</TableRowCell>
+                                <TableRowCell>@orderItem.Quantity</TableRowCell>
+                                <TableRowCell>@orderItem.Price</TableRowCell>
+                                <TableRowCell>@orderItem.SubTotal</TableRowCell>
+                                <TableRowCell Class="text-center">
+                                    <Tooltip Text="Delete Item">
+                                        <Button Type="@ButtonType.Submit" PreventDefaultOnSubmit="true" @onclick="() => DeleteItems(orderItem)">
+                                            <Icon Name="IconName.Delete" IconSize="IconSize.Large" Class="text-danger" />
+                                        </Button>
+                                    </Tooltip>
+                                </TableRowCell>
+                            </TableRow>
+                        }
+                        <TableRow Class="border-top border-light border-left-0 border-right-0 border-bottom-0">
+                            <TableRowHeader></TableRowHeader>
+                            <TableRowCell></TableRowCell>
+                            <TableRowCell></TableRowCell>
+                            <TableRowCell><strong>Total</strong></TableRowCell>
+                            <TableRowCell>@Order.OrderItems.Sum(x => x.SubTotal)</TableRowCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
+            }
+            else
+            {
+                <Heading Size="HeadingSize.Is6" TextColor="TextColor.Secondary" TextAlignment="TextAlignment.Center">
+                    @L["PleaseAddToTheCartBeforePlacingOrder"]
+                </Heading>
+            }
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Warning"
+                    Type="@ButtonType.Submit"
+                    PreventDefaultOnSubmit="true"
+                    Disabled=@(Order != null && Order.OrderItems.Count() == 0)
+                    Clicked="PlaceOrderAsync">
+                @L["Permission:PlaceOrder"]
+                <Icon Name="IconName.Share" IconSize="IconSize.Default">
+                </Icon>
+            </Button>
+
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+
+<Snackbar @ref="OrderSnackbar" Color="SnackbarColor.Success">
+    <SnackbarBody>
+        @L["OrderCreatedYouCanAddToOrder"]
+        <SnackbarAction Clicked="@(()=>OrderSnackbar.Hide())">Close</SnackbarAction>
+    </SnackbarBody>
+</Snackbar>
+
+<Snackbar @ref="OrderItemSnackbar" Color="SnackbarColor.Success">
+    <SnackbarBody>
+        @L["ProductAddedToCart"]
+        <SnackbarAction Clicked="@(()=>OrderItemSnackbar.Hide())">Close</SnackbarAction>
+    </SnackbarBody>
+</Snackbar>
+
+
+<Snackbar @ref="PlaceOrderSnackbar" Color="SnackbarColor.Success">
+    <SnackbarBody>
+        @L["OrderHasBeenPlaced"]
+        <SnackbarAction Clicked="@(()=>PlaceOrderSnackbar.Hide())">Close</SnackbarAction>
+    </SnackbarBody>
+</Snackbar>
+
+
+
+<Snackbar @ref="OrderItemDeleteSnackbar" Color="SnackbarColor.Success">
+    <SnackbarBody>
+        @L["OrderItemDeleted"]
+        <SnackbarAction Clicked="@(()=>OrderItemDeleteSnackbar.Hide())">Close</SnackbarAction>
+    </SnackbarBody>
+</Snackbar>

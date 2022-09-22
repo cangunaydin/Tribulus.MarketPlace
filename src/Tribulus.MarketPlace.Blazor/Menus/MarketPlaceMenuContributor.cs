@@ -51,7 +51,7 @@ public class MarketPlaceMenuContributor : IMenuContributor
     private Task ConfigureUserMenuAsync(MenuConfigurationContext context)
     {
         var accountStringLocalizer = context.GetLocalizer<AccountResource>();
-
+        var l = context.GetLocalizer<MarketPlaceResource>();
         var authServerUrl = _configuration["AuthServer:Authority"] ?? "";
 
         context.Menu.AddItem(new ApplicationMenuItem(
@@ -61,6 +61,14 @@ public class MarketPlaceMenuContributor : IMenuContributor
             icon: "fa fa-cog",
             order: 1000,
             null).RequireAuthenticated());
+
+        context.Menu.AddItem(new ApplicationMenuItem(
+             "Account.MyOrders",
+             l["MyOrders"],
+             "/account/myorders",
+             icon: "fas fa-shopping-cart",
+             order: 1000,
+             null).RequireAuthenticated());
 
         return Task.CompletedTask;
     }

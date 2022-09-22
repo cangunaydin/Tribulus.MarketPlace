@@ -9,11 +9,11 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace Tribulus.MarketPlace.Orders
 {
-    public class Order:FullAuditedAggregateRoot<Guid>
+    public class Order : FullAuditedAggregateRoot<Guid>
     {
 
         public Guid OwnerUserId { get; private set; }
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
         public decimal TotalValue { get; private set; }
 
@@ -27,13 +27,14 @@ namespace Tribulus.MarketPlace.Orders
 
         }
 
-        internal Order(Guid id,Guid ownerUserId,string name):base(id)
+        public Order(Guid id, Guid ownerUserId, string name) : base(id)
         {
             OwnerUserId = ownerUserId;
             State = OrderState.Pending;
             UpdateName(name);
             OrderItems = new Collection<OrderItem>();
         }
+
         public Order UpdateName(string name)
         {
             Check.NotNullOrWhiteSpace(name, nameof(name));
@@ -54,7 +55,7 @@ namespace Tribulus.MarketPlace.Orders
 
             return this;
         }
-        public Order UpdateOrderItemQuantity(Guid orderItemId,int quantity)
+        public Order UpdateOrderItemQuantity(Guid orderItemId, int quantity)
         {
             CheckOrderItemExists(orderItemId);
             var orderItem = OrderItems.First(o => o.Id == orderItemId);
@@ -85,10 +86,9 @@ namespace Tribulus.MarketPlace.Orders
             decimal totalValue = 0;
             foreach (var orderItem in OrderItems)
             {
-
                 totalValue += orderItem.SubTotal;
             }
-            TotalValue= totalValue;
+            TotalValue = totalValue;
         }
         internal void PlaceOrder()
         {

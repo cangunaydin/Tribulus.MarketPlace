@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Tribulus.MarketPlace.Orders
 {
     public class CreateOrderDto
     {
+        [Required]
         public string Name { get; set; }
 
     }
