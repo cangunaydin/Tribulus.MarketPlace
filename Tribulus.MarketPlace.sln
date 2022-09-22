@@ -65,7 +65,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "admin", "admin", "{7C95CCAD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{07F3B823-6F68-48DD-BDF5-74F38804FEA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tribulus.MarketPlace.Admin.Application.Tests", "test\Tribulus.MarketPlace.Admin.Application.Tests\Tribulus.MarketPlace.Admin.Application.Tests.csproj", "{9C636B41-9935-44C1-93C5-1FC5631628B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Application.Tests", "test\Tribulus.MarketPlace.Admin.Application.Tests\Tribulus.MarketPlace.Admin.Application.Tests.csproj", "{9C636B41-9935-44C1-93C5-1FC5631628B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

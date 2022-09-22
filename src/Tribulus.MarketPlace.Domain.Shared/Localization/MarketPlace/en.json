@@ -12,13 +12,24 @@
     "Desciprtion": "Description",
     "Price": "Price",
     "StockCount": "Stock Count",
-    "AddProductToOrder": "Add To Order",
+    "AddProductToOrder": "+",
     "Cancel": "Cancel",
     "Save": "Save",
     "UpdateProduct": "Update Product",
     "Edit": "Edit",
     "NewProduct": "New Product",
-    "Products": "Products"
+    "Products": "Products",
+    "AddOrderItem": "Add To Order",
+    "Quantity": "Quantity",
+    "OrderCreatedYouCanAddToOrder": "Your Odder is Created. Please add Products",
+    "ProductAddedToCart": "Items added to Cart",
+    "OrderItems": "Order Items Information",
+    "PlaceOrder": "Place Order",
+    "OrderPlaced": "Your order has been placed",
+    "OrderItemRemoved": "This order item has been removed",
+    "OrderDeleted": "This order has been deleted. Please create a new one",
+    "DeleteOrderItem": "-"
+
 
   }
 }

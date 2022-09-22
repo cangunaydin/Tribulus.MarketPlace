@@ -15,9 +15,11 @@ namespace Tribulus.MarketPlace.Orders
 
         Task UpdateAsync(Guid id,UpdateOrderDto input);
 
+        Task<OrderDto> GetCurrentOrderAsync();
+
         Task<OrderItemDto> CreateOrderItemAsync(Guid orderId,CreateOrderItemDto input);
 
-        Task DeleteOrderItem(Guid orderItemId);
+        Task DeleteOrderItem(Guid orderItemId, Guid orderId);
 
         Task DeleteOrder(Guid id);
 

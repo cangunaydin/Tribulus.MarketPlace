@@ -27,7 +27,7 @@ namespace Tribulus.MarketPlace.Orders
 
         }
 
-        internal Order(Guid id,Guid ownerUserId,string name):base(id)
+        public Order(Guid id,Guid ownerUserId,string name):base(id)
         {
             OwnerUserId = ownerUserId;
             State = OrderState.Pending;
@@ -47,7 +47,7 @@ namespace Tribulus.MarketPlace.Orders
             decimal price,
             int quantity)
         {
-            CheckOrderItemNotExists(orderItemId);
+            CheckOrderItemNotExists(orderItemId); 
             var newOrderItem = new OrderItem(orderItemId, Id, productId, price, quantity);
             OrderItems.Add(newOrderItem);
             UpdateTotalValue();

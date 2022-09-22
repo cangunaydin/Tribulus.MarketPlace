@@ -6,5 +6,7 @@ namespace Tribulus.MarketPlace.Orders
 {
     public class UpdateOrderDto
     {
+        public string Name { get; private set; }
+
     }
 }
