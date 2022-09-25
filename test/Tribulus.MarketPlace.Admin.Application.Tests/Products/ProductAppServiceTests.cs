@@ -47,6 +47,7 @@ public class ProductAppServiceTests:MarketPlaceAdminApplicationTestBase
         productDto.Price.ShouldBe(100);
         productDto.StockCount.ShouldBe(10);
     }
+
     [Fact]
     public async Task Should_Update_Product()
     {
@@ -64,6 +65,7 @@ public class ProductAppServiceTests:MarketPlaceAdminApplicationTestBase
         updatedProduct.Price.ShouldBe(120);
         updatedProduct.StockCount.ShouldBe(20);
     }
+
     [Fact]
     public async Task Should_Get_Valid_Product()
     {
@@ -85,6 +87,7 @@ public class ProductAppServiceTests:MarketPlaceAdminApplicationTestBase
             product.Name.ShouldContain(searchName);
         }
     }
+
     private async Task<Product> GetProductOrNullAsync(Guid productId)
     {
         return await WithUnitOfWorkAsync(async () =>
