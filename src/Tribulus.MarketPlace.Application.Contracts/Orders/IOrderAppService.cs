@@ -15,7 +15,7 @@ namespace Tribulus.MarketPlace.Orders
 
         Task<OrderDto> CreateAsync(CreateOrderDto input);
 
-        Task UpdateAsync(Guid id,UpdateOrderDto input);
+        Task<OrderDto> UpdateAsync(Guid id,UpdateOrderDto input);
 
         Task<OrderItemDto> CreateOrderItemAsync(Guid orderId,CreateOrderItemDto input);
 

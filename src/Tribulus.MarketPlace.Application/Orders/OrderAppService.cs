@@ -83,11 +83,13 @@ namespace Tribulus.MarketPlace.Orders
         }
 
 
-        public async Task UpdateAsync(Guid id, UpdateOrderDto input)
+        public async Task<OrderDto> UpdateAsync(Guid id, UpdateOrderDto input)
         {
             var order = await _orderRepository.GetAsync(id);
             order.UpdateName(input.Name);
             await _orderRepository.UpdateAsync(order);
+            var orderDto = ObjectMapper.Map<Order, OrderDto>(order);
+            return orderDto;
         }
     }
 }
