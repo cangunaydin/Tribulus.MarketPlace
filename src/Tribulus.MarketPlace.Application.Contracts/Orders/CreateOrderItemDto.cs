@@ -12,7 +12,5 @@ namespace Tribulus.MarketPlace.Orders
 
         public decimal Price { get; set; }
 
-
-
     }
 }

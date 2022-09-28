@@ -45,7 +45,7 @@ public class MarketPlaceTestDataSeedContributor : IDataSeedContributor, ITransie
                     "Order 1"
                 );
 
-        order1.AddOrderItem(_marketPlaceTestData.Order1ItemId, _marketPlaceTestData.ProductIphone13ProId, 1000, 8);
+        order1.AddOrderItem(_marketPlaceTestData.Order1ItemId, _marketPlaceTestData.ProductIphone13ProId, 1000, 3);
         await _orderRepository.InsertAsync(order1);
 
     }

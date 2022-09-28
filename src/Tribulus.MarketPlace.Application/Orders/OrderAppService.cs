@@ -58,7 +58,6 @@ namespace Tribulus.MarketPlace.Orders
             var order = await AsyncExecuter.ToListAsync(query);
             var orderDto = ObjectMapper.Map<Order, OrderDto>(order.FirstOrDefault());
             return orderDto;
-
         }
 
         public async Task<PagedResultDto<OrderDto>> GetOrdersAsync(OrderFilterDto input)
