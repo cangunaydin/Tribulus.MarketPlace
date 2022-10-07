@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Tribulus.MarketPlace.Orders;
+using Tribulus.MarketPlace.Inventory;
+using Tribulus.MarketPlace.Marketing;
 using Tribulus.MarketPlace.Products;
+using Tribulus.MarketPlace.Sales;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -57,7 +59,13 @@ public class MarketPlaceDbContext :
     #region <Entities from MarketPlace>
     public DbSet<Product> Products { get; set; }
 
+    public DbSet<ProductPrice> ProductPrices { get; set; }
+
+    public DbSet<ProductStock> ProductStocks { get; set; }
+
     public DbSet<Order> Orders { get; set; }
+
+    public DbSet<OrderItemQuantity> OrderItemQuantities { get; set; }
     #endregion
 
     public MarketPlaceDbContext(DbContextOptions<MarketPlaceDbContext> options)

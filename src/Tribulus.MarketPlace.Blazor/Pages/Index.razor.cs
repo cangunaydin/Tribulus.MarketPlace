@@ -1,13 +1,7 @@
-﻿
-using Microsoft.AspNetCore.Components.Web;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Tribulus.MarketPlace.Products;
+using Tribulus.MarketPlace.Marketing;
 using Volo.Abp.Application.Dtos;
-using Blazorise;
-using Blazorise.DataGrid;
 
 namespace Tribulus.MarketPlace.Blazor.Pages;
 
@@ -31,35 +25,34 @@ public partial class Index
     }
     protected override async Task OnInitializedAsync()
     {
-        await GetProductsAsync();
+        //await GetProductsAsync();
     }
-    private async Task OnKeyPress(KeyboardEventArgs e)
-    {
-        if (e.Code == "Enter" || e.Code == "NumpadEnter")
-        {
-            await GetProductsAsync();
-        }
-    }
-    private async Task OnDataGridReadAsync(DataGridReadDataEventArgs<ProductDto> e)
-    {
-        CurrentSorting = e.Columns
-            .Where(c => c.SortDirection != SortDirection.Default)
-            .Select(c => c.Field + (c.SortDirection == SortDirection.Descending ? " DESC" : ""))
-            .JoinAsString(",");
-        CurrentPage = e.Page - 1;
-        await GetProductsAsync();
-        await InvokeAsync(StateHasChanged);
-    }
-    private async Task GetProductsAsync()
-    {
-        Filter.SkipCount = PageSize * CurrentPage;
-        Filter.MaxResultCount = PageSize;
-        Filter.Sorting = CurrentSorting;
+    //private async Task OnKeyPress(KeyboardEventArgs e)
+    //{
+    //    if (e.Code == "Enter" || e.Code == "NumpadEnter")
+    //    {
+    //        await GetProductsAsync();
+    //    }
+    //}
+    //private async Task OnDataGridReadAsync(DataGridReadDataEventArgs<ProductDto> e)
+    //{
+    //    CurrentSorting = e.Columns
+    //        .Where(c => c.SortDirection != SortDirection.Default)
+    //        .Select(c => c.Field + (c.SortDirection == SortDirection.Descending ? " DESC" : ""))
+    //        .JoinAsString(",");
+    //    CurrentPage = e.Page - 1;
+    //    await GetProductsAsync();
+    //    await InvokeAsync(StateHasChanged);
+    //}
+    //private async Task GetProductsAsync()
+    //{
+    //    Filter.SkipCount = PageSize * CurrentPage;
+    //    Filter.MaxResultCount = PageSize;
 
-        var result=await _productAppService.GetListAsync(Filter);
-        ProductList = result.Items;
-        TotalCount =(int) result.TotalCount;
+    //    var result=await _productAppService.GetListAsync(Filter);
+    //    ProductList = result.Items;
+    //    TotalCount =(int) result.TotalCount;
 
 
-    }
+    //}
 }

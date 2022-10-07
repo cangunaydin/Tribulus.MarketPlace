@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@abp/aspnetcore.mvc.ui.theme.leptonxlite@~1.0.0-rc.4":
-  version "1.0.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@abp/aspnetcore.mvc.ui.theme.leptonxlite/-/aspnetcore.mvc.ui.theme.leptonxlite-1.0.0-rc.5.tgz#b4d2874261df5d444719bd5d899a9bb44f6d438a"
-  integrity sha512-0hOSNY1TrZ3yUnJjxBfDKaUKnYWFFlAiIZSIYOUSZg8gEqQnJndtiypCMNHrRGgGveL69NVODCmcuLQvg6KbqA==
+"@abp/aspnetcore.mvc.ui.theme.leptonxlite@~1.0.0-rc.7":
+  version "1.0.0-rc.7"
+  resolved "https://registry.yarnpkg.com/@abp/aspnetcore.mvc.ui.theme.leptonxlite/-/aspnetcore.mvc.ui.theme.leptonxlite-1.0.0-rc.7.tgz#44a9cb8c34c01ab779e732367ab3c089d5a804b7"
+  integrity sha512-NgX8SUS721qqsV7jcZYb3agi/yqu/S563QQmL6O+lZepLQVrnLheQ42A76UVgszvBgJLSJB+42O1ssIrWX1MGg==
   dependencies:
     "@abp/aspnetcore.mvc.ui.theme.shared" "~6.0.0-rc.4"
 

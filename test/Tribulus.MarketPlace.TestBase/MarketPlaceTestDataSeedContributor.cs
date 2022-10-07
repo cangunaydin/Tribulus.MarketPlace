@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Tribulus.MarketPlace.Orders;
-using Tribulus.MarketPlace.Products;
+using Tribulus.MarketPlace.Inventory;
+using Tribulus.MarketPlace.Marketing;
+using Tribulus.MarketPlace.Sales;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
@@ -13,20 +14,30 @@ public class MarketPlaceTestDataSeedContributor : IDataSeedContributor, ITransie
 {
 
     private readonly IRepository<Product, Guid> _productRepository;
+    private readonly IRepository<ProductPrice, Guid> _productPriceRepository;
+    private readonly IRepository<ProductStock, Guid> _productStockRepository;
     private readonly IRepository<Order, Guid> _orderRepository;
+    private readonly IRepository<OrderItemQuantity, Guid> _orderItemQuantityRepository;
     private readonly MarketPlaceTestData _marketPlaceTestData;
     private readonly IIdentityUserRepository _userRepository;
 
     public MarketPlaceTestDataSeedContributor(
         IRepository<Product, Guid> productRepository,
+        IRepository<ProductPrice, Guid> productPriceRepository,
+        IRepository<ProductStock, Guid> productStockRepository,
         MarketPlaceTestData marketPlaceTestData,
         IIdentityUserRepository userRepository,
-        IRepository<Order, Guid> orderRepository)
+        IRepository<Order, Guid> orderRepository,
+        IRepository<OrderItemQuantity, Guid> orderItemQuantityRepository)
     {
         _productRepository = productRepository;
+        _productPriceRepository = productPriceRepository;
+        _productStockRepository = productStockRepository;
+
         _marketPlaceTestData = marketPlaceTestData;
         _userRepository = userRepository;
         _orderRepository = orderRepository;
+        _orderItemQuantityRepository = orderItemQuantityRepository;
     }
 
     public async Task SeedAsync(DataSeedContext context)
@@ -65,42 +76,84 @@ public class MarketPlaceTestDataSeedContributor : IDataSeedContributor, ITransie
     }
     public async Task SeedProductsAsync()
     {
+
+        //Iphone 13
         var newIphone13 = new Product(
                    _marketPlaceTestData.ProductIphone13Id,
                    _marketPlaceTestData.UserJohnId,
-                   _marketPlaceTestData.ProductIphone13Name,
-                   599,
-                   10
+                   _marketPlaceTestData.ProductIphone13Name
                    );
-        
+        var newIphone13Price = new ProductPrice(_marketPlaceTestData.ProductIphone13Id,
+            599);
+
+        var newIphone13Stock = new ProductStock(_marketPlaceTestData.ProductIphone13Id,
+            10);
+
+
         await _productRepository.InsertAsync(
               newIphone13
            );
 
+        await _productPriceRepository.InsertAsync(
+             newIphone13Price
+          );
+
+        await _productStockRepository.InsertAsync(
+     newIphone13Stock
+  );
+        //Iphone 13 Pro
         var newIphone13Pro = new Product(
                     _marketPlaceTestData.ProductIphone13ProId,
                     _marketPlaceTestData.UserJohnId,
-                    _marketPlaceTestData.ProductIphone13ProName,
-                    699,
-                    5
+                    _marketPlaceTestData.ProductIphone13ProName
                     );
         newIphone13Pro.Description = _marketPlaceTestData.ProductIphone13ProDescription;
 
+        var newIphone13ProPrice = new ProductPrice(_marketPlaceTestData.ProductIphone13ProId,
+           699);
+
+        var newIphone13ProStock = new ProductStock(_marketPlaceTestData.ProductIphone13ProId,
+            5);
+
         await _productRepository.InsertAsync(
-              newIphone13Pro
-           );
+      newIphone13Pro
+   );
+
+        await _productPriceRepository.InsertAsync(
+             newIphone13ProPrice
+          );
+
+        await _productStockRepository.InsertAsync(
+     newIphone13ProStock
+  );
+        //Iphone 14
 
         var newIphone14 = new Product(
            _marketPlaceTestData.ProductIphone14Id,
            _marketPlaceTestData.UserJohnId,
-           _marketPlaceTestData.ProductIphone14Name,
-           799,
-           8
+           _marketPlaceTestData.ProductIphone14Name
            );
         newIphone14.Description = _marketPlaceTestData.ProductIphone14Description;
+
+        var newIphone14Price = new ProductPrice(_marketPlaceTestData.ProductIphone14Id,
+          799);
+
+        var newIphone14Stock = new ProductStock(_marketPlaceTestData.ProductIphone14Id,
+            8);
+           
+
+
         await _productRepository.InsertAsync(
               newIphone14
            );
+
+        await _productPriceRepository.InsertAsync(
+           newIphone14Price
+        );
+
+        await _productStockRepository.InsertAsync(
+     newIphone14Stock
+  );
 
     }
 }

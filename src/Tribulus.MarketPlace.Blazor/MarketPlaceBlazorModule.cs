@@ -17,6 +17,7 @@ using Volo.Abp.SettingManagement.Blazor.WebAssembly;
 using Volo.Abp.TenantManagement.Blazor.WebAssembly;
 using Volo.Abp.AspNetCore.Components.WebAssembly.BasicTheme;
 using Volo.Abp.AspNetCore.Components.Web.BasicTheme.Themes.Basic;
+using Volo.Abp.AspNetCore.Components.Web.Theming.Toolbars;
 
 namespace Tribulus.MarketPlace.Blazor;
 
@@ -43,6 +44,7 @@ public class MarketPlaceBlazorModule : AbpModule
         ConfigureUI(builder);
         ConfigureMenu(context);
         ConfigureAutoMapper(context);
+        ConfigureToolbar(context);
     }
 
     private void ConfigureRouter(ServiceConfigurationContext context)
@@ -66,6 +68,13 @@ public class MarketPlaceBlazorModule : AbpModule
         context.Services
             .AddBootstrap5Providers()
             .AddFontAwesomeIcons();
+    }
+    private void ConfigureToolbar(ServiceConfigurationContext context)
+    {
+        Configure<AbpToolbarOptions>(options =>
+        {
+            options.Contributors.Add(new MarketPlaceToolbarContributer());
+        });
     }
 
     private static void ConfigureAuthentication(WebAssemblyHostBuilder builder)

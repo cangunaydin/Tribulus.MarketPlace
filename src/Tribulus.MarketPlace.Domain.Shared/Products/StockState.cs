@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tribulus.MarketPlace.Products
+namespace Tribulus.MarketPlace.Inventory
 {
     public enum StockState
     {

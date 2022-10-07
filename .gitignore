@@ -251,15 +251,12 @@ paket-files/
 .idea/
 *.sln.iml
 
-# MarketPlace
-src/Tribulus.MarketPlace.Web/Logs/*
-src/Tribulus.MarketPlace.Web.Host/Logs/*
-src/Tribulus.MarketPlace.AuthServer/Logs/*
-src/Tribulus.MarketPlace.HttpApi.Host/Logs/*
-src/Tribulus.MarketPlace.HttpApi.HostWithIds/Logs/*
-src/Tribulus.MarketPlace.DbMigrator/Logs/*
-src/Tribulus.MarketPlace.Blazor.Server/Logs/*
-src/Tribulus.MarketPlace.Blazor.Server.Tiered/Logs/*
+# Inventory
+host/Tribulus.MarketPlace.Inventory.AuthServer/Logs/logs.txt
+host/Tribulus.MarketPlace.Inventory.HttpApi.Host/Logs/logs.txt
+host/Tribulus.MarketPlace.Inventory.Web.Host/Logs/logs.txt
+host/Tribulus.MarketPlace.Inventory.Web.Unified/Logs/logs.txt
+host/Tribulus.MarketPlace.Inventory.Blazor.Server.Host/Logs/logs.txt
 
 # Use abp install-libs to restore.
 **/wwwroot/libs/*

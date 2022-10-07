@@ -1,14 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Volo.Abp.EntityFrameworkCore.Modeling;
-using Volo.Abp.Identity;
-using Volo.Abp;
+using Tribulus.MarketPlace.Inventory;
+using Tribulus.MarketPlace.Marketing;
 using Tribulus.MarketPlace.Products;
-using Tribulus.MarketPlace.Orders;
+using Tribulus.MarketPlace.Sales;
+using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace Tribulus.MarketPlace.EntityFrameworkCore
 {
@@ -19,7 +15,6 @@ namespace Tribulus.MarketPlace.EntityFrameworkCore
             Check.NotNull(builder, nameof(builder));
 
             /* Configure your own tables/entities inside here */
-
             builder.Entity<Product>(b =>
             {
                 b.ToTable(MarketPlaceConsts.DbTablePrefix + "Products", MarketPlaceConsts.DbSchema);
@@ -29,9 +24,24 @@ namespace Tribulus.MarketPlace.EntityFrameworkCore
                 b.Property(x => x.Name).IsRequired().HasMaxLength(ProductConsts.MaxNameLength);
                 b.Property(x => x.Description).HasMaxLength(ProductConsts.MaxDescriptionLength);
 
-                b.HasOne<IdentityUser>().WithMany().HasForeignKey(x => x.OwnerUserId).IsRequired().OnDelete(DeleteBehavior.NoAction);
+                //b.HasOne<IdentityUser>().WithMany().HasForeignKey(x => x.OwnerUserId).IsRequired().OnDelete(DeleteBehavior.NoAction);
 
                 b.HasIndex(x => x.Name);
+            });
+            builder.Entity<ProductStock>(b =>
+            {
+                b.ToTable(MarketPlaceConsts.DbTablePrefix + "ProductStocks", MarketPlaceConsts.DbSchema);
+
+                b.ConfigureByConvention();
+
+            });
+
+            builder.Entity<ProductPrice>(b =>
+            {
+                b.ToTable(MarketPlaceConsts.DbTablePrefix + "ProductPrices", MarketPlaceConsts.DbSchema);
+
+                b.ConfigureByConvention();
+
             });
 
             builder.Entity<Order>(b =>
@@ -42,7 +52,7 @@ namespace Tribulus.MarketPlace.EntityFrameworkCore
 
                 b.Property(x => x.Name).IsRequired().HasMaxLength(ProductConsts.MaxNameLength);
 
-                b.HasOne<IdentityUser>().WithMany().HasForeignKey(x => x.OwnerUserId).IsRequired().OnDelete(DeleteBehavior.NoAction);
+                //b.HasOne<IdentityUser>().WithMany().HasForeignKey(x => x.OwnerUserId).IsRequired().OnDelete(DeleteBehavior.NoAction);
 
                 b.HasIndex(x => x.Name);
 
@@ -55,7 +65,15 @@ namespace Tribulus.MarketPlace.EntityFrameworkCore
 
                 b.ConfigureByConvention(); 
                 
-                b.HasOne<Product>().WithMany().HasForeignKey(x => x.ProductId).IsRequired().OnDelete(DeleteBehavior.NoAction);
+                b.HasOne<ProductPrice>().WithMany().HasForeignKey(x => x.ProductId).IsRequired().OnDelete(DeleteBehavior.NoAction);
+            });
+
+            builder.Entity<OrderItemQuantity>(b =>
+            {
+                b.ToTable(MarketPlaceConsts.DbTablePrefix + "OrderItemQuantities", MarketPlaceConsts.DbSchema);
+
+                b.ConfigureByConvention();
+                
             });
 
         }

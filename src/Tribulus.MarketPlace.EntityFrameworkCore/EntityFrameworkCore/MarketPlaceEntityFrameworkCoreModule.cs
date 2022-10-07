@@ -13,8 +13,8 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.DependencyInjection;
-using Tribulus.MarketPlace.Orders;
 using Microsoft.EntityFrameworkCore;
+using Tribulus.MarketPlace.Sales;
 
 namespace Tribulus.MarketPlace.EntityFrameworkCore;
 

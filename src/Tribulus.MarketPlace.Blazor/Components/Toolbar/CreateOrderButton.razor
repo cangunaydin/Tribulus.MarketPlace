@@ -1,0 +1,21 @@
+﻿@using Microsoft.Extensions.Localization
+@using Tribulus.MarketPlace.Localization
+@inherits Volo.Abp.AspNetCore.Components.AbpComponentBase
+@inject IStringLocalizer<MarketPlaceResource> UiLocalizer
+@*<div style="color: white; margin: 8px;">
+    <i class="far fa-bell" @onclick="ShowNotifications"></i>
+</div>*@
+<BarItem>
+    <BarLink To="#">
+        <BarIcon IconName="IconName.PlusSquare" />
+        @UiLocalizer["CreateOrder"]
+    </BarLink>
+</BarItem>
+
+
+@code {
+    private async Task ShowNotifications()
+    {
+        await Message.Info("TODO: Create Order");
+    }
+}

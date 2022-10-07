@@ -1,11 +1,10 @@
 ﻿@page "/"
 @using Tribulus.MarketPlace.Admin.Permissions
-@using Tribulus.MarketPlace.Admin.Products
 @using Tribulus.MarketPlace.Localization
 @using Volo.Abp.MultiTenancy
 @inherits MarketPlaceAdminComponentBase
 @attribute [Authorize(MarketPlaceAdminPermissions.Products.Default)]
-@inject IProductAppService ProductAppService
+
 @inject AbpBlazorMessageLocalizerHelper<MarketPlaceResource> LH
 
 <Card>
@@ -17,11 +16,11 @@
             </Column>
             <Column ColumnSize="ColumnSize.Is6" Flex="Flex.JustifyContent.End">
 
-                    <Button Type="@ButtonType.Button" Color="Color.Primary"
+                    @*<Button Type="@ButtonType.Button" Color="Color.Primary"
                             Clicked="OpenCreateProductModalAsync" 
                             RequiredPolicy="@MarketPlaceAdminPermissions.Products.Create">
                         @L["NewProduct"]
-                    </Button>
+                    </Button>*@
 
             </Column>
         </Row>
@@ -32,17 +31,17 @@
         @*<Form>*@
         <div id="FilterSection" class="row mt-3">
 
-            <Column ColumnSize="ColumnSize.Is12">
+         @*   <Column ColumnSize="ColumnSize.Is12">
                 <Field>
                     <FieldLabel>@L["Name"]</FieldLabel>
                     <TextEdit TValue="string" KeyPress="OnKeyPress" @bind-Text="@Filter.Name" />
                 </Field>
-            </Column>
+            </Column>*@
 
         </div>
         @*</Form>*@
         @* ************************* DATA GRID ************************* *@
-        <DataGrid TItem="ProductDto"
+        @*<DataGrid TItem="ProductDto"
                   Data="ProductList"
                   ReadData="OnDataGridReadAsync"
                   TotalItems="TotalCount"
@@ -76,11 +75,11 @@
                                 Caption="@L["Price"]">
                 </DataGridColumn>
             </DataGridColumns>
-        </DataGrid>
+        </DataGrid>*@
 
     </CardBody>
 </Card>
-
+@*
 <Modal @ref="EditProductModal">
     <ModalBackdrop />
     <ModalContent IsCentered="true">
@@ -213,7 +212,7 @@
             </ModalFooter>
         </Form>
     </ModalContent>
-</Modal>
+</Modal>*@
 
 @*
 
