@@ -9,7 +9,7 @@ namespace Tribulus.MarketPlace.Admin.Sales;
     typeof(AbpDddApplicationContractsModule),
     typeof(AbpAuthorizationModule)
     )]
-public class SalesApplicationContractsModule : AbpModule
+public class AdminSalesApplicationContractsModule : AbpModule
 {
 
 }

@@ -8,7 +8,7 @@ namespace Tribulus.MarketPlace.Admin.Sales;
 
 [DependsOn(
     typeof(SalesDomainModule),
-    typeof(SalesApplicationContractsModule),
+    typeof(AdminSalesApplicationContractsModule),
     typeof(AbpDddApplicationModule),
     typeof(AbpAutoMapperModule)
     )]
