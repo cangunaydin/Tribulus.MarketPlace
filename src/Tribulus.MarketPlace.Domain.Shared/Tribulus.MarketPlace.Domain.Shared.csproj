@@ -17,6 +17,10 @@
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.OpenIddict.Domain.Shared" Version="6.0.0" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Marketing.Domain.Shared\Tribulus.MarketPlace.Marketing.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Sales.Domain.Shared\Tribulus.MarketPlace.Sales.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Inventory.Domain.Shared\Tribulus.MarketPlace.Inventory.Domain.Shared.csproj" />
+
   </ItemGroup>
 
   <ItemGroup>

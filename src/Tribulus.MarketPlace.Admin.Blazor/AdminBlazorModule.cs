@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
@@ -17,6 +17,12 @@ using Volo.Abp.UI.Navigation;
 using Volo.Abp.Identity.Blazor.WebAssembly;
 using Volo.Abp.SettingManagement.Blazor.WebAssembly;
 using Volo.Abp.TenantManagement.Blazor.WebAssembly;
+using Tribulus.MarketPlace.Marketing.Blazor.WebAssembly;
+using Tribulus.MarketPlace.Sales.Blazor.WebAssembly;
+using Tribulus.MarketPlace.Inventory.Blazor.WebAssembly;
+using Tribulus.MarketPlace.Admin.Marketing.Blazor.WebAssembly;
+using Tribulus.MarketPlace.Admin.Sales.Blazor.WebAssembly;
+using Tribulus.MarketPlace.Admin.Inventory.Blazor.WebAssembly;
 
 namespace Tribulus.MarketPlace.Admin.Blazor;
 
@@ -28,7 +34,10 @@ namespace Tribulus.MarketPlace.Admin.Blazor;
     typeof(AbpTenantManagementBlazorWebAssemblyModule),
     typeof(AbpSettingManagementBlazorWebAssemblyModule)
 )]
-public class AdminBlazorModule : AbpModule
+[DependsOn(typeof(MarketingBlazorWebAssemblyModule))]
+    [DependsOn(typeof(SalesBlazorWebAssemblyModule))]
+    [DependsOn(typeof(InventoryBlazorWebAssemblyModule))]
+    public class AdminBlazorModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

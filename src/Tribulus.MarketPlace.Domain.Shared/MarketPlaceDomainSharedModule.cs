@@ -1,4 +1,4 @@
-﻿using Tribulus.MarketPlace.Localization;
+using Tribulus.MarketPlace.Localization;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.FeatureManagement;
@@ -12,6 +12,12 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
+using Tribulus.MarketPlace.Marketing;
+using Tribulus.MarketPlace.Sales;
+using Tribulus.MarketPlace.Inventory;
+using Tribulus.MarketPlace.Admin.Marketing;
+using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Admin.Inventory;
 
 namespace Tribulus.MarketPlace;
 
@@ -25,7 +31,10 @@ namespace Tribulus.MarketPlace;
     typeof(AbpSettingManagementDomainSharedModule),
     typeof(AbpTenantManagementDomainSharedModule)    
     )]
-public class MarketPlaceDomainSharedModule : AbpModule
+[DependsOn(typeof(MarketingDomainSharedModule))]
+    [DependsOn(typeof(SalesDomainSharedModule))]
+    [DependsOn(typeof(InventoryDomainSharedModule))]
+    public class MarketPlaceDomainSharedModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

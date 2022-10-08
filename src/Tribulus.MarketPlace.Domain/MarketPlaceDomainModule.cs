@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Tribulus.MarketPlace.MultiTenancy;
 using Volo.Abp.AuditLogging;
@@ -13,6 +13,12 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.OpenIddict;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using Tribulus.MarketPlace.Marketing;
+using Tribulus.MarketPlace.Sales;
+using Tribulus.MarketPlace.Inventory;
+using Tribulus.MarketPlace.Admin.Marketing;
+using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Admin.Inventory;
 
 namespace Tribulus.MarketPlace;
 
@@ -29,7 +35,10 @@ namespace Tribulus.MarketPlace;
     typeof(AbpTenantManagementDomainModule),
     typeof(AbpEmailingModule)
 )]
-public class MarketPlaceDomainModule : AbpModule
+[DependsOn(typeof(MarketingDomainModule))]
+    [DependsOn(typeof(SalesDomainModule))]
+    [DependsOn(typeof(InventoryDomainModule))]
+    public class MarketPlaceDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Tribulus.MarketPlace.Inventory;
-using Tribulus.MarketPlace.Marketing;
 using Tribulus.MarketPlace.Products;
 using Tribulus.MarketPlace.Sales;
 using Volo.Abp;
@@ -14,20 +13,7 @@ namespace Tribulus.MarketPlace.EntityFrameworkCore
         {
             Check.NotNull(builder, nameof(builder));
 
-            /* Configure your own tables/entities inside here */
-            builder.Entity<Product>(b =>
-            {
-                b.ToTable(MarketPlaceConsts.DbTablePrefix + "Products", MarketPlaceConsts.DbSchema);
-
-                b.ConfigureByConvention();
-
-                b.Property(x => x.Name).IsRequired().HasMaxLength(ProductConsts.MaxNameLength);
-                b.Property(x => x.Description).HasMaxLength(ProductConsts.MaxDescriptionLength);
-
-                //b.HasOne<IdentityUser>().WithMany().HasForeignKey(x => x.OwnerUserId).IsRequired().OnDelete(DeleteBehavior.NoAction);
-
-                b.HasIndex(x => x.Name);
-            });
+           
             builder.Entity<ProductStock>(b =>
             {
                 b.ToTable(MarketPlaceConsts.DbTablePrefix + "ProductStocks", MarketPlaceConsts.DbSchema);

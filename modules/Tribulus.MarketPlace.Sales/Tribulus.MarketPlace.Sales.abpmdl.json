@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "Tribulus.MarketPlace.Sales.Domain.Shared": {
+      "path": "src/Tribulus.MarketPlace.Sales.Domain.Shared/Tribulus.MarketPlace.Sales.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.Sales.Domain": {
+      "path": "src/Tribulus.MarketPlace.Sales.Domain/Tribulus.MarketPlace.Sales.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.Sales.Application.Contracts": {
+      "path": "src/Tribulus.MarketPlace.Sales.Application.Contracts/Tribulus.MarketPlace.Sales.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.Sales.Application": {
+      "path": "src/Tribulus.MarketPlace.Sales.Application/Tribulus.MarketPlace.Sales.Application.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.Sales.EntityFrameworkCore": {
+      "path": "src/Tribulus.MarketPlace.Sales.EntityFrameworkCore/Tribulus.MarketPlace.Sales.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.Sales.MongoDB": {
+      "path": "src/Tribulus.MarketPlace.Sales.MongoDB/Tribulus.MarketPlace.Sales.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.Sales.HttpApi": {
+      "path": "src/Tribulus.MarketPlace.Sales.HttpApi/Tribulus.MarketPlace.Sales.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.Sales.HttpApi.Client": {
+      "path": "src/Tribulus.MarketPlace.Sales.HttpApi.Client/Tribulus.MarketPlace.Sales.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.Sales.TestBase": {
+      "path": "test/Tribulus.MarketPlace.Sales.TestBase/Tribulus.MarketPlace.Sales.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.Sales.EntityFrameworkCore.Tests": {
+      "path": "test/Tribulus.MarketPlace.Sales.EntityFrameworkCore.Tests/Tribulus.MarketPlace.Sales.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.Sales.MongoDB.Tests": {
+      "path": "test/Tribulus.MarketPlace.Sales.MongoDB.Tests/Tribulus.MarketPlace.Sales.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.Sales.Domain.Tests": {
+      "path": "test/Tribulus.MarketPlace.Sales.Domain.Tests/Tribulus.MarketPlace.Sales.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.Sales.Application.Tests": {
+      "path": "test/Tribulus.MarketPlace.Sales.Application.Tests/Tribulus.MarketPlace.Sales.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.Sales.HttpApi.Host": {
+      "path": "host/Tribulus.MarketPlace.Sales.HttpApi.Host/Tribulus.MarketPlace.Sales.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Tribulus.MarketPlace.Sales.Web": {
+      "path": "src/Tribulus.MarketPlace.Sales.Web/Tribulus.MarketPlace.Sales.Web.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.Sales.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Tribulus.MarketPlace.Sales.HttpApi.Client.ConsoleTestApp/Tribulus.MarketPlace.Sales.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.Sales.Web.Host": {
+      "path": "host/Tribulus.MarketPlace.Sales.Web.Host/Tribulus.MarketPlace.Sales.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Tribulus.MarketPlace.Sales.AuthServer": {
+      "path": "host/Tribulus.MarketPlace.Sales.AuthServer/Tribulus.MarketPlace.Sales.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "Tribulus.MarketPlace.Sales.Host.Shared": {
+      "path": "host/Tribulus.MarketPlace.Sales.Host.Shared/Tribulus.MarketPlace.Sales.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "Tribulus.MarketPlace.Sales.Web.Unified": {
+      "path": "host/Tribulus.MarketPlace.Sales.Web.Unified/Tribulus.MarketPlace.Sales.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "Tribulus.MarketPlace.Sales.Blazor": {
+      "path": "src/Tribulus.MarketPlace.Sales.Blazor/Tribulus.MarketPlace.Sales.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.Sales.Blazor.Host": {
+      "path": "host/Tribulus.MarketPlace.Sales.Blazor.Host/Tribulus.MarketPlace.Sales.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Tribulus.MarketPlace.Sales.Blazor.Server": {
+      "path": "src/Tribulus.MarketPlace.Sales.Blazor.Server/Tribulus.MarketPlace.Sales.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.Sales.Blazor.WebAssembly": {
+      "path": "src/Tribulus.MarketPlace.Sales.Blazor.WebAssembly/Tribulus.MarketPlace.Sales.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.Sales.Blazor.Server.Host": {
+      "path": "host/Tribulus.MarketPlace.Sales.Blazor.Server.Host/Tribulus.MarketPlace.Sales.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

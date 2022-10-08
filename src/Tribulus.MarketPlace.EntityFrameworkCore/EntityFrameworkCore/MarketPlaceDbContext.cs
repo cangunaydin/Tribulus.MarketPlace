@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Tribulus.MarketPlace.Inventory;
 using Tribulus.MarketPlace.Marketing;
 using Tribulus.MarketPlace.Products;
@@ -16,6 +16,11 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using Tribulus.MarketPlace.Marketing.EntityFrameworkCore;
+using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
+using Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
+using Tribulus.MarketPlace.Admin.Sales.EntityFrameworkCore;
+using Tribulus.MarketPlace.Admin.Inventory.EntityFrameworkCore;
 
 namespace Tribulus.MarketPlace.EntityFrameworkCore;
 
@@ -57,7 +62,6 @@ public class MarketPlaceDbContext :
     #endregion
 
     #region <Entities from MarketPlace>
-    public DbSet<Product> Products { get; set; }
 
     public DbSet<ProductPrice> ProductPrices { get; set; }
 
@@ -98,5 +102,8 @@ public class MarketPlaceDbContext :
         //    b.ConfigureByConvention(); //auto configure for the base class props
         //    //...
         //});
-    }
+        builder.ConfigureMarketing();
+            builder.ConfigureSales();
+            builder.ConfigureInventory();
+        }
 }

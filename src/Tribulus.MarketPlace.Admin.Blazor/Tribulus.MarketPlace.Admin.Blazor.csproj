@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <Import Project="..\..\common.props" />
 
@@ -12,7 +12,7 @@
     <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.5" />
-  </ItemGroup>
+  <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Marketing.Blazor.WebAssembly\Tribulus.MarketPlace.Marketing.Blazor.WebAssembly.csproj" /><ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Sales.Blazor.WebAssembly\Tribulus.MarketPlace.Sales.Blazor.WebAssembly.csproj" /><ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Inventory.Blazor.WebAssembly\Tribulus.MarketPlace.Inventory.Blazor.WebAssembly.csproj" /><ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Admin.Marketing\src\Tribulus.MarketPlace.Admin.Marketing.Blazor.WebAssembly\Tribulus.MarketPlace.Admin.Marketing.Blazor.WebAssembly.csproj" /><ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Admin.Sales\src\Tribulus.MarketPlace.Admin.Sales.Blazor.WebAssembly\Tribulus.MarketPlace.Admin.Sales.Blazor.WebAssembly.csproj" /><ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Admin.Inventory\src\Tribulus.MarketPlace.Admin.Inventory.Blazor.WebAssembly\Tribulus.MarketPlace.Admin.Inventory.Blazor.WebAssembly.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.LeptonXLiteTheme" Version="1.0.0-rc.*" />

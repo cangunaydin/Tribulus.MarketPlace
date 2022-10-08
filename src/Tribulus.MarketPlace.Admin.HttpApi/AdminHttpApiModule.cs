@@ -1,4 +1,4 @@
-﻿using Localization.Resources.AbpUi;
+using Localization.Resources.AbpUi;
 using MediatR;
 using System;
 using Tribulus.MarketPlace.Localization;
@@ -10,6 +10,12 @@ using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using Tribulus.MarketPlace.Marketing;
+using Tribulus.MarketPlace.Sales;
+using Tribulus.MarketPlace.Inventory;
+using Tribulus.MarketPlace.Admin.Marketing;
+using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Admin.Inventory;
 
 namespace Tribulus.MarketPlace.Admin;
 
@@ -22,7 +28,10 @@ namespace Tribulus.MarketPlace.Admin;
     typeof(AbpFeatureManagementHttpApiModule),
     typeof(AbpSettingManagementHttpApiModule)
     )]
-public class AdminHttpApiModule : AbpModule
+[DependsOn(typeof(MarketingHttpApiModule))]
+    [DependsOn(typeof(SalesHttpApiModule))]
+    [DependsOn(typeof(InventoryHttpApiModule))]
+    public class AdminHttpApiModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

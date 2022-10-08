@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+        <RootNamespace>Tribulus.MarketPlace.Inventory</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.VirtualFileSystem" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="..\..\Tribulus.MarketPlace.Inventory.abpmdl.json" />
+      <EmbeddedResource Include="..\..\Tribulus.MarketPlace.Inventory.abpmdl.json" />
+    </ItemGroup>
+
+</Project>

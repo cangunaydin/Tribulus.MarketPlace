@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Uow;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
@@ -15,6 +15,12 @@ using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Tribulus.MarketPlace.Sales;
+using Tribulus.MarketPlace.Marketing.EntityFrameworkCore;
+using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
+using Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
+using Tribulus.MarketPlace.Admin.Marketing.EntityFrameworkCore;
+using Tribulus.MarketPlace.Admin.Sales.EntityFrameworkCore;
+using Tribulus.MarketPlace.Admin.Inventory.EntityFrameworkCore;
 
 namespace Tribulus.MarketPlace.EntityFrameworkCore;
 
@@ -30,7 +36,10 @@ namespace Tribulus.MarketPlace.EntityFrameworkCore;
     typeof(AbpTenantManagementEntityFrameworkCoreModule),
     typeof(AbpFeatureManagementEntityFrameworkCoreModule)
     )]
-public class MarketPlaceEntityFrameworkCoreModule : AbpModule
+[DependsOn(typeof(MarketingEntityFrameworkCoreModule))]
+    [DependsOn(typeof(SalesEntityFrameworkCoreModule))]
+    [DependsOn(typeof(InventoryEntityFrameworkCoreModule))]
+    public class MarketPlaceEntityFrameworkCoreModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

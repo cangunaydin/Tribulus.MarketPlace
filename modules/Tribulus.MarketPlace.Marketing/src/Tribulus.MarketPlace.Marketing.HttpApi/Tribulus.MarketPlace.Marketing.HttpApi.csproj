@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Tribulus.MarketPlace.Marketing</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="6.0.0" />
+    <ProjectReference Include="..\Tribulus.MarketPlace.Marketing.Application.Contracts\Tribulus.MarketPlace.Marketing.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
