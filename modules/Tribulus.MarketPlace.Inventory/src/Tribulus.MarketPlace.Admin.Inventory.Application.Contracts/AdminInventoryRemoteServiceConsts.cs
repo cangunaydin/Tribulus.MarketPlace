@@ -1,6 +1,6 @@
 ﻿namespace Tribulus.MarketPlace.Admin.Inventory;
 
-public class InventoryRemoteServiceConsts
+public class AdminInventoryRemoteServiceConsts
 {
     public const string RemoteServiceName = "AdminInventory";
 

@@ -11,4 +11,8 @@
     <ProjectReference Include="..\Tribulus.MarketPlace.Inventory.Application.Contracts.Shared\Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Products\" />
+  </ItemGroup>
+
 </Project>

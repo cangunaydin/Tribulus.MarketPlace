@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Tribulus.MarketPlace.Inventory.Orders;
+using Tribulus.MarketPlace.Inventory.Products;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
 
@@ -10,24 +13,21 @@ public static class InventoryDbContextModelCreatingExtensions
     {
         Check.NotNull(builder, nameof(builder));
 
-        /* Configure all entities here. Example:
-
-        builder.Entity<Question>(b =>
+        builder.Entity<ProductStock>(b =>
         {
-            //Configure table & schema name
-            b.ToTable(InventoryDbProperties.DbTablePrefix + "Questions", InventoryDbProperties.DbSchema);
+            b.ToTable(InventoryDbProperties.DbTablePrefix + "ProductStocks", InventoryDbProperties.DbSchema);
 
             b.ConfigureByConvention();
 
-            //Properties
-            b.Property(q => q.Title).IsRequired().HasMaxLength(QuestionConsts.MaxTitleLength);
-
-            //Relations
-            b.HasMany(question => question.Tags).WithOne().HasForeignKey(qt => qt.QuestionId);
-
-            //Indexes
-            b.HasIndex(q => q.CreationTime);
         });
-        */
+
+
+        builder.Entity<OrderItemQuantity>(b =>
+        {
+            b.ToTable(InventoryDbProperties.DbTablePrefix + "OrderItemQuantities", InventoryDbProperties.DbSchema);
+
+            b.ConfigureByConvention();
+
+        });
     }
 }

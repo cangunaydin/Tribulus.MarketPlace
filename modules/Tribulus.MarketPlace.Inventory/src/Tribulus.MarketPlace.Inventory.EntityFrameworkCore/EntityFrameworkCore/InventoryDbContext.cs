@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Tribulus.MarketPlace.Inventory.Orders;
+using Tribulus.MarketPlace.Inventory.Products;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -10,7 +12,8 @@ public class InventoryDbContext : AbpDbContext<InventoryDbContext>, IInventoryDb
     /* Add DbSet for each Aggregate Root here. Example:
      * public DbSet<Question> Questions { get; set; }
      */
-
+    public DbSet<ProductStock> ProductStocks { get; set; }
+    public DbSet<OrderItemQuantity> OrderItemQuantities { get; set; }
     public InventoryDbContext(DbContextOptions<InventoryDbContext> options)
         : base(options)
     {

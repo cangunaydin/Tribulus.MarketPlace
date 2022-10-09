@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Tribulus.MarketPlace.Inventory.EntityFrameworkCore.Repositories;
+using Tribulus.MarketPlace.Inventory.Orders;
+using Tribulus.MarketPlace.Inventory.Products;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
@@ -14,9 +17,11 @@ public class InventoryEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<InventoryDbContext>(options =>
         {
-                /* Add custom repositories here. Example:
-                 * options.AddRepository<Question, EfCoreQuestionRepository>();
-                 */
+            /* Add custom repositories here. Example:
+             * options.AddRepository<Question, EfCoreQuestionRepository>();
+             */
+            options.AddRepository<ProductStock, ProductStockRepository>();
+            options.AddRepository<OrderItemQuantity, OrderItemQuantityRepository>();
         });
     }
 }

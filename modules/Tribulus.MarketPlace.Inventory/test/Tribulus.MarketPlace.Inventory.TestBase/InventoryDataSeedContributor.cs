@@ -1,4 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using Tribulus.MarketPlace.Inventory.Orders;
+using Tribulus.MarketPlace.Inventory.Products;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Guids;
@@ -8,25 +11,53 @@ namespace Tribulus.MarketPlace.Inventory;
 
 public class InventoryDataSeedContributor : IDataSeedContributor, ITransientDependency
 {
-    private readonly IGuidGenerator _guidGenerator;
-    private readonly ICurrentTenant _currentTenant;
+    private readonly InventoryTestData _inventoryTestData;
+    private readonly IProductStockRepository _productStockRepository;
+    private readonly IOrderItemQuantityRepository _orderItemQuantityRepository;
 
     public InventoryDataSeedContributor(
-        IGuidGenerator guidGenerator, ICurrentTenant currentTenant)
+        InventoryTestData inventoryTestData, 
+        IProductStockRepository productStockRepository,
+        IOrderItemQuantityRepository orderItemQuantityRepository)
     {
-        _guidGenerator = guidGenerator;
-        _currentTenant = currentTenant;
+        _inventoryTestData = inventoryTestData;
+        _productStockRepository = productStockRepository;
+        _orderItemQuantityRepository = orderItemQuantityRepository;
     }
 
-    public Task SeedAsync(DataSeedContext context)
+    public async Task SeedAsync(DataSeedContext context)
     {
-        /* Instead of returning the Task.CompletedTask, you can insert your test data
-         * at this point!
-         */
+        await SeedProductsAsync();
+        await SeedOrderItemQuantities();
+    }
 
-        using (_currentTenant.Change(context?.TenantId))
-        {
-            return Task.CompletedTask;
-        }
+    private async Task SeedOrderItemQuantities()
+    {
+        var orderItemQuantity = new OrderItemQuantity(_inventoryTestData.OrderItemId, 
+            _inventoryTestData.OrderId, 
+            _inventoryTestData.ProductIphone13Id, 
+            3);
+        await _orderItemQuantityRepository.InsertAsync(orderItemQuantity);
+
+        var orderItemQuantity2 = new OrderItemQuantity(_inventoryTestData.OrderItem2Id,
+            _inventoryTestData.OrderId,
+            _inventoryTestData.ProductIphone14Id,
+            6);
+        await _orderItemQuantityRepository.InsertAsync(orderItemQuantity2);
+    }
+
+    public async Task SeedProductsAsync()
+    {
+
+        //Iphone 13
+        var newIphone13Stock = new ProductStock(_inventoryTestData.ProductIphone13Id,10);
+        await _productStockRepository.InsertAsync(newIphone13Stock);
+        //Iphone 13 Pro
+        var newIphone13ProStock = new ProductStock(_inventoryTestData.ProductIphone13ProId,5);
+        await _productStockRepository.InsertAsync( newIphone13ProStock);
+        //Iphone 14
+        var newIphone14Stock = new ProductStock(_inventoryTestData.ProductIphone14Id,8);
+        await _productStockRepository.InsertAsync(newIphone14Stock);
+
     }
 }

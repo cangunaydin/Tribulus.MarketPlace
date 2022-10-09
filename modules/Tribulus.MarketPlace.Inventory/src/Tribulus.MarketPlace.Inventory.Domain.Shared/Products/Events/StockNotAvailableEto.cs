@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Tribulus.MarketPlace.Inventory.Events
+namespace Tribulus.MarketPlace.Inventory.Products.Events
 {
     public class StockNotAvailableEto
     {

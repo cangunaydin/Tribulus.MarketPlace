@@ -8,18 +8,18 @@ namespace Tribulus.MarketPlace.Admin.Inventory;
 
 [DependsOn(
     typeof(InventoryDomainModule),
-    typeof(InventoryApplicationContractsModule),
+    typeof(AdminInventoryApplicationContractsModule),
     typeof(AbpDddApplicationModule),
     typeof(AbpAutoMapperModule)
     )]
-public class InventoryApplicationModule : AbpModule
+public class AdminInventoryApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddAutoMapperObjectMapper<InventoryApplicationModule>();
+        context.Services.AddAutoMapperObjectMapper<AdminInventoryApplicationModule>();
         Configure<AbpAutoMapperOptions>(options =>
         {
-            options.AddMaps<InventoryApplicationModule>(validate: true);
+            options.AddMaps<AdminInventoryApplicationModule>(validate: true);
         });
     }
 }
