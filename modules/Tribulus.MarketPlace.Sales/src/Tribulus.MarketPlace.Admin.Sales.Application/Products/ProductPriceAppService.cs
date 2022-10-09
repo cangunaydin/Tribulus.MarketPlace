@@ -21,9 +21,9 @@ namespace Tribulus.MarketPlace.Admin.Sales.Products
         }
 
         [Authorize(SalesPermissions.ProductPrices.Create)]
-        public async Task<ProductPriceDto> CreateAsync(CreateProductPriceDto input)
+        public async Task<ProductPriceDto> CreateAsync(Guid id,CreateProductPriceDto input)
         {
-            var productPrice = new ProductPrice(GuidGenerator.Create(), input.Price);
+            var productPrice = new ProductPrice(id, input.Price);
             await _productPriceRepository.InsertAsync(productPrice, true);
             return ObjectMapper.Map<ProductPrice, ProductPriceDto>(productPrice);
         }

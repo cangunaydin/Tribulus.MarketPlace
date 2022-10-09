@@ -1,8 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-using Tribulus.MarketPlace.Inventory;
+using Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
+using Tribulus.MarketPlace.Inventory.Orders;
+using Tribulus.MarketPlace.Inventory.Products;
 using Tribulus.MarketPlace.Marketing.EntityFrameworkCore;
-using Tribulus.MarketPlace.Sales;
+using Tribulus.MarketPlace.Marketing.Products;
 using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
+using Tribulus.MarketPlace.Sales.Orders;
+using Tribulus.MarketPlace.Sales.Products;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -25,7 +29,11 @@ namespace Tribulus.MarketPlace.EntityFrameworkCore;
 public class MarketPlaceDbContext :
     AbpDbContext<MarketPlaceDbContext>,
     IIdentityDbContext,
-    ITenantManagementDbContext
+    ITenantManagementDbContext,
+    IMarketingDbContext,
+    ISalesDbContext,
+    IInventoryDbContext
+    
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
 
@@ -53,15 +61,15 @@ public class MarketPlaceDbContext :
     // Tenant Management
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
-
-    #endregion
-
-    #region <Entities from MarketPlace>
     public DbSet<Order> Orders { get; set; }
     public DbSet<ProductPrice> ProductPrices { get; set; }
     public DbSet<ProductStock> ProductStocks { get; set; }
     public DbSet<OrderItemQuantity> OrderItemQuantities { get; set; }
+    public DbSet<Product> Products { get; set; }
+
     #endregion
+
+
 
     public MarketPlaceDbContext(DbContextOptions<MarketPlaceDbContext> options)
         : base(options)
@@ -95,6 +103,6 @@ public class MarketPlaceDbContext :
         //});
         builder.ConfigureMarketing();
         builder.ConfigureSales();
-        //builder.ConfigureInventory();
+        builder.ConfigureInventory();
     }
 }

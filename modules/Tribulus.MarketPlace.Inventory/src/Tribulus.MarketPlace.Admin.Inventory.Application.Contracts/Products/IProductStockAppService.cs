@@ -14,6 +14,6 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Products
 
         Task UpdateAsync(Guid id, UpdateProductStockDto input);
 
-        Task<ProductStockDto> CreateAsync(CreateProductStockDto input);
+        Task<ProductStockDto> CreateAsync(Guid id,CreateProductStockDto input);
     }
 }

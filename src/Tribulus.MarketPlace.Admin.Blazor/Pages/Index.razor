@@ -1,9 +1,11 @@
 ﻿@page "/"
-@using Tribulus.MarketPlace.Admin.Permissions
+@using Tribulus.MarketPlace.Sales.Permissions
+@using Tribulus.MarketPlace.Marketing.Permissions
+@using Tribulus.MarketPlace.Inventory.Permissions
 @using Tribulus.MarketPlace.Localization
 @using Volo.Abp.MultiTenancy
 @inherits MarketPlaceAdminComponentBase
-@attribute [Authorize(MarketPlaceAdminPermissions.Products.Default)]
+@attribute [Authorize(MarketingPermissions.Products.Default)]
 
 @inject AbpBlazorMessageLocalizerHelper<MarketPlaceResource> LH
 

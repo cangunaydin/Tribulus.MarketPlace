@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Tribulus.MarketPlace.Marketing;
 using Tribulus.MarketPlace.Marketing.Products;
 using Volo.Abp.Domain.Repositories;
+using Volo.Abp.Guids;
 using Volo.Abp.Users;
 using Xunit;
 
@@ -17,6 +18,7 @@ namespace Tribulus.MarketPlace.Admin.Marketing.Products
         private ICurrentUser _currentUser;
         private readonly MarketingTestData _marketingTestData;
         private readonly IRepository<Product, Guid> _productRepository;
+        private readonly IGuidGenerator _guidGenerator;
 
         public ProductAppServiceTests()
         {
@@ -24,6 +26,7 @@ namespace Tribulus.MarketPlace.Admin.Marketing.Products
             _currentUser = GetRequiredService<ICurrentUser>();
             _marketingTestData = GetRequiredService<MarketingTestData>();
             _productRepository = GetRequiredService<IRepository<Product, Guid>>();
+            _guidGenerator= GetRequiredService<IGuidGenerator>();
         }
 
         protected override void AfterAddApplication(IServiceCollection services)
@@ -36,7 +39,7 @@ namespace Tribulus.MarketPlace.Admin.Marketing.Products
         {
             Login(_marketingTestData.UserJohnId);
 
-            var productDto = await _productAppService.CreateAsync(new CreateProductDto()
+            var productDto = await _productAppService.CreateAsync(_guidGenerator.Create(),new CreateProductDto()
             {
                 Description = "New Product Description",
                 Name = "New Product Name"

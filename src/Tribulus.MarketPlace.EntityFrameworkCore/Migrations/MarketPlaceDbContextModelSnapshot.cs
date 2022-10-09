@@ -24,10 +24,9 @@ namespace Tribulus.MarketPlace.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Tribulus.MarketPlace.Inventory.OrderItemQuantity", b =>
+            modelBuilder.Entity("Tribulus.MarketPlace.Inventory.Orders.OrderItemQuantity", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -51,13 +50,12 @@ namespace Tribulus.MarketPlace.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AppOrderItemQuantities", (string)null);
+                    b.ToTable("InventoryOrderItemQuantities", (string)null);
                 });
 
-            modelBuilder.Entity("Tribulus.MarketPlace.Inventory.ProductStock", b =>
+            modelBuilder.Entity("Tribulus.MarketPlace.Inventory.Products.ProductStock", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -108,13 +106,12 @@ namespace Tribulus.MarketPlace.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AppProductStocks", (string)null);
+                    b.ToTable("InventoryProductStocks", (string)null);
                 });
 
-            modelBuilder.Entity("Tribulus.MarketPlace.Marketing.Product", b =>
+            modelBuilder.Entity("Tribulus.MarketPlace.Marketing.Products.Product", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -173,10 +170,10 @@ namespace Tribulus.MarketPlace.Migrations
 
                     b.HasIndex("Name");
 
-                    b.ToTable("AppProducts", (string)null);
+                    b.ToTable("MarketingProducts", (string)null);
                 });
 
-            modelBuilder.Entity("Tribulus.MarketPlace.Sales.Order", b =>
+            modelBuilder.Entity("Tribulus.MarketPlace.Sales.Orders.Order", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -223,8 +220,8 @@ namespace Tribulus.MarketPlace.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<Guid>("OwnerUserId")
                         .HasColumnType("uniqueidentifier");
@@ -239,10 +236,10 @@ namespace Tribulus.MarketPlace.Migrations
 
                     b.HasIndex("Name");
 
-                    b.ToTable("AppOrders", (string)null);
+                    b.ToTable("SalesOrders", (string)null);
                 });
 
-            modelBuilder.Entity("Tribulus.MarketPlace.Sales.OrderItem", b =>
+            modelBuilder.Entity("Tribulus.MarketPlace.Sales.Orders.OrderItem", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -268,10 +265,10 @@ namespace Tribulus.MarketPlace.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("AppOrderItems", (string)null);
+                    b.ToTable("SalesOrderItems", (string)null);
                 });
 
-            modelBuilder.Entity("Tribulus.MarketPlace.Sales.ProductPrice", b =>
+            modelBuilder.Entity("Tribulus.MarketPlace.Sales.Products.ProductPrice", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -321,7 +318,7 @@ namespace Tribulus.MarketPlace.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AppProductPrices", (string)null);
+                    b.ToTable("SalesProductPrices", (string)null);
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>
@@ -1766,15 +1763,15 @@ namespace Tribulus.MarketPlace.Migrations
                     b.ToTable("AbpTenantConnectionStrings", (string)null);
                 });
 
-            modelBuilder.Entity("Tribulus.MarketPlace.Sales.OrderItem", b =>
+            modelBuilder.Entity("Tribulus.MarketPlace.Sales.Orders.OrderItem", b =>
                 {
-                    b.HasOne("Tribulus.MarketPlace.Sales.Order", null)
+                    b.HasOne("Tribulus.MarketPlace.Sales.Orders.Order", null)
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Tribulus.MarketPlace.Sales.ProductPrice", null)
+                    b.HasOne("Tribulus.MarketPlace.Sales.Products.ProductPrice", null)
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -1923,7 +1920,7 @@ namespace Tribulus.MarketPlace.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Tribulus.MarketPlace.Sales.Order", b =>
+            modelBuilder.Entity("Tribulus.MarketPlace.Sales.Orders.Order", b =>
                 {
                     b.Navigation("OrderItems");
                 });

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Tribulus.MarketPlace.Sales;
 using Tribulus.MarketPlace.Sales.Products;
 using Volo.Abp.Domain.Repositories;
+using Volo.Abp.Guids;
 using Volo.Abp.Users;
 using Xunit;
 
@@ -17,12 +18,14 @@ namespace Tribulus.MarketPlace.Admin.Sales.Products
         private ICurrentUser _currentUser;
         private readonly SalesTestData _salesTestData;
         private readonly IRepository<ProductPrice, Guid> _productPriceRepository;
+        private readonly IGuidGenerator _guidGenerator;
 
         public ProductPriceAppService_Tests()
         {
             _productPriceAppService = GetRequiredService<IProductPriceAppService>();
             _salesTestData = GetRequiredService<SalesTestData>();
             _productPriceRepository = GetRequiredService<IRepository<ProductPrice, Guid>>();
+            _guidGenerator = GetRequiredService<IGuidGenerator>();
         }
 
         protected override void AfterAddApplication(IServiceCollection services)
@@ -35,9 +38,9 @@ namespace Tribulus.MarketPlace.Admin.Sales.Products
         {
             Login(_salesTestData.UserJohnId);
 
-            var productDto = await _productPriceAppService.CreateAsync(new CreateProductPriceDto()
+            var productDto = await _productPriceAppService.CreateAsync(_guidGenerator.Create(),new CreateProductPriceDto()
             {
-               Price=100
+                Price = 100
             });
             productDto.Price.ShouldBe(100);
         }
@@ -47,7 +50,7 @@ namespace Tribulus.MarketPlace.Admin.Sales.Products
             Login(_salesTestData.UserJohnId);
             await _productPriceAppService.UpdateAsync(_salesTestData.ProductIphone13Id, new UpdateProductPriceDto()
             {
-                Price=30
+                Price = 30
             });
             var updatedProduct = await GetProductOrNullAsync(_salesTestData.ProductIphone13Id);
             updatedProduct.Price.ShouldBe(30);

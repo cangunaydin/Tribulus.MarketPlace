@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Tribulus.MarketPlace.Inventory;
 using Tribulus.MarketPlace.Inventory.Products;
 using Volo.Abp.Domain.Repositories;
+using Volo.Abp.Guids;
 using Volo.Abp.Users;
 using Xunit;
 
@@ -17,12 +18,14 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Products
         private ICurrentUser _currentUser;
         private readonly InventoryTestData _inventoryTestData;
         private readonly IRepository<ProductStock, Guid> _productStockRepository;
+        private readonly IGuidGenerator _guidGenerator;
 
         public ProductStockAppService_Tests()
         {
             _productStockAppService = GetRequiredService<IProductStockAppService>();
             _inventoryTestData = GetRequiredService<InventoryTestData>();
             _productStockRepository = GetRequiredService<IRepository<ProductStock, Guid>>();
+            _guidGenerator=GetRequiredService<IGuidGenerator>();
         }
 
         protected override void AfterAddApplication(IServiceCollection services)
@@ -51,7 +54,7 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Products
         public async Task Should_Create_Valid_ProductStock()
         {
             Login(_inventoryTestData.UserJohnId);
-            var newProductStock = await _productStockAppService.CreateAsync(new CreateProductStockDto()
+            var newProductStock = await _productStockAppService.CreateAsync(_guidGenerator.Create(),new CreateProductStockDto()
             {
                 StockCount=10
             });

@@ -1,9 +1,12 @@
-using System;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.Uow;
+using Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
+using Tribulus.MarketPlace.Marketing.EntityFrameworkCore;
+using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore.SqlServer;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
@@ -12,19 +15,13 @@ using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
-using Volo.Abp.EntityFrameworkCore.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using Tribulus.MarketPlace.Sales;
-using Tribulus.MarketPlace.Marketing.EntityFrameworkCore;
-using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
-using Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
-using Tribulus.MarketPlace.Admin.Marketing.EntityFrameworkCore;
-using Tribulus.MarketPlace.Admin.Sales.EntityFrameworkCore;
-using Tribulus.MarketPlace.Admin.Inventory.EntityFrameworkCore;
 
 namespace Tribulus.MarketPlace.EntityFrameworkCore;
 
 [DependsOn(
+    typeof(MarketingEntityFrameworkCoreModule),
+    typeof(SalesEntityFrameworkCoreModule),
+    typeof(InventoryEntityFrameworkCoreModule),
     typeof(MarketPlaceDomainModule),
     typeof(AbpIdentityEntityFrameworkCoreModule),
     typeof(AbpOpenIddictEntityFrameworkCoreModule),
@@ -36,9 +33,6 @@ namespace Tribulus.MarketPlace.EntityFrameworkCore;
     typeof(AbpTenantManagementEntityFrameworkCoreModule),
     typeof(AbpFeatureManagementEntityFrameworkCoreModule)
     )]
-[DependsOn(typeof(MarketingEntityFrameworkCoreModule))]
-    [DependsOn(typeof(SalesEntityFrameworkCoreModule))]
-    [DependsOn(typeof(InventoryEntityFrameworkCoreModule))]
     public class MarketPlaceEntityFrameworkCoreModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
@@ -63,16 +57,7 @@ namespace Tribulus.MarketPlace.EntityFrameworkCore;
             options.UseSqlServer();
         });
 
-        Configure<AbpEntityOptions>(options =>
-        {
-            options.Entity<Order>(orderOptions =>
-            {
-                orderOptions.DefaultWithDetailsFunc = query
-                => query
-                .Include(f => f.OrderItems);
-                
-            });
-        });
+      
 
     }
 }

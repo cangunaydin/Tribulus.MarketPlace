@@ -4,10 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Events;
-using Tribulus.MarketPlace.Admin.Marketing;
+using Tribulus.MarketPlace.Admin.Marketing.Products;
 using Tribulus.MarketPlace.Admin.Products;
-using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Admin.Sales.Products;
 using Tribulus.MarketPlace.Localization;
+using Tribulus.MarketPlace.Marketing.Products;
 using Volo.Abp;
 using Volo.Abp.EventBus.Local;
 

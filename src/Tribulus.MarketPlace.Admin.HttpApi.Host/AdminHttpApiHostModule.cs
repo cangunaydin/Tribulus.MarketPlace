@@ -28,6 +28,9 @@ using Volo.Abp.Swashbuckle;
 using Volo.Abp.VirtualFileSystem;
 using Tribulus.MarketPlace.EntityFrameworkCore;
 using Tribulus.MarketPlace.MultiTenancy;
+using Tribulus.MarketPlace.Admin.Inventory;
+using Tribulus.MarketPlace.Admin.Marketing;
+using Tribulus.MarketPlace.Admin.Sales;
 
 namespace Tribulus.MarketPlace.Admin;
 
@@ -94,6 +97,9 @@ public class AdminHttpApiHostModule : AbpModule
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
             options.ConventionalControllers.Create(typeof(MarketPlaceAdminApplicationModule).Assembly);
+            options.ConventionalControllers.Create(typeof(AdminMarketingApplicationModule).Assembly);
+            options.ConventionalControllers.Create(typeof(AdminSalesApplicationModule).Assembly);
+            options.ConventionalControllers.Create(typeof(AdminInventoryApplicationModule).Assembly);
         });
     }
 
@@ -163,7 +169,7 @@ public class AdminHttpApiHostModule : AbpModule
             dataProtectionBuilder.PersistKeysToStackExchangeRedis(redis, "Admin-Protection-Keys");
         }
     }
-    
+
     private void ConfigureDistributedLocking(
         ServiceConfigurationContext context,
         IConfiguration configuration)

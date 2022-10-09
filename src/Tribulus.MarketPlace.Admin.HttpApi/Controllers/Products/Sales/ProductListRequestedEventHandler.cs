@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Events;
-using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Admin.Sales.Products;
+using Tribulus.MarketPlace.Sales.Products;
 
 namespace Tribulus.MarketPlace.Admin.Products.Sales;
 

@@ -1,22 +1,22 @@
 using Microsoft.Extensions.DependencyInjection;
+using Tribulus.MarketPlace.Admin.Inventory;
+using Tribulus.MarketPlace.Admin.Marketing;
+using Tribulus.MarketPlace.Admin.Sales;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
-using Volo.Abp.TenantManagement;
 using Volo.Abp.SettingManagement;
+using Volo.Abp.TenantManagement;
 using Volo.Abp.VirtualFileSystem;
-using Tribulus.MarketPlace.Marketing;
-using Tribulus.MarketPlace.Sales;
-using Tribulus.MarketPlace.Inventory;
-using Tribulus.MarketPlace.Admin.Marketing;
-using Tribulus.MarketPlace.Admin.Sales;
-using Tribulus.MarketPlace.Admin.Inventory;
 
 namespace Tribulus.MarketPlace.Admin;
 
 [DependsOn(
+    typeof(AdminMarketingHttpApiClientModule),
+    typeof(AdminSalesHttpApiClientModule),
+    typeof(AdminInventoryHttpApiClientModule),
     typeof(AdminApplicationContractsModule),
     typeof(AbpAccountHttpApiClientModule),
     typeof(AbpIdentityHttpApiClientModule),
@@ -25,9 +25,6 @@ namespace Tribulus.MarketPlace.Admin;
     typeof(AbpFeatureManagementHttpApiClientModule),
     typeof(AbpSettingManagementHttpApiClientModule)
 )]
-[DependsOn(typeof(MarketingHttpApiClientModule))]
-    [DependsOn(typeof(SalesHttpApiClientModule))]
-    [DependsOn(typeof(InventoryHttpApiClientModule))]
     public class AdminHttpApiClientModule : AbpModule
 {
     public const string RemoteServiceName = "Default";

@@ -16,14 +16,14 @@ using Volo.Abp.TenantManagement;
 using Tribulus.MarketPlace.Marketing;
 using Tribulus.MarketPlace.Sales;
 using Tribulus.MarketPlace.Inventory;
-using Tribulus.MarketPlace.Admin.Marketing;
-using Tribulus.MarketPlace.Admin.Sales;
-using Tribulus.MarketPlace.Admin.Inventory;
 
 namespace Tribulus.MarketPlace;
 
 [DependsOn(
     typeof(MarketPlaceDomainSharedModule),
+    typeof(MarketingDomainModule),
+    typeof(SalesDomainModule),
+    typeof(InventoryDomainModule),
     typeof(AbpAuditLoggingDomainModule),
     typeof(AbpBackgroundJobsDomainModule),
     typeof(AbpFeatureManagementDomainModule),
@@ -35,10 +35,8 @@ namespace Tribulus.MarketPlace;
     typeof(AbpTenantManagementDomainModule),
     typeof(AbpEmailingModule)
 )]
-[DependsOn(typeof(MarketingDomainModule))]
-    [DependsOn(typeof(SalesDomainModule))]
-    [DependsOn(typeof(InventoryDomainModule))]
-    public class MarketPlaceDomainModule : AbpModule
+
+public class MarketPlaceDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

@@ -12,22 +12,7 @@ namespace Tribulus.MarketPlace.EntityFrameworkCore
             Check.NotNull(builder, nameof(builder));
 
            
-            builder.Entity<ProductStock>(b =>
-            {
-                b.ToTable(MarketPlaceConsts.DbTablePrefix + "ProductStocks", MarketPlaceConsts.DbSchema);
-
-                b.ConfigureByConvention();
-
-            });
-
-
-            builder.Entity<OrderItemQuantity>(b =>
-            {
-                b.ToTable(MarketPlaceConsts.DbTablePrefix + "OrderItemQuantities", MarketPlaceConsts.DbSchema);
-
-                b.ConfigureByConvention();
-                
-            });
+           
 
         }
     }

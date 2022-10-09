@@ -1,5 +1,5 @@
-﻿using Tribulus.MarketPlace.Admin.Marketing;
-using Tribulus.MarketPlace.Admin.Sales;
+﻿using Tribulus.MarketPlace.Marketing.Products;
+using Tribulus.MarketPlace.Sales.Products;
 
 namespace Tribulus.MarketPlace.Admin.Products
 {

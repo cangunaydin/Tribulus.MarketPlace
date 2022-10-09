@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Tribulus.MarketPlace.Marketing;
+using Tribulus.MarketPlace.Marketing.Products;
 using Volo.Abp.Application.Dtos;
 
 namespace Tribulus.MarketPlace.Blazor.Pages;

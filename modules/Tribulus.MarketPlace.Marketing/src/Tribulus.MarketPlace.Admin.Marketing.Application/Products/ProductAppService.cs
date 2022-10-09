@@ -21,9 +21,9 @@ namespace Tribulus.MarketPlace.Admin.Marketing.Products
         }
 
         [Authorize(MarketingPermissions.Products.Create)]
-        public async Task<ProductDto> CreateAsync(CreateProductDto input)
+        public async Task<ProductDto> CreateAsync(Guid id,CreateProductDto input)
         {
-            var product = new Product(GuidGenerator.Create(), CurrentUser.GetId(), input.Name);
+            var product = new Product(id, CurrentUser.GetId(), input.Name);
             product.Description = input.Description;
             await _productRepository.InsertAsync(product, true);
             return ObjectMapper.Map<Product, ProductDto>(product);

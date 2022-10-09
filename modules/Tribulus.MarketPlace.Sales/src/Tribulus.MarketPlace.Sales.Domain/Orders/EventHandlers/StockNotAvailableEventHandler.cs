@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Tribulus.MarketPlace.Inventory.Events;
+using Tribulus.MarketPlace.Inventory.Products.Events;
 using Tribulus.MarketPlace.Sales.Orders;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
