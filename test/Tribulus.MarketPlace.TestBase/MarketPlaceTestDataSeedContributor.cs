@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Inventory;
-using Tribulus.MarketPlace.Marketing;
 using Tribulus.MarketPlace.Sales;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
@@ -13,7 +12,6 @@ namespace Tribulus.MarketPlace;
 public class MarketPlaceTestDataSeedContributor : IDataSeedContributor, ITransientDependency
 {
 
-    private readonly IRepository<Product, Guid> _productRepository;
     private readonly IRepository<ProductPrice, Guid> _productPriceRepository;
     private readonly IRepository<ProductStock, Guid> _productStockRepository;
     private readonly IRepository<Order, Guid> _orderRepository;
@@ -22,7 +20,6 @@ public class MarketPlaceTestDataSeedContributor : IDataSeedContributor, ITransie
     private readonly IIdentityUserRepository _userRepository;
 
     public MarketPlaceTestDataSeedContributor(
-        IRepository<Product, Guid> productRepository,
         IRepository<ProductPrice, Guid> productPriceRepository,
         IRepository<ProductStock, Guid> productStockRepository,
         MarketPlaceTestData marketPlaceTestData,
@@ -30,7 +27,6 @@ public class MarketPlaceTestDataSeedContributor : IDataSeedContributor, ITransie
         IRepository<Order, Guid> orderRepository,
         IRepository<OrderItemQuantity, Guid> orderItemQuantityRepository)
     {
-        _productRepository = productRepository;
         _productPriceRepository = productPriceRepository;
         _productStockRepository = productStockRepository;
 

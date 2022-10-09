@@ -1,13 +1,10 @@
-﻿using Volo.Abp.Application;
+﻿using Tribulus.MarketPlace.Inventory.Application.Contracts.Shared;
 using Volo.Abp.Modularity;
-using Volo.Abp.Authorization;
 
 namespace Tribulus.MarketPlace.Inventory;
 
 [DependsOn(
-    typeof(InventoryDomainSharedModule),
-    typeof(AbpDddApplicationContractsModule),
-    typeof(AbpAuthorizationModule)
+    typeof(InventoryApplicationContractsSharedModule)
     )]
 public class InventoryApplicationContractsModule : AbpModule
 {

@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Tribulus.MarketPlace.Inventory;
-using Tribulus.MarketPlace.Marketing;
-using Tribulus.MarketPlace.Products;
+using Tribulus.MarketPlace.Marketing.EntityFrameworkCore;
 using Tribulus.MarketPlace.Sales;
+using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -16,11 +16,6 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
-using Tribulus.MarketPlace.Marketing.EntityFrameworkCore;
-using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
-using Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
-using Tribulus.MarketPlace.Admin.Sales.EntityFrameworkCore;
-using Tribulus.MarketPlace.Admin.Inventory.EntityFrameworkCore;
 
 namespace Tribulus.MarketPlace.EntityFrameworkCore;
 
@@ -62,13 +57,9 @@ public class MarketPlaceDbContext :
     #endregion
 
     #region <Entities from MarketPlace>
-
-    public DbSet<ProductPrice> ProductPrices { get; set; }
-
-    public DbSet<ProductStock> ProductStocks { get; set; }
-
     public DbSet<Order> Orders { get; set; }
-
+    public DbSet<ProductPrice> ProductPrices { get; set; }
+    public DbSet<ProductStock> ProductStocks { get; set; }
     public DbSet<OrderItemQuantity> OrderItemQuantities { get; set; }
     #endregion
 
@@ -103,7 +94,7 @@ public class MarketPlaceDbContext :
         //    //...
         //});
         builder.ConfigureMarketing();
-            builder.ConfigureSales();
-            builder.ConfigureInventory();
-        }
+        builder.ConfigureSales();
+        //builder.ConfigureInventory();
+    }
 }

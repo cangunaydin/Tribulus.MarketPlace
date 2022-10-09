@@ -1,7 +1,9 @@
 {
   "culture": "en",
   "texts": {
-    "MyAccount":  "My account",
-    "SamplePageMessage": "A sample page for the Sales module"
+    "MyAccount": "My account",
+    "Permission:ProductPrices": "Product Prices",
+    "Create": "Create",
+    "Edit": "Edit"
   }
 }
