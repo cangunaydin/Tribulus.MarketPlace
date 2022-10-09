@@ -4,6 +4,8 @@
     "MyAccount": "My account",
     "Permission:ProductPrices": "Product Prices",
     "Create": "Create",
-    "Edit": "Edit"
+    "Edit": "Edit",
+    "Permission:Orders": "Orders"
+
   }
 }
