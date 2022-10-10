@@ -1,18 +1,19 @@
-﻿
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <Import Project="..\..\common.props" />
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>Tribulus.MarketPlace.Admin.Sales</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR.Contracts" Version="1.0.1" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="6.0.0" />
   </ItemGroup>
-
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Tribulus.MarketPlace.Admin.Composition.Contracts\Tribulus.MarketPlace.Admin.Composition.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\Tribulus.MarketPlace.Composition\Tribulus.MarketPlace.Composition.csproj" />
     <ProjectReference Include="..\Tribulus.MarketPlace.Admin.Sales.Application.Contracts\Tribulus.MarketPlace.Admin.Sales.Application.Contracts.csproj" />
   </ItemGroup>
 

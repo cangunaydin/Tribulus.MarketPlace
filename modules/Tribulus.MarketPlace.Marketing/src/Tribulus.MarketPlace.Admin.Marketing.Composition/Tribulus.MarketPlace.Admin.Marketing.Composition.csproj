@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Tribulus.MarketPlace.Admin.Marketing</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Tribulus.MarketPlace.Admin.Composition.Contracts\Tribulus.MarketPlace.Admin.Composition.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\Tribulus.MarketPlace.Composition\Tribulus.MarketPlace.Composition.csproj" />
+    <ProjectReference Include="..\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
