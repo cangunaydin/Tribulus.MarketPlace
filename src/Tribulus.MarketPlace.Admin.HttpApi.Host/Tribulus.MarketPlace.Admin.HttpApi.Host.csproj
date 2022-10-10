@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Projects\Tribulus.Composition\src\Tribulus.Composition.csproj" />
     <ProjectReference Include="..\Tribulus.MarketPlace.Admin.Application\Tribulus.MarketPlace.Admin.Application.csproj" />
     <ProjectReference Include="..\Tribulus.MarketPlace.Admin.HttpApi\Tribulus.MarketPlace.Admin.HttpApi.csproj" />
     <ProjectReference Include="..\Tribulus.MarketPlace.EntityFrameworkCore\Tribulus.MarketPlace.EntityFrameworkCore.csproj" />
