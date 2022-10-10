@@ -3,7 +3,7 @@ using Tribulus.MarketPlace.Sales.Products;
 
 namespace Tribulus.MarketPlace.Admin.Products
 {
-    public class ProductViewModelCompositionDto 
+    public class ProductCompositionDto 
     {
         public ProductDto Product { get; set; }
 

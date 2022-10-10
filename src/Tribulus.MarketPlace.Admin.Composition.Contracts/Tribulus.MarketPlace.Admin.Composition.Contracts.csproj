@@ -5,9 +5,6 @@
     <RootNamespace>Tribulus.MarketPlace.Admin</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MediatR.Contracts" Version="1.0.1" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Tribulus.MarketPlace.Admin.Application.Contracts\Tribulus.MarketPlace.Admin.Application.Contracts.csproj" />

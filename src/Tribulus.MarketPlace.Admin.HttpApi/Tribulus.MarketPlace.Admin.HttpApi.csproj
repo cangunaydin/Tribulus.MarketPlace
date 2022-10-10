@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tribulus.MarketPlace.Admin.Application.Contracts\Tribulus.MarketPlace.Admin.Application.Contracts.csproj" />
-    <ProjectReference Include="..\Tribulus.MarketPlace.Admin.HttpApi.Host.Shared\Tribulus.MarketPlace.Admin.HttpApi.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Admin.Marketing.HttpApi\Tribulus.MarketPlace.Admin.Marketing.HttpApi.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Admin.Sales.HttpApi\Tribulus.MarketPlace.Admin.Sales.HttpApi.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Admin.Inventory.HttpApi\Tribulus.MarketPlace.Admin.Inventory.HttpApi.csproj" />
@@ -17,8 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="11.0.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Volo.Abp.Account.HttpApi" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.Identity.HttpApi" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="6.0.0" />

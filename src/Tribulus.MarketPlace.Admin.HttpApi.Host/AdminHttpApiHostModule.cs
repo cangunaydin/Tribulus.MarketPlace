@@ -31,6 +31,7 @@ using Tribulus.MarketPlace.MultiTenancy;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.Composition;
 
 namespace Tribulus.MarketPlace.Admin;
 
@@ -61,6 +62,7 @@ public class AdminHttpApiHostModule : AbpModule
         ConfigureDistributedLocking(context, configuration);
         ConfigureCors(context, configuration);
         ConfigureSwaggerServices(context, configuration);
+        
     }
 
     private void ConfigureCache(IConfiguration configuration)
@@ -241,6 +243,9 @@ public class AdminHttpApiHostModule : AbpModule
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();
         app.UseUnitOfWork();
-        app.UseConfiguredEndpoints();
+        app.UseConfiguredEndpoints(options =>
+        {
+            options.MapCompositionHandlers(context);
+        });
     }
 }

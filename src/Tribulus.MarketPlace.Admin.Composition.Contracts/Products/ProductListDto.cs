@@ -6,8 +6,8 @@ public class ProductListDto
 {
     public ProductListDto()
     {
-        Products = new List<ProductViewModelCompositionDto>();
+        Products = new List<ProductCompositionDto>();
     }
 
-    public List<ProductViewModelCompositionDto> Products { get; set; }
+    public List<ProductCompositionDto> Products { get; set; }
 }
