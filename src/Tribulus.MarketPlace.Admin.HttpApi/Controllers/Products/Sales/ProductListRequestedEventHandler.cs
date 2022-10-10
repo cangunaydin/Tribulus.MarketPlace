@@ -9,7 +9,7 @@ using Tribulus.MarketPlace.Sales.Products;
 
 namespace Tribulus.MarketPlace.Admin.Products.Sales;
 
-public class ProductListRequestedEventHandler : IRequestHandler<ProductListRequested, List<ProductViewModelCompositionDto>>
+public class ProductListRequestedEventHandler : IRequestHandler<ProductListContributeEto, List<ProductCompositionDto>>
 {
     private readonly IProductPriceAppService _productPriceAppService;
     public ProductListRequestedEventHandler(IProductPriceAppService productPriceAppService)
@@ -17,17 +17,17 @@ public class ProductListRequestedEventHandler : IRequestHandler<ProductListReque
         _productPriceAppService = productPriceAppService;
     }
 
-    public async Task<List<ProductViewModelCompositionDto>> Handle(ProductListRequested request, CancellationToken cancellationToken)
+    public async Task<List<ProductCompositionDto>> Handle(ProductListContributeEto request, CancellationToken cancellationToken)
     {
         var products = request.Products;
         var productPriceInput = new ProductPriceListFilterDto();
-        productPriceInput.Ids = request.Products.Select(o => o.Product.Id).ToList();
+        productPriceInput.Ids = request.Products.Select(o => o.Id).ToList();
         var productPrices = await _productPriceAppService.GetListAsync(productPriceInput);
         foreach (var productPrice in productPrices.Items)
         {
-            var product = products.FirstOrDefault(o => o.Product.Id == productPrice.Id);
+            var product = products.FirstOrDefault(o => o.Id == productPrice.Id);
             if (product != null)
-                product.ProductPrice = productPrice;
+                product.Price = productPrice.Price;
         }
         return products;
     }

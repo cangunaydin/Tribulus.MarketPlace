@@ -20,6 +20,7 @@ namespace Tribulus.MarketPlace.Admin;
     typeof(AdminSalesHttpApiModule),
     typeof(AdminInventoryHttpApiModule),
     typeof(AdminApplicationContractsModule),
+    typeof(AdminCompositionContractsModule),
     typeof(AbpAccountHttpApiModule),
     typeof(AbpIdentityHttpApiModule),
     typeof(AbpPermissionManagementHttpApiModule),

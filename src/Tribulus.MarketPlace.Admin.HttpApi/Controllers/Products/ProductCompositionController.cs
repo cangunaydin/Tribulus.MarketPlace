@@ -38,16 +38,18 @@ public class ProductCompositionController : AdminController, IProductComposition
 
     [HttpGet]
     [Route("{id}")]
-    public async Task<ProductViewModelCompositionDto> GetAsync(Guid id)
+    public async Task<ProductCompositionDto> GetAsync(Guid id)
     {
+
         var productPrice=_productPriceAppService.GetAsync(id);
         var product = _productAppService.GetAsync(id);
         await Task.WhenAll(product,productPrice);
 
-        return new ProductViewModelCompositionDto()
+        return new ProductCompositionDto()
         {
-            Product = product.Result,
-            ProductPrice = productPrice.Result
+            Name = product.Result.Name,
+            Description = product.Result.Description,
+            Price = productPrice.Result.Price
         };
     }
 
@@ -63,18 +65,15 @@ public class ProductCompositionController : AdminController, IProductComposition
         var products=await _productAppService.GetListAsync(salesInput);
         foreach (var product in products.Items)
         {
-            var newProductCompositionDto = new ProductViewModelCompositionDto();
-            newProductCompositionDto.Product= product;
+            var newProductCompositionDto = new ProductCompositionDto();
+            newProductCompositionDto.Name= product.Name;
+            newProductCompositionDto.Description = product.Description;
             result.Products.Add(newProductCompositionDto);
         }
-        result.Products=await _mediator.Send(new ProductListRequested()
+        result.Products=await _mediator.Send(new ProductListContributeEto()
         {
             Products = result.Products
         });
-        //await _localEventBus.PublishAsync(new ProductListRequested()
-        //{
-        //    Products = result.Products
-        //});
         return result;
 
     }
