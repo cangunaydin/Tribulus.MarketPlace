@@ -7,6 +7,7 @@ using Tribulus.MarketPlace.Marketing.Products;
 using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
 using Tribulus.MarketPlace.Sales.Orders;
 using Tribulus.MarketPlace.Sales.Products;
+using Tribulus.MarketPlace.Shipping.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -104,5 +105,6 @@ public class MarketPlaceDbContext :
         builder.ConfigureMarketing();
         builder.ConfigureSales();
         builder.ConfigureInventory();
+        builder.ConfigureShipping();
     }
 }

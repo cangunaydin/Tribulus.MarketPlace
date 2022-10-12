@@ -47,7 +47,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Sales.HttpApi.Client", "src\Tribulus.MarketPlace.Admin.Sales.HttpApi.Client\Tribulus.MarketPlace.Admin.Sales.HttpApi.Client.csproj", "{37498CCE-1628-4752-9BD6-521212BDF69C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tribulus.MarketPlace.Sales.Application.Contracts.Shared", "src\Tribulus.MarketPlace.Sales.Application.Contracts.Shared\Tribulus.MarketPlace.Sales.Application.Contracts.Shared.csproj", "{944BE226-12A6-458A-A8F5-BC32AAC540F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Sales.Application.Contracts.Shared", "src\Tribulus.MarketPlace.Sales.Application.Contracts.Shared\Tribulus.MarketPlace.Sales.Application.Contracts.Shared.csproj", "{944BE226-12A6-458A-A8F5-BC32AAC540F2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "admin", "admin", "{3B6B5B80-6DC5-4D0E-BBAD-A562FE032647}"
 EndProject
@@ -55,7 +55,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "www", "www", "{D3F527E4-EB3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{C30213E6-4759-4B0E-BBD6-4A4D01E0E03C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tribulus.MarketPlace.Admin.Sales.Application.Tests", "test\Tribulus.MarketPlace.Admin.Sales.Application.Tests\Tribulus.MarketPlace.Admin.Sales.Application.Tests.csproj", "{C73596A9-D623-4877-AB0F-2DEDE5DDF578}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Sales.Application.Tests", "test\Tribulus.MarketPlace.Admin.Sales.Application.Tests\Tribulus.MarketPlace.Admin.Sales.Application.Tests.csproj", "{C73596A9-D623-4877-AB0F-2DEDE5DDF578}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -14,7 +14,7 @@ namespace Tribulus.MarketPlace.Admin;
 
 [DependsOn(
     typeof(AdminMarketingApplicationModule),
-    typeof(AdminSalesApplicationModule),
+    typeof(AdminSalesApplicationModule),     
     typeof(AdminInventoryApplicationModule),
     typeof(MarketPlaceDomainModule),
     typeof(AbpAccountApplicationModule),

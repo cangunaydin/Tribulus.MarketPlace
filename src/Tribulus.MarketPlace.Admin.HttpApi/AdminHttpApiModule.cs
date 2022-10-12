@@ -3,6 +3,7 @@ using MediatR;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Admin.Shipping;
 using Tribulus.MarketPlace.Localization;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
@@ -18,6 +19,7 @@ namespace Tribulus.MarketPlace.Admin;
 [DependsOn(
     typeof(AdminMarketingHttpApiModule),
     typeof(AdminSalesHttpApiModule),
+    typeof(AdminShippingHttpApiModule),
     typeof(AdminInventoryHttpApiModule),
     typeof(AdminApplicationContractsModule),
     typeof(AbpAccountHttpApiModule),

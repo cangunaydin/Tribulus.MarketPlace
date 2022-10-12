@@ -1,11 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
-using Tribulus.MarketPlace.Inventory;
-using Tribulus.MarketPlace.Sales;
+﻿using System.Threading.Tasks;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
-using Volo.Abp.Domain.Repositories;
-using Volo.Abp.Identity;
 
 namespace Tribulus.MarketPlace;
 

@@ -9,7 +9,7 @@ namespace Tribulus.MarketPlace.Sales.Application.Contracts.Shared
     typeof(AbpDddApplicationContractsModule),
     typeof(AbpAuthorizationModule)
     )]
-    public class SalesApplicationContractsSharedModule:AbpModule
+    public class SalesApplicationContractsSharedModule : AbpModule
     {
     }
 }

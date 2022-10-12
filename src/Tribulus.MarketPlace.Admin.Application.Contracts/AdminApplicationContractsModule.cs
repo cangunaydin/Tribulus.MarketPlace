@@ -1,6 +1,7 @@
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Admin.Shipping;
 using Tribulus.MarketPlace.Application.Contracts.Shared;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
@@ -16,6 +17,7 @@ namespace Tribulus.MarketPlace.Admin;
 [DependsOn(
     typeof(AdminMarketingApplicationContractsModule),
     typeof(AdminSalesApplicationContractsModule),
+    typeof(AdminShippingApplicationContractsModule),
     typeof(AdminInventoryApplicationContractsModule),
     typeof(MarketPlaceApplicationContractsSharedModule),
     typeof(MarketPlaceDomainSharedModule),
