@@ -32011,3 +32011,164 @@ StackExchange.Redis.RedisServerException: ERR Error running script (call to f_39
 2022-10-12 08:58:39.865 +05:45 [INF] Request finished HTTP/2 GET https://localhost:44311/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 300.8887ms
 2022-10-12 08:58:40.123 +05:45 [INF] Request starting HTTP/2 GET https://localhost:44311/_vs/browserLink - -
 2022-10-12 08:58:40.252 +05:45 [INF] Request finished HTTP/2 GET https://localhost:44311/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 128.8784ms
+2022-10-12 14:26:24.562 +05:45 [INF] Starting Tribulus.MarketPlace.HttpApi.Host.
+2022-10-12 14:26:32.271 +05:45 [INF] Loaded ABP modules:
+2022-10-12 14:26:32.273 +05:45 [INF] - Tribulus.MarketPlace.MarketPlaceHttpApiHostModule
+2022-10-12 14:26:32.273 +05:45 [INF]   - Tribulus.MarketPlace.MarketPlaceHttpApiModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Tribulus.MarketPlace.MarketPlaceApplicationContractsModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]             - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]             - Volo.Abp.Validation.AbpValidationModule
+2022-10-12 14:26:32.273 +05:45 [INF]               - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-10-12 14:26:32.273 +05:45 [INF]               - Volo.Abp.Localization.AbpLocalizationModule
+2022-10-12 14:26:32.273 +05:45 [INF]                 - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-10-12 14:26:32.273 +05:45 [INF]                 - Volo.Abp.Settings.AbpSettingsModule
+2022-10-12 14:26:32.273 +05:45 [INF]                   - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-10-12 14:26:32.273 +05:45 [INF]                   - Volo.Abp.Security.AbpSecurityModule
+2022-10-12 14:26:32.273 +05:45 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-10-12 14:26:32.273 +05:45 [INF]                     - Volo.Abp.Data.AbpDataModule
+2022-10-12 14:26:32.273 +05:45 [INF]                       - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-10-12 14:26:32.273 +05:45 [INF]                       - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-10-12 14:26:32.273 +05:45 [INF]                       - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-10-12 14:26:32.273 +05:45 [INF]             - Volo.Abp.Features.AbpFeaturesModule
+2022-10-12 14:26:32.273 +05:45 [INF]               - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-10-12 14:26:32.273 +05:45 [INF]             - Volo.Abp.EventBus.AbpEventBusModule
+2022-10-12 14:26:32.273 +05:45 [INF]               - Volo.Abp.Json.AbpJsonModule
+2022-10-12 14:26:32.273 +05:45 [INF]                 - Volo.Abp.Timing.AbpTimingModule
+2022-10-12 14:26:32.273 +05:45 [INF]               - Volo.Abp.Guids.AbpGuidsModule
+2022-10-12 14:26:32.273 +05:45 [INF]               - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-10-12 14:26:32.273 +05:45 [INF]                 - Volo.Abp.Threading.AbpThreadingModule
+2022-10-12 14:26:32.273 +05:45 [INF]               - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2022-10-12 14:26:32.273 +05:45 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-10-12 14:26:32.273 +05:45 [INF]               - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-10-12 14:26:32.273 +05:45 [INF]             - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Tribulus.MarketPlace.Application.Contracts.Shared.MarketPlaceApplicationContractsSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Tribulus.MarketPlace.MarketPlaceDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Tribulus.MarketPlace.Marketing.MarketingDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Tribulus.MarketPlace.Sales.SalesDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Tribulus.MarketPlace.Shipping.ShippingDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Tribulus.MarketPlace.Inventory.InventoryDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Tribulus.MarketPlace.Marketing.MarketingApplicationContractsModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Tribulus.MarketPlace.Marketing.Application.Contracts.Shared.MarketingApplicationContractsSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Tribulus.MarketPlace.Sales.SalesApplicationContractsModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Tribulus.MarketPlace.Sales.Application.Contracts.Shared.SalesApplicationContractsSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Tribulus.MarketPlace.Inventory.InventoryApplicationContractsModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.InventoryApplicationContractsSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Tribulus.MarketPlace.Shipping.ShippingApplicationContractsModule
+2022-10-12 14:26:32.273 +05:45 [INF]   - Tribulus.MarketPlace.MarketPlaceApplicationModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Tribulus.MarketPlace.MarketPlaceDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Tribulus.MarketPlace.Marketing.MarketingDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Volo.Abp.Domain.AbpDddDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.Auditing.AbpAuditingModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Tribulus.MarketPlace.Sales.SalesDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Tribulus.MarketPlace.Shipping.ShippingDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Tribulus.MarketPlace.Inventory.InventoryDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.Emailing.AbpEmailingModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2022-10-12 14:26:32.273 +05:45 [INF]             - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Volo.Abp.Account.AbpAccountApplicationModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2022-10-12 14:26:32.273 +05:45 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2022-10-12 14:26:32.273 +05:45 [INF]             - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-10-12 14:26:32.273 +05:45 [INF]             - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-10-12 14:26:32.273 +05:45 [INF]         - Volo.Abp.UI.AbpUiModule
+2022-10-12 14:26:32.273 +05:45 [INF]   - Tribulus.MarketPlace.EntityFrameworkCore.MarketPlaceEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Tribulus.MarketPlace.Marketing.EntityFrameworkCore.MarketingEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Tribulus.MarketPlace.Sales.EntityFrameworkCore.SalesEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Tribulus.MarketPlace.Shipping.EntityFrameworkCore.ShippingEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Tribulus.MarketPlace.Inventory.EntityFrameworkCore.InventoryEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Volo.Abp.BackgroundJobs.EntityFrameworkCore.AbpBackgroundJobsEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Volo.Abp.Castle.AbpCastleCoreModule
+2022-10-12 14:26:32.273 +05:45 [INF]   - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2022-10-12 14:26:32.273 +05:45 [INF]   - Volo.Abp.DistributedLocking.AbpDistributedLockingModule
+2022-10-12 14:26:32.273 +05:45 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2022-10-12 14:26:32.273 +05:45 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2022-10-12 14:26:32.273 +05:45 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2022-10-12 14:26:32.274 +05:45 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2022-10-12 14:26:32.274 +05:45 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-10-12 14:26:32.274 +05:45 [INF]             - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-10-12 14:26:32.274 +05:45 [INF]               - Volo.Abp.Http.AbpHttpModule
+2022-10-12 14:26:32.274 +05:45 [INF]                 - Volo.Abp.Minify.AbpMinifyModule
+2022-10-12 14:26:32.274 +05:45 [INF]             - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-10-12 14:26:32.274 +05:45 [INF]             - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-10-12 14:26:32.274 +05:45 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2022-10-12 14:26:32.274 +05:45 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2022-10-12 14:26:32.274 +05:45 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2022-10-12 14:26:32.274 +05:45 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2022-10-12 14:26:32.274 +05:45 [INF]     - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2022-10-12 14:26:32.274 +05:45 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-10-12 14:26:32.274 +05:45 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-10-12 14:26:33.174 +05:45 [DBG] Started background worker: Volo.Abp.BackgroundJobs.BackgroundJobWorker
+2022-10-12 14:26:33.183 +05:45 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-10-12 14:26:34.015 +05:45 [INF] User profile is available. Using 'C:\Users\abine\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-12 14:26:34.154 +05:45 [INF] Initialized all ABP modules.
+2022-10-12 14:26:34.269 +05:45 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-12 14:26:34.308 +05:45 [INF] Hosting environment: Development
+2022-10-12 14:26:34.308 +05:45 [INF] Content root path: D:\Code\Tribulus.MarketPlace\src\Tribulus.MarketPlace.HttpApi.Host\
+2022-10-12 14:26:34.348 +05:45 [INF] Request starting HTTP/2 GET https://localhost:44311/ - -
+2022-10-12 14:26:39.775 +05:45 [WRN] ERR Error running script (call to f_3915ee22fda531a1d5661f2523d0443fd35ff0a4): @user_script:2: @user_script: 2: Wrong number of args calling Redis command From Lua script 
+StackExchange.Redis.RedisServerException: ERR Error running script (call to f_3915ee22fda531a1d5661f2523d0443fd35ff0a4): @user_script:2: @user_script: 2: Wrong number of args calling Redis command From Lua script 
+   at Volo.Abp.Caching.StackExchangeRedis.AbpRedisCache.SetManyAsync(IEnumerable`1 items, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.<>c__DisplayClass54_0.<<SetManyAsync>g__SetRealCache|0>d.MoveNext()
+2022-10-12 14:26:39.947 +05:45 [WRN] ERR Error running script (call to f_3915ee22fda531a1d5661f2523d0443fd35ff0a4): @user_script:2: @user_script: 2: Wrong number of args calling Redis command From Lua script 
+StackExchange.Redis.RedisServerException: ERR Error running script (call to f_3915ee22fda531a1d5661f2523d0443fd35ff0a4): @user_script:2: @user_script: 2: Wrong number of args calling Redis command From Lua script 
+   at Volo.Abp.Caching.StackExchangeRedis.AbpRedisCache.SetManyAsync(IEnumerable`1 items, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.<>c__DisplayClass54_0.<<SetManyAsync>g__SetRealCache|0>d.MoveNext()
+2022-10-12 14:26:40.885 +05:45 [INF] Executing endpoint 'Tribulus.MarketPlace.Controllers.HomeController.Index (Tribulus.MarketPlace.HttpApi.Host)'
+2022-10-12 14:26:40.934 +05:45 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Index() on controller Tribulus.MarketPlace.Controllers.HomeController (Tribulus.MarketPlace.HttpApi.Host).
+2022-10-12 14:26:41.009 +05:45 [INF] Executing RedirectResult, redirecting to /swagger.
+2022-10-12 14:26:41.024 +05:45 [INF] Executed action Tribulus.MarketPlace.Controllers.HomeController.Index (Tribulus.MarketPlace.HttpApi.Host) in 78.8774ms
+2022-10-12 14:26:41.024 +05:45 [INF] Executed endpoint 'Tribulus.MarketPlace.Controllers.HomeController.Index (Tribulus.MarketPlace.HttpApi.Host)'
+2022-10-12 14:26:41.178 +05:45 [INF] Request finished HTTP/2 GET https://localhost:44311/ - - - 302 - - 6833.9597ms
+2022-10-12 14:26:41.239 +05:45 [INF] Request starting HTTP/2 GET https://localhost:44311/swagger/index.html - -
+2022-10-12 14:26:41.683 +05:45 [INF] Request finished HTTP/2 GET https://localhost:44311/swagger/index.html - - - 200 - text/html;charset=utf-8 444.2576ms
+2022-10-12 14:26:41.744 +05:45 [INF] Request starting HTTP/2 GET https://localhost:44311/_framework/aspnetcore-browser-refresh.js - -
+2022-10-12 14:26:41.781 +05:45 [INF] Request finished HTTP/2 GET https://localhost:44311/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 35.7696ms
+2022-10-12 14:26:41.841 +05:45 [INF] Request starting HTTP/2 GET https://localhost:44311/_vs/browserLink - -
+2022-10-12 14:26:42.052 +05:45 [INF] Request finished HTTP/2 GET https://localhost:44311/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 210.9973ms
+2022-10-12 14:26:42.760 +05:45 [INF] Request starting HTTP/2 GET https://localhost:44311/swagger/v1/swagger.json - -
+2022-10-12 14:26:43.094 +05:45 [INF] Request finished HTTP/2 GET https://localhost:44311/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 333.4900ms

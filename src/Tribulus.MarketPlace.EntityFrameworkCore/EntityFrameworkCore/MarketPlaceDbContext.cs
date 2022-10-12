@@ -8,6 +8,7 @@ using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
 using Tribulus.MarketPlace.Sales.Orders;
 using Tribulus.MarketPlace.Sales.Products;
 using Tribulus.MarketPlace.Shipping.EntityFrameworkCore;
+using Tribulus.MarketPlace.Shipping.Products;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -63,6 +64,7 @@ public class MarketPlaceDbContext :
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
     public DbSet<Order> Orders { get; set; }
+    public DbSet<ProductShippingOptions> ProductShippingOptions { get; set; }
     public DbSet<ProductPrice> ProductPrices { get; set; }
     public DbSet<ProductStock> ProductStocks { get; set; }
     public DbSet<OrderItemQuantity> OrderItemQuantities { get; set; }
