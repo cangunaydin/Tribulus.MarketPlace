@@ -7,6 +7,14 @@
     <RootNamespace>Tribulus.MarketPlace.Shipping</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>10.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <LangVersion>10.0</LangVersion>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AutoMapper" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="6.0.0" />
