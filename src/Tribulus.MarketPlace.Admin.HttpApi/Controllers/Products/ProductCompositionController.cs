@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Events;
+using Tribulus.MarketPlace.Admin.Inventory.Products;
+using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Marketing.Products;
 using Tribulus.MarketPlace.Admin.Products;
 using Tribulus.MarketPlace.Admin.Sales.Products;
@@ -22,10 +24,12 @@ public class ProductCompositionController : AdminController, IProductComposition
 {
     private readonly IProductAppService _productAppService;
     private readonly IProductPriceAppService _productPriceAppService;
+    private readonly IProductStockAppService _productStockAppService;
     private readonly ILocalEventBus _localEventBus;
     private readonly IMediator _mediator;
     public ProductCompositionController(IProductAppService productAppService,
         IProductPriceAppService productPriceAppService,
+        IProductStockAppService productStockAppService,
         ILocalEventBus localEventBus,
         IMediator mediator)
     {
@@ -40,9 +44,9 @@ public class ProductCompositionController : AdminController, IProductComposition
     [Route("{id}")]
     public async Task<ProductViewModelCompositionDto> GetAsync(Guid id)
     {
-        var productPrice=_productPriceAppService.GetAsync(id);
+        var productPrice = _productPriceAppService.GetAsync(id);
         var product = _productAppService.GetAsync(id);
-        await Task.WhenAll(product,productPrice);
+        await Task.WhenAll(product, productPrice);
 
         return new ProductViewModelCompositionDto()
         {
@@ -57,17 +61,17 @@ public class ProductCompositionController : AdminController, IProductComposition
         var salesInput = new ProductListFilterDto();
         salesInput.Name = input.Name;
         salesInput.SkipCount = input.SkipCount;
-        salesInput.MaxResultCount=input.MaxResultCount;
+        salesInput.MaxResultCount = input.MaxResultCount;
 
         var result = new ProductListDto();
-        var products=await _productAppService.GetListAsync(salesInput);
+        var products = await _productAppService.GetListAsync(salesInput);
         foreach (var product in products.Items)
         {
             var newProductCompositionDto = new ProductViewModelCompositionDto();
-            newProductCompositionDto.Product= product;
+            newProductCompositionDto.Product = product;
             result.Products.Add(newProductCompositionDto);
         }
-        result.Products=await _mediator.Send(new ProductListRequested()
+        result.Products = await _mediator.Send(new ProductListRequested()
         {
             Products = result.Products
         });
@@ -77,5 +81,37 @@ public class ProductCompositionController : AdminController, IProductComposition
         //});
         return result;
 
+    }
+
+
+    [HttpPost]
+    public async Task<ProductViewModelCompositionDto> CreateProduct(CreateCompleteProductDto input)
+    {
+        var newguid = GuidGenerator.Create();
+        var setproduct = _productAppService.CreateAsync(newguid, new CreateProductDto
+        {
+            Name = input.Name,
+            Description = input.Description
+        });
+
+        var setproductPrice = _productPriceAppService.CreateAsync(newguid, new CreateProductPriceDto
+        {
+            Price = input.Price
+        });
+
+        var setproductStock = _productStockAppService.CreateAsync(newguid, new CreateProductStockDto
+        {
+            StockCount = input.StockCount
+        });
+
+        await Task.WhenAll(setproduct, setproductPrice, setproductStock);
+
+
+        return new ProductViewModelCompositionDto()
+        {
+            Product = setproduct.Result,
+            ProductPrice = setproductPrice.Result,
+            ProductStock = setproductStock.Result
+        };
     }
 }
