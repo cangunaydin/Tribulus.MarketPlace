@@ -20,11 +20,11 @@ namespace Tribulus.MarketPlace.Admin.Shipping.Products
         }
 
 
-        public async Task<CreateProdcutShippingOptionDto> CreateAsync(Guid id, CreateProdcutShippingOptionDto input)
+        public async Task<CreateProductShippingOptionDto> CreateAsync(Guid id, CreateProductShippingOptionDto input)
         {
             var productShippingOption= new ProductShippingOptions(id, input.ProductId,input.Option,input.EstimatedMinDeliveryDays,input.EstimatedMaxDeliveryDays); //todo change the guid generation
             await _productShippingOptionRepository.InsertAsync(productShippingOption, true);
-            return ObjectMapper.Map<ProductShippingOptions, CreateProdcutShippingOptionDto>(productShippingOption);
+            return ObjectMapper.Map<ProductShippingOptions, CreateProductShippingOptionDto>(productShippingOption);
         }
     }
 }

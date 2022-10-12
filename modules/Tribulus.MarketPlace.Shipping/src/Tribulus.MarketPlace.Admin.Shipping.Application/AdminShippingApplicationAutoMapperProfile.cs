@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-
+using Tribulus.MarketPlace.Shipping.Products;
 namespace Tribulus.MarketPlace.Admin.Shipping;
 
 public class AdminShippingApplicationAutoMapperProfile : Profile
@@ -9,5 +9,6 @@ public class AdminShippingApplicationAutoMapperProfile : Profile
         /* You can configure your AutoMapper mapping configuration here.
          * Alternatively, you can split your mapping configurations
          * into multiple profile classes for a better organization. */
+        CreateMap<ProductShippingOptions, CreateProductShippingOptionDto>();
     }
 }

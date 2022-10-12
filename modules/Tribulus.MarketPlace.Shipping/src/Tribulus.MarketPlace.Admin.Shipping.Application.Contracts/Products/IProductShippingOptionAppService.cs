@@ -6,7 +6,7 @@ namespace Tribulus.MarketPlace.Admin.Shipping.Products
 {
     public interface IProductShippingOptionAppService : IApplicationService
     {
-        Task<CreateProdcutShippingOptionDto> CreateAsync(Guid id, CreateProdcutShippingOptionDto input);
+        Task<CreateProductShippingOptionDto> CreateAsync(Guid id, CreateProductShippingOptionDto input);
 
         //Task UpdateAsync(Guid id, UpdateProductStockDto input);
 
