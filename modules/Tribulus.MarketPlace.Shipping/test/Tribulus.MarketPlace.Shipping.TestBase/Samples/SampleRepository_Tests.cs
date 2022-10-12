@@ -19,8 +19,7 @@ public abstract class SampleRepository_Tests<TStartupModule> : ShippingTestBase<
     }
 
     [Fact]
-    public async Task Method1Async()
+    public void Method1Async()
     {
-
     }
 }

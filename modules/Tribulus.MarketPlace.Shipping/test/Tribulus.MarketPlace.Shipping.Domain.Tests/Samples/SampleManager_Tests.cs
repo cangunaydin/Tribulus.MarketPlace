@@ -13,7 +13,7 @@ public class SampleManager_Tests : ShippingDomainTestBase
     }
 
     [Fact]
-    public async Task Method1Async()
+    public void Method1Async()
     {
 
     }

@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Tribulus.MarketPlace.Shipping.EntityFrameworkCore.Repositories;
+using Tribulus.MarketPlace.Shipping.Products;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
@@ -14,9 +16,10 @@ public class ShippingEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<ShippingDbContext>(options =>
         {
-                /* Add custom repositories here. Example:
-                 * options.AddRepository<Question, EfCoreQuestionRepository>();
-                 */
+            /* Add custom repositories here. Example:
+             * options.AddRepository<Question, EfCoreQuestionRepository>();
+             */
+            options.AddRepository<ProductShippingOptions, ProductShippingOptionRepository>();
         });
     }
 }
