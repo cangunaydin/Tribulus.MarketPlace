@@ -32,6 +32,9 @@ using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Sales;
 using Tribulus.Composition;
+using Tribulus.MarketPlace.Admin.Composition;
+using Microsoft.AspNetCore.Mvc;
+using Tribulus.Composition.Tribulus.Composition;
 
 namespace Tribulus.MarketPlace.Admin;
 
@@ -39,6 +42,7 @@ namespace Tribulus.MarketPlace.Admin;
     typeof(AdminHttpApiModule),
     typeof(MarketPlaceAdminApplicationModule),
     typeof(MarketPlaceEntityFrameworkCoreModule),
+    typeof(AdminCompositionModule),
     typeof(AbpAutofacModule),
     typeof(AbpCachingStackExchangeRedisModule),
     typeof(AbpDistributedLockingModule),
@@ -53,6 +57,7 @@ public class AdminHttpApiHostModule : AbpModule
         var configuration = context.Services.GetConfiguration();
         var hostingEnvironment = context.Services.GetHostingEnvironment();
 
+        ConfigureFilters(context, configuration);
         ConfigureConventionalControllers();
         ConfigureAuthentication(context, configuration);
         ConfigureLocalization();
@@ -63,6 +68,15 @@ public class AdminHttpApiHostModule : AbpModule
         ConfigureCors(context, configuration);
         ConfigureSwaggerServices(context, configuration);
         
+        
+    }
+
+    private void ConfigureFilters(ServiceConfigurationContext context, IConfiguration configuration)
+    {
+        Configure<MvcOptions>(options =>
+        {
+            options.Filters.AddService(typeof(CompositionOverControllersFilter));
+        });
     }
 
     private void ConfigureCache(IConfiguration configuration)
@@ -102,6 +116,11 @@ public class AdminHttpApiHostModule : AbpModule
             options.ConventionalControllers.Create(typeof(AdminMarketingApplicationModule).Assembly);
             options.ConventionalControllers.Create(typeof(AdminSalesApplicationModule).Assembly);
             options.ConventionalControllers.Create(typeof(AdminInventoryApplicationModule).Assembly);
+            options.ConventionalControllers.Create(typeof(AdminCompositionModule).Assembly, options =>
+            {
+                options.RootPath = "composition";
+            });
+            
         });
     }
 

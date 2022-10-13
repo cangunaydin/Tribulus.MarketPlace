@@ -77,6 +77,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.Composition", "..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Composition.Contracts", "src\Tribulus.MarketPlace.Admin.Composition.Contracts\Tribulus.MarketPlace.Admin.Composition.Contracts.csproj", "{5E6A771C-4B95-4FFC-8CE5-925D88082E18}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Composition", "src\Tribulus.MarketPlace.Admin.Composition\Tribulus.MarketPlace.Admin.Composition.csproj", "{811016B4-6680-4819-8D00-FA4AFA537B69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -187,6 +189,10 @@ Global
 		{5E6A771C-4B95-4FFC-8CE5-925D88082E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E6A771C-4B95-4FFC-8CE5-925D88082E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E6A771C-4B95-4FFC-8CE5-925D88082E18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811016B4-6680-4819-8D00-FA4AFA537B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811016B4-6680-4819-8D00-FA4AFA537B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811016B4-6680-4819-8D00-FA4AFA537B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811016B4-6680-4819-8D00-FA4AFA537B69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -226,6 +232,7 @@ Global
 		{5BB1A5EA-D322-4D3D-9C65-6E06B494A2E0} = {E28271F9-8547-4694-89F5-3F9D23085DBA}
 		{0C4752E7-1F05-403C-A556-2ADCCF158356} = {8AA99D2E-45CF-4137-B4A8-D3B5FD7C63B6}
 		{5E6A771C-4B95-4FFC-8CE5-925D88082E18} = {BC997369-4B55-4FD7-B0C5-D64B2E4BC59D}
+		{811016B4-6680-4819-8D00-FA4AFA537B69} = {BC997369-4B55-4FD7-B0C5-D64B2E4BC59D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EA19761-8B30-6D6D-C337-462DE3A08DD5}

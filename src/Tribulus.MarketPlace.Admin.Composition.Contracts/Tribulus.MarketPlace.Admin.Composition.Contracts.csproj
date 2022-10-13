@@ -5,8 +5,11 @@
     <RootNamespace>Tribulus.MarketPlace.Admin</RootNamespace>
   </PropertyGroup>
 
-
   <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Projects\Tribulus.Composition\src\Tribulus.Composition.csproj" />
     <ProjectReference Include="..\Tribulus.MarketPlace.Admin.Application.Contracts\Tribulus.MarketPlace.Admin.Application.Contracts.csproj" />
   </ItemGroup>
 

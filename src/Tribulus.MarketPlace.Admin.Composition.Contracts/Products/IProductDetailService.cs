@@ -2,10 +2,8 @@
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Products;
 
-public interface IProductCompositionService 
+public interface IProductDetailService
 {
     Task<ProductCompositionDto> GetAsync(Guid id);
-
-    Task<ProductListDto> GetProducts(ProductFilterDto input);
 }
 
