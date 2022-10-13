@@ -11,3 +11,5 @@ public abstract class InventoryAppService : ApplicationService
         ObjectMapperContext = typeof(InventoryApplicationModule);
     }
 }
+
+

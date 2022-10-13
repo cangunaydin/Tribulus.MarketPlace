@@ -12,7 +12,9 @@
     <ProjectReference Include="..\Tribulus.MarketPlace.Application.Contracts\Tribulus.MarketPlace.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Marketing.Application\Tribulus.MarketPlace.Marketing.Application.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Sales.Application\Tribulus.MarketPlace.Sales.Application.csproj" />
-    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Inventory.Application\Tribulus.MarketPlace.Inventory.Application.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Inventory.Application\Tribulus.MarketPlace.Inventory.Application.csproj" />    
+	<ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Shipping\src\Tribulus.MarketPlace.Shipping.Application\Tribulus.MarketPlace.Shipping.Application.csproj" />
+
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="6.0.0" />

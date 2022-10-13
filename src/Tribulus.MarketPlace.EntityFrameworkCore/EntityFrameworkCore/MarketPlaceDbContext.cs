@@ -7,6 +7,8 @@ using Tribulus.MarketPlace.Marketing.Products;
 using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
 using Tribulus.MarketPlace.Sales.Orders;
 using Tribulus.MarketPlace.Sales.Products;
+using Tribulus.MarketPlace.Shipping.EntityFrameworkCore;
+using Tribulus.MarketPlace.Shipping.Products;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -32,7 +34,8 @@ public class MarketPlaceDbContext :
     ITenantManagementDbContext,
     IMarketingDbContext,
     ISalesDbContext,
-    IInventoryDbContext
+    IInventoryDbContext,
+    IShippingDbContext
     
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
@@ -66,6 +69,7 @@ public class MarketPlaceDbContext :
     public DbSet<ProductStock> ProductStocks { get; set; }
     public DbSet<OrderItemQuantity> OrderItemQuantities { get; set; }
     public DbSet<Product> Products { get; set; }
+    public DbSet<ProductDelivery> ProductDelivery { get ; set; }
 
     #endregion
 
@@ -104,5 +108,6 @@ public class MarketPlaceDbContext :
         builder.ConfigureMarketing();
         builder.ConfigureSales();
         builder.ConfigureInventory();
+        builder.ConfigureShipping();
     }
 }

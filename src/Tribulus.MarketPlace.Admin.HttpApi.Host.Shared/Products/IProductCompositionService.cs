@@ -8,5 +8,7 @@ public interface IProductCompositionService : IApplicationService
     Task<ProductViewModelCompositionDto> GetAsync(Guid id);
 
     Task<ProductListDto> GetProducts(ProductFilterDto input);
+
+    Task<ProductViewModelCompositionDto> CreateProduct(CreateCompleteProductDto input);
 }
 

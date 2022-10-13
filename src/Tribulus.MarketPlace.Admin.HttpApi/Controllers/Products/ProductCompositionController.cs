@@ -1,9 +1,11 @@
-﻿
+﻿    
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Events;
+using Tribulus.MarketPlace.Admin.Inventory;
+using Tribulus.MarketPlace.Admin.Inventory.Products;
 using Tribulus.MarketPlace.Admin.Marketing.Products;
 using Tribulus.MarketPlace.Admin.Products;
 using Tribulus.MarketPlace.Admin.Sales.Products;
@@ -11,6 +13,7 @@ using Tribulus.MarketPlace.Localization;
 using Tribulus.MarketPlace.Marketing.Products;
 using Volo.Abp;
 using Volo.Abp.EventBus.Local;
+using Volo.Abp.Users;
 
 namespace Tribulus.MarketPlace.Admin.Controllers;
 
@@ -22,16 +25,19 @@ public class ProductCompositionController : AdminController, IProductComposition
 {
     private readonly IProductAppService _productAppService;
     private readonly IProductPriceAppService _productPriceAppService;
+    private readonly IProductStockAppService _productStockAppService;
     private readonly ILocalEventBus _localEventBus;
     private readonly IMediator _mediator;
     public ProductCompositionController(IProductAppService productAppService,
         IProductPriceAppService productPriceAppService,
         ILocalEventBus localEventBus,
+        IProductStockAppService productStockAppService,
         IMediator mediator)
     {
         LocalizationResource = typeof(MarketPlaceResource);
         _productAppService = productAppService;
         _productPriceAppService = productPriceAppService;
+        _productStockAppService = productStockAppService;
         _localEventBus = localEventBus;
         _mediator = mediator;
     }
@@ -67,7 +73,7 @@ public class ProductCompositionController : AdminController, IProductComposition
             newProductCompositionDto.Product= product;
             result.Products.Add(newProductCompositionDto);
         }
-        result.Products=await _mediator.Send(new ProductListRequested()
+        result.Products= await _mediator.Send(new ProductListRequested()
         {
             Products = result.Products
         });
@@ -78,4 +84,54 @@ public class ProductCompositionController : AdminController, IProductComposition
         return result;
 
     }
+
+    [HttpPost]
+    public async Task<ProductViewModelCompositionDto> CreateProduct(CreateCompleteProductDto input)
+    {
+        var newguid = GuidGenerator.Create();
+        var setproduct = _productAppService.CreateAsync(newguid, new CreateProductDto
+        {
+            Name = input.Name,
+            Description = input.Description
+        });
+
+        var setproductPrice =  _productPriceAppService.CreateAsync(newguid, new CreateProductPriceDto
+        {
+            Price = input.Price
+        });
+
+        var setproductStock = _productStockAppService.CreateAsync(newguid, new CreateProductStockDto
+        {
+            StockCount = input.StockCount
+        });
+
+        await Task.WhenAll(setproduct, setproductPrice, setproductStock);
+
+        return new ProductViewModelCompositionDto()
+        {
+            Product = setproduct.Result,
+            ProductPrice = setproductPrice.Result,
+            ProductStock = setproductStock.Result
+        };
+    }
+
+   // [HttpPost]
+   // public async Task<ProductViewModelCompositionDto> CreateProductMediatR(CreateCompleteProductDto input)
+   // {
+   //     await _mediator.Send(new ProductCreateRequested()
+   //     {
+   //         Product = input.
+   //     }); ;
+
+      
+
+   //;
+
+   //     return new ProductViewModelCompositionDto()
+   //     {
+   //         Product = setproduct.Result,
+   //         ProductPrice = setproductPrice.Result,
+   //         ProductStock = setproductStock.Result
+   //     };
+   // }
 }

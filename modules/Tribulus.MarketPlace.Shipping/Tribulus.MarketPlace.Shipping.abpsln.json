@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "Tribulus.MarketPlace.Shipping": {
+      "path": "Tribulus.MarketPlace.Shipping.abpmdl.json"
+    }
+  }
+}
