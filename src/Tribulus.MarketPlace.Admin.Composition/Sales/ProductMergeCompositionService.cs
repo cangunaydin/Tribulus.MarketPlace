@@ -14,7 +14,7 @@ namespace Tribulus.MarketPlace.Admin.Sales
         ICompositionHandleService,
         IProductCreateService,
         IProductListService,
-                IRemoteService,
+        IRemoteService,
         ITransientDependency
     {
         private readonly IProductPriceAppService _productPriceAppService;

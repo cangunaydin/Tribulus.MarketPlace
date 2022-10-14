@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tribulus.MarketPlace.Admin.ViewModelComposition.Contracts\Tribulus.MarketPlace.Admin.ViewModelComposition.Contracts.csproj" />
+    <ProjectReference Include="..\Tribulus.MarketPlace.Domain\Tribulus.MarketPlace.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Autofac" Version="6.0.0-rc.5" />
+  </ItemGroup>
+
+</Project>

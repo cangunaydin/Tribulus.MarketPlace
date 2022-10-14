@@ -14,8 +14,7 @@ namespace Tribulus.MarketPlace.Admin.Marketing
             IProductDetailService,
         IProductDetailServiceAnother,
         IProductCreateService,
-            ICompositionHandleService,
-
+         ICompositionHandleService,
         IRemoteService,
         ITransientDependency
     {
@@ -25,7 +24,7 @@ namespace Tribulus.MarketPlace.Admin.Marketing
             _productAppService = productPriceAppService;
         }
 
-        public async Task CreateAsync(Guid id,[FromBody] Admin.Products.CreateProductDto input)
+        public async Task CreateAsync(Guid id, [FromBody] Admin.Products.CreateProductDto input)
         {
             var c = new CreateProductDto();
         }
