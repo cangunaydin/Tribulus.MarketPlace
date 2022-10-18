@@ -9,10 +9,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tribulus.MarketPlace.Admin.Application.Contracts\Tribulus.MarketPlace.Admin.Application.Contracts.csproj" />
-    <ProjectReference Include="..\Tribulus.MarketPlace.Admin.HttpApi.Host.Shared\Tribulus.MarketPlace.Admin.HttpApi.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Admin.Marketing.HttpApi\Tribulus.MarketPlace.Admin.Marketing.HttpApi.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Admin.Sales.HttpApi\Tribulus.MarketPlace.Admin.Sales.HttpApi.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Admin.Inventory.HttpApi\Tribulus.MarketPlace.Admin.Inventory.HttpApi.csproj" />
+
+
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Admin.Composition.Contracts\Tribulus.MarketPlace.Admin.Composition.Contracts.csproj" />
+
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Admin.Marketing.Composition\Tribulus.MarketPlace.Admin.Marketing.Composition.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Admin.Sales.Composition\Tribulus.MarketPlace.Admin.Sales.Composition.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Admin.Inventory.Composition\Tribulus.MarketPlace.Admin.Inventory.Composition.csproj" />
+
+
 
   </ItemGroup>
 
