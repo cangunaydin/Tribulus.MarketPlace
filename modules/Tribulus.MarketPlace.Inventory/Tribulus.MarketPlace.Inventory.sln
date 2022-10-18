@@ -39,7 +39,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{2139BB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{AB218B22-27C5-4999-A1C0-FA132B36AE23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tribulus.MarketPlace.Inventory.Application.Contracts.Shared", "src\Tribulus.MarketPlace.Inventory.Application.Contracts.Shared\Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.csproj", "{AB3D1B29-24A7-4C04-B437-CA0EE2D43855}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Inventory.Application.Contracts.Shared", "src\Tribulus.MarketPlace.Inventory.Application.Contracts.Shared\Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.csproj", "{AB3D1B29-24A7-4C04-B437-CA0EE2D43855}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "www", "www", "{E59377C4-5175-46DD-8797-F3ED9BA8338A}"
 EndProject
@@ -49,7 +49,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "admin", "admin", "{CB9AABAE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "console", "console", "{B3997193-8FD6-42DD-9970-6D82B6065D71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tribulus.MarketPlace.Admin.Inventory.Application.Tests", "test\Tribulus.MarketPlace.Admin.Inventory.Application.Tests\Tribulus.MarketPlace.Admin.Inventory.Application.Tests.csproj", "{F8ED08A4-FEEB-42BF-9A2B-5AFD2C5802EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Inventory.Application.Tests", "test\Tribulus.MarketPlace.Admin.Inventory.Application.Tests\Tribulus.MarketPlace.Admin.Inventory.Application.Tests.csproj", "{F8ED08A4-FEEB-42BF-9A2B-5AFD2C5802EA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Inventory.Application", "src\Tribulus.MarketPlace.Admin.Inventory.Application\Tribulus.MarketPlace.Admin.Inventory.Application.csproj", "{347AC0C8-8428-46B2-868F-85B984A70D26}"
 EndProject
@@ -58,6 +58,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Inventory.HttpApi", "src\Tribulus.MarketPlace.Admin.Inventory.HttpApi\Tribulus.MarketPlace.Admin.Inventory.HttpApi.csproj", "{F4F6FE06-5AD4-44A0-B82C-FA628B2798ED}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Inventory.HttpApi.Client", "src\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Client\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Client.csproj", "{C926DF7F-5E50-437B-8875-0E822BA15DD3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Inventory.Composition", "src\Tribulus.MarketPlace.Admin.Inventory.Composition\Tribulus.MarketPlace.Admin.Inventory.Composition.csproj", "{5FF01AB5-8694-4D88-B689-B90BEC3FA5D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,6 +139,10 @@ Global
 		{C926DF7F-5E50-437B-8875-0E822BA15DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C926DF7F-5E50-437B-8875-0E822BA15DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C926DF7F-5E50-437B-8875-0E822BA15DD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FF01AB5-8694-4D88-B689-B90BEC3FA5D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FF01AB5-8694-4D88-B689-B90BEC3FA5D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FF01AB5-8694-4D88-B689-B90BEC3FA5D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FF01AB5-8694-4D88-B689-B90BEC3FA5D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -168,6 +174,7 @@ Global
 		{E3F2CEB3-E0EF-428C-A78E-027559830A71} = {1CB8E476-84DD-41F8-8CCF-CDFDFE622369}
 		{F4F6FE06-5AD4-44A0-B82C-FA628B2798ED} = {1CB8E476-84DD-41F8-8CCF-CDFDFE622369}
 		{C926DF7F-5E50-437B-8875-0E822BA15DD3} = {1CB8E476-84DD-41F8-8CCF-CDFDFE622369}
+		{5FF01AB5-8694-4D88-B689-B90BEC3FA5D3} = {1CB8E476-84DD-41F8-8CCF-CDFDFE622369}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4324B3B4-B60B-4E3C-91D8-59576B4E26DD}
