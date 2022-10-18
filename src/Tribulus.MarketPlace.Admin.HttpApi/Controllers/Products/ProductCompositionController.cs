@@ -71,10 +71,11 @@ public class ProductCompositionController : AdminController, IProductComposition
             newProductCompositionDto.Product = product;
             result.Products.Add(newProductCompositionDto);
         }
-        result.Products = await _mediator.Send(new ProductListRequested()
+        await _mediator.Publish(new ProductListRequested()
         {
             Products = result.Products
         });
+
         //await _localEventBus.PublishAsync(new ProductListRequested()
         //{
         //    Products = result.Products

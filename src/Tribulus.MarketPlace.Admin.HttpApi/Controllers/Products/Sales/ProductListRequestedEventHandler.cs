@@ -9,7 +9,7 @@ using Tribulus.MarketPlace.Sales.Products;
 
 namespace Tribulus.MarketPlace.Admin.Products.Sales;
 
-public class ProductListRequestedEventHandler : IRequestHandler<ProductListRequested, List<ProductViewModelCompositionDto>>
+public class ProductListRequestedEventHandler : INotificationHandler<ProductListRequested>
 {
     private readonly IProductPriceAppService _productPriceAppService;
     public ProductListRequestedEventHandler(IProductPriceAppService productPriceAppService)
@@ -17,7 +17,7 @@ public class ProductListRequestedEventHandler : IRequestHandler<ProductListReque
         _productPriceAppService = productPriceAppService;
     }
 
-    public async Task<List<ProductViewModelCompositionDto>> Handle(ProductListRequested request, CancellationToken cancellationToken)
+    public async Task Handle(ProductListRequested request, CancellationToken cancellationToken)
     {
         var products = request.Products;
         var productPriceInput = new ProductPriceListFilterDto();
@@ -28,8 +28,7 @@ public class ProductListRequestedEventHandler : IRequestHandler<ProductListReque
             var product = products.FirstOrDefault(o => o.Product.Id == productPrice.Id);
             if (product != null)
                 product.ProductPrice = productPrice;
-        }
-        return products;
+        }        
     }
-
+   
 }
