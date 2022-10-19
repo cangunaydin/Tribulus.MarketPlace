@@ -4,57 +4,47 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Events;
-using Tribulus.MarketPlace.Admin.Inventory;
-using Tribulus.MarketPlace.Admin.Inventory.Products;
 using Tribulus.MarketPlace.Admin.Marketing.Products;
 using Tribulus.MarketPlace.Admin.Products;
-using Tribulus.MarketPlace.Admin.Sales.Products;
+using Tribulus.MarketPlace.Admin.Products.Events;
 using Tribulus.MarketPlace.Localization;
 using Tribulus.MarketPlace.Marketing.Products;
 using Volo.Abp;
 using Volo.Abp.EventBus.Local;
-using Volo.Abp.Users;
 
 namespace Tribulus.MarketPlace.Admin.Controllers;
 
-[RemoteService(Name = MarketPlaceRemoteServiceConsts.RemoteServiceName)]
-[Area("products")]
 [ControllerName("ProductComposition")]
-[Route("api/marketplace/product-composition")]
+[Route("api/composition/product")]
 public class ProductCompositionController : AdminController, IProductCompositionService
 {
     private readonly IProductAppService _productAppService;
     private readonly IProductPriceAppService _productPriceAppService;
-    private readonly IProductStockAppService _productStockAppService;
     private readonly ILocalEventBus _localEventBus;
     private readonly IMediator _mediator;
     public ProductCompositionController(IProductAppService productAppService,
         IProductPriceAppService productPriceAppService,
         ILocalEventBus localEventBus,
-        IProductStockAppService productStockAppService,
         IMediator mediator)
     {
         LocalizationResource = typeof(MarketPlaceResource);
         _productAppService = productAppService;
         _productPriceAppService = productPriceAppService;
-        _productStockAppService = productStockAppService;
         _localEventBus = localEventBus;
         _mediator = mediator;
     }
 
     [HttpGet]
     [Route("{id}")]
-    public async Task<ProductViewModelCompositionDto> GetAsync(Guid id)
+    public async Task<ProductCompositionDto> GetAsync(Guid id)
     {
-        var productPrice=_productPriceAppService.GetAsync(id);
-        var product = _productAppService.GetAsync(id);
-        await Task.WhenAll(product,productPrice);
-
-        return new ProductViewModelCompositionDto()
+        var productDetailEto = new ProductDetailEto()
         {
-            Product = product.Result,
-            ProductPrice = productPrice.Result
+            Id = id,
+            Product = new ProductCompositionDto()
         };
+        await _mediator.Publish(productDetailEto);
+        return productDetailEto.Product;
     }
 
     [HttpGet]
@@ -73,16 +63,13 @@ public class ProductCompositionController : AdminController, IProductComposition
             newProductCompositionDto.Product= product;
             result.Products.Add(newProductCompositionDto);
         }
-
-        await _mediator.Publish(new ProductListRequested()
+        result.Products=await _mediator.Send(new ProductListRequested()
         {
-            Products = result.Products
-        });
-        //await _localEventBus.PublishAsync(new ProductListRequested()
-        //{
-        //    Products = result.Products
-        //});
-        return result;
+            Filter = input,
+            Products = null
+        };
+        await _mediator.Publish(productListEto);
+        return productListEto.Products;
 
     }
 

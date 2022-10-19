@@ -38,17 +38,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" Version="1.0.0-rc.*" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" Version="1.0.0-rc.7" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Autofac" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.DistributedLocking" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.Account.Web.OpenIddict" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.Account.Application" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.Account.HttpApi" Version="6.0.0-rc.4" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.DistributedLocking" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.Account.Web.OpenIddict" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.Account.Application" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.Account.HttpApi" Version="6.0.0" />
     <ProjectReference Include="..\Tribulus.MarketPlace.EntityFrameworkCore\Tribulus.MarketPlace.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
