@@ -31,6 +31,7 @@ using Tribulus.MarketPlace.MultiTenancy;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Admin.Shipping;
 
 namespace Tribulus.MarketPlace.Admin;
 
@@ -100,6 +101,8 @@ public class AdminHttpApiHostModule : AbpModule
             options.ConventionalControllers.Create(typeof(AdminMarketingApplicationModule).Assembly);
             options.ConventionalControllers.Create(typeof(AdminSalesApplicationModule).Assembly);
             options.ConventionalControllers.Create(typeof(AdminInventoryApplicationModule).Assembly);
+            options.ConventionalControllers.Create(typeof(AdminShippingApplicationModule).Assembly);
+
         });
     }
 

@@ -21,6 +21,7 @@
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Marketing.EntityFrameworkCore\Tribulus.MarketPlace.Marketing.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Sales.EntityFrameworkCore\Tribulus.MarketPlace.Sales.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Inventory.EntityFrameworkCore\Tribulus.MarketPlace.Inventory.EntityFrameworkCore.csproj" />
+	<ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Shipping\src\Tribulus.MarketPlace.Shipping.EntityFrameworkCore\Tribulus.MarketPlace.Shipping.EntityFrameworkCore.csproj" />
 
   </ItemGroup>
 

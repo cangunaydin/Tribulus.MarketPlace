@@ -12,6 +12,8 @@
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Admin.Marketing.HttpApi.Client\Tribulus.MarketPlace.Admin.Marketing.HttpApi.Client.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Admin.Sales.HttpApi.Client\Tribulus.MarketPlace.Admin.Sales.HttpApi.Client.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Client\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Shipping\src\Tribulus.MarketPlace.Admin.Shipping.HttpApi.Client\Tribulus.MarketPlace.Admin.Shipping.HttpApi.Client.csproj" />
+
   </ItemGroup>
 
   <ItemGroup>
