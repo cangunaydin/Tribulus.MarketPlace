@@ -1,6 +1,7 @@
 using Localization.Resources.AbpUi;
 using MediatR;
 using Tribulus.MarketPlace.Admin.Inventory;
+using Tribulus.MarketPlace.Admin.Inventory.Composition;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Sales;
 using Tribulus.MarketPlace.Admin.Shipping;
@@ -22,6 +23,10 @@ namespace Tribulus.MarketPlace.Admin;
     typeof(AdminShippingHttpApiModule),
     typeof(AdminInventoryHttpApiModule),
     typeof(AdminApplicationContractsModule),
+    typeof(AdminCompositionContractsModule),
+    typeof(AdminMarketingCompositionModule),
+    typeof(AdminSalesCompositionModule),
+    typeof(AdminInventoryCompositionModule),
     typeof(AbpAccountHttpApiModule),
     typeof(AbpIdentityHttpApiModule),
     typeof(AbpPermissionManagementHttpApiModule),
