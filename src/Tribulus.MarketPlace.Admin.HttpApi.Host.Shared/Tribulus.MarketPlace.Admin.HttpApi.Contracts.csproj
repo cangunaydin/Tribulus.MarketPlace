@@ -13,4 +13,10 @@
     <ProjectReference Include="..\Tribulus.MarketPlace.Admin.Application.Contracts\Tribulus.MarketPlace.Admin.Application.Contracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Tribulus.MarketPlace.Marketing.Application.Contracts.Shared">
+      <HintPath>..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Marketing.Application.Contracts.Shared\bin\Debug\netstandard2.0\Tribulus.MarketPlace.Marketing.Application.Contracts.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
