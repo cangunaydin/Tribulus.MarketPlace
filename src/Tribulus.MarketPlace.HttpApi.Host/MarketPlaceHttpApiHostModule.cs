@@ -35,7 +35,6 @@ namespace Tribulus.MarketPlace;
     typeof(MarketPlaceHttpApiModule),
     typeof(MarketPlaceApplicationModule),
     typeof(MarketPlaceEntityFrameworkCoreModule),
-
     typeof(AbpAutofacModule),
     typeof(AbpCachingStackExchangeRedisModule),
     typeof(AbpDistributedLockingModule),

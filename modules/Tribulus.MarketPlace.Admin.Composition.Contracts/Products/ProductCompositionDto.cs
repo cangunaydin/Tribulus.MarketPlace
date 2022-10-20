@@ -9,5 +9,7 @@ namespace Tribulus.MarketPlace.Admin.Products
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int StockCount { get; set; }
+        public string ShippingName { get; set; }
+
     }
 }

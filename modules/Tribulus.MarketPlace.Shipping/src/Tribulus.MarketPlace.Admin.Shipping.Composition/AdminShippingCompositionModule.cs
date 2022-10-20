@@ -3,13 +3,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 
-namespace Tribulus.MarketPlace.Admin.Inventory.Composition
+namespace Tribulus.MarketPlace.Admin.Shipping.Composition
 {
     [DependsOn(
-    typeof(AdminShippingCompositionAutoMapperProfile),
+    typeof(AdminShippingApplicationContractsModule),
     typeof(AbpAutoMapperModule)
     )]
-    public class AdminShippingCompositionModule:AbpModule
+    public class AdminShippingCompositionModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {

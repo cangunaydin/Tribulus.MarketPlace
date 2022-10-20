@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Admin.Shipping;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -17,6 +18,7 @@ namespace Tribulus.MarketPlace.Admin;
     typeof(AdminMarketingHttpApiClientModule),
     typeof(AdminSalesHttpApiClientModule),
     typeof(AdminInventoryHttpApiClientModule),
+    typeof(AdminShippingHttpApiClientModule),
     typeof(AdminApplicationContractsModule),
     typeof(AbpAccountHttpApiClientModule),
     typeof(AbpIdentityHttpApiClientModule),

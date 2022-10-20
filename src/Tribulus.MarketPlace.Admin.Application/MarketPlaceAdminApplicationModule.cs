@@ -1,6 +1,7 @@
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Admin.Shipping;
 using Volo.Abp.Account;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.FeatureManagement;
@@ -16,6 +17,7 @@ namespace Tribulus.MarketPlace.Admin;
     typeof(AdminMarketingApplicationModule),
     typeof(AdminSalesApplicationModule),
     typeof(AdminInventoryApplicationModule),
+    typeof(AdminShippingApplicationModule),
     typeof(MarketPlaceDomainModule),
     typeof(AbpAccountApplicationModule),
     typeof(AdminApplicationContractsModule),

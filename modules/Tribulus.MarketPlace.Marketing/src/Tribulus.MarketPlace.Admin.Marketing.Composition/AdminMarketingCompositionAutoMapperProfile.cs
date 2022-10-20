@@ -14,7 +14,9 @@ public class AdminMarketingCompositionAutoMapperProfile : Profile
          * into multiple profile classes for a better organization. */
         CreateMap<ProductDto, ProductCompositionDto>()
             .Ignore(o => o.Price)
-            .Ignore(o => o.StockCount);
-        
+            .Ignore(o => o.StockCount)
+            .Ignore(o => o.ShippingName);
+
+
     }
 }

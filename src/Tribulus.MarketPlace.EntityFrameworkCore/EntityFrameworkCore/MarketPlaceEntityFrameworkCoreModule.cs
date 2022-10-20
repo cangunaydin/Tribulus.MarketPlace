@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
 using Tribulus.MarketPlace.Marketing.EntityFrameworkCore;
 using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
+using Tribulus.MarketPlace.Shipping.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -22,6 +23,7 @@ namespace Tribulus.MarketPlace.EntityFrameworkCore;
     typeof(MarketingEntityFrameworkCoreModule),
     typeof(SalesEntityFrameworkCoreModule),
     typeof(InventoryEntityFrameworkCoreModule),
+    typeof(ShippingEntityFrameworkCoreModule),
     typeof(MarketPlaceDomainModule),
     typeof(AbpIdentityEntityFrameworkCoreModule),
     typeof(AbpOpenIddictEntityFrameworkCoreModule),

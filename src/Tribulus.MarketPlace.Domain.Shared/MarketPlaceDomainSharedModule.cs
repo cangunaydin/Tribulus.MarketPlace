@@ -2,6 +2,7 @@ using Tribulus.MarketPlace.Inventory;
 using Tribulus.MarketPlace.Localization;
 using Tribulus.MarketPlace.Marketing;
 using Tribulus.MarketPlace.Sales;
+using Tribulus.MarketPlace.Shipping;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.FeatureManagement;
@@ -22,6 +23,7 @@ namespace Tribulus.MarketPlace;
     typeof(MarketingDomainSharedModule),
     typeof(SalesDomainSharedModule),
     typeof(InventoryDomainSharedModule),
+    typeof(ShippingDomainSharedModule),
     typeof(AbpAuditLoggingDomainSharedModule),
     typeof(AbpBackgroundJobsDomainSharedModule),
     typeof(AbpFeatureManagementDomainSharedModule),

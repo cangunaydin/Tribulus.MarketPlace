@@ -3,7 +3,7 @@ using Tribulus.MarketPlace.Admin.Products;
 using Tribulus.MarketPlace.Shipping.Products;
 using Volo.Abp.AutoMapper;
 
-namespace Tribulus.MarketPlace.Admin.Inventory;
+namespace Tribulus.MarketPlace.Admin.Shipping;
 
 public class AdminShippingCompositionAutoMapperProfile : Profile
 {
@@ -15,7 +15,11 @@ public class AdminShippingCompositionAutoMapperProfile : Profile
         CreateMap<ProductDeliveryDto, ProductCompositionDto>()
             .Ignore(o => o.Name)
             .Ignore(o => o.Description)
-            .Ignore(o => o.Price);
-        
+            .Ignore(o => o.Price)
+            .Ignore(o=>o.StockCount);
+
+       
+
+
     }
 }

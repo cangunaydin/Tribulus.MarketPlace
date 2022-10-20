@@ -16,6 +16,7 @@ using Volo.Abp.TenantManagement;
 using Tribulus.MarketPlace.Marketing;
 using Tribulus.MarketPlace.Sales;
 using Tribulus.MarketPlace.Inventory;
+using Tribulus.MarketPlace.Shipping;
 
 namespace Tribulus.MarketPlace;
 
@@ -24,6 +25,7 @@ namespace Tribulus.MarketPlace;
     typeof(MarketingDomainModule),
     typeof(SalesDomainModule),
     typeof(InventoryDomainModule),
+    typeof(ShippingDomainModule),
     typeof(AbpAuditLoggingDomainModule),
     typeof(AbpBackgroundJobsDomainModule),
     typeof(AbpFeatureManagementDomainModule),

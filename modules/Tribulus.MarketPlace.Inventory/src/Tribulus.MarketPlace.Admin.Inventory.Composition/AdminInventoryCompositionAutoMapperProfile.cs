@@ -15,7 +15,10 @@ public class AdminInventoryCompositionAutoMapperProfile : Profile
         CreateMap<ProductStockDto, ProductCompositionDto>()
             .Ignore(o => o.Name)
             .Ignore(o => o.Description)
-            .Ignore(o => o.Price);
-        
+            .Ignore(o => o.Price)
+            .Ignore(o => o.ShippingName);
+            
+
+
     }
 }

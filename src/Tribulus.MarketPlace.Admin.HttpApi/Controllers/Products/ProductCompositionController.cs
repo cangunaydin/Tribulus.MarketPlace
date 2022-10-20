@@ -14,7 +14,7 @@ namespace Tribulus.MarketPlace.Admin.Controllers;
 [Route("api/composition/product")]
 public class ProductCompositionController : AdminController, IProductCompositionService
 {
-    private readonly IMediator _mediator;
+    private readonly IMediator _mediator;   
     public ProductCompositionController(
         IMediator mediator)
     {
