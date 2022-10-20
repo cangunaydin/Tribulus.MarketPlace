@@ -45,6 +45,13 @@ public class ProductCompositionController : AdminController, IProductComposition
         };
         await _mediator.Publish(productListEto);
         return productListEto.Products;
+    }
 
+    [HttpPost]
+    public async Task<ActionResult> PostAsync(ProductCompositionDto input)
+    {
+        return Ok();
+        //await _mediator.Publish(productListEto);
+        //return productListEto.Products;
     }
 }

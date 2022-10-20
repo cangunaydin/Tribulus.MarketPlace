@@ -1,5 +1,5 @@
 using Localization.Resources.AbpUi;
-using MediatR;
+using MassTransit;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Inventory.Composition;
 using Tribulus.MarketPlace.Admin.Marketing;
@@ -39,12 +39,16 @@ public class AdminHttpApiModule : AbpModule
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         ConfigureLocalization();
-        ConfiguteMediatr(context);
+        ConfiguteMassTransitWithMediatR(context);
     }
 
-    private void ConfiguteMediatr(ServiceConfigurationContext context)
+    private void ConfiguteMassTransitWithMediatR(ServiceConfigurationContext context)
     {
-        context.Services.AddMediatR(typeof(AdminHttpApiModule));
+        context.Services.AddMassTransit(cfg =>
+        {
+            cfg.AddMediator();
+            cfg.AddConsumers(typeof(AdminHttpApiModule));
+        });
     }
 
     private void ConfigureLocalization()

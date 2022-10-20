@@ -26,8 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="11.0.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="MassTransit" Version="8.0.7" />
     <PackageReference Include="Volo.Abp.Account.HttpApi" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.Identity.HttpApi" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="6.0.0" />
