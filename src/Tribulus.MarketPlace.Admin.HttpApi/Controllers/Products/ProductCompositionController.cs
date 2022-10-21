@@ -1,4 +1,5 @@
 ﻿
+using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -15,9 +16,12 @@ namespace Tribulus.MarketPlace.Admin.Controllers;
 public class ProductCompositionController : AdminController, IProductCompositionService
 {
     private readonly IMediator _mediator;
-    public ProductCompositionController(
+    private readonly IBus _publishEndpoint;
+
+    public ProductCompositionController(IBus publishEndpoint,
         IMediator mediator)
     {
+        _publishEndpoint = publishEndpoint;
         LocalizationResource = typeof(MarketPlaceResource);
         _mediator = mediator;
     }
@@ -48,8 +52,16 @@ public class ProductCompositionController : AdminController, IProductComposition
     }
 
     [HttpPost]
-    public async Task<ActionResult> PostAsync(ProductCompositionDto input)
+    public async Task<ActionResult> PostAsync([FromBody] ProductCompositionDto input)
     {
+        await _publishEndpoint.Publish<ProductSubmittedEvent>(new
+        {
+            Name = input.Name,
+            Description = input.Description,
+            Price = input.Price,
+            StockCount = input.StockCount,
+            CorrelationId = Guid.NewGuid()
+        });
         return Ok();
         //await _mediator.Publish(productListEto);
         //return productListEto.Products;

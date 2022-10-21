@@ -1,8 +1,14 @@
+using GettingStarted;
 using Localization.Resources.AbpUi;
 using MassTransit;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
+using Tribulus.MarketPlace.Admin.Courier.Activities;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Inventory.Composition;
 using Tribulus.MarketPlace.Admin.Marketing;
+using Tribulus.MarketPlace.Admin.Products.Saga;
 using Tribulus.MarketPlace.Admin.Sales;
 using Tribulus.MarketPlace.Admin.Shipping;
 using Tribulus.MarketPlace.Localization;
@@ -46,9 +52,21 @@ public class AdminHttpApiModule : AbpModule
     {
         context.Services.AddMassTransit(cfg =>
         {
-            cfg.AddMediator();
-            cfg.AddConsumers(typeof(AdminHttpApiModule));
+            cfg.AddConsumers(Assembly.GetExecutingAssembly());
+            cfg.AddActivities(Assembly.GetExecutingAssembly());           
+            cfg.SetKebabCaseEndpointNameFormatter();
+            cfg.AddSagaStateMachine<ProductCourierStateMachine, ProductTransactionState>()
+                .InMemoryRepository();
+            cfg.UsingInMemory((c, inmcfg) =>
+            {
+                inmcfg.ConfigureEndpoints(c);
+            });          
         });
+
+        //context.Services.AddMassTransitHostedService();
+        context.Services.AddScoped<ProductTransactionSubmittedActivity>();
+        context.Services.AddMediatR(typeof(AdminHttpApiModule).Assembly);
+        context.Services.AddHostedService<Worker>();
     }
 
     private void ConfigureLocalization()

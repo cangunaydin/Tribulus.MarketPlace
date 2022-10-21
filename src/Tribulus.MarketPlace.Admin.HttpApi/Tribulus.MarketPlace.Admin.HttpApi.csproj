@@ -5,6 +5,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>Tribulus.MarketPlace.Admin</RootNamespace>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MassTransit" Version="8.0.7" />
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
     <PackageReference Include="Volo.Abp.Account.HttpApi" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.Identity.HttpApi" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="6.0.0" />
