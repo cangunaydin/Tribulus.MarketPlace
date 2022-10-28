@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using Tribulus.MarketPlace.Admin.Marketing.Courier.Activities;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 
@@ -13,7 +14,6 @@ public class AdminMarketingCompositionModule:AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddMediatR(typeof(AdminMarketingCompositionModule));
         context.Services.AddAutoMapperObjectMapper<AdminMarketingCompositionModule>();
         Configure<AbpAutoMapperOptions>(options =>
         {

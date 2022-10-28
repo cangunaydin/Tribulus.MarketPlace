@@ -14,4 +14,10 @@
     <ProjectReference Include="..\Tribulus.MarketPlace.Marketing.Domain\Tribulus.MarketPlace.Marketing.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Tribulus.MarketPlace.Admin.Composition.Contracts">
+      <HintPath>..\..\..\Tribulus.MarketPlace.Admin.Composition.Contracts\obj\Debug\net6.0\ref\Tribulus.MarketPlace.Admin.Composition.Contracts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -16,9 +16,9 @@ namespace Tribulus.MarketPlace.Admin.Controllers;
 public class ProductCompositionController : AdminController, IProductCompositionService
 {
     private readonly IMediator _mediator;
-    private readonly IBus _publishEndpoint;
+    private readonly IPublishEndpoint _publishEndpoint;
 
-    public ProductCompositionController(IBus publishEndpoint,
+    public ProductCompositionController(IPublishEndpoint publishEndpoint,
         IMediator mediator)
     {
         _publishEndpoint = publishEndpoint;
@@ -54,7 +54,7 @@ public class ProductCompositionController : AdminController, IProductComposition
     [HttpPost]
     public async Task<ActionResult> PostAsync([FromBody] ProductCompositionDto input)
     {
-        await _publishEndpoint.Publish<ProductSubmittedEvent>(new
+        await _publishEndpoint.Publish<SubmitProductEvent>(new
         {
             Name = input.Name,
             Description = input.Description,
@@ -62,8 +62,6 @@ public class ProductCompositionController : AdminController, IProductComposition
             StockCount = input.StockCount,
             CorrelationId = Guid.NewGuid()
         });
-        return Ok();
-        //await _mediator.Publish(productListEto);
-        //return productListEto.Products;
+        return Ok(input);    
     }
 }

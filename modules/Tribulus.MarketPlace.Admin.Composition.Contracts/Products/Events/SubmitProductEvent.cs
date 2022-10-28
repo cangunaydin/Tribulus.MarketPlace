@@ -2,7 +2,7 @@
 
 namespace Tribulus.MarketPlace.Admin.Products.Events
 {
-    public interface ProductSubmittedEvent
+    public interface SubmitProductEvent
     {
         public Guid ProductId { get; }
         public Guid CorrelationId { get; }

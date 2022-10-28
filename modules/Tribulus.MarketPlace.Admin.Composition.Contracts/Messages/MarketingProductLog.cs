@@ -2,7 +2,7 @@
 
 namespace Tribulus.MarketPlace.Admin
 {
-    public interface SubmitMarketingProductLog
+    public interface MarketingProductLog
     {
         public Guid ProductId { get; set; }
     }

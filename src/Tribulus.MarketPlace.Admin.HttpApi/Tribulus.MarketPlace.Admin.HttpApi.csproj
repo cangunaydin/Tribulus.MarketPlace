@@ -27,13 +27,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+    <PackageReference Include="MassTransit" Version="8.0.7" />
     <PackageReference Include="Volo.Abp.Account.HttpApi" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.Identity.HttpApi" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.TenantManagement.HttpApi" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.SettingManagement.HttpApi" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Tribulus.MarketPlace.Admin.Marketing.Application">
+      <HintPath>..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Admin.Marketing.Application\obj\Debug\net6.0\ref\Tribulus.MarketPlace.Admin.Marketing.Application.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
