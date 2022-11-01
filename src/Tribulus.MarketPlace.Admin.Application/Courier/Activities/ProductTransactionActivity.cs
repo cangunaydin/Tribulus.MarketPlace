@@ -1,9 +1,7 @@
-﻿using Automatonymous;
-using MassTransit;
+﻿using MassTransit;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
-using Tribulus.MarketPlace.Admin.Constants;
 using Tribulus.MarketPlace.Admin.Products;
 using Tribulus.MarketPlace.Admin.Products.Events;
 
@@ -26,9 +24,7 @@ namespace Tribulus.MarketPlace.Admin.Courier.Activities
 
         public async Task Execute(BehaviorContext<ProductTransactionState, SubmitProductEvent> context, IBehavior<ProductTransactionState, SubmitProductEvent> next)
         {
-            var sendEndpoint = await context.GetSendEndpoint(QueueNames.GetMessageUri(nameof(FullfillProductTransactionMessage)));
-            //var sendEndpoint = await context.GetSendEndpoint(new Uri("loopback://localhost/product-transaction-state"));
-            _logger.LogInformation($"Call Product Transaction consumer for sendEndpoint {sendEndpoint}");
+            _logger.LogInformation("Call Product Transaction consumer for FullfillProductTransactionMessage");
             await context.Publish<FullfillProductTransactionMessage>(new
             {
                 Name = context.Message.Name,

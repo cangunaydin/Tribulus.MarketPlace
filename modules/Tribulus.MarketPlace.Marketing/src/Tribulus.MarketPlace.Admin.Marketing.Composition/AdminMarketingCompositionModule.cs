@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using Tribulus.MarketPlace.Admin.Marketing.Courier.Activities;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 

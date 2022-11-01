@@ -8,6 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Admin.Composition.Contracts\Tribulus.MarketPlace.Admin.Composition.Contracts.csproj" />
 		<ProjectReference Include="..\Tribulus.MarketPlace.Admin.Application.Contracts\Tribulus.MarketPlace.Admin.Application.Contracts.csproj" />
 		<ProjectReference Include="..\Tribulus.MarketPlace.Domain\Tribulus.MarketPlace.Domain.csproj" />
 		<ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Admin.Marketing.Application\Tribulus.MarketPlace.Admin.Marketing.Application.csproj" />

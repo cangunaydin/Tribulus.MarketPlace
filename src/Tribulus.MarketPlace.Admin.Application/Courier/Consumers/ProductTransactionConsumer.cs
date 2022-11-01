@@ -15,27 +15,37 @@ namespace Tribulus.MarketPlace.Admin.Courier.Consumers
 
         public ProductTransactionConsumer(ILogger<ProductTransactionConsumer> logger)
         {
-            _logger = logger;            
+            _logger = logger;
         }
 
         public async Task Consume(ConsumeContext<FullfillProductTransactionMessage> context)
         {
 
-            _logger.LogInformation($"Fullfilled Product {context.Message.Name}");
-            var builder = new RoutingSlipBuilder(NewId.NextGuid());
-            var submitMarketingUrl = QueueNames.GetActivityUri(nameof(ProductMarketingActivity));
-
-            builder.AddActivity("SubmitMarketingProduct", submitMarketingUrl, new
+            _logger.LogInformation($"Product Transaction Consumer Executed--> {context.Message.Name}");
+            RoutingSlipBuilder builder = new RoutingSlipBuilder(NewId.NextGuid());
+            ProductMarketingActivityExtension.AddProductMarketingActivity(builder, new System.Uri(EndpointsUri.MainUri + EndpointsUri.ProductMarketingActivityUri), new
             {
                 Name = context.Message.Name,
                 Description = context.Message.Description
             });
 
-            builder.AddActivity("SubmitInventoryProduct", QueueNames.GetActivityUri(nameof(ProductInventoryActivity)), new
+            ProductInventoryActivityExtension.AddProductInventoryActivity(builder, new System.Uri(EndpointsUri.MainUri + EndpointsUri.ProductInventoryActivityUri), new
             {
                 context.Message.ProductId,
-                context.Message.StockCount                
+                context.Message.StockCount
             });
+
+            //builder.AddActivity("product-marketing-activity", QueueNames.GetActivityUri(nameof(ProductMarketingActivity)), new
+            //{
+            //    Name = context.Message.Name,
+            //    Description = context.Message.Description
+            //});
+
+            //builder.AddActivity("product-inventory-activity", QueueNames.GetActivityUri(nameof(ProductInventoryActivity)), new
+            //{
+            //    context.Message.ProductId,
+            //    context.Message.StockCount
+            //});
 
             //builder.AddActivity("SubmitSalesProduct", QueueNames.GetActivityUri(nameof(ProductSalesActivity)), new
             //{
@@ -53,9 +63,9 @@ namespace Tribulus.MarketPlace.Admin.Courier.Consumers
                 RoutingSlipEventContents.None, x => x.Send<ProductFullfillCompleted>(new { context.Message.ProductId }));
 
             var routingSlip = builder.Build();
-            await context.Execute(routingSlip); 
+            await context.Execute(routingSlip);
             //await context.Execute(routingSlip).ConfigureAwait(true);
-            
+
 
         }
     }
