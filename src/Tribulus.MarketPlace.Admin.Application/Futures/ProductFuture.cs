@@ -11,12 +11,8 @@ namespace Tribulus.MarketPlace.Admin.Futures
             ConfigureCommand(x => x.CorrelateById(context => context.Message.ProductId));
 
 
-           // SendRequests<ProductMarketingCreate, ProductMarketing>(x => x., x =>
-           // {
-           //     x.UsingRequestInitializer(MapOrderBurger);
-           //     x.TrackPendingRequest(message => message.OrderLineId);
-           // })
-           //.OnResponseReceived<ProductMarketingCompleted>(x => x.CompletePendingRequest(message => message.ProductLineId));
+            //SendRequests<ProductMarketingCreate, ProductMarketing>(x=>x.)
+            //   .OnResponseReceived<ProductCompleted>(x => x.CompletePendingRequest(message => message.ProductId));
         }
     }
 }
