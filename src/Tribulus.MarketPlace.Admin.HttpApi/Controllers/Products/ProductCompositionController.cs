@@ -52,16 +52,16 @@ public class ProductCompositionController : AdminController, IProductComposition
     }
 
     [HttpPost]
-    public async Task<ActionResult> PostAsync([FromBody] ProductCompositionDto input)
+    public async Task<ActionResult> PostAsync([FromBody] ProductCompositionDto product)
     {
         await _publishEndpoint.Publish<SubmitProductEvent>(new
         {
-            Name = input.Name,
-            Description = input.Description,
-            Price = input.Price,
-            StockCount = input.StockCount,
+            Name = product.Name,
+            Description = product.Description,
+            Price = product.Price,
+            StockCount = product.StockCount,
             CorrelationId = Guid.NewGuid()
         });
-        return Ok(input);    
+        return Ok(product);
     }
 }

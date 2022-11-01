@@ -1,6 +1,7 @@
 ﻿using MassTransit;
 using MassTransit.Courier.Contracts;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Constants;
 using Tribulus.MarketPlace.Admin.Inventory.Courier.Activities;
@@ -12,10 +13,14 @@ namespace Tribulus.MarketPlace.Admin.Courier.Consumers
     public class ProductTransactionConsumer : IConsumer<FullfillProductTransactionMessage>
     {
         private readonly ILogger<ProductTransactionConsumer> _logger;
+        private readonly Uri _marketingUri;
+        private readonly Uri _inventoryUri;
 
         public ProductTransactionConsumer(ILogger<ProductTransactionConsumer> logger)
         {
             _logger = logger;
+            _marketingUri = new Uri(EndpointsUri.MainUri + EndpointsUri.ProductMarketingActivityUri);
+            _inventoryUri = new Uri(EndpointsUri.MainUri + EndpointsUri.ProductInventoryActivityUri);
         }
 
         public async Task Consume(ConsumeContext<FullfillProductTransactionMessage> context)
@@ -23,13 +28,13 @@ namespace Tribulus.MarketPlace.Admin.Courier.Consumers
 
             _logger.LogInformation($"Product Transaction Consumer Executed--> {context.Message.Name}");
             RoutingSlipBuilder builder = new RoutingSlipBuilder(NewId.NextGuid());
-            ProductMarketingActivityExtension.AddProductMarketingActivity(builder, new System.Uri(EndpointsUri.MainUri + EndpointsUri.ProductMarketingActivityUri), new
+            ProductMarketingActivityExtension.AddProductMarketingActivity(builder, _marketingUri, new
             {
                 Name = context.Message.Name,
                 Description = context.Message.Description
             });
 
-            ProductInventoryActivityExtension.AddProductInventoryActivity(builder, new System.Uri(EndpointsUri.MainUri + EndpointsUri.ProductInventoryActivityUri), new
+            ProductInventoryActivityExtension.AddProductInventoryActivity(builder, _inventoryUri, new
             {
                 context.Message.ProductId,
                 context.Message.StockCount
