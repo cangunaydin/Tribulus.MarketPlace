@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Win32;
 using Tribulus.MarketPlace.Admin.Courier.Activities;
-using Tribulus.MarketPlace.Admin.Products.Events;
+using Tribulus.MarketPlace.Admin.Products.Models;
 
 namespace Tribulus.MarketPlace.Admin.Products.Saga
 {
@@ -32,14 +32,14 @@ namespace Tribulus.MarketPlace.Admin.Products.Saga
 
         public State Submitted { get; private set; }
 
-        public Event<SubmitProductEvent> SubmitProduct { get; private set; }
+        public Event<SubmitProduct> SubmitProduct { get; private set; }
 
-        void ProductCreated(BehaviorContext<ProductTransactionState, ProductFullfillCompleted> context)
+        void ProductCreated(BehaviorContext<ProductTransactionState, ProductCompleted> context)
         {
             _logger.LogInformation("State Machine-->Product Created: {0}", context.Message.ProductId);
         }
 
-        void ProductFaulted(BehaviorContext<ProductTransactionState, ProductFullfilledFaulted> context)
+        void ProductFaulted(BehaviorContext<ProductTransactionState, ProductFaulted> context)
         {
             _logger.LogInformation("State Machine-->Product Created: {0}", context.Message.ProductId);
         }

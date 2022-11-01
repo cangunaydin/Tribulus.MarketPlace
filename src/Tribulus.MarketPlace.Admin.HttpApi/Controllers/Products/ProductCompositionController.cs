@@ -6,6 +6,7 @@ using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Products;
 using Tribulus.MarketPlace.Admin.Products.Events;
+using Tribulus.MarketPlace.Admin.Products.Models;
 using Tribulus.MarketPlace.Localization;
 using Volo.Abp.Application.Dtos;
 
@@ -17,13 +18,16 @@ public class ProductCompositionController : AdminController, IProductComposition
 {
     private readonly IMediator _mediator;
     private readonly IPublishEndpoint _publishEndpoint;
+    private readonly IRequestClient<SubmitProduct> _client;
 
     public ProductCompositionController(IPublishEndpoint publishEndpoint,
+        IRequestClient<SubmitProduct> client,
         IMediator mediator)
     {
         _publishEndpoint = publishEndpoint;
         LocalizationResource = typeof(MarketPlaceResource);
         _mediator = mediator;
+        _client = client;
     }
 
     [HttpGet]
@@ -54,14 +58,36 @@ public class ProductCompositionController : AdminController, IProductComposition
     [HttpPost]
     public async Task<ActionResult> PostAsync([FromBody] ProductCompositionDto product)
     {
-        await _publishEndpoint.Publish<SubmitProductEvent>(new
+        //await _publishEndpoint.Publish<SubmitProductEvent>(new
+        //{
+        //    Name = product.Name,
+        //    Description = product.Description,
+        //    Price = product.Price,
+        //    StockCount = product.StockCount,
+        //    CorrelationId = Guid.NewGuid()
+        //});
+        //return Ok(product);
+
+        try
         {
-            Name = product.Name,
-            Description = product.Description,
-            Price = product.Price,
-            StockCount = product.StockCount,
-            CorrelationId = Guid.NewGuid()
-        });
-        return Ok(product);
+            Response response = await _client.GetResponse<ProductCompleted, ProductFaulted>(product);
+
+            return response switch
+            {
+                (_, ProductCompleted completed) => Ok(new
+                {
+                    completed.ProductId,
+                }),
+                (_, ProductFaulted faulted) => BadRequest(new
+                {
+                    faulted.ProductId,
+                }),
+                _ => BadRequest()
+            };
+        }
+        catch (RequestTimeoutException ex)
+        {
+            return Ok(ex.Message);
+        }
     }
 }

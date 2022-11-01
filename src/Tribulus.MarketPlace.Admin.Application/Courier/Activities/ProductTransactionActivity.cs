@@ -3,11 +3,11 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Products;
-using Tribulus.MarketPlace.Admin.Products.Events;
+using Tribulus.MarketPlace.Admin.Products.Models;
 
 namespace Tribulus.MarketPlace.Admin.Courier.Activities
 {
-    public class ProductTransactionActivity : IStateMachineActivity<ProductTransactionState, SubmitProductEvent>
+    public class ProductTransactionActivity : IStateMachineActivity<ProductTransactionState, SubmitProduct>
     {
         private readonly ILogger<ProductTransactionActivity> _logger;
 
@@ -22,7 +22,7 @@ namespace Tribulus.MarketPlace.Admin.Courier.Activities
             visitor.Visit(this);
         }
 
-        public async Task Execute(BehaviorContext<ProductTransactionState, SubmitProductEvent> context, IBehavior<ProductTransactionState, SubmitProductEvent> next)
+        public async Task Execute(BehaviorContext<ProductTransactionState, SubmitProduct> context, IBehavior<ProductTransactionState, SubmitProduct> next)
         {
             _logger.LogInformation("Call Product Transaction consumer for FullfillProductTransactionMessage");
             await context.Publish<FullfillProductTransactionMessage>(new
@@ -38,7 +38,7 @@ namespace Tribulus.MarketPlace.Admin.Courier.Activities
             //throw new NotImplementedException();
         }
 
-        public Task Faulted<TException>(BehaviorExceptionContext<ProductTransactionState, SubmitProductEvent, TException> context, IBehavior<ProductTransactionState, SubmitProductEvent> next) where TException : Exception
+        public Task Faulted<TException>(BehaviorExceptionContext<ProductTransactionState, SubmitProduct, TException> context, IBehavior<ProductTransactionState, SubmitProduct> next) where TException : Exception
         {
             return next.Faulted(context);
         }

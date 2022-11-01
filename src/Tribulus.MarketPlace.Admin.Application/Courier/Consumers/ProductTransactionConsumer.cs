@@ -7,6 +7,7 @@ using Tribulus.MarketPlace.Admin.Constants;
 using Tribulus.MarketPlace.Admin.Inventory.Courier.Activities;
 using Tribulus.MarketPlace.Admin.Marketing.Courier.Activities;
 using Tribulus.MarketPlace.Admin.Products;
+using Tribulus.MarketPlace.Admin.Products.Models;
 
 namespace Tribulus.MarketPlace.Admin.Courier.Consumers
 {
@@ -61,11 +62,11 @@ namespace Tribulus.MarketPlace.Admin.Courier.Consumers
 
             await builder.AddSubscription(context.SourceAddress,
                 RoutingSlipEvents.Faulted | RoutingSlipEvents.Supplemental,
-                RoutingSlipEventContents.None, x => x.Send<ProductFullfilledFaulted>(new { context.Message.ProductId }));
+                RoutingSlipEventContents.None, x => x.Send<ProductFaulted>(new { context.Message.ProductId }));
 
             await builder.AddSubscription(context.SourceAddress,
                 RoutingSlipEvents.Completed | RoutingSlipEvents.Supplemental,
-                RoutingSlipEventContents.None, x => x.Send<ProductFullfillCompleted>(new { context.Message.ProductId }));
+                RoutingSlipEventContents.None, x => x.Send<ProductCompleted>(new { context.Message.ProductId }));
 
             var routingSlip = builder.Build();
             await context.Execute(routingSlip);
