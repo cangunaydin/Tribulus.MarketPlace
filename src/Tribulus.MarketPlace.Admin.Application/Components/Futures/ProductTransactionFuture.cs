@@ -11,7 +11,7 @@ namespace Tribulus.MarketPlace.Admin.Futures
         {
             ConfigureCommand(x => x.CorrelateById(context => context.Message.ProductTransactionId));
 
-            SendRequests<Product, ProductTransaction>(x => x.Products, x =>
+            SendRequests<Product, ProductTransactionProduct>(x => x.Products, x =>
             {
                 x.UsingRequestInitializer(MapProductCreate);
                 x.TrackPendingRequest(message => message.ProductId);
