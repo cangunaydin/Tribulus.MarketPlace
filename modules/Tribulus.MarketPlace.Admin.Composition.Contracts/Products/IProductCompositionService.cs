@@ -9,5 +9,6 @@ public interface IProductCompositionService : IApplicationService
     Task<ProductCompositionDto> GetAsync(Guid id);
 
     Task<PagedResultDto<ProductCompositionDto>> GetProducts(ProductFilterDto input);
+
 }
 

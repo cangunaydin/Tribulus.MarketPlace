@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\..\Tribulus.MarketPlace.Admin.Composition.Contracts\Tribulus.MarketPlace.Admin.Composition.Contracts.csproj" />
+    <PackageReference Include="MassTransit" Version="8.0.7" />
     <PackageReference Include="MediatR" Version="11.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Volo.Abp.AutoMapper" Version="6.0.0" />

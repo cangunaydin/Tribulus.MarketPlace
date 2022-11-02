@@ -1,5 +1,9 @@
 using Localization.Resources.AbpUi;
+using MassTransit;
 using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Reflection;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Inventory.Composition;
 using Tribulus.MarketPlace.Admin.Marketing;
@@ -17,6 +21,7 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 
 namespace Tribulus.MarketPlace.Admin;
+
 
 [DependsOn(
     typeof(AdminMarketingHttpApiModule),
@@ -41,14 +46,11 @@ public class AdminHttpApiModule : AbpModule
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         ConfigureLocalization();
-        ConfiguteMediatr(context);
+
     }
 
-    private void ConfiguteMediatr(ServiceConfigurationContext context)
-    {
-        context.Services.AddMediatR(typeof(AdminHttpApiModule));
-    }
-
+    
+   
     private void ConfigureLocalization()
     {
         Configure<AbpLocalizationOptions>(options =>
