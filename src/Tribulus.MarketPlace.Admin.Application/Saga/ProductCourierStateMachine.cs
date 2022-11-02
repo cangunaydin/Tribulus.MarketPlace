@@ -1,7 +1,7 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.Logging;
 using Microsoft.Win32;
-using Tribulus.MarketPlace.Admin.Courier.Activities;
+using Tribulus.MarketPlace.Admin.Components.Activities;
 using Tribulus.MarketPlace.Admin.Products.Models;
 
 namespace Tribulus.MarketPlace.Admin.Products.Saga
@@ -18,28 +18,28 @@ namespace Tribulus.MarketPlace.Admin.Products.Saga
             this.ConfigureCorrelationIds();
             Initially(
                When(SubmitProduct)
-               .Then(x => x.Saga.ProductId = x.Message.ProductId)
-               .Then(x => logger.LogInformation($"Product Transaction {x.Message.ProductId} submittedb --> State Machine"))
+               .Then(x => x.Saga.ProductId = x.Message.ProductTransactionId)
+               .Then(x => logger.LogInformation($"Product Transaction {x.Message.ProductTransactionId} submittedb --> State Machine"))
                .Activity(c => c.OfType<ProductTransactionActivity>())
                .TransitionTo(Submitted)
                );           
         }
         private void ConfigureCorrelationIds()
         {
-            Event(() => SubmitProduct, x => x.CorrelateById(context => context.Message.ProductId));
+            Event(() => SubmitProduct, x => x.CorrelateById(context => context.Message.ProductTransactionId));
 
         }
 
         public State Submitted { get; private set; }
 
-        public Event<SubmitProduct> SubmitProduct { get; private set; }
+        public Event<SubmitProductTransaction> SubmitProduct { get; private set; }
 
-        void ProductCreated(BehaviorContext<ProductTransactionState, ProductCompleted> context)
+        void ProductCreated(BehaviorContext<ProductTransactionState, SubmitProductTransactionCompleted> context)
         {
             _logger.LogInformation("State Machine-->Product Created: {0}", context.Message.ProductId);
         }
 
-        void ProductFaulted(BehaviorContext<ProductTransactionState, ProductFaulted> context)
+        void ProductFaulted(BehaviorContext<ProductTransactionState, SubmitProductTransactionFaulted> context)
         {
             _logger.LogInformation("State Machine-->Product Created: {0}", context.Message.ProductId);
         }

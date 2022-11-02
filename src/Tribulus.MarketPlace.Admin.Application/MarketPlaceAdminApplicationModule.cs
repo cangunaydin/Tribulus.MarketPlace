@@ -1,14 +1,15 @@
 using MassTransit;
-using Microsoft.Extensions.DependencyInjection;
-using System;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using System.Reflection;
+using Tribulus.MarketPlace.Admin.Components.ItineraryPlanners;
 using Tribulus.MarketPlace.Admin.Constants;
-using Tribulus.MarketPlace.Admin.Courier.Consumers;
+using Tribulus.MarketPlace.Admin.Futures;
 using Tribulus.MarketPlace.Admin.Inventory;
-using Tribulus.MarketPlace.Admin.Inventory.Courier.Activities;
+using Tribulus.MarketPlace.Admin.Inventory.Components.Activities;
 using Tribulus.MarketPlace.Admin.Marketing;
-using Tribulus.MarketPlace.Admin.Marketing.Courier.Activities;
-using Tribulus.MarketPlace.Admin.Products.Saga;
+using Tribulus.MarketPlace.Admin.Marketing.Components.Activities;
+using Tribulus.MarketPlace.Admin.Products;
+using Tribulus.MarketPlace.Admin.Products.Models;
 using Tribulus.MarketPlace.Admin.Sales;
 using Tribulus.MarketPlace.Admin.Shipping;
 using Volo.Abp.Account;
@@ -44,39 +45,54 @@ public class MarketPlaceAdminApplicationModule : AbpModule
         {
             options.AddMaps<MarketPlaceAdminApplicationModule>();
         });
-
         ConfiguteMassTransitWithMediatR(context);
     }
 
 
     private void ConfiguteMassTransitWithMediatR(ServiceConfigurationContext context)
     {
+
+        context.Services.TryAddScoped<IItineraryPlanner<ProductTransactionProduct>, ProductItineraryPlanner>();
+
         context.Services.AddMassTransit(cfg =>
-        {         
+        {
             cfg.SetKebabCaseEndpointNameFormatter();
-         
+
+            //cfg.AddSagaStateMachine<ProductCourierStateMachine, ProductTransactionState>()
+            // .InMemoryRepository();
+            cfg.AddConsumers(Assembly.GetExecutingAssembly());
+            cfg.AddActivities(Assembly.GetExecutingAssembly());
+            cfg.AddFuturesFromNamespaceContaining<ProductTransactionFuture>();
+            //cfg.AddConsumer(typeof(ProductTransactionConsumer));
+            cfg.AddActivity(typeof(ProductMarketingActivity)).ExecuteEndpoint(e => e.Name = EndpointsUri.ProductMarketingActivityUri);
+            cfg.AddActivity(typeof(ProductInventoryActivity)).ExecuteEndpoint(e => e.Name = EndpointsUri.ProductInventoryActivityUri);
+            cfg.SetInMemorySagaRepositoryProvider();
+
             cfg.UsingInMemory((c, inmcfg) =>
             {
+                inmcfg.AutoStart = true;
+
+                inmcfg.UseInstrumentation();
+
+                //inmcfg.ApplyCustomBusConfiguration();
+
+                //if (IsRunningInContainer)
+                //    cfg.Host("rabbitmq");
+
+                inmcfg.UseDelayedMessageScheduler();
+
                 inmcfg.ConfigureEndpoints(c);
             });
 
-            cfg.AddSagaStateMachine<ProductCourierStateMachine, ProductTransactionState>()
-             .InMemoryRepository();
-            cfg.AddConsumers(Assembly.GetExecutingAssembly());
-            cfg.AddActivities(Assembly.GetExecutingAssembly());
-            cfg.AddConsumer(typeof(ProductTransactionConsumer));
-            cfg.AddActivity(typeof(ProductMarketingActivity)).ExecuteEndpoint(e => e.Name = EndpointsUri.ProductMarketingActivityUri);
-            cfg.AddActivity(typeof(ProductInventoryActivity)).ExecuteEndpoint(e => e.Name = EndpointsUri.ProductInventoryActivityUri);
-
 
         });
 
-        context.Services.Configure<MassTransitHostOptions>(options =>
-        {
-            options.WaitUntilStarted = true;
-            options.StartTimeout = TimeSpan.FromSeconds(30);
-            options.StopTimeout = TimeSpan.FromMinutes(1);
-        });
+        //context.Services.Configure<MassTransitHostOptions>(options =>
+        //{
+        //    options.WaitUntilStarted = true;
+        //    options.StartTimeout = TimeSpan.FromSeconds(30);
+        //    options.StopTimeout = TimeSpan.FromMinutes(1);
+        //});
 
         //var busControl = context.Services.GetRequiredService<IBusControl>();
 
