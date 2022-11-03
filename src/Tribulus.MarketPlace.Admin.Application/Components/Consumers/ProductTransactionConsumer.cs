@@ -11,7 +11,7 @@ using Tribulus.MarketPlace.Admin.Products.Models;
 
 namespace Tribulus.MarketPlace.Admin.Components.Consumers
 {
-    public class ProductTransactionConsumer : IConsumer<FullfillProductTransactionMessage>
+    public class ProductTransactionConsumer : IConsumer<FullfillProductTransactionMessage>, IConsumer<RoutingSlipCompleted>, IConsumer<RoutingSlipFaulted>
     {
         private readonly ILogger<ProductTransactionConsumer> _logger;
         private readonly Uri _marketingUri;
@@ -62,17 +62,27 @@ namespace Tribulus.MarketPlace.Admin.Components.Consumers
 
             await builder.AddSubscription(context.SourceAddress,
                 RoutingSlipEvents.Faulted | RoutingSlipEvents.Supplemental,
-                RoutingSlipEventContents.None, x => x.Send<SubmitProductTransactionFaulted>(new { context.Message.ProductId }));
+                RoutingSlipEventContents.None, x => x.Send<SubmitProductFaulted>(new { context.Message.ProductId }));
 
             await builder.AddSubscription(context.SourceAddress,
                 RoutingSlipEvents.Completed | RoutingSlipEvents.Supplemental,
-                RoutingSlipEventContents.None, x => x.Send<SubmitProductTransactionCompleted>(new { context.Message.ProductId }));
+                RoutingSlipEventContents.None, x => x.Send<SubmitProductCompleted>(new { context.Message.ProductId }));
 
             var routingSlip = builder.Build();
             await context.Execute(routingSlip);
             //await context.Execute(routingSlip).ConfigureAwait(true);
 
 
+        }
+
+        public Task Consume(ConsumeContext<RoutingSlipCompleted> context)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Consume(ConsumeContext<RoutingSlipFaulted> context)
+        {
+            throw new NotImplementedException();
         }
     }
 }

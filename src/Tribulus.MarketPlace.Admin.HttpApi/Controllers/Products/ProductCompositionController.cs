@@ -18,10 +18,10 @@ public class ProductCompositionController : AdminController, IProductComposition
 {
     private readonly IMediator _mediator;
     private readonly IPublishEndpoint _publishEndpoint;
-    private readonly IRequestClient<SubmitProductTransaction> _client;
+    private readonly IRequestClient<SubmitProduct> _client;
 
     public ProductCompositionController(IPublishEndpoint publishEndpoint,
-        IRequestClient<SubmitProductTransaction> client,
+        IRequestClient<SubmitProduct> client,
         IMediator mediator)
     {
         _publishEndpoint = publishEndpoint;
@@ -70,20 +70,15 @@ public class ProductCompositionController : AdminController, IProductComposition
 
         try
         {
-            ProductTransaction pt = new ProductTransaction()
-            {
-                ProductId = new Guid(),
-                Products = new Product[] { new Product { Name = product.Name, Description = product.Description, Price = product.Price, StockCount = product.StockCount } }
-            };
-            Response response = await _client.GetResponse<SubmitProductTransactionCompleted, SubmitProductTransactionFaulted>(pt);
+            Response response = await _client.GetResponse<SubmitProductCompleted, SubmitProductFaulted>(product);
 
             return response switch
             {
-                (_, SubmitProductTransactionCompleted completed) => Ok(new
+                (_, SubmitProductCompleted completed) => Ok(new
                 {
                     completed.ProductId,
                 }),
-                (_, SubmitProductTransactionFaulted faulted) => BadRequest(new
+                (_, SubmitProductFaulted faulted) => BadRequest(new
                 {
                     faulted.ProductId,
                 }),

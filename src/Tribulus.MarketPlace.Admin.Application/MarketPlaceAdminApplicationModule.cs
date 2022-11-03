@@ -1,15 +1,15 @@
 using MassTransit;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System.Reflection;
+using Tribulus.MarketPlace.Admin.Components.Futures;
 using Tribulus.MarketPlace.Admin.Components.ItineraryPlanners;
 using Tribulus.MarketPlace.Admin.Constants;
-using Tribulus.MarketPlace.Admin.Futures;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Inventory.Components.Activities;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Marketing.Components.Activities;
 using Tribulus.MarketPlace.Admin.Products;
-using Tribulus.MarketPlace.Admin.Products.Models;
 using Tribulus.MarketPlace.Admin.Sales;
 using Tribulus.MarketPlace.Admin.Shipping;
 using Volo.Abp.Account;
@@ -52,20 +52,33 @@ public class MarketPlaceAdminApplicationModule : AbpModule
     private void ConfiguteMassTransitWithMediatR(ServiceConfigurationContext context)
     {
 
-        context.Services.TryAddScoped<IItineraryPlanner<ProductTransactionProduct>, ProductItineraryPlanner>();
+        context.Services.AddScoped<IItineraryPlanner<Product>, ProductItineraryPlanner>();
 
         context.Services.AddMassTransit(cfg =>
         {
-            cfg.SetKebabCaseEndpointNameFormatter();
+            cfg.ApplyCustomMassTransitConfiguration();
+
+            cfg.AddDelayedMessageScheduler();
 
             //cfg.AddSagaStateMachine<ProductCourierStateMachine, ProductTransactionState>()
             // .InMemoryRepository();
             cfg.AddConsumers(Assembly.GetExecutingAssembly());
             cfg.AddActivities(Assembly.GetExecutingAssembly());
-            cfg.AddFuturesFromNamespaceContaining<ProductTransactionFuture>();
             //cfg.AddConsumer(typeof(ProductTransactionConsumer));
-            cfg.AddActivity(typeof(ProductMarketingActivity)).ExecuteEndpoint(e => e.Name = EndpointsUri.ProductMarketingActivityUri);
-            cfg.AddActivity(typeof(ProductInventoryActivity)).ExecuteEndpoint(e => e.Name = EndpointsUri.ProductInventoryActivityUri);
+
+            cfg.AddActivity(typeof(ProductMarketingActivity)).ExecuteEndpoint(e =>
+            {
+                e.Name = EndpointsUri.ProductMarketingActivityUri;
+            });
+            cfg.AddActivity(typeof(ProductInventoryActivity)).ExecuteEndpoint(e =>
+            {
+                e.Name = EndpointsUri.ProductInventoryActivityUri;
+            });
+
+
+            cfg.AddFuturesFromNamespaceContaining<ProductTransactionFuture>();
+
+
             cfg.SetInMemorySagaRepositoryProvider();
 
             cfg.UsingInMemory((c, inmcfg) =>

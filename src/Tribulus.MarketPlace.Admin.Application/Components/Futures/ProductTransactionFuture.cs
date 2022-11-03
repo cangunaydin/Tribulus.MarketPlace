@@ -3,41 +3,48 @@ using System.Linq;
 using Tribulus.MarketPlace.Admin.Products;
 using Tribulus.MarketPlace.Admin.Products.Models;
 
-namespace Tribulus.MarketPlace.Admin.Futures
+namespace Tribulus.MarketPlace.Admin.Components.Futures
 {
-    public class ProductTransactionFuture : Future<SubmitProductTransaction, SubmitProductTransactionCompleted, SubmitProductTransactionFaulted>
+    public class ProductTransactionFuture : Future<SubmitProduct, SubmitProductCompleted, SubmitProductFaulted>
     {
         public ProductTransactionFuture()
         {
-            ConfigureCommand(x => x.CorrelateById(context => context.Message.ProductTransactionId));
+            ConfigureCommand(x => x.CorrelateById(context => context.Message.ProductId));
 
-            SendRequests<Product, ProductTransactionProduct>(x => x.Products, x =>
+            SendRequest<Product>(x =>
             {
-                x.UsingRequestInitializer(MapProductCreate);
+                x.UsingRequestInitializer(context => new
+                {
+                    ProductId = context.Saga.CorrelationId,
+                    context.Message.Name,
+                    context.Message.Description,
+                    context.Message.Price,
+                    context.Message.StockCount
+                });
+
                 x.TrackPendingRequest(message => message.ProductId);
-            }).OnResponseReceived<ProductCreateCompleted>(x => x.CompletePendingRequest(message => message.ProductId));
+            })
+           .OnResponseReceived<ProductCreateCompleted>(x =>
+           {
+               x.CompletePendingRequest(message => message.ProductId);
+           });
 
-            WhenAllCompleted(r => r.SetCompletedUsingInitializer(context => new
+            //SendRequests<Product, ProductTransactionProduct>(x => x.Products, x =>
+            //{
+            //    x.UsingRequestInitializer(MapProductTransactionProduct);
+            //    x.TrackPendingRequest(message => message.ProductId);
+            //}).OnResponseReceived<ProductCreateCompleted>(x => x.CompletePendingRequest(message => message.ProductId));
+
+            WhenAllCompleted(r => r.SetCompletedUsingInitializer(context =>
             {
-                LinesCompleted = context.Saga.Results.Select(x => context.ToObject<SubmitProductTransactionCompleted>(x.Value)).ToDictionary(x => x.ProductId),
+                var message = context.GetCommand<SubmitProduct>();
+
+                return new { Description = $"{message.Description} {message.Name} FryShake({context.Saga.Results.Count})" };
             }));
 
             WhenAnyFaulted(f => f.SetFaultedUsingInitializer(MapProductFaulted));
             //SendRequests<ProductMarketingCreate, ProductMarketing>(x=>x.)
             //   .OnResponseReceived<ProductCompleted>(x => x.CompletePendingRequest(message => message.ProductId));
-        }
-
-
-        static object MapProductCreate(BehaviorContext<FutureState, Product> context)
-        {
-            return new
-            {
-                ProductId = context.Saga.CorrelationId,
-                Name = context.Message.Name,
-                Description = context.Message.Description,
-                Price = context.Message.Price,
-                StockCount = context.Message.StockCount,
-            };
         }
 
 

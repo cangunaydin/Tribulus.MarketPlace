@@ -7,7 +7,7 @@ using Tribulus.MarketPlace.Admin.Products.Models;
 
 namespace Tribulus.MarketPlace.Admin.Components.Activities
 {
-    public class ProductTransactionActivity : IStateMachineActivity<ProductTransactionState, SubmitProductTransaction>
+    public class ProductTransactionActivity : IStateMachineActivity<ProductTransactionState, SubmitProduct>
     {
         private readonly ILogger<ProductTransactionActivity> _logger;
 
@@ -22,7 +22,7 @@ namespace Tribulus.MarketPlace.Admin.Components.Activities
             visitor.Visit(this);
         }
 
-        public async Task Execute(BehaviorContext<ProductTransactionState, SubmitProductTransaction> context, IBehavior<ProductTransactionState, SubmitProductTransaction> next)
+        public async Task Execute(BehaviorContext<ProductTransactionState, SubmitProduct> context, IBehavior<ProductTransactionState, SubmitProduct> next)
         {
             _logger.LogInformation("Call Product Transaction consumer for FullfillProductTransactionMessage");
             await context.Publish<FullfillProductTransactionMessage>(new
@@ -38,7 +38,7 @@ namespace Tribulus.MarketPlace.Admin.Components.Activities
             //throw new NotImplementedException();
         }
 
-        public Task Faulted<TException>(BehaviorExceptionContext<ProductTransactionState, SubmitProductTransaction, TException> context, IBehavior<ProductTransactionState, SubmitProductTransaction> next) where TException : Exception
+        public Task Faulted<TException>(BehaviorExceptionContext<ProductTransactionState, SubmitProduct, TException> context, IBehavior<ProductTransactionState, SubmitProduct> next) where TException : Exception
         {
             return next.Faulted(context);
         }
