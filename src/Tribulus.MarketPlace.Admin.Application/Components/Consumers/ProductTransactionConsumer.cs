@@ -7,11 +7,11 @@ using Tribulus.MarketPlace.Admin.Constants;
 using Tribulus.MarketPlace.Admin.Inventory.Components.Activities;
 using Tribulus.MarketPlace.Admin.Marketing.Components.Activities;
 using Tribulus.MarketPlace.Admin.Products;
-using Tribulus.MarketPlace.Admin.Products.Models;
+using Tribulus.MarketPlace.Admin.Models;
 
 namespace Tribulus.MarketPlace.Admin.Components.Consumers
 {
-    public class ProductTransactionConsumer : IConsumer<FullfillProductTransactionMessage>, IConsumer<RoutingSlipCompleted>, IConsumer<RoutingSlipFaulted>
+    public class ProductTransactionConsumer : IConsumer<FullfillProductTransactionMessage>
     {
         private readonly ILogger<ProductTransactionConsumer> _logger;
         private readonly Uri _marketingUri;

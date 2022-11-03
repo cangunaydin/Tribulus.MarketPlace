@@ -6,7 +6,7 @@ using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Products;
 using Tribulus.MarketPlace.Admin.Products.Events;
-using Tribulus.MarketPlace.Admin.Products.Models;
+using Tribulus.MarketPlace.Admin.Models;
 using Tribulus.MarketPlace.Localization;
 using Volo.Abp.Application.Dtos;
 
@@ -70,10 +70,25 @@ public class ProductCompositionController : AdminController, IProductComposition
 
         try
         {
-            Response response = await _client.GetResponse<SubmitProductCompleted, SubmitProductFaulted>(product);
+            var productId = Guid.NewGuid();
+            var model = new
+            {
+                ProductId = productId,
+                Product = new Product()
+                {
+                    Name = product.Name,
+                    Description = product.Description,
+                    Price = product.Price,
+                    StockCount = product.StockCount,
+                    ProductId= productId,
+                }
+            };
+
+            Response response = await _client.GetResponse<SubmitProductCompleted, SubmitProductFaulted>(model);
 
             return response switch
             {
+                //OrderCompleted==>SubmitProductCompleted
                 (_, SubmitProductCompleted completed) => Ok(new
                 {
                     completed.ProductId,

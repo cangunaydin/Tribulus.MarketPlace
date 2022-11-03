@@ -1,6 +1,6 @@
 ﻿using MassTransit;
 using Tribulus.MarketPlace.Admin.Products;
-using Tribulus.MarketPlace.Admin.Products.Models;
+using Tribulus.MarketPlace.Admin.Models;
 
 namespace Tribulus.MarketPlace.Admin.Components.Futures
 {

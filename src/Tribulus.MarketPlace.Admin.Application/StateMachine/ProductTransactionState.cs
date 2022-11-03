@@ -1,7 +1,7 @@
 ﻿using MassTransit;
 using System;
 
-namespace Tribulus.MarketPlace.Admin
+namespace Tribulus.MarketPlace.Admin.StateMachine
 {
     public class ProductTransactionState : SagaStateMachineInstance
     {

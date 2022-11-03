@@ -1,21 +1,64 @@
 ﻿using MassTransit;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Threading.Tasks;
-using Tribulus.MarketPlace.Admin.Products;
-using Tribulus.MarketPlace.Admin.Products.Models;
+using Tribulus.MarketPlace.Admin.Models;
 
 namespace Tribulus.MarketPlace.Admin.Components.Consumers
 {
-    public class SubmitProductConsumer : RoutingSlipRequestConsumer<SubmitProduct>
+    public class SubmitProductConsumer : IConsumer<SubmitProduct>
     {
-        private readonly IItineraryPlanner<Product> _planner;
-        public SubmitProductConsumer(IItineraryPlanner<Product> planner, IEndpointNameFormatter formatter) : base(formatter.Consumer<SubmitProductResponseConsumer>())
+        private readonly IRequestClient<RequestProduct> _client;
+        private readonly ILogger<SubmitProductConsumer> _logger;
+        public SubmitProductConsumer(IRequestClient<RequestProduct> client, ILogger<SubmitProductConsumer> logger)
         {
-            _planner = planner;
+            _logger = logger;
+            _client = client;
         }
 
-        protected override Task BuildItinerary(RoutingSlipBuilder builder, ConsumeContext<SubmitProduct> context)
+        public async Task Consume(ConsumeContext<SubmitProduct> context)
         {
-            throw new System.NotImplementedException();
-        }
+            var product = context.Message.Product;
+            if (product == null)
+                throw new InvalidOperationException("There were no products to create!");
+
+            _logger.LogInformation("Submit Product Request ID: {RequestId}", context.RequestId);
+
+            try
+            {
+                Response<ProductCreateCompleted, ProductCreateFaulted> response = await _client.GetResponse<ProductCreateCompleted, ProductCreateFaulted>(new
+                {
+                    context.Message.ProductId,
+                    Product = product
+                });
+
+                if (response.Is(out Response<ProductCreateCompleted> completed))
+                {
+                    await context.RespondAsync<SubmitProductCompleted>(new
+                    {
+                        context.Message.ProductId,
+                        completed.Message.Product
+                    });
+                }
+                else if (response.Is(out Response<ProductCreateFaulted> notCompleted))
+                {
+                    await context.RespondAsync<SubmitProductFaulted>(new
+                    {
+                        context.Message.ProductId,
+                        completed.Message.Product,
+                        notCompleted.Message.Reason
+                    });
+                }
+            }
+            catch (RequestException exception)
+            {
+                await context.RespondAsync<SubmitProductFaulted>(new
+                {
+                    context.Message.ProductId,
+                    context.Message.Product,
+                    Reason = exception.Message,
+                });
+            }
+        }      
     }
 }

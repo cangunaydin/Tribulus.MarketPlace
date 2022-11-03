@@ -5,8 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Tribulus.MarketPlace.Admin.Products;
-using Tribulus.MarketPlace.Admin.Products.Models;
+using Tribulus.MarketPlace.Admin.Models;
 
 namespace Tribulus.MarketPlace.Admin.Components.Consumers
 {
@@ -18,12 +17,12 @@ namespace Tribulus.MarketPlace.Admin.Components.Consumers
             var productId = context.GetVariable<Guid>("ProductId");
 
             HasVariable(context.Message.Variables, "Product", out Product product);
-            var response = MessageInitializerCache<SubmitProductCompleted>.InitializeMessage(context, new
+            return MessageInitializerCache<SubmitProductCompleted>.InitializeMessage(context, new
             {
                 productId,
                 product
-            });
-            return null;
+            }).Select(x => x.Message);
+
         }
 
         protected override Task<SubmitProductFaulted> CreateFaultedResponseMessage(ConsumeContext<RoutingSlipFaulted> context, SubmitProduct request,
@@ -34,13 +33,12 @@ namespace Tribulus.MarketPlace.Admin.Components.Consumers
             IEnumerable<ExceptionInfo> exceptions = context.Message.ActivityExceptions.Select(x => x.ExceptionInfo);
 
             var reason = exceptions.FirstOrDefault()?.Message ?? "Unknown";
-            var response = MessageInitializerCache<SubmitProductFaulted>.InitializeMessage(context, new
+            return MessageInitializerCache<SubmitProductFaulted>.InitializeMessage(context, new
             {
                 productId,
                 Reason = reason,
                 request
-            });
-            return null;
+            }).Select(x => x.Message);
         }
     }
 }

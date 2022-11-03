@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Constants;
 using Tribulus.MarketPlace.Admin.Inventory.Components.Activities;
 using Tribulus.MarketPlace.Admin.Marketing.Components.Activities;
-using Tribulus.MarketPlace.Admin.Products;
+using Tribulus.MarketPlace.Admin.Models;
 
 namespace Tribulus.MarketPlace.Admin.Components.ItineraryPlanners
 {
-    public class ProductItineraryPlanner :
-    IItineraryPlanner<Product>
+    public class ProductItineraryPlanner: IRoutingSlipItineraryPlanner<Product>
     {
         private readonly ILogger<ProductItineraryPlanner> _logger;
 
@@ -24,10 +23,9 @@ namespace Tribulus.MarketPlace.Admin.Components.ItineraryPlanners
             _inventoryUri = new Uri(EndpointsUri.MainUri + EndpointsUri.ProductInventoryActivityUri);
         }
 
-        public async Task PlanItinerary(BehaviorContext<FutureState, Product> context, IItineraryBuilder builder)
+        public async Task PlanItinerary(Product product, IItineraryBuilder builder)
         {
-            _logger.LogInformation($"Product PlanItinerary Executed--> {context.Message.ProductId}");
-            var product = context.Message;
+            _logger.LogInformation($"Product PlanItinerary Executed--> {product.ProductId}");            
 
             builder.AddVariable("ProductId", product.ProductId);
 
@@ -39,12 +37,12 @@ namespace Tribulus.MarketPlace.Admin.Components.ItineraryPlanners
 
             ProductInventoryActivityExtension.AddProductInventoryActivity(builder, _inventoryUri, new
             {
-                context.Message.ProductId,
+                product.ProductId,
                 product.StockCount
             });
 
             await Task.WhenAll();
-            _logger.LogInformation($"Product PlanItinerary Executed Final--> {context.Message.ProductId}");
+            _logger.LogInformation($"Product PlanItinerary Executed Final--> {product.ProductId}");
         }
     }
 }

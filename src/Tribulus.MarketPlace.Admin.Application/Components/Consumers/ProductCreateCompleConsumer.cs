@@ -1,13 +1,4 @@
-﻿using MassTransit;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tribulus.MarketPlace.Admin.Products;
-using Tribulus.MarketPlace.Admin.Products.Models;
-
-namespace Tribulus.MarketPlace.Admin.Components.Consumers
+﻿namespace Tribulus.MarketPlace.Admin.Components.Consumers
 {
     public class ProductCreateCompleConsumer { }// :
     //IConsumer<Product>

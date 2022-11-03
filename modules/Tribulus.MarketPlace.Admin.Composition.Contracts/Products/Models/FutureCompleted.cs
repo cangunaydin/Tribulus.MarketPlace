@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tribulus.MarketPlace.Admin.Products.Models
+namespace Tribulus.MarketPlace.Admin.Models
 {
     public interface FutureCompleted
     {

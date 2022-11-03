@@ -1,17 +1,19 @@
 using MassTransit;
-using Microsoft.Extensions.DependencyInjection;
+using MassTransit.Components;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System.Reflection;
-using Tribulus.MarketPlace.Admin.Components.Futures;
+using Tribulus.MarketPlace.Admin.Components.Consumers;
 using Tribulus.MarketPlace.Admin.Components.ItineraryPlanners;
 using Tribulus.MarketPlace.Admin.Constants;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Inventory.Components.Activities;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Marketing.Components.Activities;
-using Tribulus.MarketPlace.Admin.Products;
+using Tribulus.MarketPlace.Admin.Models;
+using Tribulus.MarketPlace.Admin.Products.StateMachine;
 using Tribulus.MarketPlace.Admin.Sales;
 using Tribulus.MarketPlace.Admin.Shipping;
+using Tribulus.MarketPlace.Admin.StateMachine;
 using Volo.Abp.Account;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.FeatureManagement;
@@ -52,7 +54,7 @@ public class MarketPlaceAdminApplicationModule : AbpModule
     private void ConfiguteMassTransitWithMediatR(ServiceConfigurationContext context)
     {
 
-        context.Services.AddScoped<IItineraryPlanner<Product>, ProductItineraryPlanner>();
+        context.Services.TryAddScoped<IRoutingSlipItineraryPlanner<Product>, ProductItineraryPlanner>();
 
         context.Services.AddMassTransit(cfg =>
         {
@@ -60,26 +62,35 @@ public class MarketPlaceAdminApplicationModule : AbpModule
 
             cfg.AddDelayedMessageScheduler();
 
-            //cfg.AddSagaStateMachine<ProductCourierStateMachine, ProductTransactionState>()
-            // .InMemoryRepository();
-            cfg.AddConsumers(Assembly.GetExecutingAssembly());
-            cfg.AddActivities(Assembly.GetExecutingAssembly());
-            //cfg.AddConsumer(typeof(ProductTransactionConsumer));
+            //cfg.AddConsumers(Assembly.GetExecutingAssembly());
+
+            //cfg.AddActivities(Assembly.GetExecutingAssembly());
+
+            cfg.AddConsumersFromNamespaceContaining<SubmitProductConsumer>();
+            cfg.AddConsumersFromNamespaceContaining<SubmitProductResponseConsumer>();
 
             cfg.AddActivity(typeof(ProductMarketingActivity)).ExecuteEndpoint(e =>
             {
                 e.Name = EndpointsUri.ProductMarketingActivityUri;
             });
+
             cfg.AddActivity(typeof(ProductInventoryActivity)).ExecuteEndpoint(e =>
             {
                 e.Name = EndpointsUri.ProductInventoryActivityUri;
             });
 
 
-            cfg.AddFuturesFromNamespaceContaining<ProductTransactionFuture>();
+            cfg.AddSagaStateMachine<ProductStateMachine, ProductState>(typeof(ProductSagaDefinition))
+                       .InMemoryRepository();
+
+            cfg.AddSagaStateMachine<RequestStateMachine, RequestState>(typeof(RequestSagaDefinition))
+                .InMemoryRepository();
+
+            //cfg.AddSagaStateMachine<ProductCourierStateMachine, ProductTransactionState>()
+            // .InMemoryRepository();
 
 
-            cfg.SetInMemorySagaRepositoryProvider();
+            //cfg.SetInMemorySagaRepositoryProvider();
 
             cfg.UsingInMemory((c, inmcfg) =>
             {
@@ -97,6 +108,8 @@ public class MarketPlaceAdminApplicationModule : AbpModule
                 inmcfg.ConfigureEndpoints(c);
             });
 
+            cfg.AddRequestClient<SubmitProduct>();
+            cfg.AddRequestClient<RequestProduct>();
 
         });
 

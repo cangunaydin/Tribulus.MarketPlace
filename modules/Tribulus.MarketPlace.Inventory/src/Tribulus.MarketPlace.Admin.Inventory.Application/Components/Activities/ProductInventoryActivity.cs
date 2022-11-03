@@ -29,8 +29,11 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Components.Activities
         public async Task<ExecutionResult> Execute(ExecuteContext<InventoryProductArgument> context)
         {
             _logger.LogInformation($"Inventory Module--> Execute Inventory Courier called for product {context.Arguments.ProductId} Executed");
-            //return context.Completed(new { ProductId = Guid.NewGuid() });
-            throw new NotImplementedException(); //to check whether it calls the marketing compensate method or not
+            if (context.Arguments != null && context.Arguments.StockCount == 0) {
+                _logger.LogInformation($"Low stock -> 0");
+                throw new Exception("Low stock -> 0");//to check whether it calls the marketing compensate method or not
+            }
+            return context.Completed(new { ProductId = context.Arguments.ProductId });
         }
     }
 }

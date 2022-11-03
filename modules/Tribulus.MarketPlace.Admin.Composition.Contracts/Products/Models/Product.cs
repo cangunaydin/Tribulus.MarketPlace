@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tribulus.MarketPlace.Admin.Products
+namespace Tribulus.MarketPlace.Admin.Models
 {
     public record Product
     {
