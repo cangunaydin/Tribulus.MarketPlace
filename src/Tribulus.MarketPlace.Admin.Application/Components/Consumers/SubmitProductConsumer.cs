@@ -36,17 +36,17 @@ namespace Tribulus.MarketPlace.Admin.Components.Consumers
                 {
                     await context.RespondAsync<SubmitProductCompleted>(new
                     {
-                        context.Message.ProductId,
+                        completed.Message.ProductId,
                         completed.Message.Product
                     });
                 }
-                else if (response.Is(out Response<ProductCreateFaulted> notCompleted))
+                else if (response.Is(out Response<ProductCreateFaulted> faulted))
                 {
                     await context.RespondAsync<SubmitProductFaulted>(new
                     {
-                        context.Message.ProductId,
-                        completed.Message.Product,
-                        notCompleted.Message.Reason
+                        faulted.Message.ProductId,
+                        faulted.Message.Product,
+                        faulted.Message.Reason
                     });
                 }
             }

@@ -5,44 +5,28 @@ using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Components.ItineraryPlanners;
 using Tribulus.MarketPlace.Admin.Models;
 
-namespace Tribulus.MarketPlace.Admin.StateMachine
+namespace Tribulus.MarketPlace.Admin.Components.Activities
 {
     public class PrepareProductActivity :
-        IStateMachineActivity<ProductState>, IConsumer<RoutingSlipFaulted>
+        IStateMachineActivity<ProductState>
     {
         private readonly IRoutingSlipItineraryPlanner<Product> _planner;
-        //private readonly BehaviorContext<FutureState, Product> _behaviourProduct;
+
         public PrepareProductActivity(IRoutingSlipItineraryPlanner<Product> planner)
         {
             _planner = planner;
-            //_behaviourProduct = behaviourProduct;
         }
 
 
         public void Probe(ProbeContext context)
         {
-            context.CreateScope("prepareBurger");
+            context.CreateScope("prepare-product");
         }
 
         public void Accept(StateMachineVisitor visitor)
         {
             visitor.Visit(this);
         }
-
-        //public async Task Execute(BehaviorContext<ProductState> context, IBehavior<ProductState> next)
-        //{
-        //    await Execute(context);
-
-        //    await next.Execute(context);
-        //}
-
-        //public async Task Execute<T>(BehaviorContext<ProductState, T> context, IBehavior<ProductState, T> next) where T : class
-        //{
-        //    await Execute(context);
-
-        //    await next.Execute(context);
-        //}
-
 
         public Task Faulted<TException>(BehaviorExceptionContext<ProductState, TException> context, IBehavior<ProductState> next) where TException : Exception
         {
@@ -57,15 +41,20 @@ namespace Tribulus.MarketPlace.Admin.StateMachine
         }
 
 
-        public Task Execute<T>(BehaviorContext<ProductState, T> context, IBehavior<ProductState, T> next) where T : class
+        public async Task Execute<T>(BehaviorContext<ProductState, T> context, IBehavior<ProductState, T> next) where T : class
         {
-            throw new NotImplementedException();
+            await Execute(context);
+            await next.Execute(context);
         }
-
 
         public async Task Execute(BehaviorContext<ProductState> context, IBehavior<ProductState> next)
         {
+            await Execute(context);
+            await next.Execute(context);
+        }
 
+        async Task Execute(BehaviorContext<ProductState> context)
+        {
             var trackingNumber = NewId.NextGuid();
 
             var builder = new RoutingSlipBuilder(trackingNumber);
@@ -75,25 +64,17 @@ namespace Tribulus.MarketPlace.Admin.StateMachine
             //if (consumeContext.ExpirationTime.HasValue)
             //    builder.AddVariable("Deadline", consumeContext.ExpirationTime.Value);
 
+            builder.AddVariable("RequestId", context.RequestId);
             builder.AddVariable("SubmitProductId", context.Saga.Product.ProductId);
             builder.AddVariable("ProductId", context.Saga.CorrelationId);
-            try
-            {
 
-                await _planner.PlanItinerary(context.Saga.Product, builder);
-            }
-            catch (Exception ex)
-            {
-                var msg = ex.Message;
-            }
+            await _planner.PlanItinerary(context.Saga.Product, builder);
+
             var routingSlip = builder.Build();
 
             await context.Execute(routingSlip).ConfigureAwait(false);
-        }
+            context.Saga.TrackingNumber = trackingNumber;
 
-        public Task Consume(ConsumeContext<RoutingSlipFaulted> context)
-        {
-            throw new NotImplementedException();
         }
     }
 }

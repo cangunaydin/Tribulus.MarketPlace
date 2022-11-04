@@ -23,7 +23,7 @@ namespace Tribulus.MarketPlace.Admin.Components.ItineraryPlanners
             _inventoryUri = new Uri(EndpointsUri.MainUri + EndpointsUri.ProductInventoryActivityUri);
         }
 
-        public async Task PlanItinerary(Product product, IItineraryBuilder builder)
+        public Task PlanItinerary(Product product, IItineraryBuilder builder)
         {
             _logger.LogInformation($"Product PlanItinerary Executed--> {product.ProductId}");            
 
@@ -31,8 +31,8 @@ namespace Tribulus.MarketPlace.Admin.Components.ItineraryPlanners
 
             ProductMarketingActivityExtension.AddProductMarketingActivity(builder, _marketingUri, new
             {
-                Name = product.Name,
-                Description = product.Description
+                product.Name,
+                product.Description
             });
 
             ProductInventoryActivityExtension.AddProductInventoryActivity(builder, _inventoryUri, new
@@ -41,8 +41,8 @@ namespace Tribulus.MarketPlace.Admin.Components.ItineraryPlanners
                 product.StockCount
             });
 
-            await Task.WhenAll();
-            _logger.LogInformation($"Product PlanItinerary Executed Final--> {product.ProductId}");
+            _logger.LogInformation($"Product PlanItinerary Executed Completed--> {product.ProductId}");
+            return Task.CompletedTask;
         }
     }
 }

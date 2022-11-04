@@ -1,5 +1,4 @@
 ﻿using System;
-using Tribulus.MarketPlace.Admin.Models;
 
 namespace Tribulus.MarketPlace.Admin.Models
 {

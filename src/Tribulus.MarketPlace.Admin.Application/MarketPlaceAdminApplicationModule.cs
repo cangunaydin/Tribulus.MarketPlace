@@ -1,8 +1,7 @@
-using Autofac;
 using MassTransit;
 using MassTransit.Components;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using System.Reflection;
 using Tribulus.MarketPlace.Admin.Components.Consumers;
 using Tribulus.MarketPlace.Admin.Components.ItineraryPlanners;
 using Tribulus.MarketPlace.Admin.Constants;
@@ -55,11 +54,6 @@ public class MarketPlaceAdminApplicationModule : AbpModule
 
     private void ConfiguteMassTransitWithMediatR(ServiceConfigurationContext context)
     {
-        var containerBuilder = context.Services.GetContainerBuilder();
-
-        containerBuilder.RegisterType<ProductSagaDefinition>();
-        containerBuilder.RegisterType<RequestSagaDefinition>();
-
         context.Services.TryAddScoped<IRoutingSlipItineraryPlanner<Product>, ProductItineraryPlanner>();
 
         context.Services.AddMassTransit(cfg =>
@@ -68,12 +62,11 @@ public class MarketPlaceAdminApplicationModule : AbpModule
 
             cfg.AddDelayedMessageScheduler();
 
-            //cfg.AddConsumers(Assembly.GetExecutingAssembly());
+            cfg.AddConsumers(Assembly.GetExecutingAssembly());
 
-            //cfg.AddActivities(Assembly.GetExecutingAssembly());
+            cfg.AddActivities(Assembly.GetExecutingAssembly());
 
             cfg.AddConsumersFromNamespaceContaining<SubmitProductConsumer>();
-            cfg.AddConsumersFromNamespaceContaining<SubmitProductResponseConsumer>();
 
             cfg.AddActivity(typeof(ProductMarketingActivity)).ExecuteEndpoint(e =>
             {
@@ -92,12 +85,6 @@ public class MarketPlaceAdminApplicationModule : AbpModule
             cfg.AddSagaStateMachine<RequestStateMachine, RequestState>(typeof(RequestSagaDefinition))
                 .InMemoryRepository();
 
-            //cfg.AddSagaStateMachine<ProductCourierStateMachine, ProductTransactionState>()
-            // .InMemoryRepository();
-
-
-            //cfg.SetInMemorySagaRepositoryProvider();
-
             cfg.UsingInMemory((c, inmcfg) =>
             {
                 inmcfg.AutoStart = true;
@@ -115,7 +102,6 @@ public class MarketPlaceAdminApplicationModule : AbpModule
             });
 
             cfg.AddRequestClient<SubmitProduct>();
-            cfg.AddRequestClient<RequestProduct>();
 
         });
 

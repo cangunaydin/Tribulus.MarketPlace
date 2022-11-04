@@ -56,7 +56,7 @@ public class ProductCompositionController : AdminController, IProductComposition
     }
 
     [HttpPost]
-    public async Task<ActionResult> PostAsync([FromBody] ProductCompositionDto product)
+    public async Task<ActionResult> PostAsync([FromBody] Product product)
     {
         //await _publishEndpoint.Publish<SubmitProductEvent>(new
         //{
@@ -74,33 +74,26 @@ public class ProductCompositionController : AdminController, IProductComposition
             var model = new
             {
                 ProductId = productId,
-                Product = new Product()
-                {
-                    Name = product.Name,
-                    Description = product.Description,
-                    Price = product.Price,
-                    StockCount = product.StockCount,
-                    ProductId= productId,
-                }
+                Product = product
             };
+            model.Product.ProductId = productId;
 
             Response response = await _client.GetResponse<SubmitProductCompleted, SubmitProductFaulted>(model);
 
             return response switch
             {
-                //OrderCompleted==>SubmitProductCompleted
                 (_, SubmitProductCompleted completed) => Ok(new
                 {
-                    completed.ProductId,
+                    completed.ProductId
                 }),
                 (_, SubmitProductFaulted faulted) => BadRequest(new
                 {
-                    faulted.ProductId,
+                    faulted.Reason
                 }),
                 _ => BadRequest()
             };
         }
-        catch (RequestTimeoutException ex)
+        catch (Exception ex)
         {
             return Ok(ex.Message);
         }
