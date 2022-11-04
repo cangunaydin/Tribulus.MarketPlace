@@ -3,10 +3,11 @@ using MassTransit.Courier.Contracts;
 using MassTransit.Middleware;
 using System;
 using Tribulus.MarketPlace.Admin.Models;
+using Volo.Abp.DependencyInjection;
 
 namespace Tribulus.MarketPlace.Admin.StateMachine
 {
-    public class ProductSagaDefinition : SagaDefinition<ProductState>
+    public class ProductSagaDefinition : SagaDefinition<ProductState>, ITransientDependency
     {
         protected ProductSagaDefinition()
         {
