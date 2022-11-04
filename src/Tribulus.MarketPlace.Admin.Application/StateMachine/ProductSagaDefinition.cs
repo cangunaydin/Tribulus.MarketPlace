@@ -7,9 +7,9 @@ using Volo.Abp.DependencyInjection;
 
 namespace Tribulus.MarketPlace.Admin.StateMachine
 {
-    public class ProductSagaDefinition : SagaDefinition<ProductState>, ITransientDependency
+    public class ProductSagaDefinition : SagaDefinition<ProductState> 
     {
-        protected ProductSagaDefinition()
+        public ProductSagaDefinition()
         {
             var partitionCount = 32;
 

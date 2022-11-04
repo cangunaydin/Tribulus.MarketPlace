@@ -3,12 +3,11 @@ using MassTransit.Components;
 using MassTransit.Contracts;
 using MassTransit.Middleware;
 using System;
-using Volo.Abp.DependencyInjection;
 
 namespace Tribulus.MarketPlace.Admin.StateMachine
 {
     public class RequestSagaDefinition :
-        SagaDefinition<RequestState>, ITransientDependency
+        SagaDefinition<RequestState>
     {
         public RequestSagaDefinition()
         {

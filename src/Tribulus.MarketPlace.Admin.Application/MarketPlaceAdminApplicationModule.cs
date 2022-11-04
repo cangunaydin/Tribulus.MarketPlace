@@ -1,7 +1,8 @@
+using Autofac;
 using MassTransit;
 using MassTransit.Components;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System.Reflection;
 using Tribulus.MarketPlace.Admin.Components.Consumers;
 using Tribulus.MarketPlace.Admin.Components.ItineraryPlanners;
 using Tribulus.MarketPlace.Admin.Constants;
@@ -48,11 +49,16 @@ public class MarketPlaceAdminApplicationModule : AbpModule
             options.AddMaps<MarketPlaceAdminApplicationModule>();
         });
         ConfiguteMassTransitWithMediatR(context);
+
     }
 
 
     private void ConfiguteMassTransitWithMediatR(ServiceConfigurationContext context)
     {
+        var containerBuilder = context.Services.GetContainerBuilder();
+
+        containerBuilder.RegisterType<ProductSagaDefinition>();
+        containerBuilder.RegisterType<RequestSagaDefinition>();
 
         context.Services.TryAddScoped<IRoutingSlipItineraryPlanner<Product>, ProductItineraryPlanner>();
 

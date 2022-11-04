@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Tribulus.MarketPlace.Localization;
+﻿using Tribulus.MarketPlace.Localization;
 using Volo.Abp.Application.Services;
 
 namespace Tribulus.MarketPlace.Admin;
