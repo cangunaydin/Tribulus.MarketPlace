@@ -73,6 +73,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Applic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Composition.Contracts", "modules\Tribulus.MarketPlace.Admin.Composition.Contracts\Tribulus.MarketPlace.Admin.Composition.Contracts.csproj", "{E3395126-1703-49A3-8E97-847C11FF5E24}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{86D7F0EE-F3B5-4382-9727-CD88E5344C68}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Inventory.Composition", "modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Admin.Inventory.Composition\Tribulus.MarketPlace.Admin.Inventory.Composition.csproj", "{80323D38-6D50-47A0-A89B-1859E91E46D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Marketing.Composition", "modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Admin.Marketing.Composition\Tribulus.MarketPlace.Admin.Marketing.Composition.csproj", "{9D10ECD4-1969-4715-AA20-3D7027F17859}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Sales.Composition", "modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Admin.Sales.Composition\Tribulus.MarketPlace.Admin.Sales.Composition.csproj", "{FB5FE0D5-16F3-4A8B-BCB1-C262280304CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Inventory.Application.Contracts", "modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts.csproj", "{C1DABFFC-6AED-46B7-BE7D-CA20491F7464}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Marketing.Application.Contracts", "modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts.csproj", "{98ED9E6E-C4A4-4266-A91B-E0D63CCA0F46}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Sales.Application.Contracts", "modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Admin.Sales.Application.Contracts\Tribulus.MarketPlace.Admin.Sales.Application.Contracts.csproj", "{EDA2D690-3A35-455C-8C05-18FDFD61E3A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -179,6 +193,30 @@ Global
 		{E3395126-1703-49A3-8E97-847C11FF5E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3395126-1703-49A3-8E97-847C11FF5E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3395126-1703-49A3-8E97-847C11FF5E24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80323D38-6D50-47A0-A89B-1859E91E46D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80323D38-6D50-47A0-A89B-1859E91E46D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80323D38-6D50-47A0-A89B-1859E91E46D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80323D38-6D50-47A0-A89B-1859E91E46D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D10ECD4-1969-4715-AA20-3D7027F17859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D10ECD4-1969-4715-AA20-3D7027F17859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D10ECD4-1969-4715-AA20-3D7027F17859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D10ECD4-1969-4715-AA20-3D7027F17859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB5FE0D5-16F3-4A8B-BCB1-C262280304CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5FE0D5-16F3-4A8B-BCB1-C262280304CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB5FE0D5-16F3-4A8B-BCB1-C262280304CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB5FE0D5-16F3-4A8B-BCB1-C262280304CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1DABFFC-6AED-46B7-BE7D-CA20491F7464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1DABFFC-6AED-46B7-BE7D-CA20491F7464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1DABFFC-6AED-46B7-BE7D-CA20491F7464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1DABFFC-6AED-46B7-BE7D-CA20491F7464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98ED9E6E-C4A4-4266-A91B-E0D63CCA0F46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98ED9E6E-C4A4-4266-A91B-E0D63CCA0F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98ED9E6E-C4A4-4266-A91B-E0D63CCA0F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98ED9E6E-C4A4-4266-A91B-E0D63CCA0F46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDA2D690-3A35-455C-8C05-18FDFD61E3A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA2D690-3A35-455C-8C05-18FDFD61E3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA2D690-3A35-455C-8C05-18FDFD61E3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA2D690-3A35-455C-8C05-18FDFD61E3A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -217,6 +255,12 @@ Global
 		{E28271F9-8547-4694-89F5-3F9D23085DBA} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{5BB1A5EA-D322-4D3D-9C65-6E06B494A2E0} = {E28271F9-8547-4694-89F5-3F9D23085DBA}
 		{E3395126-1703-49A3-8E97-847C11FF5E24} = {BC997369-4B55-4FD7-B0C5-D64B2E4BC59D}
+		{80323D38-6D50-47A0-A89B-1859E91E46D6} = {86D7F0EE-F3B5-4382-9727-CD88E5344C68}
+		{9D10ECD4-1969-4715-AA20-3D7027F17859} = {86D7F0EE-F3B5-4382-9727-CD88E5344C68}
+		{FB5FE0D5-16F3-4A8B-BCB1-C262280304CE} = {86D7F0EE-F3B5-4382-9727-CD88E5344C68}
+		{C1DABFFC-6AED-46B7-BE7D-CA20491F7464} = {86D7F0EE-F3B5-4382-9727-CD88E5344C68}
+		{98ED9E6E-C4A4-4266-A91B-E0D63CCA0F46} = {86D7F0EE-F3B5-4382-9727-CD88E5344C68}
+		{EDA2D690-3A35-455C-8C05-18FDFD61E3A5} = {86D7F0EE-F3B5-4382-9727-CD88E5344C68}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EA19761-8B30-6D6D-C337-462DE3A08DD5}
