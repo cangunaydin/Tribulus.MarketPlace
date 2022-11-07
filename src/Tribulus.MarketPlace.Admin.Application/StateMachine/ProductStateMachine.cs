@@ -50,28 +50,28 @@ namespace Tribulus.MarketPlace.Admin.Products.StateMachine
             During(WaitingForCompletion,
                When(ProductRequested)
                    .RequestStarted(),
-                When(ProductCompleted)
-                    .Then(context => context.Saga.Product = context.GetVariable<Product>("Product"))
-                    .RequestCompleted(x => CreateProductCompleted(x))
-                    .TransitionTo(Completed),
-                When(ProductFaulted)
-                    .Then(context =>
-                    {
-                        context.Saga.Reason = context.Message.ActivityExceptions.Select(x => x.ExceptionInfo).FirstOrDefault()?.Message ?? "Unknown";
-                    })
-                    .RequestCompleted(x => CreateProductFaulted(x))
-                    .TransitionTo(Faulted));
+               When(ProductCompleted)
+                   .Then(context => context.Saga.Product = context.GetVariable<Product>("Product"))
+                   .RequestCompleted(x => CreateProductCompleted(x))
+                   .TransitionTo(Completed),
+               When(ProductFaulted)
+                   .Then(context =>
+                   {
+                       context.Saga.Reason = context.Message.ActivityExceptions.Select(x => x.ExceptionInfo).FirstOrDefault()?.Message ?? "Unknown";
+                   })
+                   .RequestCompleted(x => CreateProductFaulted(x))
+                   .TransitionTo(Faulted));
 
 
-            During(Completed,
-                When(ProductRequested)
-                    .RespondAsync(x => CreateProductCompleted((BehaviorContext<ProductState, RoutingSlipCompleted>)x))
-            );
+            //During(Completed,
+            //    When(ProductRequested)
+            //        .RespondAsync(x => CreateProductCompleted((BehaviorContext<ProductState, RoutingSlipCompleted>)x))
+            //);
 
-            During(Faulted,
-                When(ProductRequested)
-                    .RespondAsync(x => CreateProductFaulted((BehaviorContext<ProductState, RoutingSlipFaulted>)x))
-            );
+            //During(Faulted,
+            //    When(ProductRequested)
+            //        .RespondAsync(x => CreateProductFaulted((BehaviorContext<ProductState, RoutingSlipFaulted>)x))
+            //);
         }
 
 
