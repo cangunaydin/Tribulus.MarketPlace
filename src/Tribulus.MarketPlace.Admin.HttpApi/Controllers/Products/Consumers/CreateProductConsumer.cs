@@ -2,12 +2,11 @@
 using MassTransit.Courier;
 using MediatR;
 using System.Threading.Tasks;
+using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
 using Tribulus.MarketPlace.Extensions;
-using Tribulus.MarketPlace.Products.LocalEvents;
-using Tribulus.MarketPlace.Products.MassTransit.Commands;
 using Tribulus.MarketPlace.RoutingSlip;
 
-namespace Tribulus.MarketPlace.Admin.MassTransit.Products.Consumers;
+namespace Tribulus.MarketPlace.Admin.Controllers.Products.Consumers;
 
 public class CreateProductConsumer : RoutingSlipRequestConsumer<CreateProduct>
 {

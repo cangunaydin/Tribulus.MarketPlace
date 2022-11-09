@@ -1,17 +1,10 @@
 using Localization.Resources.AbpUi;
-using MassTransit;
 using MediatR;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Inventory.Composition;
-using Tribulus.MarketPlace.Admin.Inventory.Products;
 using Tribulus.MarketPlace.Admin.Marketing;
-using Tribulus.MarketPlace.Admin.Marketing.Products;
-using Tribulus.MarketPlace.Admin.MassTransit.Products.Consumers;
 using Tribulus.MarketPlace.Admin.Sales;
-using Tribulus.MarketPlace.Admin.Sales.Products;
-using Tribulus.MarketPlace.Extensions;
 using Tribulus.MarketPlace.Localization;
-using Tribulus.MarketPlace.Products.MassTransit.Commands;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;

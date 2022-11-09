@@ -3,7 +3,7 @@ using MassTransit;
 using MassTransit.Courier;
 using System;
 
-namespace Tribulus.MarketPlace;
+namespace Tribulus.MarketPlace.RoutingSlip;
 
 public interface IItineraryPlanner<in T>
 {

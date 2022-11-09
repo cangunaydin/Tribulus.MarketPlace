@@ -4,15 +4,15 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
+using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
+using Tribulus.MarketPlace.Admin.Controllers.Products.Events;
 using Tribulus.MarketPlace.Localization;
 using Tribulus.MarketPlace.Products;
 using Tribulus.MarketPlace.Products.LocalEvents;
-using Tribulus.MarketPlace.Products.MassTransit.Commands;
-using Tribulus.MarketPlace.Products.MassTransit.Events;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
-namespace Tribulus.MarketPlace.Admin.Controllers;
+namespace Tribulus.MarketPlace.Admin.Controllers.Products;
 
 [ControllerName("ProductComposition")]
 [Route("api/composition/product")]
