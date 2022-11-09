@@ -6,15 +6,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
+using Tribulus.MarketPlace.Admin.Controllers.Products.Events;
 using Tribulus.MarketPlace.Inventory.Products;
 using Tribulus.MarketPlace.Marketing.Products;
 using Tribulus.MarketPlace.Products;
-using Tribulus.MarketPlace.Products.MassTransit.Commands;
-using Tribulus.MarketPlace.Products.MassTransit.Events;
 using Tribulus.MarketPlace.RoutingSlip;
 using Tribulus.MarketPlace.Sales.Products;
 
-namespace Tribulus.MarketPlace.Admin.MassTransit.Products.Consumers;
+namespace Tribulus.MarketPlace.Admin.Controllers.Products.Consumers;
 
 public class CreateProductResponseConsumer : RoutingSlipResponseConsumer<CreateProduct, ProductCreated, ProductCreationFaulted>
 {

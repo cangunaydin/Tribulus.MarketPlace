@@ -35,7 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MassTransit\Products\Sagas\" />
+    <Folder Include="Controllers\Products\Sagas\" />
   </ItemGroup>
 
 </Project>

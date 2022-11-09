@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tribulus.MarketPlace.Products.MassTransit.Commands;
+namespace Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
 
 public interface CreateProduct
 {
