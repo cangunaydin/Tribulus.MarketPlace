@@ -56,5 +56,9 @@ namespace Tribulus.MarketPlace.Admin.Marketing.Products
             product.Description = input.Description;
             await _productRepository.UpdateAsync(product);
         }
+        public async Task DeleteAsync(Guid id)
+        {
+            await _productRepository.DeleteAsync(id);
+        }
     }
 }

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Tribulus.MarketPlace.Admin.Sales.Composition": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:53540;http://localhost:53541"
+    }
+  }
+}

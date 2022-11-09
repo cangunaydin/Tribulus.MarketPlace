@@ -53,5 +53,10 @@ namespace Tribulus.MarketPlace.Admin.Sales.Products
             productPrice.UpdatePrice(input.Price);
             await _productPriceRepository.UpdateAsync(productPrice);
         }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            await _productPriceRepository.DeleteAsync(id);
+        }
     }
 }

@@ -31,6 +31,13 @@ using Tribulus.MarketPlace.MultiTenancy;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Sales;
+using MassTransit;
+using Tribulus.MarketPlace.Extensions;
+using Tribulus.MarketPlace.Admin.MassTransit.Products.Consumers;
+using Tribulus.MarketPlace.Admin.Sales.Products;
+using Tribulus.MarketPlace.Admin.Marketing.Products;
+using Tribulus.MarketPlace.Admin.Inventory.Products;
+using Tribulus.MarketPlace.Products.MassTransit.Commands;
 
 namespace Tribulus.MarketPlace.Admin;
 
@@ -61,6 +68,29 @@ public class AdminHttpApiHostModule : AbpModule
         ConfigureDistributedLocking(context, configuration);
         ConfigureCors(context, configuration);
         ConfigureSwaggerServices(context, configuration);
+        context.Services.AddMassTransit(cfg =>
+        {
+            cfg.ApplyMarketPlaceMassTransitConfiguration();
+
+
+            cfg.AddConsumersFromNamespaceContaining<CreateProductConsumer>();
+            cfg.AddActivitiesFromNamespaceContaining<CreateProductActivity>();
+            cfg.AddActivitiesFromNamespaceContaining<CreateProductPriceActivity>();
+            cfg.AddActivitiesFromNamespaceContaining<CreateProductStockActivity>();
+
+            cfg.UsingInMemory((context, cfg) =>
+            {
+                // Controllers are using the request client, so we may as well
+                // start the bus receive endpoint
+                cfg.AutoStart = true;
+
+                cfg.ConfigureEndpoints(context);
+            });
+
+            cfg.AddRequestClient<CreateProduct>();
+        }).AddMassTransitHostedService();
+
+
     }
 
     private void ConfigureCache(IConfiguration configuration)

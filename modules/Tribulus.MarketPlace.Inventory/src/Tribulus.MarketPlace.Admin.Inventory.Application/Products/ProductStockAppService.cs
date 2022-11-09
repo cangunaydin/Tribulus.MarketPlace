@@ -53,5 +53,10 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Products
             productStock.UpdateStockCount(input.StockCount);
             await _productStockRepository.UpdateAsync(productStock);
         }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            await _productStockRepository.DeleteAsync(id);
+        }
     }
 }

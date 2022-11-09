@@ -8,12 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tribulus.MarketPlace.Inventory.Application.Contracts.Shared\Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.csproj" />
-    
+    <PackageReference Include="MassTransit" Version="7.3.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Products\" />
+    <ProjectReference Include="..\Tribulus.MarketPlace.Inventory.Application.Contracts.Shared\Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.csproj" />
+    
   </ItemGroup>
 
 </Project>

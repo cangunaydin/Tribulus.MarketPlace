@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Tribulus.MarketPlace.Admin.Products;
 using Tribulus.MarketPlace.Marketing.Products;
+using Tribulus.MarketPlace.Products;
 using Volo.Abp.AutoMapper;
 
 namespace Tribulus.MarketPlace.Admin.Marketing;

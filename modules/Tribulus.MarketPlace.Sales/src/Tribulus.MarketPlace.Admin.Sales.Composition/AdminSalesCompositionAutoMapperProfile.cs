@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Tribulus.MarketPlace.Admin.Products;
+using Tribulus.MarketPlace.Products;
 using Tribulus.MarketPlace.Sales.Products;
 using Volo.Abp.AutoMapper;
 

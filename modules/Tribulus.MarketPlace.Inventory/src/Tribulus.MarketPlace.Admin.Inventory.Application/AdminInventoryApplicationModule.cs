@@ -21,5 +21,6 @@ public class AdminInventoryApplicationModule : AbpModule
         {
             options.AddMaps<AdminInventoryApplicationModule>(validate: true);
         });
+
     }
 }

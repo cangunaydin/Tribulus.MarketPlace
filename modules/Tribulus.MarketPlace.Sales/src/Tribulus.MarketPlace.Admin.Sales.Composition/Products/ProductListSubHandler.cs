@@ -3,7 +3,7 @@ using MediatR;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Tribulus.MarketPlace.Admin.Products.Events;
+using Tribulus.MarketPlace.Products.LocalEvents;
 using Tribulus.MarketPlace.Sales.Products;
 using Volo.Abp.ObjectMapping;
 

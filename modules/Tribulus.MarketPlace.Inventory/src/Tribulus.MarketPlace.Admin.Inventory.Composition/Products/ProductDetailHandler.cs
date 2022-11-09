@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
-using Tribulus.MarketPlace.Admin.Products.Events;
+using Tribulus.MarketPlace.Products.LocalEvents;
 using Volo.Abp.ObjectMapping;
 
 namespace Tribulus.MarketPlace.Admin.Inventory.Products;

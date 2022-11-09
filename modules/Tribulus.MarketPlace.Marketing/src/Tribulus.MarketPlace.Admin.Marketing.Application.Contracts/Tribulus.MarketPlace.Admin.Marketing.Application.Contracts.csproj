@@ -8,10 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="6.0.0" />
-    <PackageReference Include="Volo.Abp.Authorization" Version="6.0.0" />
+    <PackageReference Include="MassTransit" Version="7.3.1" />
     <ProjectReference Include="..\Tribulus.MarketPlace.Marketing.Application.Contracts.Shared\Tribulus.MarketPlace.Marketing.Application.Contracts.Shared.csproj" />
-    <ProjectReference Include="..\Tribulus.MarketPlace.Marketing.Domain.Shared\Tribulus.MarketPlace.Marketing.Domain.Shared.csproj" />
+    
   </ItemGroup>
 
 </Project>
