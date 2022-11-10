@@ -1,14 +1,10 @@
 using MassTransit;
 using MassTransit.Components;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System.Reflection;
 using Tribulus.MarketPlace.Admin.Components.Consumers;
 using Tribulus.MarketPlace.Admin.Components.ItineraryPlanners;
-using Tribulus.MarketPlace.Admin.Constants;
-using Tribulus.MarketPlace.Admin.Inventory;
-using Tribulus.MarketPlace.Admin.Inventory.Components.Activities;
-using Tribulus.MarketPlace.Admin.Marketing;
-using Tribulus.MarketPlace.Admin.Marketing.Components.Activities;
+//using Tribulus.MarketPlace.Admin.Inventory;
+//using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Models;
 using Tribulus.MarketPlace.Admin.Products.StateMachine;
 using Tribulus.MarketPlace.Admin.Sales;
@@ -26,10 +22,10 @@ using Volo.Abp.TenantManagement;
 namespace Tribulus.MarketPlace.Admin;
 
 [DependsOn(
-    typeof(AdminMarketingApplicationModule),
+    //typeof(AdminMarketingApplicationModule),
     typeof(AdminSalesApplicationModule),
     typeof(AdminShippingApplicationModule),
-    typeof(AdminInventoryApplicationModule),
+    //typeof(AdminInventoryApplicationModule),
     typeof(MarketPlaceDomainModule),
     typeof(AbpAccountApplicationModule),
     typeof(AdminApplicationContractsModule),
@@ -62,21 +58,21 @@ public class MarketPlaceAdminApplicationModule : AbpModule
 
             cfg.AddDelayedMessageScheduler();
 
-            cfg.AddConsumers(Assembly.GetExecutingAssembly());
+            //cfg.AddConsumers(Assembly.GetExecutingAssembly());
 
-            cfg.AddActivities(Assembly.GetExecutingAssembly());
+            //cfg.AddActivities(Assembly.GetExecutingAssembly());
 
             cfg.AddConsumersFromNamespaceContaining<SubmitProductConsumer>();
 
-            cfg.AddActivity(typeof(ProductMarketingActivity)).ExecuteEndpoint(e =>
-            {
-                e.Name = EndpointsUri.ProductMarketingActivityUri;
-            });
+            //cfg.AddActivity(typeof(ProductMarketingActivity)).ExecuteEndpoint(e =>
+            //{
+            //    e.Name = EndpointsUri.ProductMarketingActivityUri;
+            //});
 
-            cfg.AddActivity(typeof(ProductInventoryActivity)).ExecuteEndpoint(e =>
-            {
-                e.Name = EndpointsUri.ProductInventoryActivityUri;
-            });
+            //cfg.AddActivity(typeof(ProductInventoryActivity)).ExecuteEndpoint(e =>
+            //{
+            //    e.Name = EndpointsUri.ProductInventoryActivityUri;
+            //});
 
 
             cfg.AddSagaStateMachine<ProductStateMachine, ProductState>(typeof(ProductSagaDefinition))
@@ -85,7 +81,7 @@ public class MarketPlaceAdminApplicationModule : AbpModule
             cfg.AddSagaStateMachine<RequestStateMachine, RequestState>(typeof(RequestSagaDefinition))
                 .InMemoryRepository();
 
-            cfg.UsingInMemory((c, inmcfg) =>
+            cfg.UsingRabbitMq((c, inmcfg) =>
             {
                 inmcfg.AutoStart = true;
 
@@ -95,6 +91,12 @@ public class MarketPlaceAdminApplicationModule : AbpModule
 
                 //if (IsRunningInContainer)
                 //    cfg.Host("rabbitmq");
+                inmcfg.Host("localhost", "/",
+                   host =>
+                   {
+                       host.Username("guest");
+                       host.Password("guest");
+                   });
 
                 inmcfg.UseDelayedMessageScheduler();
 

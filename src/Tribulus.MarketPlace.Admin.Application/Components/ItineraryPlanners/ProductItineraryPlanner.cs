@@ -9,7 +9,7 @@ using Tribulus.MarketPlace.Admin.Models;
 
 namespace Tribulus.MarketPlace.Admin.Components.ItineraryPlanners
 {
-    public class ProductItineraryPlanner: IRoutingSlipItineraryPlanner<Product>
+    public class ProductItineraryPlanner : IRoutingSlipItineraryPlanner<Product>
     {
         private readonly ILogger<ProductItineraryPlanner> _logger;
 
@@ -19,27 +19,33 @@ namespace Tribulus.MarketPlace.Admin.Components.ItineraryPlanners
         public ProductItineraryPlanner(ILogger<ProductItineraryPlanner> logger, IEndpointNameFormatter formatter)
         {
             _logger = logger;
-            _marketingUri = new Uri(EndpointsUri.MainUri + EndpointsUri.ProductMarketingActivityUri);
-            _inventoryUri = new Uri(EndpointsUri.MainUri + EndpointsUri.ProductInventoryActivityUri);
+            _marketingUri = new Uri(EndpointsUri.RabbitMqMainUri + EndpointsUri.ProductMarketingActivityUri);
+            _inventoryUri = new Uri(EndpointsUri.RabbitMqMainUri + EndpointsUri.ProductInventoryActivityUri);
         }
 
         public Task PlanItinerary(Product product, IItineraryBuilder builder)
         {
-            _logger.LogInformation($"Product PlanItinerary Executed--> {product.ProductId}");            
+            _logger.LogInformation($"Product PlanItinerary Executed--> {product.ProductId}");
 
             builder.AddVariable("ProductId", product.ProductId);
 
-            ProductMarketingActivityExtension.AddProductMarketingActivity(builder, _marketingUri, new
+            builder.AddActivity(EndpointsUri.ProductMarketingActivityUri, _marketingUri, new
             {
                 product.Name,
                 product.Description
             });
+            //ProductMarketingActivityExtension.AddProductMarketingActivity(builder, _marketingUri, new
+            //{
+            //    product.Name,
+            //    product.Description
+            //});
 
-            ProductInventoryActivityExtension.AddProductInventoryActivity(builder, _inventoryUri, new
+            builder.AddActivity(EndpointsUri.ProductInventoryActivityUri, _inventoryUri, new
             {
-                product.ProductId,
-                product.StockCount
+                product.Name,
+                product.Description
             });
+          
 
             _logger.LogInformation($"Product PlanItinerary Executed Completed--> {product.ProductId}");
             return Task.CompletedTask;

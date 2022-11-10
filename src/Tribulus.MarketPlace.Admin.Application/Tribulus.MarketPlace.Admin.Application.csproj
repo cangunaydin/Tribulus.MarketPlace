@@ -17,6 +17,7 @@
 		<ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Shipping\src\Tribulus.MarketPlace.Admin.Shipping.Application\Tribulus.MarketPlace.Admin.Shipping.Application.csproj" />
 		<PackageReference Include="Automatonymous" Version="5.1.0" />
 		<PackageReference Include="MassTransit" Version="8.0.7" />
+		<PackageReference Include="MassTransit.RabbitMQ" Version="8.0.7" />
 
 
 		<PackageReference Include="Volo.Abp.Account.Application" Version="6.0.0" />

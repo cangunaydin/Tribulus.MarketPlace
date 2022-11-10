@@ -15,6 +15,9 @@ namespace Tribulus.MarketPlace.Admin.Marketing.Products
     {
         private readonly IProductRepository _productRepository;
 
+        public ProductAppService()
+        {
+        }
         public ProductAppService(IProductRepository productRepository)
         {
             _productRepository = productRepository;

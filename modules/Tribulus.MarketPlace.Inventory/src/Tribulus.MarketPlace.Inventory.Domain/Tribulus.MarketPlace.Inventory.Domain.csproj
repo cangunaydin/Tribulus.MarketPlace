@@ -1,16 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\common.props" />
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Tribulus.MarketPlace.Inventory</RootNamespace>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="6.0.0" />
-    <ProjectReference Include="..\..\..\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Sales.Domain.Shared\Tribulus.MarketPlace.Sales.Domain.Shared.csproj" />
-    <ProjectReference Include="..\Tribulus.MarketPlace.Inventory.Domain.Shared\Tribulus.MarketPlace.Inventory.Domain.Shared.csproj" />
-  </ItemGroup>
-
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>Tribulus.MarketPlace.Inventory</RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Domain" Version="6.0.0" />
+		<PackageReference Include="Volo.Abp.Emailing" Version="6.0.0" />
+		<PackageReference Include="Volo.Abp.Identity.Domain" Version="6.0.0" />
+		<PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="6.0.0" />
+		<PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="6.0.0" />
+		<PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="6.0.0" />
+		<PackageReference Include="Volo.Abp.TenantManagement.Domain" Version="6.0.0" />
+		<PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="6.0.0" />
+		<PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="6.0.0" />
+		<PackageReference Include="Volo.Abp.OpenIddict.Domain" Version="6.0.0" />
+		<PackageReference Include="Volo.Abp.PermissionManagement.Domain.OpenIddict" Version="6.0.0" />
+		<ProjectReference Include="..\..\..\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Sales.Domain.Shared\Tribulus.MarketPlace.Sales.Domain.Shared.csproj" />
+		<ProjectReference Include="..\..\..\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Inventory.Domain.Shared\Tribulus.MarketPlace.Inventory.Domain.Shared.csproj" />
+	</ItemGroup>
 </Project>

@@ -18,10 +18,10 @@ using Volo.Abp.TenantManagement;
 namespace Tribulus.MarketPlace.Admin;
 
 [DependsOn(
-    typeof(AdminMarketingHttpApiModule),
+    //typeof(AdminMarketingHttpApiModule),
     typeof(AdminSalesHttpApiModule),
     typeof(AdminShippingHttpApiModule),
-    typeof(AdminInventoryHttpApiModule),
+    //typeof(AdminInventoryHttpApiModule),
     typeof(AdminApplicationContractsModule),
     typeof(AdminCompositionContractsModule),
     typeof(AdminMarketingCompositionModule),

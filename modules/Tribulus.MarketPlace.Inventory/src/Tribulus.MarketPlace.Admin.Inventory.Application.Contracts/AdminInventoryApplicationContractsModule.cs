@@ -8,5 +8,8 @@ namespace Tribulus.MarketPlace.Admin.Inventory;
     )]
 public class AdminInventoryApplicationContractsModule : AbpModule
 {
-
+    public override void PreConfigureServices(ServiceConfigurationContext context)
+    {
+        AdminInventoryDtoExtensions.Configure();
+    }
 }

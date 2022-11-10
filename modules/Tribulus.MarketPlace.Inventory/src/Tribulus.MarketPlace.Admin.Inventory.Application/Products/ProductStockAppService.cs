@@ -15,6 +15,9 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Products
     {
         private readonly IRepository<ProductStock, Guid> _productStockRepository;
 
+        public ProductStockAppService()
+        {
+        }
         public ProductStockAppService(IRepository<ProductStock, Guid> productStockRepository)
         {
             _productStockRepository = productStockRepository;
