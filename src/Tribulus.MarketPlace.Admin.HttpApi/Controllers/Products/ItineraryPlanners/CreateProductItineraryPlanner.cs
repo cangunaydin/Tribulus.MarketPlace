@@ -1,11 +1,12 @@
 ﻿using MassTransit.Courier;
+using MassTransit.Futures;
 using System;
+using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
 using Tribulus.MarketPlace.Admin.Inventory.Products;
 using Tribulus.MarketPlace.Admin.Marketing.Products;
 using Tribulus.MarketPlace.Admin.Sales.Products;
 using Tribulus.MarketPlace.Extensions;
-using Tribulus.MarketPlace.RoutingSlip;
 using Volo.Abp.DependencyInjection;
 
 namespace Tribulus.MarketPlace.Admin.Controllers.Products.ItineraryPlanners;
@@ -23,31 +24,33 @@ public class CreateProductItineraryPlanner : IItineraryPlanner<CreateProduct>,IT
         builder.AddActivity(activity.Name, address, value);
     }
 
-    public void ProduceItinerary(CreateProduct value, ItineraryBuilder builder)
+    public Task PlanItinerary(FutureConsumeContext<CreateProduct> context, ItineraryBuilder builder)
     {
+        var product = context.Message;
         var createProductAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(ICreateProductActivity))}");
 
+        builder.AddVariable(nameof(product.ProductId), product.ProductId);
+        builder.AddVariable(nameof(product.UserId), product.UserId);
         builder.AddActivity(_endpointNameformatter.GetActivityName(typeof(ICreateProductActivity)), createProductAddress, new
         {
-           ProductId=value.ProductId,
-           Name=value.Name,
-           Description=value.Description
+            Name = product.Name,
+            Description = product.Description
         });
 
         var createProductPriceAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(ICreateProductPriceActivity))}");
 
         builder.AddActivity(_endpointNameformatter.GetActivityName(typeof(ICreateProductPriceActivity)), createProductPriceAddress, new
         {
-            ProductId = value.ProductId,
-            Price=value.Price
+            Price = product.Price
         });
 
         var createProductStockAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(ICreateProductStockActivity))}");
 
         builder.AddActivity(_endpointNameformatter.GetActivityName(typeof(ICreateProductStockActivity)), createProductStockAddress, new
         {
-            ProductId = value.ProductId,
-            StockCount = value.StockCount
+            StockCount = product.StockCount
         });
+        return Task.CompletedTask;
     }
+
 }

@@ -1,5 +1,6 @@
 ﻿using MassTransit;
 using MassTransit.Courier;
+using MassTransit.Futures;
 using MediatR;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
@@ -21,14 +22,15 @@ public class CreateProductConsumer : RoutingSlipRequestConsumer<CreateProduct>
         _mediator = mediator;
     }
 
-    protected override async Task BuildItinerary(RoutingSlipBuilder builder, ConsumeContext<CreateProduct> context)
+    protected override Task BuildItinerary(RoutingSlipBuilder builder, ConsumeContext<CreateProduct> context)
     {
         builder.AddVariable("ProductId", context.Message.ProductId);
 
         if (context.ExpirationTime.HasValue)
             builder.AddVariable("Deadline", context.ExpirationTime.Value);
        
-        _planner.ProduceItinerary(context.Message, builder);
+        _planner.PlanItinerary((FutureConsumeContext<CreateProduct>)context, builder);
+        return Task.CompletedTask;
 
     }
 }

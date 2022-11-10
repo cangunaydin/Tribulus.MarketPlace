@@ -1,6 +1,7 @@
 ﻿
 using MassTransit;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -55,7 +56,9 @@ public class ProductCompositionController : AdminController, IProductComposition
         return productListEto.Products;
 
     }
+
     [HttpPost]
+    [Authorize("CreateProductComposition")]
     public async Task<ProductCompositionDto> CreateAsync(CreateProductCompositionDto input)
     {
         try
@@ -64,23 +67,17 @@ public class ProductCompositionController : AdminController, IProductComposition
             Response response = await _createProductRequestClient.GetResponse<ProductCreated, ProductCreationFaulted>(new
             {
                 ProductId = id,
-                Name=input.Name,
-                Description=input.Description,
-                StockCount=input.StockCount,
-                Price=input.Price
+                Name = input.Name,
+                Description = input.Description,
+                StockCount = input.StockCount,
+                Price = input.Price,
+                UserId=CurrentUser.Id
 
             });
 
             return response switch
             {
-                (_, ProductCreated completed) => new ProductCompositionDto
-                {
-                    Id= completed.Product.Id,
-                    Description=completed.Product.Description,
-                    Name=completed.Product.Name,
-                    Price=completed.Product.Price,
-                    StockCount=completed.Product.StockCount
-                },
+                (_, ProductCreated completed) => completed.Product,
                 (_, ProductCreationFaulted notCompleted) => throw new UserFriendlyException(notCompleted.Reason),
                 _ => throw new Exception("unknown error has happened")
             };

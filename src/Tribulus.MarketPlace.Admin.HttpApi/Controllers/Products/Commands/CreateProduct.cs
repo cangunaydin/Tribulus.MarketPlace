@@ -9,4 +9,6 @@ public interface CreateProduct
     public string Description { get;  }
     public decimal Price { get;}
     public int StockCount { get;}
+
+    public Guid UserId { get; }
 }

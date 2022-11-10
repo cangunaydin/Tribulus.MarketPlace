@@ -1,4 +1,5 @@
 using MassTransit;
+using MassTransit.Futures;
 using Medallion.Threading;
 using Medallion.Threading.Redis;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -17,6 +18,7 @@ using System.IO;
 using System.Linq;
 using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
 using Tribulus.MarketPlace.Admin.Controllers.Products.Consumers;
+using Tribulus.MarketPlace.Admin.Controllers.Products.Futures;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Inventory.Products;
 using Tribulus.MarketPlace.Admin.Marketing;
@@ -25,11 +27,15 @@ using Tribulus.MarketPlace.Admin.Sales;
 using Tribulus.MarketPlace.Admin.Sales.Products;
 using Tribulus.MarketPlace.EntityFrameworkCore;
 using Tribulus.MarketPlace.Extensions;
+using Tribulus.MarketPlace.Inventory.Permissions;
+using Tribulus.MarketPlace.Marketing.Permissions;
 using Tribulus.MarketPlace.MultiTenancy;
+using Tribulus.MarketPlace.Sales.Permissions;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy;
 using Volo.Abp.AspNetCore.Serilog;
+using Volo.Abp.Authorization;
 using Volo.Abp.Autofac;
 using Volo.Abp.Caching;
 using Volo.Abp.Caching.StackExchangeRedis;
@@ -68,15 +74,20 @@ public class AdminHttpApiHostModule : AbpModule
         ConfigureDistributedLocking(context, configuration);
         ConfigureCors(context, configuration);
         ConfigureSwaggerServices(context, configuration);
+        ConfigureAuthorization(context, configuration);
         context.Services.AddMassTransit(cfg =>
         {
             cfg.ApplyMarketPlaceMassTransitConfiguration();
 
 
-            cfg.AddConsumersFromNamespaceContaining<CreateProductConsumer>();
+            //cfg.AddConsumersFromNamespaceContaining<CreateProductConsumer>();
             cfg.AddActivitiesFromNamespaceContaining<CreateProductActivity>();
             cfg.AddActivitiesFromNamespaceContaining<CreateProductPriceActivity>();
             cfg.AddActivitiesFromNamespaceContaining<CreateProductStockActivity>();
+            cfg.AddFuturesFromNamespaceContaining<CreateProductFuture>();
+
+            cfg.AddSagaRepository<FutureState>()
+                .InMemoryRepository();
 
             cfg.UsingInMemory((context, cfg) =>
             {
@@ -91,6 +102,18 @@ public class AdminHttpApiHostModule : AbpModule
         }).AddMassTransitHostedService();
 
 
+    }
+
+    private void ConfigureAuthorization(ServiceConfigurationContext context, IConfiguration configuration)
+    {
+        context.Services.AddAuthorization(options =>
+        {
+            options.AddPolicy("CreateProductComposition", policy =>
+            {
+                policy.Requirements.Add(new PermissionsRequirement(new[] { MarketingPermissions.Products.Create,InventoryPermissions.ProductStocks.Create,SalesPermissions.ProductPrices.Create }, requiresAll: true));
+            });
+
+        });
     }
 
     private void ConfigureCache(IConfiguration configuration)

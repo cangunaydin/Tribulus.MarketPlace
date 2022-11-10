@@ -34,8 +34,4 @@
     <PackageReference Include="Volo.Abp.SettingManagement.HttpApi" Version="6.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\Products\Sagas\" />
-  </ItemGroup>
-
 </Project>
