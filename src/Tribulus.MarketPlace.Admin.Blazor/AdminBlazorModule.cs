@@ -1,22 +1,22 @@
-﻿using System;
-using System.Net.Http;
 using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Tribulus.MarketPlace.Admin.Blazor.Menus;
 using OpenIddict.Abstractions;
-using Volo.Abp.AspNetCore.Components.WebAssembly.LeptonXLiteTheme;
+using System;
+using System.Net.Http;
+using Tribulus.MarketPlace.Admin.Blazor.Menus;
 using Volo.Abp.AspNetCore.Components.Web.LeptonXLiteTheme.Themes.LeptonXLite;
 using Volo.Abp.AspNetCore.Components.Web.Theming.Routing;
+using Volo.Abp.AspNetCore.Components.WebAssembly.LeptonXLiteTheme;
 using Volo.Abp.Autofac.WebAssembly;
 using Volo.Abp.AutoMapper;
-using Volo.Abp.Modularity;
-using Volo.Abp.UI.Navigation;
 using Volo.Abp.Identity.Blazor.WebAssembly;
+using Volo.Abp.Modularity;
 using Volo.Abp.SettingManagement.Blazor.WebAssembly;
 using Volo.Abp.TenantManagement.Blazor.WebAssembly;
+using Volo.Abp.UI.Navigation;
 
 namespace Tribulus.MarketPlace.Admin.Blazor;
 
@@ -28,7 +28,7 @@ namespace Tribulus.MarketPlace.Admin.Blazor;
     typeof(AbpTenantManagementBlazorWebAssemblyModule),
     typeof(AbpSettingManagementBlazorWebAssemblyModule)
 )]
-public class AdminBlazorModule : AbpModule
+    public class AdminBlazorModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

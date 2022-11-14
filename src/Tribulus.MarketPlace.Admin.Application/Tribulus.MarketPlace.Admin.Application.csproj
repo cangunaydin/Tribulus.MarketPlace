@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -10,15 +10,18 @@
   <ItemGroup>
     <ProjectReference Include="..\Tribulus.MarketPlace.Admin.Application.Contracts\Tribulus.MarketPlace.Admin.Application.Contracts.csproj" />
     <ProjectReference Include="..\Tribulus.MarketPlace.Domain\Tribulus.MarketPlace.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Admin.Marketing.Application\Tribulus.MarketPlace.Admin.Marketing.Application.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Admin.Sales.Application\Tribulus.MarketPlace.Admin.Sales.Application.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Admin.Inventory.Application\Tribulus.MarketPlace.Admin.Inventory.Application.csproj" />
+    
+
+
+    <PackageReference Include="Volo.Abp.Account.Application" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="6.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Volo.Abp.Account.Application" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.Identity.Application" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="6.0.0-rc.4" />
-  </ItemGroup>
-
-</Project>
+  </Project>

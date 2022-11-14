@@ -8,13 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.ObjectExtending" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.TenantManagement.Application.Contracts" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.SettingManagement.Application.Contracts" Version="6.0.0-rc.4" />
+    <PackageReference Include="Volo.Abp.ObjectExtending" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application.Contracts" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application.Contracts" Version="6.0.0" />
+
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Admin.Sales.Application.Contracts\Tribulus.MarketPlace.Admin.Sales.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Tribulus.MarketPlace.Application.Contracts.Shared\Tribulus.MarketPlace.Application.Contracts.Shared.csproj" />
+
   </ItemGroup>
 
   <ItemGroup>

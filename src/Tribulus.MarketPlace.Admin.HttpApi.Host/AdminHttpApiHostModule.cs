@@ -1,7 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using MassTransit;
+using MassTransit.Futures;
 using Medallion.Threading;
 using Medallion.Threading.Redis;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -12,12 +10,32 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using StackExchange.Redis;
 using Microsoft.OpenApi.Models;
+using StackExchange.Redis;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
+using Tribulus.MarketPlace.Admin.Controllers.Products.Consumers;
+using Tribulus.MarketPlace.Admin.Controllers.Products.Futures;
+using Tribulus.MarketPlace.Admin.Inventory;
+using Tribulus.MarketPlace.Admin.Inventory.Products;
+using Tribulus.MarketPlace.Admin.Marketing;
+using Tribulus.MarketPlace.Admin.Marketing.Products;
+using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Admin.Sales.Products;
+using Tribulus.MarketPlace.EntityFrameworkCore;
+using Tribulus.MarketPlace.Extensions;
+using Tribulus.MarketPlace.Inventory.Permissions;
+using Tribulus.MarketPlace.Marketing.Permissions;
+using Tribulus.MarketPlace.MultiTenancy;
+using Tribulus.MarketPlace.Sales.Permissions;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy;
 using Volo.Abp.AspNetCore.Serilog;
+using Volo.Abp.Authorization;
 using Volo.Abp.Autofac;
 using Volo.Abp.Caching;
 using Volo.Abp.Caching.StackExchangeRedis;
@@ -26,8 +44,6 @@ using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.VirtualFileSystem;
-using Tribulus.MarketPlace.EntityFrameworkCore;
-using Tribulus.MarketPlace.MultiTenancy;
 
 namespace Tribulus.MarketPlace.Admin;
 
@@ -58,6 +74,48 @@ public class AdminHttpApiHostModule : AbpModule
         ConfigureDistributedLocking(context, configuration);
         ConfigureCors(context, configuration);
         ConfigureSwaggerServices(context, configuration);
+        ConfigureAuthorization(context, configuration);
+        context.Services.AddMassTransit(cfg =>
+        {
+            cfg.ApplyMarketPlaceMassTransitConfiguration();
+
+
+            //cfg.AddConsumersFromNamespaceContaining<CreateProductConsumer>();
+            cfg.AddActivitiesFromNamespaceContaining<CreateProductActivity>();
+            cfg.AddActivitiesFromNamespaceContaining<CreateProductPriceActivity>();
+            cfg.AddActivitiesFromNamespaceContaining<CreateProductStockActivity>();
+            cfg.AddFuturesFromNamespaceContaining<CreateProductFuture>();
+
+            cfg.AddSagaRepository<FutureState>()
+                .InMemoryRepository();
+
+            cfg.UsingInMemory((context, cfg) =>
+            {
+                // Controllers are using the request client, so we may as well
+                // start the bus receive endpoint
+                cfg.AutoStart = true;
+
+                cfg.ConfigureEndpoints(context);
+            });
+
+            cfg.AddRequestClient<CreateProduct>();
+            cfg.AddRequestClient<UpdateProduct>();
+
+        }).AddMassTransitHostedService();
+
+
+    }
+
+    private void ConfigureAuthorization(ServiceConfigurationContext context, IConfiguration configuration)
+    {
+        context.Services.AddAuthorization(options =>
+        {
+            options.AddPolicy("CreateProductComposition", policy =>
+            {
+                policy.Requirements.Add(new PermissionsRequirement(new[] { MarketingPermissions.Products.Create,InventoryPermissions.ProductStocks.Create,SalesPermissions.ProductPrices.Create }, requiresAll: true));
+            });
+
+        });
     }
 
     private void ConfigureCache(IConfiguration configuration)
@@ -94,6 +152,9 @@ public class AdminHttpApiHostModule : AbpModule
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
             options.ConventionalControllers.Create(typeof(MarketPlaceAdminApplicationModule).Assembly);
+            options.ConventionalControllers.Create(typeof(AdminMarketingApplicationModule).Assembly);
+            options.ConventionalControllers.Create(typeof(AdminSalesApplicationModule).Assembly);
+            options.ConventionalControllers.Create(typeof(AdminInventoryApplicationModule).Assembly);
         });
     }
 
@@ -163,7 +224,7 @@ public class AdminHttpApiHostModule : AbpModule
             dataProtectionBuilder.PersistKeysToStackExchangeRedis(redis, "Admin-Protection-Keys");
         }
     }
-    
+
     private void ConfigureDistributedLocking(
         ServiceConfigurationContext context,
         IConfiguration configuration)

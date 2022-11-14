@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -9,14 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Identity.Domain.Shared" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain.Shared" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.AuditLogging.Domain.Shared" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.TenantManagement.Domain.Shared" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="6.0.0-rc.4" />
-    <PackageReference Include="Volo.Abp.OpenIddict.Domain.Shared" Version="6.0.0-rc.4" />
+    <PackageReference Include="Volo.Abp.Identity.Domain.Shared" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain.Shared" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain.Shared" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Domain.Shared" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="6.0.0" />
+    <PackageReference Include="Volo.Abp.OpenIddict.Domain.Shared" Version="6.0.0" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Marketing.Domain.Shared\Tribulus.MarketPlace.Marketing.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Sales.Domain.Shared\Tribulus.MarketPlace.Sales.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Inventory.Domain.Shared\Tribulus.MarketPlace.Inventory.Domain.Shared.csproj" />
+
   </ItemGroup>
 
   <ItemGroup>

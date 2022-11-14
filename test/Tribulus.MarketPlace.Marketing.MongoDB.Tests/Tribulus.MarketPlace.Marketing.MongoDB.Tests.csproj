@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Tribulus.MarketPlace.Marketing</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="Mongo2Go" Version="3.1.3" />
+    <ProjectReference Include="..\..\src\Tribulus.MarketPlace.Marketing.MongoDB\Tribulus.MarketPlace.Marketing.MongoDB.csproj" />
+    <ProjectReference Include="..\Tribulus.MarketPlace.Marketing.TestBase\Tribulus.MarketPlace.Marketing.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>

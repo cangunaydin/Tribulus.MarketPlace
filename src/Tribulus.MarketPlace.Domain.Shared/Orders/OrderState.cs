@@ -6,6 +6,6 @@ namespace Tribulus.MarketPlace.Orders
 {
     public enum OrderState
     {
-        Pending=1,Confirmed,Rejected
+        Created=1,Pending,Confirmed,Rejected
     }
 }

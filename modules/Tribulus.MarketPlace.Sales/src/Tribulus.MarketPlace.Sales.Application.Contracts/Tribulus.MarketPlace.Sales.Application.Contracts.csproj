@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Tribulus.MarketPlace.Sales</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tribulus.MarketPlace.Sales.Application.Contracts.Shared\Tribulus.MarketPlace.Sales.Application.Contracts.Shared.csproj" />
+
+  </ItemGroup>
+
+</Project>

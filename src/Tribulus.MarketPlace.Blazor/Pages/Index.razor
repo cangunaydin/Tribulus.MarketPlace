@@ -12,7 +12,7 @@
     <CardBody>
         @* ************************* SEARCH ************************* *@
         @*<Form>*@
-            <div id="FilterSection" class="row mt-3">
+           @* <div id="FilterSection" class="row mt-3">
 
                 <Column ColumnSize="ColumnSize.Is12">
                     <Field>
@@ -21,27 +21,16 @@
                     </Field>
                 </Column>
 
-            </div>
+            </div>*@
         @*</Form>*@
         @* ************************* DATA GRID ************************* *@
-        <DataGrid TItem="ProductDto"
+       @* <DataGrid TItem="ProductDto"
                   Data="ProductList"
                   ReadData="OnDataGridReadAsync"
                   TotalItems="TotalCount"
                   ShowPager="true"
                   PageSize="PageSize">
             <DataGridColumns>
-                @* <DataGridEntityActionsColumn TItem="ProductDto">
-                <DisplayTemplate>
-                <EntityActions TItem="ProductDto">
-                <EntityAction TItem="ProductDto"
-                RequiredPolicy="@MarketPlacePermissions.Orders.Update"
-                Clicked="() => OpenAddOrderItemModalAsync(context)"
-                Text="@L["AddProductToOrder"]">
-                </EntityAction>
-                </EntityActions>
-                </DisplayTemplate>
-                </DataGridEntityActionsColumn>*@
 
                 <DataGridColumn TItem="ProductDto"
                                 Field="Name"
@@ -58,7 +47,7 @@
                                 Caption="@L["Price"]">
                 </DataGridColumn>
             </DataGridColumns>
-        </DataGrid>
+        </DataGrid>*@
 
     </CardBody>
 </Card>

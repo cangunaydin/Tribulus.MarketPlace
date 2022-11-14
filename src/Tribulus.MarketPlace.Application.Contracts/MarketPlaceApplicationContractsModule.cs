@@ -1,23 +1,18 @@
-﻿using Volo.Abp.Account;
-using Volo.Abp.FeatureManagement;
-using Volo.Abp.Identity;
+﻿using Tribulus.MarketPlace.Application.Contracts.Shared;
+using Tribulus.MarketPlace.Inventory;
+using Tribulus.MarketPlace.Marketing;
+using Tribulus.MarketPlace.Sales;
+using Volo.Abp.Account;
 using Volo.Abp.Modularity;
-using Volo.Abp.ObjectExtending;
-using Volo.Abp.PermissionManagement;
-using Volo.Abp.SettingManagement;
-using Volo.Abp.TenantManagement;
 
 namespace Tribulus.MarketPlace;
 
 [DependsOn(
-    typeof(MarketPlaceDomainSharedModule),
     typeof(AbpAccountApplicationContractsModule),
-    typeof(AbpFeatureManagementApplicationContractsModule),
-    typeof(AbpIdentityApplicationContractsModule),
-    typeof(AbpPermissionManagementApplicationContractsModule),
-    typeof(AbpSettingManagementApplicationContractsModule),
-    typeof(AbpTenantManagementApplicationContractsModule),
-    typeof(AbpObjectExtendingModule)
+    typeof(MarketPlaceApplicationContractsSharedModule),
+    typeof(MarketingApplicationContractsModule),
+    typeof(SalesApplicationContractsModule),
+    typeof(InventoryApplicationContractsModule)
 )]
 public class MarketPlaceApplicationContractsModule : AbpModule
 {

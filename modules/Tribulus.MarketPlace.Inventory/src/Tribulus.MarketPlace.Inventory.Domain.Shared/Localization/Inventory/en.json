@@ -1,0 +1,11 @@
+{
+  "culture": "en",
+  "texts": {
+    "MyAccount": "My account",
+    "SamplePageMessage": "A sample page for the Inventory module",
+    "Permission:Inventory": "Inventory",
+    "Permission:ProductStocksManagement": "Stocks Management",
+    "Permission:Create": "Create",
+    "Permission:Edit":"Edit"
+  }
+}

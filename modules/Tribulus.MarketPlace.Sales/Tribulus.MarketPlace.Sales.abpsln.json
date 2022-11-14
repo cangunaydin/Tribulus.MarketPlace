@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "Tribulus.MarketPlace.Sales": {
+      "path": "Tribulus.MarketPlace.Sales.abpmdl.json"
+    }
+  }
+}

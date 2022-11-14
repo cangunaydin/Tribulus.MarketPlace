@@ -1,9 +1,12 @@
-﻿using System;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.Uow;
+using Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
+using Tribulus.MarketPlace.Marketing.EntityFrameworkCore;
+using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore.SqlServer;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
@@ -12,13 +15,13 @@ using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
-using Volo.Abp.EntityFrameworkCore.DependencyInjection;
-using Tribulus.MarketPlace.Orders;
-using Microsoft.EntityFrameworkCore;
 
 namespace Tribulus.MarketPlace.EntityFrameworkCore;
 
 [DependsOn(
+    typeof(MarketingEntityFrameworkCoreModule),
+    typeof(SalesEntityFrameworkCoreModule),
+    typeof(InventoryEntityFrameworkCoreModule),
     typeof(MarketPlaceDomainModule),
     typeof(AbpIdentityEntityFrameworkCoreModule),
     typeof(AbpOpenIddictEntityFrameworkCoreModule),
@@ -30,7 +33,7 @@ namespace Tribulus.MarketPlace.EntityFrameworkCore;
     typeof(AbpTenantManagementEntityFrameworkCoreModule),
     typeof(AbpFeatureManagementEntityFrameworkCoreModule)
     )]
-public class MarketPlaceEntityFrameworkCoreModule : AbpModule
+    public class MarketPlaceEntityFrameworkCoreModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
@@ -54,16 +57,7 @@ public class MarketPlaceEntityFrameworkCoreModule : AbpModule
             options.UseSqlServer();
         });
 
-        Configure<AbpEntityOptions>(options =>
-        {
-            options.Entity<Order>(orderOptions =>
-            {
-                orderOptions.DefaultWithDetailsFunc = query
-                => query
-                .Include(f => f.OrderItems);
-                
-            });
-        });
+      
 
     }
 }

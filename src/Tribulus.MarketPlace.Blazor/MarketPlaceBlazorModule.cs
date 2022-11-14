@@ -1,22 +1,20 @@
-﻿using System;
-using System.Net.Http;
-using Blazorise.Bootstrap5;
+﻿using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Tribulus.MarketPlace.Blazor.Menus;
 using OpenIddict.Abstractions;
+using System;
+using System.Net.Http;
+using Tribulus.MarketPlace.Blazor.Menus;
+using Volo.Abp.AspNetCore.Components.Web.BasicTheme.Themes.Basic;
 using Volo.Abp.AspNetCore.Components.Web.Theming.Routing;
+using Volo.Abp.AspNetCore.Components.Web.Theming.Toolbars;
+using Volo.Abp.AspNetCore.Components.WebAssembly.BasicTheme;
 using Volo.Abp.Autofac.WebAssembly;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.UI.Navigation;
-using Volo.Abp.Identity.Blazor.WebAssembly;
-using Volo.Abp.SettingManagement.Blazor.WebAssembly;
-using Volo.Abp.TenantManagement.Blazor.WebAssembly;
-using Volo.Abp.AspNetCore.Components.WebAssembly.BasicTheme;
-using Volo.Abp.AspNetCore.Components.Web.BasicTheme.Themes.Basic;
 
 namespace Tribulus.MarketPlace.Blazor;
 
@@ -24,10 +22,6 @@ namespace Tribulus.MarketPlace.Blazor;
     typeof(AbpAutofacWebAssemblyModule),
     typeof(MarketPlaceHttpApiClientModule),
     typeof(AbpAspNetCoreComponentsWebAssemblyBasicThemeModule)
-    //typeof(AbpAspNetCoreComponentsWebAssemblyLeptonXLiteThemeModule),
-    //typeof(AbpIdentityBlazorWebAssemblyModule),
-    //typeof(AbpTenantManagementBlazorWebAssemblyModule),
-    //typeof(AbpSettingManagementBlazorWebAssemblyModule)
 )]
 public class MarketPlaceBlazorModule : AbpModule
 {
@@ -43,6 +37,7 @@ public class MarketPlaceBlazorModule : AbpModule
         ConfigureUI(builder);
         ConfigureMenu(context);
         ConfigureAutoMapper(context);
+        ConfigureToolbar(context);
     }
 
     private void ConfigureRouter(ServiceConfigurationContext context)
@@ -66,6 +61,13 @@ public class MarketPlaceBlazorModule : AbpModule
         context.Services
             .AddBootstrap5Providers()
             .AddFontAwesomeIcons();
+    }
+    private void ConfigureToolbar(ServiceConfigurationContext context)
+    {
+        Configure<AbpToolbarOptions>(options =>
+        {
+            options.Contributors.Add(new MarketPlaceToolbarContributer());
+        });
     }
 
     private static void ConfigureAuthentication(WebAssemblyHostBuilder builder)

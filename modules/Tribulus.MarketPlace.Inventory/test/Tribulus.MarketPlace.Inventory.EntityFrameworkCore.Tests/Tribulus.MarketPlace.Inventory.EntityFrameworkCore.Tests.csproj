@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Tribulus.MarketPlace.Inventory</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.5" />
+    <ProjectReference Include="..\..\src\Tribulus.MarketPlace.Inventory.EntityFrameworkCore\Tribulus.MarketPlace.Inventory.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Tribulus.MarketPlace.Inventory.TestBase\Tribulus.MarketPlace.Inventory.TestBase.csproj" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>

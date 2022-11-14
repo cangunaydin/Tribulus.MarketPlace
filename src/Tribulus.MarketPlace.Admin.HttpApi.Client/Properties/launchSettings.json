@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Tribulus.MarketPlace.Admin.HttpApi.Client": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:53536;http://localhost:53537"
+    }
+  }
+}

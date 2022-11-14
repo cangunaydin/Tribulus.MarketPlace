@@ -6,6 +6,7 @@ namespace Tribulus.MarketPlace.Products
 {
     public static class ProductConsts
     {
+        public const string DefaultSorting = "CreationTime desc";
         public const int MinNameLength = 2;
         public const int MaxNameLength = 255;
 

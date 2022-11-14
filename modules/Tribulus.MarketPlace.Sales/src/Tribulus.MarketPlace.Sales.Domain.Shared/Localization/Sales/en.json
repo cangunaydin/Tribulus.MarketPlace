@@ -1,0 +1,11 @@
+{
+  "culture": "en",
+  "texts": {
+    "MyAccount": "My account",
+    "Permission:ProductPrices": "Product Prices",
+    "Create": "Create",
+    "Edit": "Edit",
+    "Permission:Orders": "Orders"
+
+  }
+}

@@ -47,3 +47,7 @@
         -webkit-transform: scale(1.0);
     }
 }
+.navbar-nav
+{
+    align-items:center !important;
+}

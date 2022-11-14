@@ -1,4 +1,8 @@
-﻿using Volo.Abp.Account;
+using Tribulus.MarketPlace.Admin.Inventory;
+using Tribulus.MarketPlace.Admin.Marketing;
+using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Application.Contracts.Shared;
+using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
@@ -10,6 +14,10 @@ using Volo.Abp.TenantManagement;
 namespace Tribulus.MarketPlace.Admin;
 
 [DependsOn(
+    typeof(AdminMarketingApplicationContractsModule),
+    typeof(AdminSalesApplicationContractsModule),
+    typeof(AdminInventoryApplicationContractsModule),
+    typeof(MarketPlaceApplicationContractsSharedModule),
     typeof(MarketPlaceDomainSharedModule),
     typeof(AbpAccountApplicationContractsModule),
     typeof(AbpFeatureManagementApplicationContractsModule),
@@ -19,7 +27,7 @@ namespace Tribulus.MarketPlace.Admin;
     typeof(AbpTenantManagementApplicationContractsModule),
     typeof(AbpObjectExtendingModule)
 )]
-public class AdminApplicationContractsModule : AbpModule
+    public class AdminApplicationContractsModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
