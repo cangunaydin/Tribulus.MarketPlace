@@ -1,5 +1,4 @@
 using MassTransit;
-using MassTransit.Futures;
 using Medallion.Threading;
 using Medallion.Threading.Redis;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -17,7 +16,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
-using Tribulus.MarketPlace.Admin.Controllers.Products.Consumers;
 using Tribulus.MarketPlace.Admin.Controllers.Products.Futures;
 using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Inventory.Products;
