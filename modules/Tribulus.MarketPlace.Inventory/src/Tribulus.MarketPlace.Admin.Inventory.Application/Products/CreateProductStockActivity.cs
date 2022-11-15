@@ -1,7 +1,5 @@
-﻿
-using MassTransit.Courier;
+﻿using MassTransit;
 using System;
-using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Inventory.Products;
 using Volo.Abp.Domain.Repositories;

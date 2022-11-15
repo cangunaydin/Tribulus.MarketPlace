@@ -1,12 +1,9 @@
-﻿using Volo.Abp.ObjectMapping;
-using MassTransit.Courier;
+﻿using MassTransit;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Inventory.Products;
 using Volo.Abp.Domain.Repositories;
+using Volo.Abp.ObjectMapping;
 
 namespace Tribulus.MarketPlace.Admin.Inventory.Products
 {

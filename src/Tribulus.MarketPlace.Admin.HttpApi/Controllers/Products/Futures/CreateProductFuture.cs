@@ -14,7 +14,7 @@ using Tribulus.MarketPlace.Sales.Products;
 namespace Tribulus.MarketPlace.Admin.Controllers.Products.Futures;
 
 public class CreateProductFuture :
-       Future<CreateProduct, ProductCreated,ProductCreationFaulted>
+       Future<CreateProduct, ProductCreated, ProductCreationFaulted>
 {
     public CreateProductFuture()
     {
@@ -25,35 +25,35 @@ public class CreateProductFuture :
             x.OnRoutingSlipCompleted(r => r
                 .SetCompletedUsingInitializer(context =>
                 {
-                    var productId = context.Message.GetVariable<Guid>("FutureId");
-                    var product = context.Message.GetVariable<ProductDto>("Product");
-                    var productPrice = context.Message.GetVariable<ProductPriceDto>("ProductPrice");
-                    var productStock = context.Message.GetVariable<ProductStockDto>("ProductStock");
+                    var productId = context.GetVariable<Guid>("FutureId");
+                    var product = context.GetVariable<ProductDto>("Product");
+                    var productPrice = context.GetVariable<ProductPriceDto>("ProductPrice");
+                    var productStock = context.GetVariable<ProductStockDto>("ProductStock");
 
                     return new
                     {
-                        Product=new ProductCompositionDto()
+                        Product = new ProductCompositionDto()
                         {
-                            Id= productId,
-                            Name=product.Name,
-                            Description=product.Description,
-                            Price=productPrice.Price,
-                            StockCount=productStock.StockCount
+                            Id = (Guid)productId,
+                            Name = product.Name,
+                            Description = product.Description,
+                            Price = productPrice.Price,
+                            StockCount = productStock.StockCount
                         }
                     };
                 }));
             x.OnRoutingSlipFaulted(r => r.SetFaultedUsingInitializer(context =>
             {
-                var productId = context.Message.GetVariable<Guid>("FutureId");
+                var productId = context.GetVariable<Guid>("FutureId");
 
                 IEnumerable<ExceptionInfo> exceptions = context.Message.ActivityExceptions.Select(x => x.ExceptionInfo);
 
                 var reason = exceptions.FirstOrDefault()?.Message ?? "Unknown";
 
-                return new 
+                return new
                 {
-                    ProductId=productId,
-                    Reason=reason
+                    ProductId = productId,
+                    Reason = reason
                 };
             }));
         }

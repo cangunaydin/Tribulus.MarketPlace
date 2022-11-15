@@ -1,8 +1,7 @@
-﻿using MassTransit.Courier;
+﻿using MassTransit;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Marketing.Products;
 using Volo.Abp.ObjectMapping;
-using Volo.Abp.Users;
 
 namespace Tribulus.MarketPlace.Admin.Marketing.Products
 {

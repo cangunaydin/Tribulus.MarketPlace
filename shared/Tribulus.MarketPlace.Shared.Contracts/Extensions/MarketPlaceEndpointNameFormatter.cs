@@ -1,7 +1,4 @@
 ﻿using MassTransit;
-using MassTransit.Courier;
-using MassTransit.Definition;
-using MassTransit.Saga;
 using System;
 using Volo.Abp.DependencyInjection;
 

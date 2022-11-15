@@ -101,7 +101,7 @@ public class AdminHttpApiHostModule : AbpModule
             cfg.AddRequestClient<CreateProduct>();
             cfg.AddRequestClient<UpdateProduct>();
 
-        }).AddMassTransitHostedService();
+        });
 
 
     }
@@ -112,7 +112,7 @@ public class AdminHttpApiHostModule : AbpModule
         {
             options.AddPolicy("CreateProductComposition", policy =>
             {
-                policy.Requirements.Add(new PermissionsRequirement(new[] { MarketingPermissions.Products.Create,InventoryPermissions.ProductStocks.Create,SalesPermissions.ProductPrices.Create }, requiresAll: true));
+                policy.Requirements.Add(new PermissionsRequirement(new[] { MarketingPermissions.Products.Create, InventoryPermissions.ProductStocks.Create, SalesPermissions.ProductPrices.Create }, requiresAll: true));
             });
 
         });

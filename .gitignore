@@ -261,8 +261,11 @@ host/Tribulus.MarketPlace.Inventory.Blazor.Server.Host/Logs/logs.txt
 # Use abp install-libs to restore.
 **/wwwroot/libs/*
 
+#logs
 src/Tribulus.MarketPlace.Admin.HttpApi.Host/Logs/logs.txt
 src/Tribulus.MarketPlace.AuthServer/Logs/logs.txt
+
+# appsettings
 /src/Tribulus.MarketPlace.Admin.HttpApi.Host/appsettings.json
 /src/Tribulus.MarketPlace.AuthServer/appsettings.json
 /src/Tribulus.MarketPlace.Admin.HttpApi.Host/Logs/logs.txt

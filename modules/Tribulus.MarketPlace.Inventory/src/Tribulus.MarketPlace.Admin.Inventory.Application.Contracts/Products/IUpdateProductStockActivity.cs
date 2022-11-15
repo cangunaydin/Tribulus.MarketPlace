@@ -1,7 +1,4 @@
-﻿using MassTransit.Courier;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MassTransit;
 
 namespace Tribulus.MarketPlace.Admin.Inventory.Products
 {

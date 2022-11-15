@@ -1,14 +1,8 @@
-﻿using MassTransit.Courier;
-using MassTransit.Futures;
+﻿using MassTransit;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
 using Tribulus.MarketPlace.Admin.Inventory.Products;
-using Tribulus.MarketPlace.Admin.Marketing.Products;
-using Tribulus.MarketPlace.Admin.Sales.Products;
 using Tribulus.MarketPlace.Extensions;
 using Volo.Abp.DependencyInjection;
 
@@ -21,13 +15,13 @@ namespace Tribulus.MarketPlace.Admin.Controllers.Products.ItineraryPlanners
         {
             _endpointNameformatter = endpointNameformatter;
         }
-        public void AddActivity(CreateProduct value, ItineraryBuilder builder, Type activity)
+        public void AddActivity(CreateProduct value, IItineraryBuilder builder, Type activity)
         {
             var address = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(activity)}");
             builder.AddActivity(activity.Name, address, value);
         }
 
-        public Task PlanItinerary(FutureConsumeContext<UpdateProduct> context, ItineraryBuilder builder)
+        public Task PlanItinerary(BehaviorContext<FutureState, UpdateProduct> context, IItineraryBuilder builder)
         {
             var product = context.Message;
             var updateProductAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(IUpdateProductStockActivity))}");

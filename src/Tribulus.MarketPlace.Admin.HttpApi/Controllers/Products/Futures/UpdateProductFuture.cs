@@ -1,17 +1,11 @@
-﻿using MassTransit.Courier;
-using MassTransit.Futures;
-using MassTransit;
+﻿using MassTransit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tribulus.MarketPlace.Inventory.Products;
-using Tribulus.MarketPlace.Marketing.Products;
-using Tribulus.MarketPlace.Products;
-using Tribulus.MarketPlace.Sales.Products;
 using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
 using Tribulus.MarketPlace.Admin.Controllers.Products.Events;
+using Tribulus.MarketPlace.Inventory.Products;
+using Tribulus.MarketPlace.Products;
 
 namespace Tribulus.MarketPlace.Admin.Controllers.Products.Futures
 {
@@ -27,16 +21,16 @@ namespace Tribulus.MarketPlace.Admin.Controllers.Products.Futures
                 x.OnRoutingSlipCompleted(r => r
                     .SetCompletedUsingInitializer(context =>
                     {
-                        var productId = context.Message.GetVariable<Guid>("FutureId");
+                        var productId = context.GetVariable<Guid>("FutureId");
                         //var product = context.Message.GetVariable<ProductDto>("Product");
                         //var productPrice = context.Message.GetVariable<ProductPriceDto>("ProductPrice");
-                        var productStock = context.Message.GetVariable<ProductStockDto>("ProductStock");
+                        var productStock = context.GetVariable<ProductStockDto>("ProductStock");
 
                         return new
                         {
                             Product = new ProductCompositionDto()
                             {
-                                Id = productId,
+                                Id = (Guid)productId,
                                 //Name = product.Name,
                                 //Description = product.Description,
                                 //Price = productPrice.Price,
@@ -46,7 +40,7 @@ namespace Tribulus.MarketPlace.Admin.Controllers.Products.Futures
                     }));
                 x.OnRoutingSlipFaulted(r => r.SetFaultedUsingInitializer(context =>
                 {
-                    var productId = context.Message.GetVariable<Guid>("FutureId");
+                    var productId = context.GetVariable<Guid>("FutureId");
 
                     IEnumerable<ExceptionInfo> exceptions = context.Message.ActivityExceptions.Select(x => x.ExceptionInfo);
 
@@ -58,8 +52,7 @@ namespace Tribulus.MarketPlace.Admin.Controllers.Products.Futures
                         Reason = reason
                     };
                 }));
-            }
-                );
+            });
         }
     }
 }

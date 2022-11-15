@@ -1,4 +1,4 @@
-﻿using MassTransit.Courier;
+﻿using MassTransit;
 using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Sales.Products;

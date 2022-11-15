@@ -1,5 +1,4 @@
-﻿using MassTransit.Courier;
-using MassTransit.Futures;
+﻿using MassTransit;
 using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
@@ -18,13 +17,13 @@ public class CreateProductItineraryPlanner : IItineraryPlanner<CreateProduct>,IT
     {
         _endpointNameformatter = endpointNameformatter;
     }
-    public void AddActivity(CreateProduct value, ItineraryBuilder builder, Type activity)
+    public void AddActivity(CreateProduct value, IItineraryBuilder builder, Type activity)
     {
         var address = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(activity)}");
         builder.AddActivity(activity.Name, address, value);
     }
 
-    public Task PlanItinerary(FutureConsumeContext<CreateProduct> context, ItineraryBuilder builder)
+    public Task PlanItinerary(BehaviorContext<FutureState, CreateProduct> context, IItineraryBuilder builder)
     {
         var product = context.Message;
         var createProductAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(ICreateProductActivity))}");
