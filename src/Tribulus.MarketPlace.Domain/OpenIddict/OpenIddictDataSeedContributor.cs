@@ -74,6 +74,18 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                 }
             });
         }
+        if (await _scopeManager.FindByNameAsync("MarketPlaceAdminInventory") == null)
+        {
+            await _scopeManager.CreateAsync(new OpenIddictScopeDescriptor
+            {
+                Name = "MarketPlaceAdminInventory",
+                DisplayName = "Market Place Inventory Admin API",
+                Resources =
+                {
+                    "MarketPlaceAdminInventory"
+                }
+            });
+        }
     }
 
     private async Task CreateApplicationsAsync()
@@ -182,6 +194,29 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                 scopes: commonScopes.Union(new[] { "MarketPlaceAdmin" }).ToList(),
                 redirectUri: $"{swaggerAdminRootUrl}/swagger/oauth2-redirect.html",
                 clientUri: swaggerAdminRootUrl
+            );
+        }
+
+
+        // Swagger Inventory Admin Client
+        var swaggerInventoryAdminClientId = configurationSection["MarketPlaceAdminInventory_Swagger:ClientId"];
+        if (!swaggerInventoryAdminClientId.IsNullOrWhiteSpace())
+        {
+            var swaggerInventoryAdminRootUrl = configurationSection["MarketPlaceAdminInventory_Swagger:RootUrl"].TrimEnd('/');
+
+            await CreateApplicationAsync(
+                name: swaggerInventoryAdminClientId,
+                type: OpenIddictConstants.ClientTypes.Public,
+                consentType: OpenIddictConstants.ConsentTypes.Implicit,
+                displayName: "Swagger Inventory Admin Application",
+                secret: null,
+                grantTypes: new List<string>
+                {
+                    OpenIddictConstants.GrantTypes.AuthorizationCode,
+                },
+                scopes: commonScopes.Union(new[] { "MarketPlaceAdminInventory" }).ToList(),
+                redirectUri: $"{swaggerInventoryAdminRootUrl}/swagger/oauth2-redirect.html",
+                clientUri: swaggerInventoryAdminRootUrl
             );
         }
 

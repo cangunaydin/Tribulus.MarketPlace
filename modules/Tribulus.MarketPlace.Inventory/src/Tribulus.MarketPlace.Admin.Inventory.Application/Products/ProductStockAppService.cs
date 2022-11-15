@@ -10,7 +10,6 @@ using Volo.Abp.Domain.Repositories;
 
 namespace Tribulus.MarketPlace.Admin.Inventory.Products
 {
-    [Authorize(InventoryPermissions.ProductStocks.Default)]
     public class ProductStockAppService : AdminInventoryAppService, IProductStockAppService
     {
         private readonly IRepository<ProductStock, Guid> _productStockRepository;
@@ -29,6 +28,7 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Products
             return ObjectMapper.Map<ProductStock, ProductStockDto>(productStock);
         }
 
+        [Authorize(InventoryPermissions.ProductStocks.Default)]
         public async Task<ProductStockDto> GetAsync(Guid id)
         {
             var productStock = await _productStockRepository.GetAsync(id);

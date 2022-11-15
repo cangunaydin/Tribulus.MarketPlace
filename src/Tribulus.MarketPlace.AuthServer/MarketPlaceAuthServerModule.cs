@@ -45,7 +45,7 @@ namespace Tribulus.MarketPlace;
     typeof(AbpDistributedLockingModule),
     typeof(AbpAccountWebOpenIddictModule),
     typeof(AbpAccountApplicationModule),
-    typeof(AbpAccountHttpApiModule),
+    typeof(AbpAccountHttpApiModule), 
     typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
     typeof(MarketPlaceEntityFrameworkCoreModule),
     typeof(AbpAspNetCoreSerilogModule)
@@ -60,6 +60,8 @@ public class MarketPlaceAuthServerModule : AbpModule
             {
                 options.AddAudiences("MarketPlace");
                 options.AddAudiences("MarketPlaceAdmin");
+                options.AddAudiences("MarketPlaceAdminInventory");
+
                 options.UseLocalServer();
                 options.UseAspNetCore();
             });
@@ -177,7 +179,9 @@ public class MarketPlaceAuthServerModule : AbpModule
                             MarketPlaceUrlOptions.GetWwwConfigValue(configuration),
                             MarketPlaceUrlOptions.GetApiConfigValue(configuration),
                             MarketPlaceUrlOptions.GetAdminConfigValue(configuration),
-                            MarketPlaceUrlOptions.GetAdminApiConfigValue(configuration)
+                            MarketPlaceUrlOptions.GetAdminApiConfigValue(configuration),
+                            MarketPlaceUrlOptions.GetMarketPlaceInventoryAdminApiConfigValue(configuration)
+
                         )
                     .WithAbpExposedHeaders()
                     .SetIsOriginAllowedToAllowWildcardSubdomains()

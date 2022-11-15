@@ -28,4 +28,10 @@
     <Content Remove="**\*generate-proxy.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Tribulus.MarketPlace.Admin.Inventory.Application.Contracts">
+      <HintPath>..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts\bin\Debug\netstandard2.0\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

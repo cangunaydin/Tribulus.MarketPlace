@@ -8,12 +8,13 @@ public class InventoryPermissionDefinitionProvider : PermissionDefinitionProvide
 {
     public override void Define(IPermissionDefinitionContext context)
     {
-        var inventoryGroup = context.AddGroup(InventoryPermissions.GroupName, L("Permission:Inventory"));
+        var inventoryGroup = context.AddGroup(InventoryPermissions.GroupName);
 
 
         var productPermissions = inventoryGroup.AddPermission(InventoryPermissions.ProductStocks.Default, L("Permission:ProductStocksManagement"));
         productPermissions.AddChild(InventoryPermissions.ProductStocks.Create, L("Permission:Create"));
         productPermissions.AddChild(InventoryPermissions.ProductStocks.Update, L("Permission:Edit"));
+        productPermissions.AddChild("Test");
     }
 
     private static LocalizableString L(string name)

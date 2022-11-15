@@ -4,7 +4,7 @@ namespace Tribulus.MarketPlace.Inventory.Permissions;
 
 public class InventoryPermissions
 {
-    public const string GroupName = "Inventory";
+    public const string GroupName = "MarketPlaceAdminInventory";
 
     public static class ProductStocks
     {

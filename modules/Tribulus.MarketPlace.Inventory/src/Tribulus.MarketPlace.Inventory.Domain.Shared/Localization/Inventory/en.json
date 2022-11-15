@@ -4,8 +4,8 @@
     "MyAccount": "My account",
     "SamplePageMessage": "A sample page for the Inventory module",
     "Permission:Inventory": "Inventory",
-    "Permission:ProductStocksManagement": "Stocks Management",
+    "Permission:ProductStocksManagement": "Product Stock Management",
     "Permission:Create": "Create",
-    "Permission:Edit":"Edit"
+    "Permission:Edit": "Edit"
   }
 }

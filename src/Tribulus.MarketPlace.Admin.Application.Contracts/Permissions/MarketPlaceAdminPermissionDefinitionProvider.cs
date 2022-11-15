@@ -15,6 +15,11 @@ public class MarketPlaceAdminPermissionDefinitionProvider : PermissionDefinition
         productPermissions.AddChild(MarketPlaceAdminPermissions.Products.Create, L("Permission:Create"));
         productPermissions.AddChild(MarketPlaceAdminPermissions.Products.Update, L("Permission:Edit"));
 
+        //var marketPlaceInventoryAdminGroup = context.AddGroup(MarketPlaceInventoryAdminPermissions.GroupName);
+        //var productStockPermissions = marketPlaceInventoryAdminGroup.AddPermission(MarketPlaceAdminPermissions.Products.Default, L("Permission:ProductStocksManagement"));
+        //productStockPermissions.AddChild(MarketPlaceAdminPermissions.Products.Create, L("Permission:Create"));
+        //productStockPermissions.AddChild(MarketPlaceAdminPermissions.Products.Update, L("Permission:Edit"));
+
     }
 
     private static LocalizableString L(string name)
