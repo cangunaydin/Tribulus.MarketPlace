@@ -265,9 +265,3 @@ host/Tribulus.MarketPlace.Inventory.Blazor.Server.Host/Logs/logs.txt
 src/Tribulus.MarketPlace.Admin.HttpApi.Host/Logs/logs.txt
 src/Tribulus.MarketPlace.AuthServer/Logs/logs.txt
 
-# appsettings
-/src/Tribulus.MarketPlace.Admin.HttpApi.Host/appsettings.json
-/src/Tribulus.MarketPlace.AuthServer/appsettings.json
-/src/Tribulus.MarketPlace.Admin.HttpApi.Host/Logs/logs.txt
-/src/Tribulus.MarketPlace.HttpApi.Host/appsettings.json
-/src/Tribulus.MarketPlace.DbMigrator/appsettings.json
