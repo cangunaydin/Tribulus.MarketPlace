@@ -29,12 +29,14 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Products
             return ObjectMapper.Map<ProductStock, ProductStockDto>(productStock);
         }
 
+        [Authorize(InventoryPermissions.ProductStocks.Default)]
         public async Task<ProductStockDto> GetAsync(Guid id)
         {
             var productStock = await _productStockRepository.GetAsync(id);
             return ObjectMapper.Map<ProductStock, ProductStockDto>(productStock);
         }
 
+        [Authorize(InventoryPermissions.ProductStocks.Default)]
         public async Task<ListResultDto<ProductStockDto>> GetListAsync(ProductStockListFilterDto input)
         {
             var query = await _productStockRepository.GetQueryableAsync();

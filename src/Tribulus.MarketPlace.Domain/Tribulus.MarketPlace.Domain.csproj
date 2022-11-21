@@ -9,9 +9,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tribulus.MarketPlace.Domain.Shared\Tribulus.MarketPlace.Domain.Shared.csproj" />
-    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Marketing.Domain\Tribulus.MarketPlace.Marketing.Domain.csproj" />
+    <!--<ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Marketing\src\Tribulus.MarketPlace.Marketing.Domain\Tribulus.MarketPlace.Marketing.Domain.csproj" />
     <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Sales\src\Tribulus.MarketPlace.Sales.Domain\Tribulus.MarketPlace.Sales.Domain.csproj" />
-    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Inventory.Domain\Tribulus.MarketPlace.Inventory.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Tribulus.MarketPlace.Inventory\src\Tribulus.MarketPlace.Inventory.Domain\Tribulus.MarketPlace.Inventory.Domain.csproj" />-->
 
     </ItemGroup>
 

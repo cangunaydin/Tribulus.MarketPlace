@@ -24,7 +24,7 @@ namespace Tribulus.MarketPlace.Admin.Controllers.Products.Futures
                         var productId = context.GetVariable<Guid>("FutureId");
                         //var product = context.Message.GetVariable<ProductDto>("Product");
                         //var productPrice = context.Message.GetVariable<ProductPriceDto>("ProductPrice");
-                        var productStock = context.GetVariable<ProductStockDto>("ProductStock");
+                        //var productStock = context.GetVariable<ProductStockDto>("ProductStock");
 
                         return new
                         {
@@ -34,7 +34,7 @@ namespace Tribulus.MarketPlace.Admin.Controllers.Products.Futures
                                 //Name = product.Name,
                                 //Description = product.Description,
                                 //Price = productPrice.Price,
-                                StockCount = productStock.StockCount
+                                StockCount =0// productStock.StockCount
                             }
                         };
                     }));

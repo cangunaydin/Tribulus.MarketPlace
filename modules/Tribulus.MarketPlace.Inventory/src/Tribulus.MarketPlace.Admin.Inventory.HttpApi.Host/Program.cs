@@ -1,12 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
-using System;
-using System.Threading.Tasks;
 
-namespace Tribulus.MarketPlace.Admin;
+namespace Tribulus.MarketPlace.Admin.Inventory;
 
 public class Program
 {
@@ -27,12 +22,12 @@ public class Program
 
         try
         {
-            Log.Information("Starting Tribulus.MarketPlace.Admin.HttpApi.Host.");
+            Log.Information("Starting Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host.");
             var builder = WebApplication.CreateBuilder(args);
             builder.Host.AddAppSettingsSecretsJson()
                 .UseAutofac()
                 .UseSerilog();
-            await builder.AddApplicationAsync<AdminHttpApiHostModule>();
+            await builder.AddApplicationAsync<AdminInventoryHttpApiHostModule>();
             var app = builder.Build();
             await app.InitializeApplicationAsync();
             await app.RunAsync();

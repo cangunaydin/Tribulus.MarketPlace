@@ -1,10 +1,4 @@
 ﻿using AutoMapper;
-using Tribulus.MarketPlace.Admin.Inventory;
-using Tribulus.MarketPlace.Admin.Marketing;
-using Tribulus.MarketPlace.Admin.Sales;
-using Tribulus.MarketPlace.Inventory;
-using Tribulus.MarketPlace.Marketing;
-using Tribulus.MarketPlace.Sales;
 
 namespace Tribulus.MarketPlace.Admin;
 

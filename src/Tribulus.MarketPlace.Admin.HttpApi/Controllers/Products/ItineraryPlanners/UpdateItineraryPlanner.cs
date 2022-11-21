@@ -2,7 +2,6 @@
 using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
-using Tribulus.MarketPlace.Admin.Inventory.Products;
 using Tribulus.MarketPlace.Extensions;
 using Volo.Abp.DependencyInjection;
 
@@ -24,14 +23,14 @@ namespace Tribulus.MarketPlace.Admin.Controllers.Products.ItineraryPlanners
         public Task PlanItinerary(BehaviorContext<FutureState, UpdateProduct> context, IItineraryBuilder builder)
         {
             var product = context.Message;
-            var updateProductAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(IUpdateProductStockActivity))}");
+            //var updateProductAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(IUpdateProductStockActivity))}");
 
-            builder.AddVariable(nameof(product.ProductId), product.ProductId);
-            builder.AddVariable(nameof(product.UserId), product.UserId);
-            builder.AddActivity(_endpointNameformatter.GetActivityName(typeof(IUpdateProductStockActivity)), updateProductAddress, new
-            {
-                StockCount = product.StockCount
-            });
+            //builder.AddVariable(nameof(product.ProductId), product.ProductId);
+            //builder.AddVariable(nameof(product.UserId), product.UserId);
+            //builder.AddActivity(_endpointNameformatter.GetActivityName(typeof(IUpdateProductStockActivity)), updateProductAddress, new
+            //{
+            //    StockCount = product.StockCount
+            //});
 
             //var createProductPriceAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(ICreateProductPriceActivity))}");
 

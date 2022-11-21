@@ -1,6 +1,3 @@
-using System;
-using System.IO;
-using System.Linq;
 using Localization.Resources.AbpUi;
 using Medallion.Threading;
 using Medallion.Threading.Redis;
@@ -9,15 +6,18 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OpenIddict.Server;
+using StackExchange.Redis;
+using System;
+using System.IO;
 using Tribulus.MarketPlace.EntityFrameworkCore;
+using Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
 using Tribulus.MarketPlace.Localization;
 using Tribulus.MarketPlace.MultiTenancy;
-using StackExchange.Redis;
+using Tribulus.MarketPlace.Options;
 using Volo.Abp;
 using Volo.Abp.Account;
 using Volo.Abp.Account.Web;
-using Volo.Abp.AspNetCore.Mvc.UI;
-using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap;
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.Bundling;
@@ -32,10 +32,7 @@ using Volo.Abp.DistributedLocking;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.UI.Navigation.Urls;
-using Volo.Abp.UI;
 using Volo.Abp.VirtualFileSystem;
-using Tribulus.MarketPlace.Options;
-using OpenIddict.Server;
 
 namespace Tribulus.MarketPlace;
 
@@ -48,6 +45,7 @@ namespace Tribulus.MarketPlace;
     typeof(AbpAccountHttpApiModule),
     typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
     typeof(MarketPlaceEntityFrameworkCoreModule),
+    typeof(InventoryEntityFrameworkCoreModule),
     typeof(AbpAspNetCoreSerilogModule)
     )]
 public class MarketPlaceAuthServerModule : AbpModule
@@ -60,6 +58,7 @@ public class MarketPlaceAuthServerModule : AbpModule
             {
                 options.AddAudiences("MarketPlace");
                 options.AddAudiences("MarketPlaceAdmin");
+                options.AddAudiences("MarketPlaceAdminInventory");
                 options.UseLocalServer();
                 options.UseAspNetCore();
             });
@@ -124,6 +123,8 @@ public class MarketPlaceAuthServerModule : AbpModule
             {
                 options.FileSets.ReplaceEmbeddedByPhysical<MarketPlaceDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Domain.Shared"));
                 options.FileSets.ReplaceEmbeddedByPhysical<MarketPlaceDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Domain"));
+                options.FileSets.ReplaceEmbeddedByPhysical<MarketPlaceDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Inventory.Domain.Shared"));
+                options.FileSets.ReplaceEmbeddedByPhysical<MarketPlaceDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Inventory.Domain"));
             });
         }
 
@@ -135,7 +136,8 @@ public class MarketPlaceAuthServerModule : AbpModule
                 {
                         MarketPlaceUrlOptions.GetWwwConfigValue(configuration),
                         MarketPlaceUrlOptions.GetApiConfigValue(configuration),
-                        MarketPlaceUrlOptions.GetAdminApiConfigValue(configuration)
+                        MarketPlaceUrlOptions.GetAdminApiConfigValue(configuration),
+                        MarketPlaceUrlOptions.GetAdminInventoryApiConfigValue(configuration)
                 });
 
         });
@@ -177,7 +179,8 @@ public class MarketPlaceAuthServerModule : AbpModule
                             MarketPlaceUrlOptions.GetWwwConfigValue(configuration),
                             MarketPlaceUrlOptions.GetApiConfigValue(configuration),
                             MarketPlaceUrlOptions.GetAdminConfigValue(configuration),
-                            MarketPlaceUrlOptions.GetAdminApiConfigValue(configuration)
+                            MarketPlaceUrlOptions.GetAdminApiConfigValue(configuration),
+                            MarketPlaceUrlOptions.GetAdminInventoryApiConfigValue(configuration)
                         )
                     .WithAbpExposedHeaders()
                     .SetIsOriginAllowedToAllowWildcardSubdomains()

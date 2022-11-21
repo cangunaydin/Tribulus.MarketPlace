@@ -2,9 +2,6 @@
 using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
-using Tribulus.MarketPlace.Admin.Inventory.Products;
-using Tribulus.MarketPlace.Admin.Marketing.Products;
-using Tribulus.MarketPlace.Admin.Sales.Products;
 using Tribulus.MarketPlace.Extensions;
 using Volo.Abp.DependencyInjection;
 
@@ -26,29 +23,29 @@ public class CreateProductItineraryPlanner : IItineraryPlanner<CreateProduct>,IT
     public Task PlanItinerary(BehaviorContext<FutureState, CreateProduct> context, IItineraryBuilder builder)
     {
         var product = context.Message;
-        var createProductAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(ICreateProductActivity))}");
+        //var createProductAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(ICreateProductActivity))}");
 
-        builder.AddVariable(nameof(product.ProductId), product.ProductId);
-        builder.AddVariable(nameof(product.UserId), product.UserId);
-        builder.AddActivity(_endpointNameformatter.GetActivityName(typeof(ICreateProductActivity)), createProductAddress, new
-        {
-            Name = product.Name,
-            Description = product.Description
-        });
+        //builder.AddVariable(nameof(product.ProductId), product.ProductId);
+        //builder.AddVariable(nameof(product.UserId), product.UserId);
+        //builder.AddActivity(_endpointNameformatter.GetActivityName(typeof(ICreateProductActivity)), createProductAddress, new
+        //{
+        //    Name = product.Name,
+        //    Description = product.Description
+        //});
 
-        var createProductPriceAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(ICreateProductPriceActivity))}");
+        //var createProductPriceAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(ICreateProductPriceActivity))}");
 
-        builder.AddActivity(_endpointNameformatter.GetActivityName(typeof(ICreateProductPriceActivity)), createProductPriceAddress, new
-        {
-            Price = product.Price
-        });
+        //builder.AddActivity(_endpointNameformatter.GetActivityName(typeof(ICreateProductPriceActivity)), createProductPriceAddress, new
+        //{
+        //    Price = product.Price
+        //});
 
-        var createProductStockAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(ICreateProductStockActivity))}");
+        //var createProductStockAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(ICreateProductStockActivity))}");
 
-        builder.AddActivity(_endpointNameformatter.GetActivityName(typeof(ICreateProductStockActivity)), createProductStockAddress, new
-        {
-            StockCount = product.StockCount
-        });
+        //builder.AddActivity(_endpointNameformatter.GetActivityName(typeof(ICreateProductStockActivity)), createProductStockAddress, new
+        //{
+        //    StockCount = product.StockCount
+        //});
         return Task.CompletedTask;
     }
 

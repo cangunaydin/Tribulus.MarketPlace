@@ -74,6 +74,19 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                 }
             });
         }
+
+        if (await _scopeManager.FindByNameAsync("MarketPlaceAdminInventory") == null)
+        {
+            await _scopeManager.CreateAsync(new OpenIddictScopeDescriptor
+            {
+                Name = "MarketPlaceAdminInventory",
+                DisplayName = "Market Place Admin Inventory API",
+                Resources =
+                {
+                    "MarketPlaceAdminInventory"
+                }
+            });
+        }
     }
 
     private async Task CreateApplicationsAsync()
@@ -185,6 +198,28 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
             );
         }
 
+
+        // Swagger Inventory Admin Client
+        var swaggerAdminInventoryClientId = configurationSection["MarketPlaceAdminInventory_Swagger:ClientId"];
+        if (!swaggerAdminInventoryClientId.IsNullOrWhiteSpace())
+        {
+            var swaggerAdminInventoryRootUrl = configurationSection["MarketPlaceAdminInventory_Swagger:RootUrl"].TrimEnd('/');
+
+            await CreateApplicationAsync(
+                name: swaggerAdminInventoryClientId,
+                type: OpenIddictConstants.ClientTypes.Public,
+                consentType: OpenIddictConstants.ConsentTypes.Implicit,
+                displayName: "Swagger Admin Inventory Application",
+                secret: null,
+                grantTypes: new List<string>
+                {
+                    OpenIddictConstants.GrantTypes.AuthorizationCode,
+                },
+                scopes: commonScopes.Union(new[] { "MarketPlaceAdminInventory" }).ToList(),
+                redirectUri: $"{swaggerAdminInventoryRootUrl}/swagger/oauth2-redirect.html",
+                clientUri: swaggerAdminInventoryRootUrl
+            );
+        }
 
     }
 

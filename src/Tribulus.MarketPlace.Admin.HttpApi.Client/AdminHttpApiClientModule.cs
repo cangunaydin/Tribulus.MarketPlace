@@ -1,7 +1,4 @@
 using Microsoft.Extensions.DependencyInjection;
-using Tribulus.MarketPlace.Admin.Inventory;
-using Tribulus.MarketPlace.Admin.Marketing;
-using Tribulus.MarketPlace.Admin.Sales;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -14,9 +11,9 @@ using Volo.Abp.VirtualFileSystem;
 namespace Tribulus.MarketPlace.Admin;
 
 [DependsOn(
-    typeof(AdminMarketingHttpApiClientModule),
-    typeof(AdminSalesHttpApiClientModule),
-    typeof(AdminInventoryHttpApiClientModule),
+    //typeof(AdminMarketingHttpApiClientModule),
+    //typeof(AdminSalesHttpApiClientModule),
+    //typeof(AdminInventoryHttpApiClientModule),
     typeof(AdminApplicationContractsModule),
     typeof(AbpAccountHttpApiClientModule),
     typeof(AbpIdentityHttpApiClientModule),

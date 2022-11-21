@@ -1,9 +1,5 @@
 using Localization.Resources.AbpUi;
 using MediatR;
-using Tribulus.MarketPlace.Admin.Inventory;
-using Tribulus.MarketPlace.Admin.Inventory.Composition;
-using Tribulus.MarketPlace.Admin.Marketing;
-using Tribulus.MarketPlace.Admin.Sales;
 using Tribulus.MarketPlace.Localization;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
@@ -17,14 +13,14 @@ using Volo.Abp.TenantManagement;
 namespace Tribulus.MarketPlace.Admin;
 
 [DependsOn(
-    typeof(AdminMarketingHttpApiModule),
-    typeof(AdminSalesHttpApiModule),
-    typeof(AdminInventoryHttpApiModule),
+    //typeof(AdminMarketingHttpApiModule),
+    //typeof(AdminSalesHttpApiModule),
+    //typeof(AdminInventoryHttpApiModule),
     typeof(AdminApplicationContractsModule),
     typeof(SharedContractsModule),
-    typeof(AdminMarketingCompositionModule),
-    typeof(AdminSalesCompositionModule),
-    typeof(AdminInventoryCompositionModule),
+    //typeof(AdminMarketingCompositionModule),
+    //typeof(AdminSalesCompositionModule),
+    //typeof(AdminInventoryCompositionModule),
     typeof(AbpAccountHttpApiModule),
     typeof(AbpIdentityHttpApiModule),
     typeof(AbpPermissionManagementHttpApiModule),

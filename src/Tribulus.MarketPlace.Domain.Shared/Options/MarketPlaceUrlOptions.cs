@@ -15,6 +15,7 @@ namespace Tribulus.MarketPlace.Options
         private const string ApiDefaultValue = "https://localhost:44311";
         private const string ApiInternalDefaultValue = ApiDefaultValue;
         private const string AdminApiDefaultValue = "https://localhost:44354";
+        private const string AdminInventoryApiDefaultValue = "https://localhost:44374";
 
         public string Account { get; set; } = AccountDefaultValue;
         public string Www { get; set; } = WwwDefaultValue;
@@ -22,6 +23,7 @@ namespace Tribulus.MarketPlace.Options
         public string ApiInternal { get; set; } = ApiInternalDefaultValue;
         public string Admin { get; set; } = AdminDefaultValue;
         public string AdminApi { get; set; } = AdminApiDefaultValue;
+        public string AdminInventoryApi { get; set; } = AdminInventoryApiDefaultValue;
 
         public static string GetAccountConfigValue(IConfiguration configuration)
         {
@@ -51,6 +53,11 @@ namespace Tribulus.MarketPlace.Options
         public static string GetAdminApiConfigValue(IConfiguration configuration)
         {
             return GetConfigValue(configuration, nameof(AdminApi), AdminApiDefaultValue);
+        }
+
+        public static string GetAdminInventoryApiConfigValue(IConfiguration configuration)
+        {
+            return GetConfigValue(configuration, nameof(AdminInventoryApi), AdminInventoryApiDefaultValue);
         }
 
         private static string GetConfigKey(string appName)

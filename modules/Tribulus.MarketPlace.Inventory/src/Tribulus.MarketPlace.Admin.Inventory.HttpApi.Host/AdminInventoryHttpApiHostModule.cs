@@ -1,52 +1,48 @@
-using MassTransit;
+﻿using MassTransit;
 using Medallion.Threading;
 using Medallion.Threading.Redis;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.DataProtection;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Tribulus.MarketPlace.Admin.Controllers.Products.Commands;
-using Tribulus.MarketPlace.Admin.Controllers.Products.Futures;
-using Tribulus.MarketPlace.EntityFrameworkCore;
-using Tribulus.MarketPlace.Extensions;
-using Tribulus.MarketPlace.MultiTenancy;
+using Tasky.Microservice.Shared;
+using Tribulus.MarketPlace.Admin.Inventory;
+using Tribulus.MarketPlace.Inventory;
+using Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
+using Tribulus.MarketPlace.Inventory.MultiTenancy;
 using Volo.Abp;
+using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AspNetCore.Mvc;
-using Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
 using Volo.Abp.Caching;
 using Volo.Abp.Caching.StackExchangeRedis;
-using Volo.Abp.DistributedLocking;
+using Volo.Abp.Data;
+using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.SqlServer;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.VirtualFileSystem;
 
-namespace Tribulus.MarketPlace.Admin;
+namespace Tribulus.MarketPlace;
+
 
 [DependsOn(
-    typeof(AdminHttpApiModule),
-    typeof(MarketPlaceAdminApplicationModule),
-    typeof(MarketPlaceEntityFrameworkCoreModule),
+    typeof(MarketPlaceMicroserviceModule),
     typeof(AbpAutofacModule),
+    typeof(AbpDataModule),
     typeof(AbpCachingStackExchangeRedisModule),
-    typeof(AbpDistributedLockingModule),
-    typeof(AbpAspNetCoreMvcUiMultiTenancyModule),
     typeof(AbpAspNetCoreSerilogModule),
-    typeof(AbpSwashbuckleModule)
+    typeof(AbpAspNetCoreMultiTenancyModule),
+    typeof(AbpSwashbuckleModule),
+    typeof(AbpEntityFrameworkCoreModule),
+    typeof(AbpEntityFrameworkCoreSqlServerModule),
+    typeof(AdminInventoryApplicationModule),
+    typeof(InventoryEntityFrameworkCoreModule)
 )]
-public class AdminHttpApiHostModule : AbpModule
+public class AdminInventoryHttpApiHostModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
@@ -63,33 +59,33 @@ public class AdminHttpApiHostModule : AbpModule
         ConfigureCors(context, configuration);
         ConfigureSwaggerServices(context, configuration);
         ConfigureAuthorization(context, configuration);
-        context.Services.AddMassTransit(cfg =>
-        {
-            cfg.ApplyMarketPlaceMassTransitConfiguration();
+        //context.Services.AddMassTransit(cfg =>
+        //{
+        //    cfg.ApplyMarketPlaceMassTransitConfiguration();
 
 
-            //cfg.AddConsumersFromNamespaceContaining<CreateProductConsumer>();
-            //cfg.AddActivitiesFromNamespaceContaining<CreateProductActivity>();
-            //cfg.AddActivitiesFromNamespaceContaining<CreateProductPriceActivity>();
-            //cfg.AddActivitiesFromNamespaceContaining<CreateProductStockActivity>();
-            cfg.AddFuturesFromNamespaceContaining<CreateProductFuture>();
+        //    //cfg.AddConsumersFromNamespaceContaining<CreateProductConsumer>();
+        //    //cfg.AddActivitiesFromNamespaceContaining<CreateProductActivity>();
+        //    //cfg.AddActivitiesFromNamespaceContaining<CreateProductPriceActivity>();
+        //    //cfg.AddActivitiesFromNamespaceContaining<CreateProductStockActivity>();
+        //    cfg.AddFuturesFromNamespaceContaining<CreateProductFuture>();
 
-            cfg.AddSagaRepository<FutureState>()
-                .InMemoryRepository();
+        //    cfg.AddSagaRepository<FutureState>()
+        //        .InMemoryRepository();
 
-            cfg.UsingInMemory((context, cfg) =>
-            {
-                // Controllers are using the request client, so we may as well
-                // start the bus receive endpoint
-                cfg.AutoStart = true;
+        //    cfg.UsingInMemory((context, cfg) =>
+        //    {
+        //        // Controllers are using the request client, so we may as well
+        //        // start the bus receive endpoint
+        //        cfg.AutoStart = true;
 
-                cfg.ConfigureEndpoints(context);
-            });
+        //        cfg.ConfigureEndpoints(context);
+        //    });
 
-            cfg.AddRequestClient<CreateProduct>();
-            cfg.AddRequestClient<UpdateProduct>();
+        //    cfg.AddRequestClient<CreateProduct>();
+        //    cfg.AddRequestClient<UpdateProduct>();
 
-        });
+        //});
 
 
     }
@@ -108,7 +104,7 @@ public class AdminHttpApiHostModule : AbpModule
 
     private void ConfigureCache(IConfiguration configuration)
     {
-        Configure<AbpDistributedCacheOptions>(options => { options.KeyPrefix = "Admin:"; });
+        Configure<AbpDistributedCacheOptions>(options => { options.KeyPrefix = "AdminInventory:"; });
     }
 
     private void ConfigureVirtualFileSystem(ServiceConfigurationContext context)
@@ -119,18 +115,18 @@ public class AdminHttpApiHostModule : AbpModule
         {
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
-                options.FileSets.ReplaceEmbeddedByPhysical<MarketPlaceDomainSharedModule>(
+                options.FileSets.ReplaceEmbeddedByPhysical<InventoryDomainSharedModule>(
                     Path.Combine(hostingEnvironment.ContentRootPath,
-                        $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Domain.Shared"));
-                options.FileSets.ReplaceEmbeddedByPhysical<MarketPlaceDomainModule>(
+                        $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Inventory.Domain.Shared"));
+                options.FileSets.ReplaceEmbeddedByPhysical<InventoryDomainModule>(
                     Path.Combine(hostingEnvironment.ContentRootPath,
-                        $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Domain"));
-                options.FileSets.ReplaceEmbeddedByPhysical<AdminApplicationContractsModule>(
+                        $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Inventory.Domain"));
+                options.FileSets.ReplaceEmbeddedByPhysical<AdminInventoryApplicationContractsModule>(
                     Path.Combine(hostingEnvironment.ContentRootPath,
-                        $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Admin.Application.Contracts"));
-                options.FileSets.ReplaceEmbeddedByPhysical<MarketPlaceAdminApplicationModule>(
+                        $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Admin.Inventory.Application.Contracts"));
+                options.FileSets.ReplaceEmbeddedByPhysical<AdminInventoryApplicationModule>(
                     Path.Combine(hostingEnvironment.ContentRootPath,
-                        $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Admin.Application"));
+                        $"..{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Admin.Inventory.Application"));
             });
         }
     }
@@ -139,7 +135,7 @@ public class AdminHttpApiHostModule : AbpModule
     {
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
-            options.ConventionalControllers.Create(typeof(MarketPlaceAdminApplicationModule).Assembly);
+            options.ConventionalControllers.Create(typeof(AdminInventoryApplicationModule).Assembly);
             //options.ConventionalControllers.Create(typeof(AdminMarketingApplicationModule).Assembly);
             //options.ConventionalControllers.Create(typeof(AdminSalesApplicationModule).Assembly);
             //options.ConventionalControllers.Create(typeof(AdminInventoryApplicationModule).Assembly);
@@ -153,7 +149,7 @@ public class AdminHttpApiHostModule : AbpModule
             {
                 options.Authority = configuration["AuthServer:Authority"];
                 options.RequireHttpsMetadata = Convert.ToBoolean(configuration["AuthServer:RequireHttpsMetadata"]);
-                options.Audience = "MarketPlaceAdmin";
+                options.Audience = "MarketPlaceAdminInventory";
             });
     }
 
@@ -163,11 +159,11 @@ public class AdminHttpApiHostModule : AbpModule
             configuration["AuthServer:Authority"],
             new Dictionary<string, string>
             {
-                    {"MarketPlaceAdmin", "Market Place Admin API"}
+                    {"MarketPlaceAdminInventory", "Market Place Admin Inventory API"}
             },
             options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Admin API", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Admin Inventory API", Version = "v1" });
                 options.DocInclusionPredicate((docName, description) => true);
                 options.CustomSchemaIds(type => type.FullName);
             });
@@ -278,7 +274,7 @@ public class AdminHttpApiHostModule : AbpModule
 
             var configuration = context.GetConfiguration();
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
-            options.OAuthScopes("MarketPlaceAdmin");
+            options.OAuthScopes("MarketPlaceAdminInventory");
         });
 
         app.UseAuditing();
