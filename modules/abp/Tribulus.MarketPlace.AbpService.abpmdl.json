@@ -1,0 +1,79 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "Tribulus.MarketPlace.AbpService.Domain.Shared": {
+      "path": "src/Tribulus.MarketPlace.AbpService.Domain.Shared/Tribulus.MarketPlace.AbpService.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AbpService.Domain": {
+      "path": "src/Tribulus.MarketPlace.AbpService.Domain/Tribulus.MarketPlace.AbpService.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AbpService.Application.Contracts": {
+      "path": "src/Tribulus.MarketPlace.AbpService.Application.Contracts/Tribulus.MarketPlace.AbpService.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AbpService.Application": {
+      "path": "src/Tribulus.MarketPlace.AbpService.Application/Tribulus.MarketPlace.AbpService.Application.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AbpService.EntityFrameworkCore": {
+      "path": "src/Tribulus.MarketPlace.AbpService.EntityFrameworkCore/Tribulus.MarketPlace.AbpService.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AbpService.MongoDB": {
+      "path": "src/Tribulus.MarketPlace.AbpService.MongoDB/Tribulus.MarketPlace.AbpService.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AbpService.HttpApi": {
+      "path": "src/Tribulus.MarketPlace.AbpService.HttpApi/Tribulus.MarketPlace.AbpService.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AbpService.HttpApi.Client": {
+      "path": "src/Tribulus.MarketPlace.AbpService.HttpApi.Client/Tribulus.MarketPlace.AbpService.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AbpService.TestBase": {
+      "path": "test/Tribulus.MarketPlace.AbpService.TestBase/Tribulus.MarketPlace.AbpService.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.AbpService.EntityFrameworkCore.Tests": {
+      "path": "test/Tribulus.MarketPlace.AbpService.EntityFrameworkCore.Tests/Tribulus.MarketPlace.AbpService.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.AbpService.MongoDB.Tests": {
+      "path": "test/Tribulus.MarketPlace.AbpService.MongoDB.Tests/Tribulus.MarketPlace.AbpService.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.AbpService.Domain.Tests": {
+      "path": "test/Tribulus.MarketPlace.AbpService.Domain.Tests/Tribulus.MarketPlace.AbpService.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.AbpService.Application.Tests": {
+      "path": "test/Tribulus.MarketPlace.AbpService.Application.Tests/Tribulus.MarketPlace.AbpService.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.AbpService.HttpApi.Host": {
+      "path": "host/Tribulus.MarketPlace.AbpService.HttpApi.Host/Tribulus.MarketPlace.AbpService.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Tribulus.MarketPlace.AbpService.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Tribulus.MarketPlace.AbpService.HttpApi.Client.ConsoleTestApp/Tribulus.MarketPlace.AbpService.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.AbpService.AuthServer": {
+      "path": "host/Tribulus.MarketPlace.AbpService.AuthServer/Tribulus.MarketPlace.AbpService.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "Tribulus.MarketPlace.AbpService.Host.Shared": {
+      "path": "host/Tribulus.MarketPlace.AbpService.Host.Shared/Tribulus.MarketPlace.AbpService.Host.Shared.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

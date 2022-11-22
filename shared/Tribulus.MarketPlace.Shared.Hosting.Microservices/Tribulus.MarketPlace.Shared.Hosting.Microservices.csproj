@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tribulus.MarketPlace.Shared.Hosting.AspNetCore\Tribulus.MarketPlace.Shared.Hosting.AspNetCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="6.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.5" />
+    <PackageReference Include="DistributedLock.Redis" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.MultiTenancy" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.EventBus.RabbitMQ" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.RabbitMQ" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.DistributedLocking" Version="6.0.1" />
+    <!--        Un-comment if you are using mongodb in any microservice -->
+    <!--        <ProjectReference Include="..\..\..\..\..\..\abp\framework\src\Volo.Abp.MongoDB\Volo.Abp.MongoDB.csproj" />-->
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\abp\src\Tribulus.MarketPlace.AbpService.EntityFrameworkCore\Tribulus.MarketPlace.AbpService.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+
+</Project>

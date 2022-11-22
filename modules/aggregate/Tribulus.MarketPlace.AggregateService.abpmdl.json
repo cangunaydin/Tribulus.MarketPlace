@@ -1,0 +1,79 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "Tribulus.MarketPlace.AggregateService.Domain.Shared": {
+      "path": "src/Tribulus.MarketPlace.AggregateService.Domain.Shared/Tribulus.MarketPlace.AggregateService.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AggregateService.Domain": {
+      "path": "src/Tribulus.MarketPlace.AggregateService.Domain/Tribulus.MarketPlace.AggregateService.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AggregateService.Application.Contracts": {
+      "path": "src/Tribulus.MarketPlace.AggregateService.Application.Contracts/Tribulus.MarketPlace.AggregateService.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AggregateService.Application": {
+      "path": "src/Tribulus.MarketPlace.AggregateService.Application/Tribulus.MarketPlace.AggregateService.Application.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AggregateService.EntityFrameworkCore": {
+      "path": "src/Tribulus.MarketPlace.AggregateService.EntityFrameworkCore/Tribulus.MarketPlace.AggregateService.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AggregateService.MongoDB": {
+      "path": "src/Tribulus.MarketPlace.AggregateService.MongoDB/Tribulus.MarketPlace.AggregateService.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AggregateService.HttpApi": {
+      "path": "src/Tribulus.MarketPlace.AggregateService.HttpApi/Tribulus.MarketPlace.AggregateService.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AggregateService.HttpApi.Client": {
+      "path": "src/Tribulus.MarketPlace.AggregateService.HttpApi.Client/Tribulus.MarketPlace.AggregateService.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "Tribulus.MarketPlace.AggregateService.TestBase": {
+      "path": "test/Tribulus.MarketPlace.AggregateService.TestBase/Tribulus.MarketPlace.AggregateService.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.AggregateService.EntityFrameworkCore.Tests": {
+      "path": "test/Tribulus.MarketPlace.AggregateService.EntityFrameworkCore.Tests/Tribulus.MarketPlace.AggregateService.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.AggregateService.MongoDB.Tests": {
+      "path": "test/Tribulus.MarketPlace.AggregateService.MongoDB.Tests/Tribulus.MarketPlace.AggregateService.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.AggregateService.Domain.Tests": {
+      "path": "test/Tribulus.MarketPlace.AggregateService.Domain.Tests/Tribulus.MarketPlace.AggregateService.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.AggregateService.Application.Tests": {
+      "path": "test/Tribulus.MarketPlace.AggregateService.Application.Tests/Tribulus.MarketPlace.AggregateService.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.AggregateService.HttpApi.Host": {
+      "path": "host/Tribulus.MarketPlace.AggregateService.HttpApi.Host/Tribulus.MarketPlace.AggregateService.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Tribulus.MarketPlace.AggregateService.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Tribulus.MarketPlace.AggregateService.HttpApi.Client.ConsoleTestApp/Tribulus.MarketPlace.AggregateService.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "Tribulus.MarketPlace.AggregateService.AuthServer": {
+      "path": "host/Tribulus.MarketPlace.AggregateService.AuthServer/Tribulus.MarketPlace.AggregateService.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "Tribulus.MarketPlace.AggregateService.Host.Shared": {
+      "path": "host/Tribulus.MarketPlace.AggregateService.Host.Shared/Tribulus.MarketPlace.AggregateService.Host.Shared.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

@@ -1,0 +1,100 @@
+﻿{
+  "ReverseProxy": {
+    "Routes": {
+      "Account Service": {
+        "ClusterId": "accountCluster",
+        "Match": {
+          "Path": "/api/account/{**everything}"
+        }
+      },
+      "Identity Service": {
+        "ClusterId": "identityCluster",
+        "Match": {
+          "Path": "/api/identity/{**everything}"
+        }
+      },
+      "Administration Service": {
+        "ClusterId": "administrationCluster",
+        "Match": {
+          "Path": "/api/abp/{**everything}"
+        }
+      },
+      "feature-management-route": {
+        "ClusterId": "feature-management-cluster",
+        "Match": {
+          "Path": "/api/feature-management/{**everything}"
+        }
+      },
+      "permission-management-route": {
+        "ClusterId": "permission-management-cluster",
+        "Match": {
+          "Path": "/api/permission-management/{**everything}"
+        }
+      },
+      "setting-management-route": {
+        "ClusterId": "setting-management-cluster",
+        "Match": {
+          "Path": "/api/setting-management/{**everything}"
+        }
+      },
+      "Aggregate Service": {
+        "ClusterId": "aggregateCluster",
+        "Match": {
+          "Path": "/api/aggregate/{**everything}"
+        }
+      }
+     
+    },
+    "Clusters": {
+      "accountCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://localhost:44351"
+          }
+        }
+      },
+      "identityCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://localhost:44373"
+          }
+        }
+      },
+      "administrationCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://localhost:44373"
+          }
+        }
+      },
+      "feature-management-cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://localhost:44373"
+          }
+        }
+      },
+      "permission-management-cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://localhost:44373"
+          }
+        }
+      },
+      "setting-management-cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://localhost:44373"
+          }
+        }
+      },
+      "aggregateCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://localhost:44397"
+          }
+        }
+      }
+    }
+  }
+}

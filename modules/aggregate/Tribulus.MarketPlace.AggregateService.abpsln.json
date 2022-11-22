@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "Tribulus.MarketPlace.AggregateService": {
+      "path": "Tribulus.MarketPlace.AggregateService.abpmdl.json"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tribulus.MarketPlace.Shared.Hosting\Tribulus.MarketPlace.Shared.Hosting.csproj" />
+    <ProjectReference Include="..\..\modules\abp\src\Tribulus.MarketPlace.AbpService.Application.Contracts\Tribulus.MarketPlace.AbpService.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\abp\src\Tribulus.MarketPlace.AbpService.EntityFrameworkCore\Tribulus.MarketPlace.AbpService.EntityFrameworkCore.csproj" />
+
+    <ProjectReference Include="..\..\modules\aggregate\src\Tribulus.MarketPlace.AggregateService.Application.Contracts\Tribulus.MarketPlace.AggregateService.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\aggregate\src\Tribulus.MarketPlace.AggregateService.EntityFrameworkCore\Tribulus.MarketPlace.AggregateService.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <Content Include="appsettings.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="appsettings.secrets.json" />
+    <Content Include="appsettings.secrets.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
