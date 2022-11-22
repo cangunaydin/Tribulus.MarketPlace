@@ -30,7 +30,7 @@ public class ProductServiceHttpApiHostModule : AbpModule
         // var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
 
-        JwtBearerConfigurationHelper.Configure(context, "ProductService");
+        JwtBearerConfigurationHelper.Configure(context, "AggregateService");
         SwaggerConfigurationHelper.ConfigureWithAuth(
             context: context,
             authority: configuration["AuthServer:Authority"],

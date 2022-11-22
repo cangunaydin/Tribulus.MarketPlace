@@ -1,0 +1,541 @@
+2022-11-22 19:50:30.310 +01:00 [INF] Starting Tribulus.MarketPlace.AuthServer.
+2022-11-22 19:50:39.522 +01:00 [INF] Loaded ABP modules:
+2022-11-22 19:50:39.523 +01:00 [INF] - Tribulus.MarketPlace.MarketPlaceAuthServerModule
+2022-11-22 19:50:39.523 +01:00 [INF]   - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2022-11-22 19:50:39.523 +01:00 [INF]     - Volo.Abp.Caching.AbpCachingModule
+2022-11-22 19:50:39.523 +01:00 [INF]       - Volo.Abp.Threading.AbpThreadingModule
+2022-11-22 19:50:39.523 +01:00 [INF]       - Volo.Abp.Serialization.AbpSerializationModule
+2022-11-22 19:50:39.523 +01:00 [INF]       - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-22 19:50:39.523 +01:00 [INF]       - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-22 19:50:39.523 +01:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2022-11-22 19:50:39.523 +01:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-22 19:50:39.523 +01:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-22 19:50:39.523 +01:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-22 19:50:39.523 +01:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-22 19:50:39.523 +01:00 [INF]         - Volo.Abp.Security.AbpSecurityModule
+2022-11-22 19:50:39.523 +01:00 [INF]       - Volo.Abp.Json.AbpJsonModule
+2022-11-22 19:50:39.523 +01:00 [INF]         - Volo.Abp.Timing.AbpTimingModule
+2022-11-22 19:50:39.523 +01:00 [INF]           - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-22 19:50:39.523 +01:00 [INF]             - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-22 19:50:39.523 +01:00 [INF]             - Volo.Abp.Settings.AbpSettingsModule
+2022-11-22 19:50:39.523 +01:00 [INF]   - Volo.Abp.EventBus.RabbitMq.AbpEventBusRabbitMqModule
+2022-11-22 19:50:39.523 +01:00 [INF]     - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-22 19:50:39.523 +01:00 [INF]       - Volo.Abp.Guids.AbpGuidsModule
+2022-11-22 19:50:39.523 +01:00 [INF]       - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-22 19:50:39.523 +01:00 [INF]       - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-22 19:50:39.523 +01:00 [INF]     - Volo.Abp.RabbitMQ.AbpRabbitMqModule
+2022-11-22 19:50:39.523 +01:00 [INF]   - Volo.Abp.BackgroundJobs.RabbitMQ.AbpBackgroundJobsRabbitMqModule
+2022-11-22 19:50:39.523 +01:00 [INF]     - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2022-11-22 19:50:39.523 +01:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.AbpAspNetCoreMvcUiLeptonXLiteThemeModule
+2022-11-22 19:50:39.523 +01:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2022-11-22 19:50:39.523 +01:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2022-11-22 19:50:39.523 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2022-11-22 19:50:39.523 +01:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-11-22 19:50:39.523 +01:00 [INF]             - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-11-22 19:50:39.523 +01:00 [INF]               - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-22 19:50:39.523 +01:00 [INF]                 - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-22 19:50:39.523 +01:00 [INF]               - Volo.Abp.Http.AbpHttpModule
+2022-11-22 19:50:39.524 +01:00 [INF]                 - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-11-22 19:50:39.524 +01:00 [INF]                 - Volo.Abp.Minify.AbpMinifyModule
+2022-11-22 19:50:39.524 +01:00 [INF]               - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-22 19:50:39.524 +01:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-22 19:50:39.524 +01:00 [INF]               - Volo.Abp.Validation.AbpValidationModule
+2022-11-22 19:50:39.524 +01:00 [INF]               - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-22 19:50:39.524 +01:00 [INF]             - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-11-22 19:50:39.524 +01:00 [INF]             - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-11-22 19:50:39.524 +01:00 [INF]               - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-22 19:50:39.524 +01:00 [INF]             - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-11-22 19:50:39.524 +01:00 [INF]               - Volo.Abp.UI.AbpUiModule
+2022-11-22 19:50:39.524 +01:00 [INF]             - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-11-22 19:50:39.524 +01:00 [INF]             - Volo.Abp.Application.AbpDddApplicationModule
+2022-11-22 19:50:39.524 +01:00 [INF]               - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-22 19:50:39.524 +01:00 [INF]                 - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-22 19:50:39.524 +01:00 [INF]                 - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-22 19:50:39.524 +01:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2022-11-22 19:50:39.524 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2022-11-22 19:50:39.524 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-11-22 19:50:39.524 +01:00 [INF]   - Volo.Abp.Account.Web.AbpAccountWebOpenIddictModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.Account.Web.AbpAccountWebModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2022-11-22 19:50:39.524 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2022-11-22 19:50:39.524 +01:00 [INF]           - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-11-22 19:50:39.524 +01:00 [INF]             - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-11-22 19:50:39.524 +01:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-11-22 19:50:39.524 +01:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2022-11-22 19:50:39.524 +01:00 [INF]             - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-11-22 19:50:39.524 +01:00 [INF]           - Volo.Abp.Users.AbpUsersDomainModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.OpenIddict.AbpOpenIddictAspNetCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2022-11-22 19:50:39.524 +01:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2022-11-22 19:50:39.524 +01:00 [INF]   - Volo.Abp.Account.AbpAccountApplicationModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.Identity.AbpIdentityApplicationModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2022-11-22 19:50:39.524 +01:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.Emailing.AbpEmailingModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2022-11-22 19:50:39.524 +01:00 [INF]         - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2022-11-22 19:50:39.524 +01:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]   - Volo.Abp.Account.AbpAccountHttpApiModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2022-11-22 19:50:39.524 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.EntityFrameworkCore.AbpServiceEntityFrameworkCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Tribulus.MarketPlace.AbpService.AbpServiceDomainModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Tribulus.MarketPlace.AbpService.AbpServiceDomainSharedModule
+2022-11-22 19:50:39.524 +01:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-11-22 19:50:39.524 +01:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-11-22 19:50:39.524 +01:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-11-22 19:50:39.524 +01:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.AspNetCore.MarketPlaceSharedHostingAspNetCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-22 19:50:39.524 +01:00 [INF]       - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-22 19:50:39.524 +01:00 [INF]         - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-11-22 19:50:39.524 +01:00 [INF]     - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-11-22 19:50:39.524 +01:00 [INF]   - Tribulus.MarketPlace.Localization.MarketPlaceSharedLocalizationModule
+2022-11-22 19:50:39.807 +01:00 [DBG] RabbitMQ Queue 'AbpBackgroundJobs.Volo.Abp.Emailing.BackgroundEmailSendingJobArgs' has 0 messages and 0 consumers.
+2022-11-22 19:54:23.823 +01:00 [INF] Starting Tribulus.MarketPlace.AuthServer.
+2022-11-22 19:54:27.327 +01:00 [INF] Loaded ABP modules:
+2022-11-22 19:54:27.329 +01:00 [INF] - Tribulus.MarketPlace.MarketPlaceAuthServerModule
+2022-11-22 19:54:27.329 +01:00 [INF]   - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.Caching.AbpCachingModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.Threading.AbpThreadingModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.Serialization.AbpSerializationModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2022-11-22 19:54:27.329 +01:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-22 19:54:27.329 +01:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-22 19:54:27.329 +01:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-22 19:54:27.329 +01:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.Security.AbpSecurityModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.Json.AbpJsonModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.Timing.AbpTimingModule
+2022-11-22 19:54:27.329 +01:00 [INF]           - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-22 19:54:27.329 +01:00 [INF]             - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-22 19:54:27.329 +01:00 [INF]             - Volo.Abp.Settings.AbpSettingsModule
+2022-11-22 19:54:27.329 +01:00 [INF]   - Volo.Abp.EventBus.RabbitMq.AbpEventBusRabbitMqModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.Guids.AbpGuidsModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.RabbitMQ.AbpRabbitMqModule
+2022-11-22 19:54:27.329 +01:00 [INF]   - Volo.Abp.BackgroundJobs.RabbitMQ.AbpBackgroundJobsRabbitMqModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2022-11-22 19:54:27.329 +01:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.AbpAspNetCoreMvcUiLeptonXLiteThemeModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2022-11-22 19:54:27.329 +01:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-11-22 19:54:27.329 +01:00 [INF]             - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]               - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-22 19:54:27.329 +01:00 [INF]                 - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-22 19:54:27.329 +01:00 [INF]               - Volo.Abp.Http.AbpHttpModule
+2022-11-22 19:54:27.329 +01:00 [INF]                 - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-11-22 19:54:27.329 +01:00 [INF]                 - Volo.Abp.Minify.AbpMinifyModule
+2022-11-22 19:54:27.329 +01:00 [INF]               - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-22 19:54:27.329 +01:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-22 19:54:27.329 +01:00 [INF]               - Volo.Abp.Validation.AbpValidationModule
+2022-11-22 19:54:27.329 +01:00 [INF]               - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-22 19:54:27.329 +01:00 [INF]             - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-11-22 19:54:27.329 +01:00 [INF]             - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-11-22 19:54:27.329 +01:00 [INF]               - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-22 19:54:27.329 +01:00 [INF]             - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-11-22 19:54:27.329 +01:00 [INF]               - Volo.Abp.UI.AbpUiModule
+2022-11-22 19:54:27.329 +01:00 [INF]             - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-11-22 19:54:27.329 +01:00 [INF]             - Volo.Abp.Application.AbpDddApplicationModule
+2022-11-22 19:54:27.329 +01:00 [INF]               - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-22 19:54:27.329 +01:00 [INF]                 - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-22 19:54:27.329 +01:00 [INF]                 - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-22 19:54:27.329 +01:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-11-22 19:54:27.329 +01:00 [INF]   - Volo.Abp.Account.Web.AbpAccountWebOpenIddictModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.Account.Web.AbpAccountWebModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2022-11-22 19:54:27.329 +01:00 [INF]           - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-11-22 19:54:27.329 +01:00 [INF]             - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-11-22 19:54:27.329 +01:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-11-22 19:54:27.329 +01:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2022-11-22 19:54:27.329 +01:00 [INF]             - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-11-22 19:54:27.329 +01:00 [INF]           - Volo.Abp.Users.AbpUsersDomainModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.OpenIddict.AbpOpenIddictAspNetCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2022-11-22 19:54:27.329 +01:00 [INF]   - Volo.Abp.Account.AbpAccountApplicationModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.Identity.AbpIdentityApplicationModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.Emailing.AbpEmailingModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2022-11-22 19:54:27.329 +01:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]   - Volo.Abp.Account.AbpAccountHttpApiModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2022-11-22 19:54:27.329 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.EntityFrameworkCore.AbpServiceEntityFrameworkCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Tribulus.MarketPlace.AbpService.AbpServiceDomainModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Tribulus.MarketPlace.AbpService.AbpServiceDomainSharedModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.AspNetCore.MarketPlaceSharedHostingAspNetCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-22 19:54:27.329 +01:00 [INF]       - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-22 19:54:27.329 +01:00 [INF]         - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-11-22 19:54:27.329 +01:00 [INF]     - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-11-22 19:54:27.329 +01:00 [INF]   - Tribulus.MarketPlace.Localization.MarketPlaceSharedLocalizationModule
+2022-11-22 19:54:27.493 +01:00 [DBG] RabbitMQ Queue 'AbpBackgroundJobs.Volo.Abp.Emailing.BackgroundEmailSendingJobArgs' has 0 messages and 0 consumers.
+2022-11-22 19:54:27.590 +01:00 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-22 19:54:28.638 +01:00 [INF] Initialized all ABP modules.
+2022-11-22 19:54:28.728 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-22 19:54:28.729 +01:00 [INF] Hosting environment: Development
+2022-11-22 19:54:28.729 +01:00 [INF] Content root path: C:\Development\Projects\Tribulus.MarketPlace\apps\auth-server\
+2022-11-22 19:54:28.753 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44351/ - -
+2022-11-22 19:54:42.351 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+InferIssuerFromHost.
+2022-11-22 19:54:42.374 +01:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+InferEndpointType.
+2022-11-22 19:54:42.374 +01:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+InferIssuerFromHost.
+2022-11-22 19:54:42.376 +01:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2022-11-22 19:54:42.393 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2022-11-22 19:54:42.395 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2022-11-22 19:54:42.406 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2022-11-22 19:54:42.407 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateToken.
+2022-11-22 19:54:42.407 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateToken.
+2022-11-22 19:54:42.410 +01:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2022-11-22 19:54:42.474 +01:00 [INF] Executing endpoint '/Index'
+2022-11-22 19:54:42.494 +01:00 [INF] Route matched with {page = "/Index", area = "", action = "", controller = ""}. Executing page /Index
+2022-11-22 19:54:42.497 +01:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2022-11-22 19:54:42.655 +01:00 [INF] Executing handler method Tribulus.MarketPlace.Pages.IndexModel.OnGetAsync - ModelState is "Valid"
+2022-11-22 19:54:42.875 +01:00 [INF] Executed handler method OnGetAsync, returned result .
+2022-11-22 19:54:42.878 +01:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-11-22 19:54:42.878 +01:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-11-22 19:54:42.916 +01:00 [DBG] Added 0 entity changes to the current audit log
+2022-11-22 19:54:43.215 +01:00 [INF] Executed page /Index in 715.4836ms
+2022-11-22 19:54:43.218 +01:00 [INF] Executed endpoint '/Index'
+2022-11-22 19:54:43.222 +01:00 [DBG] Added 0 entity changes to the current audit log
+2022-11-22 19:54:43.526 +01:00 [DBG] Added 0 entity changes to the current audit log
+2022-11-22 19:54:43.541 +01:00 [DBG] Added 0 entity changes to the current audit log
+2022-11-22 19:54:43.564 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Volo.Abp.AbpException: Could not find the bundle file '/libs/abp/core/abp.css' for the bundle 'LeptonXLite.Global'!
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpTagHelperResourceService.ProcessAsync(ViewContext viewContext, TagHelper tagHelper, TagHelperContext context, TagHelperOutput output, List`1 bundleItems, String bundleName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpBundleTagHelperService`2.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCoreGeneratedDocument.Themes_LeptonXLite_Layouts_Empty.<>c__DisplayClass13_0.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Themes_LeptonXLite_Layouts_Empty.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Uow.AbpUnitOfWorkMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.Serilog.AbpSerilogMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Builder.ApplicationBuilderAbpOpenIddictMiddlewareExtension.<>c__DisplayClass0_0.<<UseAbpOpenIddictValidation>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Security.AbpSecurityHeadersMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.Tracing.AbpCorrelationIdMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RequestLocalization.AbpRequestLocalizationMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-11-22 19:54:43.776 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44351/ - - - 500 - text/html;+charset=utf-8 15024.5244ms
+2022-11-22 19:54:43.786 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44351/_framework/aspnetcore-browser-refresh.js - -
+2022-11-22 19:54:43.786 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44351/_vs/browserLink - -
+2022-11-22 19:54:43.798 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44351/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 6.5204ms
+2022-11-22 19:54:43.852 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44351/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 65.7938ms
+2022-11-22 19:54:43.879 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44351/favicon.ico - -
+2022-11-22 19:54:43.885 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+InferIssuerFromHost.
+2022-11-22 19:54:43.886 +01:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+InferEndpointType.
+2022-11-22 19:54:43.886 +01:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+InferIssuerFromHost.
+2022-11-22 19:54:43.886 +01:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2022-11-22 19:54:43.886 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2022-11-22 19:54:43.886 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2022-11-22 19:54:43.886 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2022-11-22 19:54:43.886 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateToken.
+2022-11-22 19:54:43.886 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateToken.
+2022-11-22 19:54:43.886 +01:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2022-11-22 19:54:43.893 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44351/favicon.ico - - - 404 - - 13.7758ms
+2022-11-22 19:55:28.965 +01:00 [INF] Starting Tribulus.MarketPlace.AuthServer.
+2022-11-22 19:55:32.516 +01:00 [INF] Loaded ABP modules:
+2022-11-22 19:55:32.518 +01:00 [INF] - Tribulus.MarketPlace.MarketPlaceAuthServerModule
+2022-11-22 19:55:32.518 +01:00 [INF]   - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.Caching.AbpCachingModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.Threading.AbpThreadingModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.Serialization.AbpSerializationModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2022-11-22 19:55:32.518 +01:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-22 19:55:32.518 +01:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-22 19:55:32.518 +01:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-22 19:55:32.518 +01:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.Security.AbpSecurityModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.Json.AbpJsonModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.Timing.AbpTimingModule
+2022-11-22 19:55:32.518 +01:00 [INF]           - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-22 19:55:32.518 +01:00 [INF]             - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-22 19:55:32.518 +01:00 [INF]             - Volo.Abp.Settings.AbpSettingsModule
+2022-11-22 19:55:32.518 +01:00 [INF]   - Volo.Abp.EventBus.RabbitMq.AbpEventBusRabbitMqModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.Guids.AbpGuidsModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.RabbitMQ.AbpRabbitMqModule
+2022-11-22 19:55:32.518 +01:00 [INF]   - Volo.Abp.BackgroundJobs.RabbitMQ.AbpBackgroundJobsRabbitMqModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2022-11-22 19:55:32.518 +01:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.AbpAspNetCoreMvcUiLeptonXLiteThemeModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2022-11-22 19:55:32.518 +01:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-11-22 19:55:32.518 +01:00 [INF]             - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]               - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-22 19:55:32.518 +01:00 [INF]                 - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-22 19:55:32.518 +01:00 [INF]               - Volo.Abp.Http.AbpHttpModule
+2022-11-22 19:55:32.518 +01:00 [INF]                 - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-11-22 19:55:32.518 +01:00 [INF]                 - Volo.Abp.Minify.AbpMinifyModule
+2022-11-22 19:55:32.518 +01:00 [INF]               - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-22 19:55:32.518 +01:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-22 19:55:32.518 +01:00 [INF]               - Volo.Abp.Validation.AbpValidationModule
+2022-11-22 19:55:32.518 +01:00 [INF]               - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-22 19:55:32.518 +01:00 [INF]             - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-11-22 19:55:32.518 +01:00 [INF]             - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-11-22 19:55:32.518 +01:00 [INF]               - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-22 19:55:32.518 +01:00 [INF]             - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-11-22 19:55:32.518 +01:00 [INF]               - Volo.Abp.UI.AbpUiModule
+2022-11-22 19:55:32.518 +01:00 [INF]             - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-11-22 19:55:32.518 +01:00 [INF]             - Volo.Abp.Application.AbpDddApplicationModule
+2022-11-22 19:55:32.518 +01:00 [INF]               - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-22 19:55:32.518 +01:00 [INF]                 - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-22 19:55:32.518 +01:00 [INF]                 - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-22 19:55:32.518 +01:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-11-22 19:55:32.518 +01:00 [INF]   - Volo.Abp.Account.Web.AbpAccountWebOpenIddictModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.Account.Web.AbpAccountWebModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2022-11-22 19:55:32.518 +01:00 [INF]           - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-11-22 19:55:32.518 +01:00 [INF]             - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-11-22 19:55:32.518 +01:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-11-22 19:55:32.518 +01:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2022-11-22 19:55:32.518 +01:00 [INF]             - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-11-22 19:55:32.518 +01:00 [INF]           - Volo.Abp.Users.AbpUsersDomainModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.OpenIddict.AbpOpenIddictAspNetCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2022-11-22 19:55:32.518 +01:00 [INF]   - Volo.Abp.Account.AbpAccountApplicationModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.Identity.AbpIdentityApplicationModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.Emailing.AbpEmailingModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2022-11-22 19:55:32.518 +01:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]   - Volo.Abp.Account.AbpAccountHttpApiModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2022-11-22 19:55:32.518 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.EntityFrameworkCore.AbpServiceEntityFrameworkCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Tribulus.MarketPlace.AbpService.AbpServiceDomainModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Tribulus.MarketPlace.AbpService.AbpServiceDomainSharedModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.AspNetCore.MarketPlaceSharedHostingAspNetCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-22 19:55:32.518 +01:00 [INF]       - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-22 19:55:32.518 +01:00 [INF]         - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-11-22 19:55:32.518 +01:00 [INF]     - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-11-22 19:55:32.518 +01:00 [INF]   - Tribulus.MarketPlace.Localization.MarketPlaceSharedLocalizationModule
+2022-11-22 19:55:32.686 +01:00 [DBG] RabbitMQ Queue 'AbpBackgroundJobs.Volo.Abp.Emailing.BackgroundEmailSendingJobArgs' has 0 messages and 0 consumers.
+2022-11-22 19:55:32.794 +01:00 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-22 19:55:33.276 +01:00 [INF] Initialized all ABP modules.
+2022-11-22 19:55:33.357 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-22 19:55:33.358 +01:00 [INF] Hosting environment: Development
+2022-11-22 19:55:33.358 +01:00 [INF] Content root path: C:\Development\Projects\Tribulus.MarketPlace\apps\auth-server\
+2022-11-22 19:55:33.375 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44351/ - -
+2022-11-22 19:55:38.438 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+InferIssuerFromHost.
+2022-11-22 19:55:38.460 +01:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+InferEndpointType.
+2022-11-22 19:55:38.461 +01:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+InferIssuerFromHost.
+2022-11-22 19:55:38.462 +01:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2022-11-22 19:55:38.478 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2022-11-22 19:55:38.480 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2022-11-22 19:55:38.490 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2022-11-22 19:55:38.491 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateToken.
+2022-11-22 19:55:38.491 +01:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateToken.
+2022-11-22 19:55:38.494 +01:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2022-11-22 19:55:38.697 +01:00 [INF] Executing endpoint '/Index'
+2022-11-22 19:55:38.718 +01:00 [INF] Route matched with {page = "/Index", area = "", action = "", controller = ""}. Executing page /Index
+2022-11-22 19:55:38.721 +01:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2022-11-22 19:55:38.869 +01:00 [INF] Executing handler method Tribulus.MarketPlace.Pages.IndexModel.OnGetAsync - ModelState is "Valid"
+2022-11-22 19:55:41.410 +01:00 [INF] Executed handler method OnGetAsync, returned result .
+2022-11-22 19:55:41.413 +01:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-11-22 19:55:41.413 +01:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-11-22 19:55:41.477 +01:00 [DBG] Added 0 entity changes to the current audit log
+2022-11-22 19:55:41.774 +01:00 [INF] Executed page /Index in 3051.5542ms
+2022-11-22 19:55:41.776 +01:00 [INF] Executed endpoint '/Index'
+2022-11-22 19:55:41.779 +01:00 [DBG] Added 0 entity changes to the current audit log
+2022-11-22 19:55:42.090 +01:00 [DBG] Added 0 entity changes to the current audit log
+2022-11-22 19:55:42.107 +01:00 [DBG] Added 0 entity changes to the current audit log
+2022-11-22 19:55:42.132 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Volo.Abp.AbpException: Could not find the bundle file '/libs/abp/core/abp.css' for the bundle 'LeptonXLite.Global'!
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpTagHelperResourceService.ProcessAsync(ViewContext viewContext, TagHelper tagHelper, TagHelperContext context, TagHelperOutput output, List`1 bundleItems, String bundleName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpBundleTagHelperService`2.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCoreGeneratedDocument.Themes_LeptonXLite_Layouts_Empty.<>c__DisplayClass13_0.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Themes_LeptonXLite_Layouts_Empty.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Uow.AbpUnitOfWorkMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.Serilog.AbpSerilogMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Builder.ApplicationBuilderAbpOpenIddictMiddlewareExtension.<>c__DisplayClass0_0.<<UseAbpOpenIddictValidation>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Security.AbpSecurityHeadersMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.Tracing.AbpCorrelationIdMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RequestLocalization.AbpRequestLocalizationMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-11-22 19:55:42.292 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44351/ - - - 500 - text/html;+charset=utf-8 8918.1580ms
+2022-11-22 19:55:42.300 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44351/_framework/aspnetcore-browser-refresh.js - -
+2022-11-22 19:55:42.300 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44351/_vs/browserLink - -
+2022-11-22 19:55:42.309 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44351/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 6.4080ms
+2022-11-22 19:55:42.337 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44351/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.2901ms

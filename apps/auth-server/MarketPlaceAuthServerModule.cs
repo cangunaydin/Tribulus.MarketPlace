@@ -149,7 +149,7 @@ public class MarketPlaceAuthServerModule : AbpModule
             {
                 options.FileSets.ReplaceEmbeddedByPhysical<MarketPlaceSharedLocalizationModule>(Path.Combine(
                     hostingEnvironment.ContentRootPath,
-                    $"..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}shared{Path.DirectorySeparatorChar}SampleMicro.Shared.Localization"));
+                    $"..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}shared{Path.DirectorySeparatorChar}Tribulus.MarketPlace.Shared.Localization"));
             });
         }
 

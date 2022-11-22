@@ -8,7 +8,7 @@ namespace Tribulus.MarketPlace.AbpService.EntityFrameworkCore;
 /* This class is needed for EF Core console commands
  * (like Add-Migration and Update-Database commands)
  * */
-public class IdentityServiceDbContextFactory : IDesignTimeDbContextFactory<AbpServiceDbContext>
+public class AbpServiceDbContextFactory : IDesignTimeDbContextFactory<AbpServiceDbContext>
 {
     public AbpServiceDbContext CreateDbContext(string[] args)
     {

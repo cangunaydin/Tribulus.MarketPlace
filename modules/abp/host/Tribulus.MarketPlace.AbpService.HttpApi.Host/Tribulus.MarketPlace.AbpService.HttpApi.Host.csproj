@@ -31,6 +31,8 @@
     <ProjectReference Include="..\..\src\Tribulus.MarketPlace.AbpService.Application\Tribulus.MarketPlace.AbpService.Application.csproj" />
     <ProjectReference Include="..\..\src\Tribulus.MarketPlace.AbpService.EntityFrameworkCore\Tribulus.MarketPlace.AbpService.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\src\Tribulus.MarketPlace.AbpService.HttpApi\Tribulus.MarketPlace.AbpService.HttpApi.csproj" />
+
+    <ProjectReference Include="..\..\..\aggregate\src\Tribulus.MarketPlace.AggregateService.Application.Contracts\Tribulus.MarketPlace.AggregateService.Application.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>

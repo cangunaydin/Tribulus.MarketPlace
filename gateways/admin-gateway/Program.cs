@@ -1,14 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
-using Serilog.Events;
-using Tribulus.MarketPlace.AdminGateway;
+using System;
+using System.Threading.Tasks;
 using Tribulus.MarketPlace.Shared.Hosting.AspNetCore;
 
-namespace Tribulus.MarketPlace.Admin;
+namespace Tribulus.MarketPlace.AdminGateway;
 
 public class Program
 {
