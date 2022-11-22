@@ -22,7 +22,7 @@ typeof(MarketPlaceSharedHostingMicroservicesModule),
     typeof(AggregateServiceHttpApiModule),
     typeof(AggregateServiceEntityFrameworkCoreModule)
 )]
-public class ProductServiceHttpApiHostModule : AbpModule
+public class AggregateServiceHttpApiHostModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

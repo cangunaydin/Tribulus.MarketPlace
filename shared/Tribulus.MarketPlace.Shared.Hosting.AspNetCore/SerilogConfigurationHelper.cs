@@ -28,13 +28,13 @@ public static class SerilogConfigurationHelper
             .Enrich.FromLogContext()
             .Enrich.WithProperty("Application", $"{applicationName}")
             .WriteTo.Async(c => c.File("Logs/logs.txt"))
-            .WriteTo.Elasticsearch(
-                new ElasticsearchSinkOptions(new Uri(configuration["ElasticSearch:Url"]))
-                {
-                    AutoRegisterTemplate = true,
-                    AutoRegisterTemplateVersion = AutoRegisterTemplateVersion.ESv6,
-                    IndexFormat = "SampleMicro-log-{0:yyyy.MM}"
-                })
+            //.WriteTo.Elasticsearch(
+            //    new ElasticsearchSinkOptions(new Uri(configuration["ElasticSearch:Url"]))
+            //    {
+            //        AutoRegisterTemplate = true,
+            //        AutoRegisterTemplateVersion = AutoRegisterTemplateVersion.ESv6,
+            //        IndexFormat = "SampleMicro-log-{0:yyyy.MM}"
+            //    })
             .WriteTo.Async(c => c.Console())
             .CreateLogger();
     }
