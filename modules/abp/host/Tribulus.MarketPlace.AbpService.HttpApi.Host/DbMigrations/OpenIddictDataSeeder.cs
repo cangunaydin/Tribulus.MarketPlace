@@ -6,6 +6,9 @@ using JetBrains.Annotations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Localization;
 using OpenIddict.Abstractions;
+using Tribulus.MarketPlace.Inventory.Permissions;
+using Tribulus.MarketPlace.Marketing.Permissions;
+using Tribulus.MarketPlace.Sales.Permissions;
 using Volo.Abp;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Data;
@@ -16,9 +19,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.Uow;
 
 namespace Tribulus.MarketPlace.AbpService.DbMigrations;
-
-
-public class OpenIddictDataSeeder : IDataSeedContributor,ITransientDependency
+public class OpenIddictDataSeeder : IDataSeedContributor, ITransientDependency
 {
     private readonly IConfiguration _configuration;
     private readonly ICurrentTenant _currentTenant;
@@ -200,8 +201,8 @@ public class OpenIddictDataSeeder : IDataSeedContributor,ITransientDependency
             {
                 OpenIddictConstants.GrantTypes.ClientCredentials
             },
-            scopes: commonScopes.Union(new[] { "AccountService", "AbpService", "InventoryService", "MarketingService", "SalesService" }).ToList() //todo: update this part for sales,inventory,marketing
-
+            scopes: commonScopes.Union(new[] { "InventoryService", "MarketingService", "SalesService" }).ToList(),
+            permissions: new List<string>() { MarketingPermissions.Products.Default, InventoryPermissions.ProductStocks.Default, SalesPermissions.ProductPrices.Default }
         );
     }
 
@@ -407,5 +408,6 @@ public class OpenIddictDataSeeder : IDataSeedContributor,ITransientDependency
         }
     }
 }
+
 
 

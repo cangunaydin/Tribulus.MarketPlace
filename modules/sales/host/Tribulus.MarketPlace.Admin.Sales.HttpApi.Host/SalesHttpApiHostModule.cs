@@ -31,16 +31,16 @@ public class SalesHttpApiHostModule : AbpModule
         // var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
 
-        JwtBearerConfigurationHelper.Configure(context, "MarketingService");
+        JwtBearerConfigurationHelper.Configure(context, "SalesService");
         SwaggerConfigurationHelper.ConfigureWithAuth(
             context: context,
             authority: configuration["AuthServer:Authority"],
             scopes: new
                 Dictionary<string, string> /* Requested scopes for authorization code request and descriptions for swagger UI only */
                 {
-                    {"MarketingService", "Marketing Service API"}
+                    {"SalesService", "Sales Service API"}
                 },
-            apiTitle: "Marketing Service API"
+            apiTitle: "Sales Service API"
         );
         context.Services.AddCors(options =>
         {
@@ -94,7 +94,7 @@ public class SalesHttpApiHostModule : AbpModule
         app.UseAbpSwaggerUI(options =>
         {
             var configuration = context.ServiceProvider.GetRequiredService<IConfiguration>();
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Marketing Service API");
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Sales Service API");
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
         });
         app.UseAbpSerilogEnrichers();

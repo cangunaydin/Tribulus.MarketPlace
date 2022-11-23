@@ -2,6 +2,9 @@
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
+using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.Admin.Marketing;
+using Tribulus.MarketPlace.Admin.Inventory;
 
 namespace Tribulus.MarketPlace.AggregateService;
 
@@ -9,7 +12,11 @@ namespace Tribulus.MarketPlace.AggregateService;
     typeof(AggregateServiceDomainModule),
     typeof(AggregateServiceApplicationContractsModule),
     typeof(AbpDddApplicationModule),
-    typeof(AbpAutoMapperModule)
+    typeof(AbpAutoMapperModule),
+
+    typeof(AdminSalesHttpApiClientModule),
+    typeof(AdminMarketingHttpApiClientModule),
+    typeof(AdminInventoryHttpApiClientModule)
     )]
 public class AggregateServiceApplicationModule : AbpModule
 {

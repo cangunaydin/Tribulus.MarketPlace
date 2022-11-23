@@ -12,6 +12,11 @@
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="6.0.1" />
     <ProjectReference Include="..\Tribulus.MarketPlace.AggregateService.Application.Contracts\Tribulus.MarketPlace.AggregateService.Application.Contracts.csproj" />
     <ProjectReference Include="..\Tribulus.MarketPlace.AggregateService.Domain\Tribulus.MarketPlace.AggregateService.Domain.csproj" />
+
+
+    <ProjectReference Include="..\..\..\marketing\src\Tribulus.MarketPlace.Admin.Marketing.HttpApi.Client\Tribulus.MarketPlace.Admin.Marketing.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\..\inventory\src\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Client\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\..\sales\src\Tribulus.MarketPlace.Admin.Sales.HttpApi.Client\Tribulus.MarketPlace.Admin.Sales.HttpApi.Client.csproj" />
   </ItemGroup>
 
 </Project>

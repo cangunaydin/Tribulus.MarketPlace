@@ -6,6 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tribulus.MarketPlace.Inventory.Permissions;
+using Tribulus.MarketPlace.Marketing.Permissions;
+using Tribulus.MarketPlace.Sales.Permissions;
 using Volo.Abp;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Data;
@@ -198,8 +201,8 @@ public class OpenIddictDataSeeder : ITransientDependency
             {
                 OpenIddictConstants.GrantTypes.ClientCredentials
             },
-            scopes: commonScopes.Union(new[] { "AccountService", "AbpService", "InventoryService", "MarketingService", "SalesService" }).ToList() //todo: update this part for sales,inventory,marketing
-            
+            scopes: commonScopes.Union(new[] { "InventoryService", "MarketingService", "SalesService" }).ToList(),
+            permissions:new List<string>(){ MarketingPermissions.Products.Default,InventoryPermissions.ProductStocks.Default,SalesPermissions.ProductPrices.Default}
         );
     }
 

@@ -12,6 +12,8 @@ using Tribulus.MarketPlace.AggregateService.EntityFrameworkCore;
 using Tribulus.MarketPlace.Shared.Hosting.AspNetCore;
 using Tribulus.MarketPlace.Shared.Hosting.Microservices;
 using Volo.Abp;
+using Volo.Abp.AspNetCore.Mvc;
+using Volo.Abp.Http.Client.IdentityModel;
 using Volo.Abp.Modularity;
 
 namespace Tribulus.MarketPlace.AggregateService;
@@ -20,7 +22,8 @@ namespace Tribulus.MarketPlace.AggregateService;
 typeof(MarketPlaceSharedHostingMicroservicesModule),
     typeof(AggregateServiceApplicationModule),
     typeof(AggregateServiceHttpApiModule),
-    typeof(AggregateServiceEntityFrameworkCoreModule)
+    typeof(AggregateServiceEntityFrameworkCoreModule),
+    typeof(AbpHttpClientIdentityModelModule)
 )]
 public class AggregateServiceHttpApiHostModule : AbpModule
 {
@@ -57,6 +60,14 @@ public class AggregateServiceHttpApiHostModule : AbpModule
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials();
+            });
+        });
+        Configure<AbpAspNetCoreMvcOptions>(options =>
+        {
+            options.ConventionalControllers.Create(typeof(AggregateServiceApplicationModule).Assembly, opts =>
+            {
+                opts.RootPath = "aggregate";
+                opts.RemoteServiceName = "AggregateService";
             });
         });
     }
