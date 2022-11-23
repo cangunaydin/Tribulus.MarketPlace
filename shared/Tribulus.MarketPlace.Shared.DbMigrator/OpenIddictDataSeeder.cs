@@ -62,11 +62,14 @@ public class OpenIddictDataSeeder : ITransientDependency
         await CreateScopesAsync("AccountService");
         await CreateScopesAsync("AbpService");
         await CreateScopesAsync("AggregateService");
+        await CreateScopesAsync("InventoryService");
+        await CreateScopesAsync("SalesService");
+        await CreateScopesAsync("MarketingService");
     }
 
     private async Task CreateWebGatewaySwaggerClientsAsync()
     {
-        await CreateSwaggerClientAsync("MarketPlace", new[] { "AccountService", "AbpService", "AggregateService" });
+        await CreateSwaggerClientAsync("MarketPlace", new[] { "AccountService", "AbpService", "AggregateService","InventoryService","SalesService","MarketingService" });
     }
 
     private async Task CreateSwaggerClientAsync(string name, string[] scopes = null)
@@ -91,6 +94,9 @@ public class OpenIddictDataSeeder : ITransientDependency
             var accountServiceRootUrl = _configuration[$"OpenIddict:Resources:AccountService:RootUrl"].TrimEnd('/');
             var abpServiceRootUrl = _configuration[$"OpenIddict:Resources:AbpService:RootUrl"].TrimEnd('/');
             var aggregateServiceRootUrl = _configuration[$"OpenIddict:Resources:AggregateService:RootUrl"].TrimEnd('/');
+            var inventoryServiceRootUrl = _configuration[$"OpenIddict:Resources:InventoryService:RootUrl"].TrimEnd('/');
+            var marketingServiceRootUrl = _configuration[$"OpenIddict:Resources:MarketingService:RootUrl"].TrimEnd('/');
+            var salesServiceRootUrl = _configuration[$"OpenIddict:Resources:SalesService:RootUrl"].TrimEnd('/');
 
             await CreateApplicationAsync(
                 name: swaggerClientId,
@@ -107,8 +113,11 @@ public class OpenIddictDataSeeder : ITransientDependency
                     $"{webGatewaySwaggerRootUrl}/swagger/oauth2-redirect.html", // WebGateway redirect uri
                     $"{publicWebGatewayRootUrl}/swagger/oauth2-redirect.html", // PublicWebGateway redirect uri
                     $"{accountServiceRootUrl}/swagger/oauth2-redirect.html", // AccountService redirect uri
-                    $"{abpServiceRootUrl}/swagger/oauth2-redirect.html", // IdentityService redirect uri
-                    $"{aggregateServiceRootUrl}/swagger/oauth2-redirect.html", // AdministrationService redirect uri
+                    $"{abpServiceRootUrl}/swagger/oauth2-redirect.html", // AbpService redirect uri
+                    $"{aggregateServiceRootUrl}/swagger/oauth2-redirect.html", // AggregateService redirect uri
+                    $"{inventoryServiceRootUrl}/swagger/oauth2-redirect.html", // InventoryService redirect uri
+                    $"{marketingServiceRootUrl}/swagger/oauth2-redirect.html", // MarketingService redirect uri
+                    $"{salesServiceRootUrl}/swagger/oauth2-redirect.html", // SalesService redirect uri
                 }
             );
         }
@@ -155,7 +164,7 @@ public class OpenIddictDataSeeder : ITransientDependency
             {
                 OpenIddictConstants.GrantTypes.AuthorizationCode
             },
-            scopes: commonScopes.Union(new[] {"AccountService", "AbpService", "AggregateService"}).ToList(),
+            scopes: commonScopes.Union(new[] {"AccountService", "AbpService", "AggregateService","InventoryService","MarketingService","SalesService"}).ToList(),
             redirectUris: new List<string> { $"{adminBlazorClientRootUrl}authentication/login-callback" },
             postLogoutRedirectUris: new List<string> { $"{adminBlazorClientRootUrl}authentication/logout-callback" }
         );
@@ -172,7 +181,7 @@ public class OpenIddictDataSeeder : ITransientDependency
             {
                 OpenIddictConstants.GrantTypes.AuthorizationCode
             },
-            scopes: commonScopes.Union(new[] { "AccountService", "AbpService", "AggregateService" }).ToList(),
+            scopes: commonScopes.Union(new[] { "AccountService", "AbpService", "AggregateService", "InventoryService", "MarketingService", "SalesService" }).ToList(),
             redirectUris: new List<string> { $"{publicBlazorClientRootUrl}authentication/login-callback" },
             postLogoutRedirectUris: new List<string> { $"{publicBlazorClientRootUrl}authentication/logout-callback" }
         );
@@ -189,7 +198,7 @@ public class OpenIddictDataSeeder : ITransientDependency
             {
                 OpenIddictConstants.GrantTypes.ClientCredentials
             },
-            scopes: commonScopes.Union(new[] { "AbpService" }).ToList() //todo: update this part for sales,inventory,marketing
+            scopes: commonScopes.Union(new[] { "AccountService", "AbpService", "InventoryService", "MarketingService", "SalesService" }).ToList() //todo: update this part for sales,inventory,marketing
             
         );
     }

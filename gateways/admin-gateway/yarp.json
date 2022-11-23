@@ -8,31 +8,31 @@
         }
       },
       "Identity Service": {
-        "ClusterId": "identityCluster",
+        "ClusterId": "abpCluster",
         "Match": {
           "Path": "/api/identity/{**everything}"
         }
       },
-      "Administration Service": {
-        "ClusterId": "administrationCluster",
+      "Abp Service": {
+        "ClusterId": "abpCluster",
         "Match": {
           "Path": "/api/abp/{**everything}"
         }
       },
       "feature-management-route": {
-        "ClusterId": "feature-management-cluster",
+        "ClusterId": "abpCluster",
         "Match": {
           "Path": "/api/feature-management/{**everything}"
         }
       },
       "permission-management-route": {
-        "ClusterId": "permission-management-cluster",
+        "ClusterId": "abpCluster",
         "Match": {
           "Path": "/api/permission-management/{**everything}"
         }
       },
       "setting-management-route": {
-        "ClusterId": "setting-management-cluster",
+        "ClusterId": "abpCluster",
         "Match": {
           "Path": "/api/setting-management/{**everything}"
         }
@@ -42,8 +42,26 @@
         "Match": {
           "Path": "/api/aggregate/{**everything}"
         }
+      },
+      "Marketing Service": {
+        "ClusterId": "marketingCluster",
+        "Match": {
+          "Path": "/api/admin-marketing/{**everything}"
+        }
+      },
+      "Sales Service": {
+        "ClusterId": "salesCluster",
+        "Match": {
+          "Path": "/api/admin-sales/{**everything}"
+        }
+      },
+      "Inventory Service": {
+        "ClusterId": "inventoryCluster",
+        "Match": {
+          "Path": "/api/admin-inventory/{**everything}"
+        }
       }
-     
+
     },
     "Clusters": {
       "accountCluster": {
@@ -60,7 +78,7 @@
           }
         }
       },
-      "administrationCluster": {
+      "abpCluster": {
         "Destinations": {
           "destination1": {
             "Address": "https://localhost:44373"
@@ -94,7 +112,29 @@
             "Address": "https://localhost:44397"
           }
         }
+      },
+      "marketingCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://localhost:44361"
+          }
+        }
+      },
+      "salesCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://localhost:44371"
+          }
+        }
+      },
+      "inventoryCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://localhost:44393"
+          }
+        }
       }
+
     }
   }
 }

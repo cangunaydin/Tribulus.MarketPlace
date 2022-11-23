@@ -57,7 +57,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{C30213
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Sales.Application.Tests", "test\Tribulus.MarketPlace.Admin.Sales.Application.Tests\Tribulus.MarketPlace.Admin.Sales.Application.Tests.csproj", "{C73596A9-D623-4877-AB0F-2DEDE5DDF578}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tribulus.MarketPlace.Admin.Sales.Composition", "src\Tribulus.MarketPlace.Admin.Sales.Composition\Tribulus.MarketPlace.Admin.Sales.Composition.csproj", "{2954569E-DD96-408C-830E-8C04A1423619}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Sales.Composition", "src\Tribulus.MarketPlace.Admin.Sales.Composition\Tribulus.MarketPlace.Admin.Sales.Composition.csproj", "{2954569E-DD96-408C-830E-8C04A1423619}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "host", "host", "{94B9096B-D562-43E6-B7ED-B075B26DF9E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Sales.HttpApi.Host", "host\Tribulus.MarketPlace.Admin.Sales.HttpApi.Host\Tribulus.MarketPlace.Admin.Sales.HttpApi.Host.csproj", "{722262CB-611E-4AFC-9EBF-9B09F87AF806}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +145,10 @@ Global
 		{2954569E-DD96-408C-830E-8C04A1423619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2954569E-DD96-408C-830E-8C04A1423619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2954569E-DD96-408C-830E-8C04A1423619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{722262CB-611E-4AFC-9EBF-9B09F87AF806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{722262CB-611E-4AFC-9EBF-9B09F87AF806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{722262CB-611E-4AFC-9EBF-9B09F87AF806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{722262CB-611E-4AFC-9EBF-9B09F87AF806}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -172,6 +180,8 @@ Global
 		{C30213E6-4759-4B0E-BBD6-4A4D01E0E03C} = {CCD2960C-23CC-4AB4-B84D-60C7AAA52F4D}
 		{C73596A9-D623-4877-AB0F-2DEDE5DDF578} = {3B6B5B80-6DC5-4D0E-BBAD-A562FE032647}
 		{2954569E-DD96-408C-830E-8C04A1423619} = {ABA1E89D-60EE-4CBE-8066-2E0743EE244A}
+		{94B9096B-D562-43E6-B7ED-B075B26DF9E8} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
+		{722262CB-611E-4AFC-9EBF-9B09F87AF806} = {94B9096B-D562-43E6-B7ED-B075B26DF9E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4324B3B4-B60B-4E3C-91D8-59576B4E26DD}

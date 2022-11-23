@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using Tribulus.MarketPlace.AbpService;
 using Tribulus.MarketPlace.AbpService.EntityFrameworkCore;
 using Tribulus.MarketPlace.AggregateService.EntityFrameworkCore;
+using Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
+using Tribulus.MarketPlace.Marketing.EntityFrameworkCore;
+using Tribulus.MarketPlace.Sales.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
@@ -90,6 +93,9 @@ public class MarketPlaceDbMigrationService : ITransientDependency
         {
             await MigrateDatabaseAsync<AbpServiceDbContext>(cancellationToken);
             await MigrateDatabaseAsync<AggregateServiceDbContext>(cancellationToken);
+            await MigrateDatabaseAsync<MarketingDbContext>(cancellationToken);
+            await MigrateDatabaseAsync<InventoryDbContext>(cancellationToken);
+            await MigrateDatabaseAsync<SalesDbContext>(cancellationToken);
 
             await uow.CompleteAsync(cancellationToken);
         }

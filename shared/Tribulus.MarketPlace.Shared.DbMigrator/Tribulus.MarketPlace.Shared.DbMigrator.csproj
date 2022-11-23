@@ -17,6 +17,15 @@
 
     <ProjectReference Include="..\..\modules\aggregate\src\Tribulus.MarketPlace.AggregateService.Application.Contracts\Tribulus.MarketPlace.AggregateService.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\aggregate\src\Tribulus.MarketPlace.AggregateService.EntityFrameworkCore\Tribulus.MarketPlace.AggregateService.EntityFrameworkCore.csproj" />
+
+    <ProjectReference Include="..\..\modules\marketing\src\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\marketing\src\Tribulus.MarketPlace.Marketing.EntityFrameworkCore\Tribulus.MarketPlace.Marketing.EntityFrameworkCore.csproj" />
+
+    <ProjectReference Include="..\..\modules\sales\src\Tribulus.MarketPlace.Admin.Sales.Application.Contracts\Tribulus.MarketPlace.Admin.Sales.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\sales\src\Tribulus.MarketPlace.Sales.EntityFrameworkCore\Tribulus.MarketPlace.Sales.EntityFrameworkCore.csproj" />
+
+    <ProjectReference Include="..\..\modules\inventory\src\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\inventory\src\Tribulus.MarketPlace.Inventory.EntityFrameworkCore\Tribulus.MarketPlace.Inventory.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>

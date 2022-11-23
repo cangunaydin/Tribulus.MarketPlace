@@ -31,8 +31,11 @@ public class MarketPlaceAdminGatewayModule : AbpModule
             scopes: new
                 Dictionary<string, string> /* Requested scopes for authorization code request and descriptions for swagger UI only */ {
                     { "AccountService", "Account Service API" },
-                    { "AbpService", "Identity Service API" },
-                    { "Aggregateservice", "Aggregate Service API" }
+                    { "AbpService", "Abp Service API" },
+                    { "AggregateService", "Aggregate Service API" },
+                    { "MarketingService", "Marketing Service API" },
+                    { "SalesService", "Sales Service API" },
+                    { "InventoryService", "Inventory Service API" }
                 },
             apiTitle: "Admin Gateway API"
         );

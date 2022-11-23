@@ -4,7 +4,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>Tribulus.MarketPlace.Aggregateservice</RootNamespace>
+    <RootNamespace>Tribulus.MarketPlace.AggregateService</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
