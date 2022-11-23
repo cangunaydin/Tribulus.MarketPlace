@@ -32,7 +32,7 @@
     <ProjectReference Include="..\..\src\Tribulus.MarketPlace.AbpService.EntityFrameworkCore\Tribulus.MarketPlace.AbpService.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\src\Tribulus.MarketPlace.AbpService.HttpApi\Tribulus.MarketPlace.AbpService.HttpApi.csproj" />
 
-    <ProjectReference Include="..\..\..\aggregate\src\Tribulus.MarketPlace.AggregateService.Application.Contracts\Tribulus.MarketPlace.AggregateService.Application.Contracts.csproj" />
+
   </ItemGroup>
 
   <ItemGroup>
@@ -42,10 +42,13 @@
     <None Remove="Logs\**" />
   </ItemGroup>
 
+
   <ItemGroup>
-    <Reference Include="Tribulus.MarketPlace.AggregateService.Application.Contracts">
-      <HintPath>..\..\..\aggregate\src\Tribulus.MarketPlace.AggregateService.Application.Contracts\bin\Debug\netstandard2.0\Tribulus.MarketPlace.AggregateService.Application.Contracts.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\..\aggregate\src\Tribulus.MarketPlace.AggregateService.Application.Contracts\Tribulus.MarketPlace.AggregateService.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\marketing\src\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\inventory\src\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\sales\src\Tribulus.MarketPlace.Admin.Sales.Application.Contracts\Tribulus.MarketPlace.Admin.Sales.Application.Contracts.csproj" />
   </ItemGroup>
+
 
 </Project>

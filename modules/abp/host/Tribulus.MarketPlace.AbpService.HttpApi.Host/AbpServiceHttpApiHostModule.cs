@@ -9,6 +9,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.AbpService.DbMigrations;
 using Tribulus.MarketPlace.AbpService.EntityFrameworkCore;
+using Tribulus.MarketPlace.Admin.Inventory;
+using Tribulus.MarketPlace.Admin.Marketing;
+using Tribulus.MarketPlace.Admin.Sales;
 using Tribulus.MarketPlace.AggregateService;
 using Tribulus.MarketPlace.Localization;
 using Tribulus.MarketPlace.Shared.Hosting.AspNetCore;
@@ -24,9 +27,13 @@ namespace Tribulus.MarketPlace.AbpService;
     typeof(MarketPlaceSharedLocalizationModule),
     typeof(MarketPlaceSharedHostingMicroservicesModule),
     typeof(AbpAspNetCoreMvcUiMultiTenancyModule),
+    
     typeof(AbpAccountApplicationContractsModule),
-
     typeof(AggregateServiceApplicationContractsModule),
+    typeof(AdminMarketingApplicationContractsModule),
+    typeof(AdminSalesApplicationContractsModule),
+    typeof(AdminInventoryApplicationContractsModule),
+
     typeof(AbpServiceApplicationModule),
     typeof(AbpServiceEntityFrameworkCoreModule),
     typeof(AbpServiceHttpApiModule)
