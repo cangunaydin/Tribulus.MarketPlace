@@ -14,7 +14,7 @@ public class AdminSalesCompositionModule:AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddMediatR(typeof(AdminSalesCompositionModule));
+        //context.Services.AddMediatR(typeof(AdminSalesCompositionModule));
         context.Services.AddAutoMapperObjectMapper<AdminSalesCompositionModule>();
         Configure<AbpAutoMapperOptions>(options =>
         {

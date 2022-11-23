@@ -5,6 +5,7 @@ using Volo.Abp.Application;
 using Tribulus.MarketPlace.Admin.Sales;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Inventory;
+using MediatR;
 
 namespace Tribulus.MarketPlace.AggregateService;
 
@@ -27,5 +28,9 @@ public class AggregateServiceApplicationModule : AbpModule
         {
             options.AddMaps<AggregateServiceApplicationModule>(validate: true);
         });
+        context.Services.AddMediatR(typeof(AggregateServiceApplicationModule));
+
+        //apply masstransit config over here.
+
     }
 }

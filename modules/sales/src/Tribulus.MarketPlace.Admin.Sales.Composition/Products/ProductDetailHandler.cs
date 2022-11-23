@@ -7,7 +7,7 @@ using Volo.Abp.ObjectMapping;
 
 namespace Tribulus.MarketPlace.Admin.Sales.Products
 {
-    public class ProductDetailHandler : INotificationHandler<ProductDetailEto>
+    public class ProductDetailHandler : INotificationHandler<GetProductDetailEto>
     {
         private readonly IProductPriceAppService _productPriceAppService;
         private readonly IObjectMapper _objectMapper;
@@ -17,7 +17,7 @@ namespace Tribulus.MarketPlace.Admin.Sales.Products
             _productPriceAppService = productPriceAppService;
             _objectMapper = objectMapper;
         }
-        public async Task Handle(ProductDetailEto notification, CancellationToken cancellationToken)
+        public async Task Handle(GetProductDetailEto notification, CancellationToken cancellationToken)
         {
             var id = notification.Id;
             var productPrice = await _productPriceAppService.GetAsync(id);

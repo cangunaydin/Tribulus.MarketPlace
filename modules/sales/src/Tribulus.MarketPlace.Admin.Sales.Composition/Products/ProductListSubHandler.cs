@@ -9,7 +9,7 @@ using Volo.Abp.ObjectMapping;
 
 namespace Tribulus.MarketPlace.Admin.Sales.Products
 {
-    public class ProductListSubHandler : INotificationHandler<ProductListSub>
+    public class ProductListSubHandler : INotificationHandler<SubscribeProductListEto>
     {
         private readonly IProductPriceAppService _productPriceAppService;
 
@@ -20,7 +20,7 @@ namespace Tribulus.MarketPlace.Admin.Sales.Products
             _objectMapper = objectMapper;
         }
 
-        public async Task Handle(ProductListSub notification, CancellationToken cancellationToken)
+        public async Task Handle(SubscribeProductListEto notification, CancellationToken cancellationToken)
         {
             var productCompositions = notification.Products;
             var productPricesInput = new ProductPriceListFilterDto();

@@ -3271,3 +3271,284 @@ Autofac.Core.DependencyResolutionException: An exception was thrown while activa
 2022-11-23 13:41:24.775 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44393/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 151.2461ms
 2022-11-23 13:41:24.872 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44393/swagger/v1/swagger.json - -
 2022-11-23 13:41:25.164 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44393/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 291.9180ms
+2022-11-23 16:25:44.760 +01:00 [INF] Starting web host.
+2022-11-23 16:25:55.885 +01:00 [INF] Loaded ABP modules:
+2022-11-23 16:25:55.887 +01:00 [INF] - Tribulus.MarketPlace.Admin.Inventory.InventoryHttpApiHostModule
+2022-11-23 16:25:55.887 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.Microservices.MarketPlaceSharedHostingMicroservicesModule
+2022-11-23 16:25:55.887 +01:00 [INF]     - Tribulus.MarketPlace.Shared.Hosting.AspNetCore.MarketPlaceSharedHostingAspNetCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.Security.AbpSecurityModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Json.AbpJsonModule
+2022-11-23 16:25:55.887 +01:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2022-11-23 16:25:55.887 +01:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-23 16:25:55.887 +01:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-23 16:25:55.887 +01:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Threading.AbpThreadingModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.Http.AbpHttpModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Minify.AbpMinifyModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.Validation.AbpValidationModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.UI.AbpUiModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-23 16:25:55.887 +01:00 [INF]               - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-23 16:25:55.887 +01:00 [INF]                 - Volo.Abp.Guids.AbpGuidsModule
+2022-11-23 16:25:55.887 +01:00 [INF]                 - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-23 16:25:55.887 +01:00 [INF]                 - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-23 16:25:55.887 +01:00 [INF]               - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-23 16:25:55.887 +01:00 [INF]               - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Features.AbpFeaturesModule
+2022-11-23 16:25:55.887 +01:00 [INF]     - Volo.Abp.BackgroundJobs.RabbitMQ.AbpBackgroundJobsRabbitMqModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.RabbitMQ.AbpRabbitMqModule
+2022-11-23 16:25:55.887 +01:00 [INF]     - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2022-11-23 16:25:55.887 +01:00 [INF]     - Volo.Abp.DistributedLocking.AbpDistributedLockingModule
+2022-11-23 16:25:55.887 +01:00 [INF]     - Volo.Abp.EventBus.RabbitMq.AbpEventBusRabbitMqModule
+2022-11-23 16:25:55.887 +01:00 [INF]     - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.Caching.AbpCachingModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.Serialization.AbpSerializationModule
+2022-11-23 16:25:55.887 +01:00 [INF]     - Tribulus.MarketPlace.AbpService.EntityFrameworkCore.AbpServiceEntityFrameworkCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Tribulus.MarketPlace.AbpService.AbpServiceDomainModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Tribulus.MarketPlace.AbpService.AbpServiceDomainSharedModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-11-23 16:25:55.887 +01:00 [INF]           - Volo.Abp.Users.AbpUsersDomainModule
+2022-11-23 16:25:55.887 +01:00 [INF]             - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]         - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]   - Tribulus.MarketPlace.Admin.Inventory.AdminInventoryApplicationModule
+2022-11-23 16:25:55.887 +01:00 [INF]     - Tribulus.MarketPlace.Inventory.InventoryDomainModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Tribulus.MarketPlace.Inventory.InventoryDomainSharedModule
+2022-11-23 16:25:55.887 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Inventory.AdminInventoryApplicationContractsModule
+2022-11-23 16:25:55.887 +01:00 [INF]       - Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.InventoryApplicationContractsSharedModule
+2022-11-23 16:25:55.887 +01:00 [INF]   - Tribulus.MarketPlace.Admin.Inventory.AdminInventoryHttpApiModule
+2022-11-23 16:25:55.887 +01:00 [INF]   - Tribulus.MarketPlace.Inventory.EntityFrameworkCore.InventoryEntityFrameworkCoreModule
+2022-11-23 16:25:55.887 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2022-11-23 16:25:56.564 +01:00 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-23 16:25:57.641 +01:00 [INF] Lock is acquired for db migration and seeding on database named: Inventory...
+2022-11-23 16:26:01.721 +01:00 [INF] Lock is released for db migration and seeding on database named: Inventory...
+2022-11-23 16:26:01.843 +01:00 [INF] Initialized all ABP modules.
+2022-11-23 16:26:02.336 +01:00 [INF] Now listening on: https://localhost:44393
+2022-11-23 16:26:02.336 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-23 16:26:02.336 +01:00 [INF] Hosting environment: Development
+2022-11-23 16:26:02.336 +01:00 [INF] Content root path: C:\Development\Projects\Tribulus.MarketPlace\modules\inventory\host\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host\
+2022-11-23 16:26:02.793 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44393/ - -
+2022-11-23 16:26:05.538 +01:00 [INF] Executing endpoint 'Tribulus.MarketPlace.Admin.Inventory.Controllers.HomeController.Index (Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host)'
+2022-11-23 16:26:05.588 +01:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Index() on controller Tribulus.MarketPlace.Admin.Inventory.Controllers.HomeController (Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host).
+2022-11-23 16:26:05.641 +01:00 [INF] Executing RedirectResult, redirecting to /swagger.
+2022-11-23 16:26:05.648 +01:00 [INF] Executed action Tribulus.MarketPlace.Admin.Inventory.Controllers.HomeController.Index (Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host) in 54.386ms
+2022-11-23 16:26:05.648 +01:00 [INF] Executed endpoint 'Tribulus.MarketPlace.Admin.Inventory.Controllers.HomeController.Index (Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host)'
+2022-11-23 16:26:05.680 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44393/ - - - 302 0 - 2889.5300ms
+2022-11-23 16:26:05.708 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44393/swagger/index.html - -
+2022-11-23 16:26:05.919 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44393/swagger/index.html - - - 200 - text/html;charset=utf-8 211.1758ms
+2022-11-23 16:26:05.937 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44393/_framework/aspnetcore-browser-refresh.js - -
+2022-11-23 16:26:05.944 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44393/_framework/aspnetcore-browser-refresh.js - - - 200 12068 application/javascript;+charset=utf-8 6.8310ms
+2022-11-23 16:26:05.966 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44393/_vs/browserLink - -
+2022-11-23 16:26:06.060 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44393/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 94.0991ms
+2022-11-23 16:26:06.144 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44393/swagger/v1/swagger.json - -
+2022-11-23 16:26:06.390 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44393/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 246.2862ms
+2022-11-23 16:42:57.557 +01:00 [INF] Starting web host.
+2022-11-23 16:43:00.183 +01:00 [INF] Loaded ABP modules:
+2022-11-23 16:43:00.184 +01:00 [INF] - Tribulus.MarketPlace.Admin.Inventory.InventoryHttpApiHostModule
+2022-11-23 16:43:00.184 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.Microservices.MarketPlaceSharedHostingMicroservicesModule
+2022-11-23 16:43:00.184 +01:00 [INF]     - Tribulus.MarketPlace.Shared.Hosting.AspNetCore.MarketPlaceSharedHostingAspNetCoreModule
+2022-11-23 16:43:00.184 +01:00 [INF]       - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-23 16:43:00.184 +01:00 [INF]         - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-23 16:43:00.184 +01:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-23 16:43:00.184 +01:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2022-11-23 16:43:00.184 +01:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-23 16:43:00.184 +01:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-23 16:43:00.184 +01:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-23 16:43:00.184 +01:00 [INF]           - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-23 16:43:00.184 +01:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-23 16:43:00.184 +01:00 [INF]       - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-11-23 16:43:00.184 +01:00 [INF]         - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-23 16:43:00.184 +01:00 [INF]           - Volo.Abp.Security.AbpSecurityModule
+2022-11-23 16:43:00.184 +01:00 [INF]         - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-11-23 16:43:00.184 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-23 16:43:00.184 +01:00 [INF]             - Volo.Abp.Json.AbpJsonModule
+2022-11-23 16:43:00.184 +01:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2022-11-23 16:43:00.184 +01:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-23 16:43:00.184 +01:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-23 16:43:00.184 +01:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2022-11-23 16:43:00.184 +01:00 [INF]             - Volo.Abp.Threading.AbpThreadingModule
+2022-11-23 16:43:00.184 +01:00 [INF]             - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-23 16:43:00.184 +01:00 [INF]           - Volo.Abp.Http.AbpHttpModule
+2022-11-23 16:43:00.184 +01:00 [INF]             - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-11-23 16:43:00.184 +01:00 [INF]             - Volo.Abp.Minify.AbpMinifyModule
+2022-11-23 16:43:00.184 +01:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-23 16:43:00.185 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.Validation.AbpValidationModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-11-23 16:43:00.185 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-11-23 16:43:00.185 +01:00 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-11-23 16:43:00.185 +01:00 [INF]             - Volo.Abp.UI.AbpUiModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2022-11-23 16:43:00.185 +01:00 [INF]             - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-23 16:43:00.185 +01:00 [INF]               - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-23 16:43:00.185 +01:00 [INF]                 - Volo.Abp.Guids.AbpGuidsModule
+2022-11-23 16:43:00.185 +01:00 [INF]                 - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-23 16:43:00.185 +01:00 [INF]                 - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-23 16:43:00.185 +01:00 [INF]               - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-23 16:43:00.185 +01:00 [INF]               - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-23 16:43:00.185 +01:00 [INF]             - Volo.Abp.Features.AbpFeaturesModule
+2022-11-23 16:43:00.185 +01:00 [INF]     - Volo.Abp.BackgroundJobs.RabbitMQ.AbpBackgroundJobsRabbitMqModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Volo.Abp.RabbitMQ.AbpRabbitMqModule
+2022-11-23 16:43:00.185 +01:00 [INF]     - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2022-11-23 16:43:00.185 +01:00 [INF]     - Volo.Abp.DistributedLocking.AbpDistributedLockingModule
+2022-11-23 16:43:00.185 +01:00 [INF]     - Volo.Abp.EventBus.RabbitMq.AbpEventBusRabbitMqModule
+2022-11-23 16:43:00.185 +01:00 [INF]     - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Volo.Abp.Caching.AbpCachingModule
+2022-11-23 16:43:00.185 +01:00 [INF]         - Volo.Abp.Serialization.AbpSerializationModule
+2022-11-23 16:43:00.185 +01:00 [INF]     - Tribulus.MarketPlace.AbpService.EntityFrameworkCore.AbpServiceEntityFrameworkCoreModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Tribulus.MarketPlace.AbpService.AbpServiceDomainModule
+2022-11-23 16:43:00.185 +01:00 [INF]         - Tribulus.MarketPlace.AbpService.AbpServiceDomainSharedModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-11-23 16:43:00.185 +01:00 [INF]             - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-11-23 16:43:00.185 +01:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-11-23 16:43:00.185 +01:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-11-23 16:43:00.185 +01:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-11-23 16:43:00.185 +01:00 [INF]         - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2022-11-23 16:43:00.185 +01:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-11-23 16:43:00.185 +01:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-11-23 16:43:00.185 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-11-23 16:43:00.185 +01:00 [INF]           - Volo.Abp.Users.AbpUsersDomainModule
+2022-11-23 16:43:00.185 +01:00 [INF]             - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-11-23 16:43:00.185 +01:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-11-23 16:43:00.185 +01:00 [INF]         - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-11-23 16:43:00.185 +01:00 [INF]   - Tribulus.MarketPlace.Admin.Inventory.AdminInventoryApplicationModule
+2022-11-23 16:43:00.185 +01:00 [INF]     - Tribulus.MarketPlace.Inventory.InventoryDomainModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Tribulus.MarketPlace.Inventory.InventoryDomainSharedModule
+2022-11-23 16:43:00.185 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Inventory.AdminInventoryApplicationContractsModule
+2022-11-23 16:43:00.185 +01:00 [INF]       - Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.InventoryApplicationContractsSharedModule
+2022-11-23 16:43:00.185 +01:00 [INF]   - Tribulus.MarketPlace.Admin.Inventory.AdminInventoryHttpApiModule
+2022-11-23 16:43:00.185 +01:00 [INF]   - Tribulus.MarketPlace.Inventory.EntityFrameworkCore.InventoryEntityFrameworkCoreModule
+2022-11-23 16:43:00.185 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2022-11-23 16:43:00.338 +01:00 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-23 16:43:00.758 +01:00 [INF] Lock is acquired for db migration and seeding on database named: Inventory...
+2022-11-23 16:43:05.149 +01:00 [INF] Lock is released for db migration and seeding on database named: Inventory...
+2022-11-23 16:43:05.238 +01:00 [INF] Initialized all ABP modules.
+2022-11-23 16:43:05.550 +01:00 [INF] Now listening on: https://localhost:44393
+2022-11-23 16:43:05.550 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-23 16:43:05.550 +01:00 [INF] Hosting environment: Development
+2022-11-23 16:43:05.550 +01:00 [INF] Content root path: C:\Development\Projects\Tribulus.MarketPlace\modules\inventory\host\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host\
+2022-11-23 16:43:06.235 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44393/ - -
+2022-11-23 16:43:07.504 +01:00 [INF] Executing endpoint 'Tribulus.MarketPlace.Admin.Inventory.Controllers.HomeController.Index (Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host)'
+2022-11-23 16:43:07.543 +01:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Index() on controller Tribulus.MarketPlace.Admin.Inventory.Controllers.HomeController (Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host).
+2022-11-23 16:43:07.604 +01:00 [INF] Executing RedirectResult, redirecting to /swagger.
+2022-11-23 16:43:07.612 +01:00 [INF] Executed action Tribulus.MarketPlace.Admin.Inventory.Controllers.HomeController.Index (Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host) in 61.6708ms
+2022-11-23 16:43:07.612 +01:00 [INF] Executed endpoint 'Tribulus.MarketPlace.Admin.Inventory.Controllers.HomeController.Index (Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host)'
+2022-11-23 16:43:07.654 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44393/ - - - 302 0 - 1418.7034ms
+2022-11-23 16:43:07.673 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44393/swagger/index.html - -
+2022-11-23 16:43:07.936 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44393/_framework/aspnetcore-browser-refresh.js - -
+2022-11-23 16:43:07.938 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44393/swagger/index.html - - - 200 - text/html;charset=utf-8 264.6787ms
+2022-11-23 16:43:07.942 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44393/_framework/aspnetcore-browser-refresh.js - - - 200 12068 application/javascript;+charset=utf-8 5.7044ms
+2022-11-23 16:43:07.976 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44393/_vs/browserLink - -
+2022-11-23 16:43:08.065 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44393/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 88.2943ms
+2022-11-23 16:43:08.140 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44393/swagger/v1/swagger.json - -
+2022-11-23 16:43:08.392 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44393/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 252.3540ms
+2022-11-23 16:44:20.483 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44393/api/abp/api-definition - -
+2022-11-23 16:44:20.485 +01:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController.Get (Volo.Abp.AspNetCore.Mvc)'
+2022-11-23 16:44:20.499 +01:00 [INF] Route matched with {area = "abp", action = "Get", controller = "AbpApiDefinition"}. Executing controller action with signature Volo.Abp.Http.Modeling.ApplicationApiDescriptionModel Get(Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto) on controller Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController (Volo.Abp.AspNetCore.Mvc).
+2022-11-23 16:44:20.651 +01:00 [DBG] ActionApiDescriptionModel.Create: AbpApplicationConfiguration.GetAsync
+2022-11-23 16:44:20.658 +01:00 [DBG] ActionApiDescriptionModel.Create: AbpApiDefinition.GetByModel
+2022-11-23 16:44:20.663 +01:00 [DBG] ActionApiDescriptionModel.Create: ProductStock.CreateAsyncByIdAndInput
+2022-11-23 16:44:20.663 +01:00 [DBG] ActionApiDescriptionModel.Create: ProductStock.GetAsyncById
+2022-11-23 16:44:20.663 +01:00 [DBG] ActionApiDescriptionModel.Create: ProductStock.GetListAsyncByInput
+2022-11-23 16:44:20.664 +01:00 [DBG] ActionApiDescriptionModel.Create: ProductStock.UpdateAsyncByIdAndInput
+2022-11-23 16:44:20.664 +01:00 [DBG] ActionApiDescriptionModel.Create: ProductStock.DeleteAsyncById
+2022-11-23 16:44:20.671 +01:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Http.Modeling.ApplicationApiDescriptionModel'.
+2022-11-23 16:44:20.689 +01:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController.Get (Volo.Abp.AspNetCore.Mvc) in 190.1611ms
+2022-11-23 16:44:20.689 +01:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController.Get (Volo.Abp.AspNetCore.Mvc)'
+2022-11-23 16:44:20.689 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44393/api/abp/api-definition - - - 200 - application/json;+charset=utf-8 206.3045ms
+2022-11-23 16:44:20.699 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44393/api/admin-inventory/product-stock?MaxResultCount=100&api-version=1.0 - -
+2022-11-23 16:44:21.212 +01:00 [DBG] PermissionStore.GetCacheItemAsync: pn:C,pk:MarketPlace_AggregateService,n:Inventory.ProductStocks
+2022-11-23 16:44:21.215 +01:00 [DBG] Not found in the cache: pn:C,pk:MarketPlace_AggregateService,n:Inventory.ProductStocks
+2022-11-23 16:44:21.220 +01:00 [DBG] Getting all granted permissions from the repository for this provider name,key: C,MarketPlace_AggregateService
+2022-11-23 16:44:22.200 +01:00 [DBG] Setting the cache items. Count: 3
+2022-11-23 16:44:22.221 +01:00 [DBG] Finished setting the cache items. Count: 3
+2022-11-23 16:44:22.230 +01:00 [INF] Executing endpoint 'Tribulus.MarketPlace.Admin.Inventory.Products.ProductStockAppService.GetListAsync (Tribulus.MarketPlace.Admin.Inventory.Application)'
+2022-11-23 16:44:22.234 +01:00 [INF] Route matched with {action = "GetList", controller = "ProductStock", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Volo.Abp.Application.Dtos.ListResultDto`1[Tribulus.MarketPlace.Inventory.Products.ProductStockDto]] GetListAsync(Tribulus.MarketPlace.Inventory.Products.ProductStockListFilterDto) on controller Tribulus.MarketPlace.Admin.Inventory.Products.ProductStockAppService (Tribulus.MarketPlace.Admin.Inventory.Application).
+2022-11-23 16:44:22.627 +01:00 [DBG] Added 0 entity changes to the current audit log
+2022-11-23 16:44:22.635 +01:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Application.Dtos.ListResultDto`1[[Tribulus.MarketPlace.Inventory.Products.ProductStockDto, Tribulus.MarketPlace.Inventory.Application.Contracts.Shared, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-23 16:44:22.639 +01:00 [INF] Executed action Tribulus.MarketPlace.Admin.Inventory.Products.ProductStockAppService.GetListAsync (Tribulus.MarketPlace.Admin.Inventory.Application) in 404.6326ms
+2022-11-23 16:44:22.640 +01:00 [INF] Executed endpoint 'Tribulus.MarketPlace.Admin.Inventory.Products.ProductStockAppService.GetListAsync (Tribulus.MarketPlace.Admin.Inventory.Application)'
+2022-11-23 16:44:22.641 +01:00 [DBG] Added 0 entity changes to the current audit log
+2022-11-23 16:44:22.644 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44393/api/admin-inventory/product-stock?MaxResultCount=100&api-version=1.0 - - - 200 - application/json;+charset=utf-8 1945.3842ms
+2022-11-23 16:44:52.879 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44393/api/admin-inventory/product-stock?MaxResultCount=100&api-version=1.0 - -
+2022-11-23 16:44:52.881 +01:00 [DBG] PermissionStore.GetCacheItemAsync: pn:C,pk:MarketPlace_AggregateService,n:Inventory.ProductStocks
+2022-11-23 16:44:52.890 +01:00 [DBG] Found in the cache: pn:C,pk:MarketPlace_AggregateService,n:Inventory.ProductStocks
+2022-11-23 16:44:52.891 +01:00 [INF] Executing endpoint 'Tribulus.MarketPlace.Admin.Inventory.Products.ProductStockAppService.GetListAsync (Tribulus.MarketPlace.Admin.Inventory.Application)'
+2022-11-23 16:44:52.893 +01:00 [INF] Route matched with {action = "GetList", controller = "ProductStock", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Volo.Abp.Application.Dtos.ListResultDto`1[Tribulus.MarketPlace.Inventory.Products.ProductStockDto]] GetListAsync(Tribulus.MarketPlace.Inventory.Products.ProductStockListFilterDto) on controller Tribulus.MarketPlace.Admin.Inventory.Products.ProductStockAppService (Tribulus.MarketPlace.Admin.Inventory.Application).
+2022-11-23 16:44:52.905 +01:00 [DBG] Added 0 entity changes to the current audit log
+2022-11-23 16:44:52.905 +01:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Application.Dtos.ListResultDto`1[[Tribulus.MarketPlace.Inventory.Products.ProductStockDto, Tribulus.MarketPlace.Inventory.Application.Contracts.Shared, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-23 16:44:52.905 +01:00 [INF] Executed action Tribulus.MarketPlace.Admin.Inventory.Products.ProductStockAppService.GetListAsync (Tribulus.MarketPlace.Admin.Inventory.Application) in 12.6778ms
+2022-11-23 16:44:52.905 +01:00 [INF] Executed endpoint 'Tribulus.MarketPlace.Admin.Inventory.Products.ProductStockAppService.GetListAsync (Tribulus.MarketPlace.Admin.Inventory.Application)'
+2022-11-23 16:44:52.906 +01:00 [DBG] Added 0 entity changes to the current audit log
+2022-11-23 16:44:52.906 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44393/api/admin-inventory/product-stock?MaxResultCount=100&api-version=1.0 - - - 200 - application/json;+charset=utf-8 27.3861ms

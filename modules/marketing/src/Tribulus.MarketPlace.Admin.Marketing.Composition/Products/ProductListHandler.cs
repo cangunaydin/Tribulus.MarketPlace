@@ -10,7 +10,7 @@ using Volo.Abp.ObjectMapping;
 
 namespace Tribulus.MarketPlace.Admin.Marketing.Products;
 
-public class ProductListHandler : INotificationHandler<ProductListEto>
+public class ProductListHandler : INotificationHandler<GetProductListEto>
 {
     private readonly IProductAppService _productAppService;
     private readonly IObjectMapper _objectMapper;
@@ -24,7 +24,7 @@ public class ProductListHandler : INotificationHandler<ProductListEto>
         _mediator = mediator;
     }
 
-    public async Task Handle(ProductListEto notification, CancellationToken cancellationToken)
+    public async Task Handle(GetProductListEto notification, CancellationToken cancellationToken)
     {
         //create input for paged result from marketing
         var productListInput = new ProductListFilterDto();
@@ -35,20 +35,20 @@ public class ProductListHandler : INotificationHandler<ProductListEto>
         var productsResult = await _productAppService.GetListAsync(productListInput);
 
         //create composition objects only for marketing products
-        List<ProductCompositionDto> productCompositions = new List<ProductCompositionDto>();
+        List<ProductAggregateDto> productCompositions = new List<ProductAggregateDto>();
         foreach (var product in productsResult.Items)
         {
-            var productComposition = _objectMapper.Map<ProductDto, ProductCompositionDto>(product);
+            var productComposition = _objectMapper.Map<ProductDto, ProductAggregateDto>(product);
             productCompositions.Add(productComposition);
         }
 
         //send composition to the contributers, so they can compose the properties that is missing
-        await _mediator.Publish(new ProductListSub()
+        await _mediator.Publish(new SubscribeProductListEto()
         {
             Products = productCompositions
         });
         //update the notification products,so gateway can return this to the user.
-        notification.Products = new PagedResultDto<ProductCompositionDto>(productsResult.TotalCount, productCompositions);
+        notification.Products = new PagedResultDto<ProductAggregateDto>(productsResult.TotalCount, productCompositions);
 
 
     }

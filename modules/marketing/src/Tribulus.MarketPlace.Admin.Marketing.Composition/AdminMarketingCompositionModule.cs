@@ -13,7 +13,6 @@ public class AdminMarketingCompositionModule:AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddMediatR(typeof(AdminMarketingCompositionModule));
         context.Services.AddAutoMapperObjectMapper<AdminMarketingCompositionModule>();
         Configure<AbpAutoMapperOptions>(options =>
         {

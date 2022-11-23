@@ -13,7 +13,6 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Composition
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddMediatR(typeof(AdminInventoryCompositionModule));
             context.Services.AddAutoMapperObjectMapper<AdminInventoryCompositionModule>();
             Configure<AbpAutoMapperOptions>(options =>
             {

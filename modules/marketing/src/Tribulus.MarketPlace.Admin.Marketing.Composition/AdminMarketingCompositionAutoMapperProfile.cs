@@ -12,7 +12,7 @@ public class AdminMarketingCompositionAutoMapperProfile : Profile
         /* You can configure your AutoMapper mapping configuration here.
          * Alternatively, you can split your mapping configurations
          * into multiple profile classes for a better organization. */
-        CreateMap<ProductDto, ProductCompositionDto>()
+        CreateMap<ProductDto, ProductAggregateDto>()
             .Ignore(o => o.Price)
             .Ignore(o => o.StockCount);
         
