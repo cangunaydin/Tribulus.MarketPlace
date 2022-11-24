@@ -1,3 +1,4 @@
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.Configuration;
@@ -9,8 +10,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.AggregateService.DbMigrations;
 using Tribulus.MarketPlace.AggregateService.EntityFrameworkCore;
+using Tribulus.MarketPlace.AggregateService.Products.Futures;
+using Tribulus.MarketPlace.Extensions;
 using Tribulus.MarketPlace.Shared.Hosting.AspNetCore;
 using Tribulus.MarketPlace.Shared.Hosting.Microservices;
+using Tribulus.MarketPlace.Shared.MassTransit;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Http.Client.IdentityModel;
@@ -23,7 +27,8 @@ typeof(MarketPlaceSharedHostingMicroservicesModule),
     typeof(AggregateServiceApplicationModule),
     typeof(AggregateServiceHttpApiModule),
     typeof(AggregateServiceEntityFrameworkCoreModule),
-    typeof(AbpHttpClientIdentityModelModule)
+    typeof(AbpHttpClientIdentityModelModule),
+    typeof(MarketPlaceSharedMassTransitModule)
 )]
 public class AggregateServiceHttpApiHostModule : AbpModule
 {
@@ -33,6 +38,7 @@ public class AggregateServiceHttpApiHostModule : AbpModule
         // var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
 
+        
         JwtBearerConfigurationHelper.Configure(context, "AggregateService");
         SwaggerConfigurationHelper.ConfigureWithAuth(
             context: context,
@@ -70,6 +76,18 @@ public class AggregateServiceHttpApiHostModule : AbpModule
                 opts.RemoteServiceName = "AggregateService";
             });
         });
+
+        //send masstransit efcore connection string to configuration, if saga needs to be configured with ef core.
+        //var connectionString = configuration["ConnectionStrings:MassTransitSaga"]; 
+
+        //masstransit config call.
+        MassTransitConfigurationHelper.Configure(context, conf =>
+        {
+            conf.AddFuturesFromNamespaceContaining<CreateProductFuture>();
+        });
+
+
+
     }
 
     public override void OnApplicationInitialization(ApplicationInitializationContext context)

@@ -5,12 +5,12 @@ using System.IO;
 
 namespace Tribulus.MarketPlace.AggregateService.EntityFrameworkCore;
 
-public class ProductServiceDbContextFactory : IDesignTimeDbContextFactory<AggregateServiceDbContext>
+public class AggregateServiceDbContextFactory : IDesignTimeDbContextFactory<AggregateServiceDbContext>
 {
     private readonly string _connectionString;
 
     /* This constructor is used when you use EF Core tooling (e.g. Update-Database) */
-    public ProductServiceDbContextFactory()
+    public AggregateServiceDbContextFactory()
     {
         _connectionString = GetConnectionStringFromConfiguration();
     }

@@ -1,3 +1,4 @@
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.Configuration;
@@ -8,9 +9,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Marketing.DbMigrations;
+using Tribulus.MarketPlace.Admin.Marketing.Products;
+using Tribulus.MarketPlace.Extensions;
 using Tribulus.MarketPlace.Marketing.EntityFrameworkCore;
 using Tribulus.MarketPlace.Shared.Hosting.AspNetCore;
 using Tribulus.MarketPlace.Shared.Hosting.Microservices;
+using Tribulus.MarketPlace.Shared.MassTransit;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Modularity;
@@ -21,7 +25,8 @@ namespace Tribulus.MarketPlace.Admin.Marketing;
 typeof(MarketPlaceSharedHostingMicroservicesModule),
     typeof(AdminMarketingApplicationModule),
     typeof(AdminMarketingHttpApiModule),
-    typeof(MarketingEntityFrameworkCoreModule)
+    typeof(MarketingEntityFrameworkCoreModule),
+    typeof(MarketPlaceSharedMassTransitModule)
 )]
 public class MarketingHttpApiHostModule : AbpModule
 {
@@ -68,6 +73,11 @@ public class MarketingHttpApiHostModule : AbpModule
                 opts.RootPath = "admin-marketing";
                 opts.RemoteServiceName = "AdminMarketing";
             });
+        });
+        //masstransit config call.
+        MassTransitConfigurationHelper.Configure(context, conf =>
+        {
+            conf.AddActivitiesFromNamespaceContaining<CreateProductActivity>();
         });
     }
 

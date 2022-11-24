@@ -1,3 +1,4 @@
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.Configuration;
@@ -8,9 +9,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Inventory.DbMigrations;
+using Tribulus.MarketPlace.Admin.Inventory.Products;
+using Tribulus.MarketPlace.Extensions;
 using Tribulus.MarketPlace.Inventory.EntityFrameworkCore;
 using Tribulus.MarketPlace.Shared.Hosting.AspNetCore;
 using Tribulus.MarketPlace.Shared.Hosting.Microservices;
+using Tribulus.MarketPlace.Shared.MassTransit;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Modularity;
@@ -21,7 +25,8 @@ namespace Tribulus.MarketPlace.Admin.Inventory;
 typeof(MarketPlaceSharedHostingMicroservicesModule),
     typeof(AdminInventoryApplicationModule),
     typeof(AdminInventoryHttpApiModule),
-    typeof(InventoryEntityFrameworkCoreModule)
+    typeof(InventoryEntityFrameworkCoreModule),
+    typeof(MarketPlaceSharedMassTransitModule)
 )]
 public class InventoryHttpApiHostModule : AbpModule
 {
@@ -68,6 +73,12 @@ public class InventoryHttpApiHostModule : AbpModule
                 opts.RootPath = "admin-inventory";
                 opts.RemoteServiceName = "AdminInventory";
             });
+        });
+
+        //masstransit config call.
+        MassTransitConfigurationHelper.Configure(context, conf =>
+        {
+            conf.AddActivitiesFromNamespaceContaining<CreateProductStockActivity>();
         });
     }
 

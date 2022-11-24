@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\shared\Tribulus.MarketPlace.Shared.Hosting.Microservices\Tribulus.MarketPlace.Shared.Hosting.Microservices.csproj" />
+    <ProjectReference Include="..\..\..\..\shared\Tribulus.MarketPlace.Shared.MassTransit\Tribulus.MarketPlace.Shared.MassTransit.csproj" />
     <ProjectReference Include="..\..\src\Tribulus.MarketPlace.Admin.Inventory.Application\Tribulus.MarketPlace.Admin.Inventory.Application.csproj" />
     <ProjectReference Include="..\..\src\Tribulus.MarketPlace.Inventory.EntityFrameworkCore\Tribulus.MarketPlace.Inventory.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\src\Tribulus.MarketPlace.Admin.Inventory.HttpApi\Tribulus.MarketPlace.Admin.Inventory.HttpApi.csproj" />
