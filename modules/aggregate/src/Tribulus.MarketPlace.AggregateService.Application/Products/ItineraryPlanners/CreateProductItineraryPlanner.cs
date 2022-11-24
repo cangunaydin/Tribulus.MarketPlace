@@ -31,7 +31,6 @@ namespace Tribulus.MarketPlace.AggregateService.Products.ItineraryPlanners
         public Task PlanItinerary(BehaviorContext<FutureState, CreateProduct> value, IItineraryBuilder builder)
         {
             var product = value.Message;
-            var createProductAddress = new Uri($"exchange:{_endpointNameformatter.ExecuteActivity(typeof(ICreateProductActivity))}");
 
             builder.AddVariable(nameof(product.ProductId), product.ProductId);
             builder.AddVariable(nameof(product.UserId), product.UserId);

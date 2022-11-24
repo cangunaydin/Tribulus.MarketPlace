@@ -28,5 +28,9 @@
     <PackageReference Include="Volo.Abp.SettingManagement.Blazor.WebAssembly" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\Tribulus.MarketPlace.Shared.Localization\Tribulus.MarketPlace.Shared.Localization.csproj" />
+  </ItemGroup>
+
 
 </Project>

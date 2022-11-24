@@ -8,7 +8,6 @@ using Tribulus.MarketPlace.Admin.Sales;
 using Tribulus.MarketPlace.AggregateService.Constants;
 using Tribulus.MarketPlace.AggregateService.Products.Activities;
 using Tribulus.MarketPlace.AggregateService.Products.Commands;
-using Tribulus.MarketPlace.AggregateService.Products.Extensions;
 using Tribulus.MarketPlace.AggregateService.Products.Futures;
 using Volo.Abp.Application;
 using Volo.Abp.AutoMapper;

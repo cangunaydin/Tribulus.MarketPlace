@@ -27,17 +27,10 @@ namespace Tribulus.MarketPlace.AggregateService.Products.Activities
     {
         var asd = _productStockAppService.GetListAsync(new ProductStockListFilterDto { MaxResultCount = 10 });
         var productStock = new CreateProductStockDto { StockCount = context.Arguments.StockCount};
-        try
-        {
-            var productStockDto = await _productStockAppService.CreateAsync(context.Arguments.ProductId, productStock);
+          var productStockDto = await _productStockAppService.CreateAsync(context.Arguments.ProductId, productStock);
             return context.CompletedWithVariables<ProductStockLog>(new { ProductId = context.Arguments.ProductId }, new { ProductStock = productStockDto });
 
-        }
-        catch (Exception ex)
-        {
-
-            throw;
-        }
+      
 
     }
 }
