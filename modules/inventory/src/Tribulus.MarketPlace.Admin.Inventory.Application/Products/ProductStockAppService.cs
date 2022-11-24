@@ -20,7 +20,7 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Products
             _productStockRepository = productStockRepository;
         }
 
-        [Authorize(InventoryPermissions.ProductStocks.Create)]
+        //[Authorize(InventoryPermissions.ProductStocks.Create)]
         public async Task<ProductStockDto> CreateAsync(Guid id, CreateProductStockDto input)
         {
             var productStock = new ProductStock(id, input.StockCount); //todo change the guid generation

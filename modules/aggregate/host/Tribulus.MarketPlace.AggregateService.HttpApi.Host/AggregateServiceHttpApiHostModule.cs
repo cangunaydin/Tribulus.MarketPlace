@@ -33,6 +33,9 @@ public class AggregateServiceHttpApiHostModule : AbpModule
         // var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
 
+
+
+
         JwtBearerConfigurationHelper.Configure(context, "AggregateService");
         SwaggerConfigurationHelper.ConfigureWithAuth(
             context: context,

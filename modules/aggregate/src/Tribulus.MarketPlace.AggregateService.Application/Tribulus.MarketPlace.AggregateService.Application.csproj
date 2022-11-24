@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.0.8" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Volo.Abp.AutoMapper" Version="6.0.1" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="6.0.1" />
@@ -21,8 +22,6 @@
     <ProjectReference Include="..\..\..\marketing\src\Tribulus.MarketPlace.Admin.Marketing.HttpApi.Client\Tribulus.MarketPlace.Admin.Marketing.HttpApi.Client.csproj" />
     <ProjectReference Include="..\..\..\inventory\src\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Client\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Client.csproj" />
     <ProjectReference Include="..\..\..\sales\src\Tribulus.MarketPlace.Admin.Sales.HttpApi.Client\Tribulus.MarketPlace.Admin.Sales.HttpApi.Client.csproj" />
-
-    <ProjectReference Include="..\..\..\..\shared\Tribulus.MarketPlace.Shared.MassTransit\Tribulus.MarketPlace.Shared.MassTransit.csproj" />
   </ItemGroup>
 
 </Project>
