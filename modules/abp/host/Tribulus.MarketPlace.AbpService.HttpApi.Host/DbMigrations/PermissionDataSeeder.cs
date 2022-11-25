@@ -42,9 +42,10 @@ public class PermissionDataSeeder : ITransientDependency
                     ? MultiTenancySides.Host
                     : MultiTenancySides.Tenant;
 
-                var permissionNames = _permissionDefinitionManager
-                    .GetPermissions()
-                    .Where(p => p.MultiTenancySide.HasFlag(multiTenancySide))
+                var permissionNames = await _permissionDefinitionManager
+                    .GetPermissionsAsync();
+
+                var permissionNameCollection = permissionNames.Where(p => p.MultiTenancySide.HasFlag(multiTenancySide))
                     .Where(p => !p.Providers.Any() || p.Providers.Contains(RolePermissionValueProvider.ProviderName))
                     .Select(p => p.Name)
                     .ToArray();
@@ -53,7 +54,7 @@ public class PermissionDataSeeder : ITransientDependency
                 await _permissionDataSeeder.SeedAsync(
                     RolePermissionValueProvider.ProviderName,
                     "admin",
-                    permissionNames,
+                    permissionNameCollection,
                     tenantId
                 );
 

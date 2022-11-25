@@ -3,14 +3,14 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>Tribulus.MarketPlace.AggregateService</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="6.0.1" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="7.0.0-rc.2" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="7.0.0-rc.2" />
     <ProjectReference Include="..\..\..\inventory\src\Tribulus.MarketPlace.Admin.Inventory.Composition\Tribulus.MarketPlace.Admin.Inventory.Composition.csproj" />
     <ProjectReference Include="..\..\..\marketing\src\Tribulus.MarketPlace.Admin.Marketing.Composition\Tribulus.MarketPlace.Admin.Marketing.Composition.csproj" />
     <ProjectReference Include="..\..\..\sales\src\Tribulus.MarketPlace.Admin.Sales.Composition\Tribulus.MarketPlace.Admin.Sales.Composition.csproj" />

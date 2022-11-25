@@ -3,23 +3,23 @@
   <Import Project="..\..\..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>Tribulus.MarketPlace.AbpService</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="6.0.1" />
-    <PackageReference Include="Volo.Abp.Http.Client.IdentityModel.Web" Version="6.0.1" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="7.0.0-rc.2" />
+    <PackageReference Include="Volo.Abp.Http.Client.IdentityModel.Web" Version="7.0.0-rc.2" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="7.0.0-rc.2" />
 
-    <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="6.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="6.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="6.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -48,6 +48,14 @@
     <ProjectReference Include="..\..\..\marketing\src\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\..\inventory\src\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\..\sales\src\Tribulus.MarketPlace.Admin.Sales.Application.Contracts\Tribulus.MarketPlace.Admin.Sales.Application.Contracts.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Update="Fody" Version="6.6.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 

@@ -55,6 +55,13 @@ public class AbpServiceDbContext : AbpDbContext<AbpServiceDbContext>,
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
+    public DbSet<PermissionGroupDefinitionRecord> PermissionGroups { get; set; }
+
+    public DbSet<PermissionDefinitionRecord> Permissions { get; set; }
+    public DbSet<FeatureGroupDefinitionRecord> FeatureGroups { get; set; }
+
+    public DbSet<FeatureDefinitionRecord> Features { get; set; }
+
     public AbpServiceDbContext(DbContextOptions<AbpServiceDbContext> options)
         : base(options)
     {

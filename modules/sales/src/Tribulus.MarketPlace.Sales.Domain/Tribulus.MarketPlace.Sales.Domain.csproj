@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="7.0.0-rc.2" />
     <ProjectReference Include="..\..\..\inventory\src\Tribulus.MarketPlace.Inventory.Domain.Shared\Tribulus.MarketPlace.Inventory.Domain.Shared.csproj" />
     <ProjectReference Include="..\Tribulus.MarketPlace.Sales.Domain.Shared\Tribulus.MarketPlace.Sales.Domain.Shared.csproj" />
   </ItemGroup>
