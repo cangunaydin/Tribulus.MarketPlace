@@ -10827,3 +10827,751 @@ Error Number:4060,State:1,Class:11
 2022-11-24 13:20:31.318 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 10.3687ms
 2022-11-24 13:20:31.431 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44354/_vs/browserLink - -
 2022-11-24 13:20:31.539 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44354/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 107.7583ms
+2022-11-27 12:54:13.996 +01:00 [INF] Starting Tribulus.MarketPlace.AdminGateway.
+2022-11-27 12:54:16.976 +01:00 [INF] Loaded ABP modules:
+2022-11-27 12:54:16.978 +01:00 [INF] - Tribulus.MarketPlace.AdminGateway.MarketPlaceAdminGatewayModule
+2022-11-27 12:54:16.978 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.Gateways.MarketPlaceSharedHostingGatewaysModule
+2022-11-27 12:54:16.978 +01:00 [INF]     - Tribulus.MarketPlace.Shared.Hosting.AspNetCore.MarketPlaceSharedHostingAspNetCoreModule
+2022-11-27 12:54:16.978 +01:00 [INF]       - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 12:54:16.978 +01:00 [INF]         - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 12:54:16.978 +01:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 12:54:16.978 +01:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 12:54:16.978 +01:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 12:54:16.978 +01:00 [INF]       - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-11-27 12:54:16.978 +01:00 [INF]         - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 12:54:16.978 +01:00 [INF]         - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 12:54:16.978 +01:00 [INF]             - Volo.Abp.Json.AbpJsonModule
+2022-11-27 12:54:16.978 +01:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 12:54:16.978 +01:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 12:54:16.978 +01:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 12:54:16.978 +01:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 12:54:16.978 +01:00 [INF]             - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 12:54:16.978 +01:00 [INF]             - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.Http.AbpHttpModule
+2022-11-27 12:54:16.978 +01:00 [INF]             - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-11-27 12:54:16.978 +01:00 [INF]             - Volo.Abp.Minify.AbpMinifyModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 12:54:16.978 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 12:54:16.978 +01:00 [INF]       - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-11-27 12:54:16.978 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-11-27 12:54:16.978 +01:00 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-11-27 12:54:16.978 +01:00 [INF]             - Volo.Abp.UI.AbpUiModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-11-27 12:54:16.978 +01:00 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2022-11-27 12:54:16.978 +01:00 [INF]             - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 12:54:16.978 +01:00 [INF]               - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 12:54:16.978 +01:00 [INF]                 - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 12:54:16.978 +01:00 [INF]                 - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 12:54:16.978 +01:00 [INF]                 - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 12:54:16.978 +01:00 [INF]               - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 12:54:16.978 +01:00 [INF]               - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 12:54:16.978 +01:00 [INF]             - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 12:54:17.160 +01:00 [INF] Loading proxy data from config.
+2022-11-27 12:54:17.225 +01:00 [INF] User profile is available. Using 'C:\Users\cangu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-27 12:54:17.323 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:17.331 +01:00 [DBG] New client created for cluster 'abpCluster'.
+2022-11-27 12:54:17.331 +01:00 [DBG] Cluster 'abpCluster' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] New client created for cluster 'accountCluster'.
+2022-11-27 12:54:17.332 +01:00 [DBG] Cluster 'accountCluster' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] New client created for cluster 'aggregateCluster'.
+2022-11-27 12:54:17.332 +01:00 [DBG] Cluster 'aggregateCluster' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] New client created for cluster 'feature-management-cluster'.
+2022-11-27 12:54:17.332 +01:00 [DBG] Cluster 'feature-management-cluster' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] New client created for cluster 'identityCluster'.
+2022-11-27 12:54:17.332 +01:00 [DBG] Cluster 'identityCluster' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] New client created for cluster 'inventoryCluster'.
+2022-11-27 12:54:17.332 +01:00 [DBG] Cluster 'inventoryCluster' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] New client created for cluster 'marketingCluster'.
+2022-11-27 12:54:17.332 +01:00 [DBG] Cluster 'marketingCluster' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] New client created for cluster 'permission-management-cluster'.
+2022-11-27 12:54:17.332 +01:00 [DBG] Cluster 'permission-management-cluster' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] New client created for cluster 'salesCluster'.
+2022-11-27 12:54:17.332 +01:00 [DBG] Cluster 'salesCluster' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:17.332 +01:00 [DBG] New client created for cluster 'setting-management-cluster'.
+2022-11-27 12:54:17.332 +01:00 [DBG] Cluster 'setting-management-cluster' has been added.
+2022-11-27 12:54:17.354 +01:00 [DBG] Route 'Abp Service' has been added.
+2022-11-27 12:54:17.354 +01:00 [DBG] Route 'Account Service' has been added.
+2022-11-27 12:54:17.354 +01:00 [DBG] Route 'Aggregate Service' has been added.
+2022-11-27 12:54:17.354 +01:00 [DBG] Route 'feature-management-route' has been added.
+2022-11-27 12:54:17.354 +01:00 [DBG] Route 'Identity Service' has been added.
+2022-11-27 12:54:17.354 +01:00 [DBG] Route 'Inventory Service' has been added.
+2022-11-27 12:54:17.354 +01:00 [DBG] Route 'Marketing Service' has been added.
+2022-11-27 12:54:17.354 +01:00 [DBG] Route 'permission-management-route' has been added.
+2022-11-27 12:54:17.354 +01:00 [DBG] Route 'Sales Service' has been added.
+2022-11-27 12:54:17.354 +01:00 [DBG] Route 'setting-management-route' has been added.
+2022-11-27 12:54:17.385 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 12:54:17.547 +01:00 [INF] Now listening on: http://localhost:63135
+2022-11-27 12:54:17.547 +01:00 [INF] Now listening on: https://localhost:63136
+2022-11-27 12:54:17.547 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-27 12:54:17.547 +01:00 [INF] Hosting environment: Development
+2022-11-27 12:54:17.547 +01:00 [INF] Content root path: C:\Development\Projects\Tribulus.MarketPlace\gateways\admin-gateway\
+2022-11-27 12:54:35.668 +01:00 [INF] Application is shutting down...
+2022-11-27 12:54:36.336 +01:00 [INF] Starting Tribulus.MarketPlace.AdminGateway.
+2022-11-27 12:54:36.895 +01:00 [INF] Loaded ABP modules:
+2022-11-27 12:54:36.896 +01:00 [INF] - Tribulus.MarketPlace.AdminGateway.MarketPlaceAdminGatewayModule
+2022-11-27 12:54:36.896 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.Gateways.MarketPlaceSharedHostingGatewaysModule
+2022-11-27 12:54:36.896 +01:00 [INF]     - Tribulus.MarketPlace.Shared.Hosting.AspNetCore.MarketPlaceSharedHostingAspNetCoreModule
+2022-11-27 12:54:36.896 +01:00 [INF]       - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 12:54:36.896 +01:00 [INF]         - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 12:54:36.896 +01:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 12:54:36.896 +01:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 12:54:36.896 +01:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 12:54:36.896 +01:00 [INF]       - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-11-27 12:54:36.896 +01:00 [INF]         - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 12:54:36.896 +01:00 [INF]         - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 12:54:36.896 +01:00 [INF]             - Volo.Abp.Json.AbpJsonModule
+2022-11-27 12:54:36.896 +01:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 12:54:36.896 +01:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 12:54:36.896 +01:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 12:54:36.896 +01:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 12:54:36.896 +01:00 [INF]             - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 12:54:36.896 +01:00 [INF]             - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.Http.AbpHttpModule
+2022-11-27 12:54:36.896 +01:00 [INF]             - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-11-27 12:54:36.896 +01:00 [INF]             - Volo.Abp.Minify.AbpMinifyModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 12:54:36.896 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 12:54:36.896 +01:00 [INF]       - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-11-27 12:54:36.896 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-11-27 12:54:36.896 +01:00 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-11-27 12:54:36.896 +01:00 [INF]             - Volo.Abp.UI.AbpUiModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-11-27 12:54:36.896 +01:00 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2022-11-27 12:54:36.896 +01:00 [INF]             - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 12:54:36.896 +01:00 [INF]               - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 12:54:36.896 +01:00 [INF]                 - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 12:54:36.896 +01:00 [INF]                 - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 12:54:36.896 +01:00 [INF]                 - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 12:54:36.896 +01:00 [INF]               - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 12:54:36.896 +01:00 [INF]               - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 12:54:36.896 +01:00 [INF]             - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 12:54:36.959 +01:00 [INF] Loading proxy data from config.
+2022-11-27 12:54:37.006 +01:00 [INF] User profile is available. Using 'C:\Users\cangu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-27 12:54:37.069 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:37.072 +01:00 [DBG] New client created for cluster 'abpCluster'.
+2022-11-27 12:54:37.072 +01:00 [DBG] Cluster 'abpCluster' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] New client created for cluster 'accountCluster'.
+2022-11-27 12:54:37.073 +01:00 [DBG] Cluster 'accountCluster' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] New client created for cluster 'aggregateCluster'.
+2022-11-27 12:54:37.073 +01:00 [DBG] Cluster 'aggregateCluster' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] New client created for cluster 'feature-management-cluster'.
+2022-11-27 12:54:37.073 +01:00 [DBG] Cluster 'feature-management-cluster' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] New client created for cluster 'identityCluster'.
+2022-11-27 12:54:37.073 +01:00 [DBG] Cluster 'identityCluster' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] New client created for cluster 'inventoryCluster'.
+2022-11-27 12:54:37.073 +01:00 [DBG] Cluster 'inventoryCluster' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] New client created for cluster 'marketingCluster'.
+2022-11-27 12:54:37.073 +01:00 [DBG] Cluster 'marketingCluster' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] New client created for cluster 'permission-management-cluster'.
+2022-11-27 12:54:37.073 +01:00 [DBG] Cluster 'permission-management-cluster' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] New client created for cluster 'salesCluster'.
+2022-11-27 12:54:37.073 +01:00 [DBG] Cluster 'salesCluster' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:54:37.073 +01:00 [DBG] New client created for cluster 'setting-management-cluster'.
+2022-11-27 12:54:37.073 +01:00 [DBG] Cluster 'setting-management-cluster' has been added.
+2022-11-27 12:54:37.078 +01:00 [DBG] Route 'Abp Service' has been added.
+2022-11-27 12:54:37.078 +01:00 [DBG] Route 'Account Service' has been added.
+2022-11-27 12:54:37.078 +01:00 [DBG] Route 'Aggregate Service' has been added.
+2022-11-27 12:54:37.078 +01:00 [DBG] Route 'feature-management-route' has been added.
+2022-11-27 12:54:37.078 +01:00 [DBG] Route 'Identity Service' has been added.
+2022-11-27 12:54:37.078 +01:00 [DBG] Route 'Inventory Service' has been added.
+2022-11-27 12:54:37.078 +01:00 [DBG] Route 'Marketing Service' has been added.
+2022-11-27 12:54:37.078 +01:00 [DBG] Route 'permission-management-route' has been added.
+2022-11-27 12:54:37.078 +01:00 [DBG] Route 'Sales Service' has been added.
+2022-11-27 12:54:37.078 +01:00 [DBG] Route 'setting-management-route' has been added.
+2022-11-27 12:54:37.089 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 12:54:37.231 +01:00 [INF] Now listening on: http://localhost:63135
+2022-11-27 12:54:37.231 +01:00 [INF] Now listening on: https://localhost:63136
+2022-11-27 12:54:37.231 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-27 12:54:37.231 +01:00 [INF] Hosting environment: Development
+2022-11-27 12:54:37.231 +01:00 [INF] Content root path: C:\Development\Projects\Tribulus.MarketPlace\gateways\admin-gateway\
+2022-11-27 12:56:59.515 +01:00 [INF] Starting Tribulus.MarketPlace.AdminGateway.
+2022-11-27 12:57:00.100 +01:00 [INF] Loaded ABP modules:
+2022-11-27 12:57:00.101 +01:00 [INF] - Tribulus.MarketPlace.AdminGateway.MarketPlaceAdminGatewayModule
+2022-11-27 12:57:00.101 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.Gateways.MarketPlaceSharedHostingGatewaysModule
+2022-11-27 12:57:00.101 +01:00 [INF]     - Tribulus.MarketPlace.Shared.Hosting.AspNetCore.MarketPlaceSharedHostingAspNetCoreModule
+2022-11-27 12:57:00.101 +01:00 [INF]       - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 12:57:00.101 +01:00 [INF]         - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 12:57:00.101 +01:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 12:57:00.101 +01:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 12:57:00.101 +01:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 12:57:00.101 +01:00 [INF]       - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-11-27 12:57:00.101 +01:00 [INF]         - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 12:57:00.101 +01:00 [INF]         - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 12:57:00.101 +01:00 [INF]             - Volo.Abp.Json.AbpJsonModule
+2022-11-27 12:57:00.101 +01:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 12:57:00.101 +01:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 12:57:00.101 +01:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 12:57:00.101 +01:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 12:57:00.101 +01:00 [INF]             - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 12:57:00.101 +01:00 [INF]             - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.Http.AbpHttpModule
+2022-11-27 12:57:00.101 +01:00 [INF]             - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-11-27 12:57:00.101 +01:00 [INF]             - Volo.Abp.Minify.AbpMinifyModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 12:57:00.101 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 12:57:00.101 +01:00 [INF]       - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-11-27 12:57:00.101 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-11-27 12:57:00.101 +01:00 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-11-27 12:57:00.101 +01:00 [INF]             - Volo.Abp.UI.AbpUiModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-11-27 12:57:00.101 +01:00 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2022-11-27 12:57:00.101 +01:00 [INF]             - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 12:57:00.101 +01:00 [INF]               - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 12:57:00.101 +01:00 [INF]                 - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 12:57:00.101 +01:00 [INF]                 - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 12:57:00.101 +01:00 [INF]                 - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 12:57:00.101 +01:00 [INF]               - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 12:57:00.101 +01:00 [INF]               - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 12:57:00.101 +01:00 [INF]             - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 12:57:00.156 +01:00 [INF] Loading proxy data from config.
+2022-11-27 12:57:00.220 +01:00 [INF] User profile is available. Using 'C:\Users\cangu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-27 12:57:00.278 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:57:00.281 +01:00 [DBG] New client created for cluster 'abpCluster'.
+2022-11-27 12:57:00.281 +01:00 [DBG] Cluster 'abpCluster' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] New client created for cluster 'accountCluster'.
+2022-11-27 12:57:00.283 +01:00 [DBG] Cluster 'accountCluster' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] New client created for cluster 'aggregateCluster'.
+2022-11-27 12:57:00.283 +01:00 [DBG] Cluster 'aggregateCluster' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] New client created for cluster 'feature-management-cluster'.
+2022-11-27 12:57:00.283 +01:00 [DBG] Cluster 'feature-management-cluster' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] New client created for cluster 'identityCluster'.
+2022-11-27 12:57:00.283 +01:00 [DBG] Cluster 'identityCluster' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] New client created for cluster 'inventoryCluster'.
+2022-11-27 12:57:00.283 +01:00 [DBG] Cluster 'inventoryCluster' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] New client created for cluster 'marketingCluster'.
+2022-11-27 12:57:00.283 +01:00 [DBG] Cluster 'marketingCluster' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] New client created for cluster 'permission-management-cluster'.
+2022-11-27 12:57:00.283 +01:00 [DBG] Cluster 'permission-management-cluster' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] New client created for cluster 'salesCluster'.
+2022-11-27 12:57:00.283 +01:00 [DBG] Cluster 'salesCluster' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 12:57:00.283 +01:00 [DBG] New client created for cluster 'setting-management-cluster'.
+2022-11-27 12:57:00.283 +01:00 [DBG] Cluster 'setting-management-cluster' has been added.
+2022-11-27 12:57:00.289 +01:00 [DBG] Route 'Abp Service' has been added.
+2022-11-27 12:57:00.289 +01:00 [DBG] Route 'Account Service' has been added.
+2022-11-27 12:57:00.289 +01:00 [DBG] Route 'Aggregate Service' has been added.
+2022-11-27 12:57:00.289 +01:00 [DBG] Route 'feature-management-route' has been added.
+2022-11-27 12:57:00.289 +01:00 [DBG] Route 'Identity Service' has been added.
+2022-11-27 12:57:00.289 +01:00 [DBG] Route 'Inventory Service' has been added.
+2022-11-27 12:57:00.289 +01:00 [DBG] Route 'Marketing Service' has been added.
+2022-11-27 12:57:00.289 +01:00 [DBG] Route 'permission-management-route' has been added.
+2022-11-27 12:57:00.289 +01:00 [DBG] Route 'Sales Service' has been added.
+2022-11-27 12:57:00.289 +01:00 [DBG] Route 'setting-management-route' has been added.
+2022-11-27 12:57:00.294 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 12:57:00.437 +01:00 [INF] Now listening on: http://localhost:63293
+2022-11-27 12:57:00.437 +01:00 [INF] Now listening on: https://localhost:63294
+2022-11-27 12:57:00.437 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-27 12:57:00.437 +01:00 [INF] Hosting environment: Development
+2022-11-27 12:57:00.437 +01:00 [INF] Content root path: C:\Development\Projects\Tribulus.MarketPlace\gateways\admin-gateway\
+2022-11-27 13:03:22.571 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63294/ - -
+2022-11-27 13:03:22.811 +01:00 [INF] Request was redirected to /swagger
+2022-11-27 13:03:22.817 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63294/swagger - -
+2022-11-27 13:03:22.819 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63294/ - - - 302 0 - 247.9855ms
+2022-11-27 13:03:22.819 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63294/swagger - - - 301 0 - 1.0301ms
+2022-11-27 13:03:22.820 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63294/swagger/index.html - -
+2022-11-27 13:03:22.860 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63294/swagger/index.html - - - 200 - text/html;charset=utf-8 40.4726ms
+2022-11-27 13:03:22.873 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63294/swagger/swagger-ui-bundle.js - -
+2022-11-27 13:03:22.873 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63294/swagger/swagger-ui.css - -
+2022-11-27 13:03:22.873 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63294/swagger/swagger-ui-standalone-preset.js - -
+2022-11-27 13:03:22.890 +01:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-11-27 13:03:22.890 +01:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-11-27 13:03:22.892 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63294/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 19.5479ms
+2022-11-27 13:03:22.892 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63294/swagger/swagger-ui.css - - - 200 143943 text/css 19.5771ms
+2022-11-27 13:03:22.895 +01:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-11-27 13:03:22.895 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63294/swagger/swagger-ui-bundle.js - - - 200 1095087 application/javascript 22.2600ms
+2022-11-27 13:03:23.104 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63294/swagger/favicon-32x32.png - -
+2022-11-27 13:03:23.106 +01:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-11-27 13:03:23.106 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63294/swagger/favicon-32x32.png - - - 200 628 image/png 2.9009ms
+2022-11-27 13:05:45.612 +01:00 [INF] Application is shutting down...
+2022-11-27 13:05:46.222 +01:00 [INF] Starting Tribulus.MarketPlace.AdminGateway.
+2022-11-27 13:05:46.800 +01:00 [INF] Loaded ABP modules:
+2022-11-27 13:05:46.801 +01:00 [INF] - Tribulus.MarketPlace.AdminGateway.MarketPlaceAdminGatewayModule
+2022-11-27 13:05:46.801 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.Gateways.MarketPlaceSharedHostingGatewaysModule
+2022-11-27 13:05:46.801 +01:00 [INF]     - Tribulus.MarketPlace.Shared.Hosting.AspNetCore.MarketPlaceSharedHostingAspNetCoreModule
+2022-11-27 13:05:46.801 +01:00 [INF]       - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 13:05:46.801 +01:00 [INF]         - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 13:05:46.801 +01:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 13:05:46.801 +01:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 13:05:46.801 +01:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 13:05:46.801 +01:00 [INF]       - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-11-27 13:05:46.801 +01:00 [INF]         - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 13:05:46.801 +01:00 [INF]         - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 13:05:46.801 +01:00 [INF]             - Volo.Abp.Json.AbpJsonModule
+2022-11-27 13:05:46.801 +01:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 13:05:46.801 +01:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 13:05:46.801 +01:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 13:05:46.801 +01:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 13:05:46.801 +01:00 [INF]             - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 13:05:46.801 +01:00 [INF]             - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.Http.AbpHttpModule
+2022-11-27 13:05:46.801 +01:00 [INF]             - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-11-27 13:05:46.801 +01:00 [INF]             - Volo.Abp.Minify.AbpMinifyModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 13:05:46.801 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 13:05:46.801 +01:00 [INF]       - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-11-27 13:05:46.801 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-11-27 13:05:46.801 +01:00 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-11-27 13:05:46.801 +01:00 [INF]             - Volo.Abp.UI.AbpUiModule
+2022-11-27 13:05:46.801 +01:00 [INF]           - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-11-27 13:05:46.802 +01:00 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2022-11-27 13:05:46.802 +01:00 [INF]             - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 13:05:46.802 +01:00 [INF]               - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 13:05:46.802 +01:00 [INF]                 - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 13:05:46.802 +01:00 [INF]                 - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 13:05:46.802 +01:00 [INF]                 - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 13:05:46.802 +01:00 [INF]               - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 13:05:46.802 +01:00 [INF]               - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 13:05:46.802 +01:00 [INF]             - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 13:05:46.875 +01:00 [INF] Loading proxy data from config.
+2022-11-27 13:05:46.917 +01:00 [INF] User profile is available. Using 'C:\Users\cangu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-27 13:05:46.982 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:05:46.986 +01:00 [DBG] New client created for cluster 'abpCluster'.
+2022-11-27 13:05:46.986 +01:00 [DBG] Cluster 'abpCluster' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] New client created for cluster 'accountCluster'.
+2022-11-27 13:05:46.987 +01:00 [DBG] Cluster 'accountCluster' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] New client created for cluster 'aggregateCluster'.
+2022-11-27 13:05:46.987 +01:00 [DBG] Cluster 'aggregateCluster' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] New client created for cluster 'feature-management-cluster'.
+2022-11-27 13:05:46.987 +01:00 [DBG] Cluster 'feature-management-cluster' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] New client created for cluster 'identityCluster'.
+2022-11-27 13:05:46.987 +01:00 [DBG] Cluster 'identityCluster' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] New client created for cluster 'inventoryCluster'.
+2022-11-27 13:05:46.987 +01:00 [DBG] Cluster 'inventoryCluster' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] New client created for cluster 'marketingCluster'.
+2022-11-27 13:05:46.987 +01:00 [DBG] Cluster 'marketingCluster' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] New client created for cluster 'permission-management-cluster'.
+2022-11-27 13:05:46.987 +01:00 [DBG] Cluster 'permission-management-cluster' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] New client created for cluster 'salesCluster'.
+2022-11-27 13:05:46.987 +01:00 [DBG] Cluster 'salesCluster' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:05:46.987 +01:00 [DBG] New client created for cluster 'setting-management-cluster'.
+2022-11-27 13:05:46.987 +01:00 [DBG] Cluster 'setting-management-cluster' has been added.
+2022-11-27 13:05:46.992 +01:00 [DBG] Route 'Abp Service' has been added.
+2022-11-27 13:05:46.992 +01:00 [DBG] Route 'Account Service' has been added.
+2022-11-27 13:05:46.992 +01:00 [DBG] Route 'Aggregate Service' has been added.
+2022-11-27 13:05:46.992 +01:00 [DBG] Route 'feature-management-route' has been added.
+2022-11-27 13:05:46.992 +01:00 [DBG] Route 'Identity Service' has been added.
+2022-11-27 13:05:46.992 +01:00 [DBG] Route 'Inventory Service' has been added.
+2022-11-27 13:05:46.992 +01:00 [DBG] Route 'Marketing Service' has been added.
+2022-11-27 13:05:46.992 +01:00 [DBG] Route 'permission-management-route' has been added.
+2022-11-27 13:05:46.992 +01:00 [DBG] Route 'Sales Service' has been added.
+2022-11-27 13:05:46.992 +01:00 [DBG] Route 'setting-management-route' has been added.
+2022-11-27 13:05:47.012 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 13:05:47.156 +01:00 [INF] Now listening on: http://localhost:63293
+2022-11-27 13:05:47.156 +01:00 [INF] Now listening on: https://localhost:63294
+2022-11-27 13:05:47.156 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-27 13:05:47.156 +01:00 [INF] Hosting environment: Development
+2022-11-27 13:05:47.157 +01:00 [INF] Content root path: C:\Development\Projects\Tribulus.MarketPlace\gateways\admin-gateway\
+2022-11-27 13:06:39.564 +01:00 [INF] Starting Tribulus.MarketPlace.AdminGateway.
+2022-11-27 13:06:40.354 +01:00 [INF] Loaded ABP modules:
+2022-11-27 13:06:40.355 +01:00 [INF] - Tribulus.MarketPlace.AdminGateway.MarketPlaceAdminGatewayModule
+2022-11-27 13:06:40.355 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.Gateways.MarketPlaceSharedHostingGatewaysModule
+2022-11-27 13:06:40.355 +01:00 [INF]     - Tribulus.MarketPlace.Shared.Hosting.AspNetCore.MarketPlaceSharedHostingAspNetCoreModule
+2022-11-27 13:06:40.355 +01:00 [INF]       - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 13:06:40.355 +01:00 [INF]         - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 13:06:40.355 +01:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 13:06:40.355 +01:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2022-11-27 13:06:40.355 +01:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 13:06:40.355 +01:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 13:06:40.355 +01:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 13:06:40.355 +01:00 [INF]           - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 13:06:40.355 +01:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 13:06:40.355 +01:00 [INF]       - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-11-27 13:06:40.355 +01:00 [INF]         - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 13:06:40.355 +01:00 [INF]           - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 13:06:40.355 +01:00 [INF]         - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-11-27 13:06:40.355 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 13:06:40.355 +01:00 [INF]             - Volo.Abp.Json.AbpJsonModule
+2022-11-27 13:06:40.355 +01:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 13:06:40.355 +01:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 13:06:40.355 +01:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 13:06:40.355 +01:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 13:06:40.356 +01:00 [INF]             - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 13:06:40.356 +01:00 [INF]             - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 13:06:40.356 +01:00 [INF]           - Volo.Abp.Http.AbpHttpModule
+2022-11-27 13:06:40.356 +01:00 [INF]             - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-11-27 13:06:40.356 +01:00 [INF]             - Volo.Abp.Minify.AbpMinifyModule
+2022-11-27 13:06:40.356 +01:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 13:06:40.356 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 13:06:40.356 +01:00 [INF]           - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 13:06:40.356 +01:00 [INF]           - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 13:06:40.356 +01:00 [INF]       - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-11-27 13:06:40.356 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-11-27 13:06:40.356 +01:00 [INF]           - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-11-27 13:06:40.356 +01:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-11-27 13:06:40.356 +01:00 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 13:06:40.356 +01:00 [INF]           - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-11-27 13:06:40.356 +01:00 [INF]             - Volo.Abp.UI.AbpUiModule
+2022-11-27 13:06:40.356 +01:00 [INF]           - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-11-27 13:06:40.356 +01:00 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2022-11-27 13:06:40.356 +01:00 [INF]             - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 13:06:40.356 +01:00 [INF]               - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 13:06:40.356 +01:00 [INF]                 - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 13:06:40.356 +01:00 [INF]                 - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 13:06:40.356 +01:00 [INF]                 - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 13:06:40.356 +01:00 [INF]               - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 13:06:40.356 +01:00 [INF]               - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 13:06:40.356 +01:00 [INF]             - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 13:06:40.430 +01:00 [INF] Loading proxy data from config.
+2022-11-27 13:06:40.474 +01:00 [INF] User profile is available. Using 'C:\Users\cangu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-27 13:06:40.538 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:06:40.541 +01:00 [DBG] New client created for cluster 'abpCluster'.
+2022-11-27 13:06:40.541 +01:00 [DBG] Cluster 'abpCluster' has been added.
+2022-11-27 13:06:40.542 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] New client created for cluster 'accountCluster'.
+2022-11-27 13:06:40.543 +01:00 [DBG] Cluster 'accountCluster' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] New client created for cluster 'aggregateCluster'.
+2022-11-27 13:06:40.543 +01:00 [DBG] Cluster 'aggregateCluster' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] New client created for cluster 'feature-management-cluster'.
+2022-11-27 13:06:40.543 +01:00 [DBG] Cluster 'feature-management-cluster' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] New client created for cluster 'identityCluster'.
+2022-11-27 13:06:40.543 +01:00 [DBG] Cluster 'identityCluster' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] New client created for cluster 'inventoryCluster'.
+2022-11-27 13:06:40.543 +01:00 [DBG] Cluster 'inventoryCluster' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] New client created for cluster 'marketingCluster'.
+2022-11-27 13:06:40.543 +01:00 [DBG] Cluster 'marketingCluster' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] New client created for cluster 'permission-management-cluster'.
+2022-11-27 13:06:40.543 +01:00 [DBG] Cluster 'permission-management-cluster' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] New client created for cluster 'salesCluster'.
+2022-11-27 13:06:40.543 +01:00 [DBG] Cluster 'salesCluster' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:06:40.543 +01:00 [DBG] New client created for cluster 'setting-management-cluster'.
+2022-11-27 13:06:40.543 +01:00 [DBG] Cluster 'setting-management-cluster' has been added.
+2022-11-27 13:06:40.557 +01:00 [DBG] Route 'Abp Service' has been added.
+2022-11-27 13:06:40.557 +01:00 [DBG] Route 'Account Service' has been added.
+2022-11-27 13:06:40.557 +01:00 [DBG] Route 'Aggregate Service' has been added.
+2022-11-27 13:06:40.557 +01:00 [DBG] Route 'feature-management-route' has been added.
+2022-11-27 13:06:40.557 +01:00 [DBG] Route 'Identity Service' has been added.
+2022-11-27 13:06:40.557 +01:00 [DBG] Route 'Inventory Service' has been added.
+2022-11-27 13:06:40.557 +01:00 [DBG] Route 'Marketing Service' has been added.
+2022-11-27 13:06:40.557 +01:00 [DBG] Route 'permission-management-route' has been added.
+2022-11-27 13:06:40.557 +01:00 [DBG] Route 'Sales Service' has been added.
+2022-11-27 13:06:40.557 +01:00 [DBG] Route 'setting-management-route' has been added.
+2022-11-27 13:06:40.585 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 13:06:40.744 +01:00 [INF] Now listening on: http://localhost:63771
+2022-11-27 13:06:40.744 +01:00 [INF] Now listening on: https://localhost:63772
+2022-11-27 13:06:40.745 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-27 13:06:40.745 +01:00 [INF] Hosting environment: Development
+2022-11-27 13:06:40.745 +01:00 [INF] Content root path: C:\Development\Projects\Tribulus.MarketPlace\gateways\admin-gateway\
+2022-11-27 13:07:28.524 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63772/ - -
+2022-11-27 13:07:28.691 +01:00 [INF] Request was redirected to /swagger
+2022-11-27 13:07:28.696 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63772/swagger - -
+2022-11-27 13:07:28.699 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63772/swagger - - - 301 0 - 1.4810ms
+2022-11-27 13:07:28.699 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63772/ - - - 302 0 - 174.8353ms
+2022-11-27 13:07:28.704 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63772/swagger/index.html - -
+2022-11-27 13:07:28.745 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63772/swagger/index.html - - - 200 - text/html;charset=utf-8 40.9986ms
+2022-11-27 13:07:28.753 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63772/swagger/swagger-ui.css - -
+2022-11-27 13:07:28.753 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63772/swagger/swagger-ui-bundle.js - -
+2022-11-27 13:07:28.754 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63772/swagger/swagger-ui-standalone-preset.js - -
+2022-11-27 13:07:28.761 +01:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-11-27 13:07:28.766 +01:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-11-27 13:07:28.767 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63772/swagger/swagger-ui.css - - - 200 143943 text/css 13.6824ms
+2022-11-27 13:07:28.767 +01:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-11-27 13:07:28.768 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63772/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 14.6308ms
+2022-11-27 13:07:28.769 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63772/swagger/swagger-ui-bundle.js - - - 200 1095087 application/javascript 14.9679ms
+2022-11-27 13:07:28.986 +01:00 [INF] Request starting HTTP/2 GET https://localhost:63772/swagger/favicon-32x32.png - -
+2022-11-27 13:07:28.987 +01:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-11-27 13:07:28.987 +01:00 [INF] Request finished HTTP/2 GET https://localhost:63772/swagger/favicon-32x32.png - - - 200 628 image/png 0.5828ms
+2022-11-27 13:19:56.375 +01:00 [INF] Application is shutting down...
+2022-11-27 13:19:56.991 +01:00 [INF] Starting Tribulus.MarketPlace.AdminGateway.
+2022-11-27 13:19:57.553 +01:00 [INF] Loaded ABP modules:
+2022-11-27 13:19:57.554 +01:00 [INF] - Tribulus.MarketPlace.AdminGateway.MarketPlaceAdminGatewayModule
+2022-11-27 13:19:57.554 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.Gateways.MarketPlaceSharedHostingGatewaysModule
+2022-11-27 13:19:57.554 +01:00 [INF]     - Tribulus.MarketPlace.Shared.Hosting.AspNetCore.MarketPlaceSharedHostingAspNetCoreModule
+2022-11-27 13:19:57.554 +01:00 [INF]       - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 13:19:57.554 +01:00 [INF]         - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 13:19:57.554 +01:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 13:19:57.554 +01:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 13:19:57.554 +01:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 13:19:57.554 +01:00 [INF]       - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-11-27 13:19:57.554 +01:00 [INF]         - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 13:19:57.554 +01:00 [INF]         - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 13:19:57.554 +01:00 [INF]             - Volo.Abp.Json.AbpJsonModule
+2022-11-27 13:19:57.554 +01:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 13:19:57.554 +01:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 13:19:57.554 +01:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 13:19:57.554 +01:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 13:19:57.554 +01:00 [INF]             - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 13:19:57.554 +01:00 [INF]             - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.Http.AbpHttpModule
+2022-11-27 13:19:57.554 +01:00 [INF]             - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-11-27 13:19:57.554 +01:00 [INF]             - Volo.Abp.Minify.AbpMinifyModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 13:19:57.554 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 13:19:57.554 +01:00 [INF]       - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-11-27 13:19:57.554 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-11-27 13:19:57.554 +01:00 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-11-27 13:19:57.554 +01:00 [INF]             - Volo.Abp.UI.AbpUiModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-11-27 13:19:57.554 +01:00 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2022-11-27 13:19:57.554 +01:00 [INF]             - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 13:19:57.554 +01:00 [INF]               - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 13:19:57.554 +01:00 [INF]                 - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 13:19:57.554 +01:00 [INF]                 - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 13:19:57.554 +01:00 [INF]                 - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 13:19:57.554 +01:00 [INF]               - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 13:19:57.554 +01:00 [INF]               - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 13:19:57.554 +01:00 [INF]             - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 13:19:57.610 +01:00 [INF] Loading proxy data from config.
+2022-11-27 13:19:57.660 +01:00 [INF] User profile is available. Using 'C:\Users\cangu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-27 13:19:57.721 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:19:57.724 +01:00 [DBG] New client created for cluster 'abpCluster'.
+2022-11-27 13:19:57.725 +01:00 [DBG] Cluster 'abpCluster' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] New client created for cluster 'accountCluster'.
+2022-11-27 13:19:57.726 +01:00 [DBG] Cluster 'accountCluster' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] New client created for cluster 'aggregateCluster'.
+2022-11-27 13:19:57.726 +01:00 [DBG] Cluster 'aggregateCluster' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] New client created for cluster 'feature-management-cluster'.
+2022-11-27 13:19:57.726 +01:00 [DBG] Cluster 'feature-management-cluster' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] New client created for cluster 'identityCluster'.
+2022-11-27 13:19:57.726 +01:00 [DBG] Cluster 'identityCluster' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] New client created for cluster 'inventoryCluster'.
+2022-11-27 13:19:57.726 +01:00 [DBG] Cluster 'inventoryCluster' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] New client created for cluster 'marketingCluster'.
+2022-11-27 13:19:57.726 +01:00 [DBG] Cluster 'marketingCluster' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] New client created for cluster 'permission-management-cluster'.
+2022-11-27 13:19:57.726 +01:00 [DBG] Cluster 'permission-management-cluster' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] New client created for cluster 'salesCluster'.
+2022-11-27 13:19:57.726 +01:00 [DBG] Cluster 'salesCluster' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:19:57.726 +01:00 [DBG] New client created for cluster 'setting-management-cluster'.
+2022-11-27 13:19:57.726 +01:00 [DBG] Cluster 'setting-management-cluster' has been added.
+2022-11-27 13:19:57.732 +01:00 [DBG] Route 'Abp Service' has been added.
+2022-11-27 13:19:57.732 +01:00 [DBG] Route 'Account Service' has been added.
+2022-11-27 13:19:57.732 +01:00 [DBG] Route 'Aggregate Service' has been added.
+2022-11-27 13:19:57.732 +01:00 [DBG] Route 'feature-management-route' has been added.
+2022-11-27 13:19:57.732 +01:00 [DBG] Route 'Identity Service' has been added.
+2022-11-27 13:19:57.732 +01:00 [DBG] Route 'Inventory Service' has been added.
+2022-11-27 13:19:57.732 +01:00 [DBG] Route 'Marketing Service' has been added.
+2022-11-27 13:19:57.732 +01:00 [DBG] Route 'permission-management-route' has been added.
+2022-11-27 13:19:57.732 +01:00 [DBG] Route 'Sales Service' has been added.
+2022-11-27 13:19:57.732 +01:00 [DBG] Route 'setting-management-route' has been added.
+2022-11-27 13:19:57.746 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 13:19:57.876 +01:00 [INF] Now listening on: http://localhost:63771
+2022-11-27 13:19:57.876 +01:00 [INF] Now listening on: https://localhost:63772
+2022-11-27 13:19:57.876 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-27 13:19:57.876 +01:00 [INF] Hosting environment: Development
+2022-11-27 13:19:57.876 +01:00 [INF] Content root path: C:\Development\Projects\Tribulus.MarketPlace\gateways\admin-gateway\
+2022-11-27 13:20:39.656 +01:00 [INF] Starting Tribulus.MarketPlace.AdminGateway.
+2022-11-27 13:20:40.392 +01:00 [INF] Loaded ABP modules:
+2022-11-27 13:20:40.393 +01:00 [INF] - Tribulus.MarketPlace.AdminGateway.MarketPlaceAdminGatewayModule
+2022-11-27 13:20:40.393 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.Gateways.MarketPlaceSharedHostingGatewaysModule
+2022-11-27 13:20:40.393 +01:00 [INF]     - Tribulus.MarketPlace.Shared.Hosting.AspNetCore.MarketPlaceSharedHostingAspNetCoreModule
+2022-11-27 13:20:40.393 +01:00 [INF]       - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 13:20:40.393 +01:00 [INF]         - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 13:20:40.393 +01:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 13:20:40.393 +01:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 13:20:40.393 +01:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 13:20:40.393 +01:00 [INF]       - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-11-27 13:20:40.393 +01:00 [INF]         - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 13:20:40.393 +01:00 [INF]         - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 13:20:40.393 +01:00 [INF]             - Volo.Abp.Json.AbpJsonModule
+2022-11-27 13:20:40.393 +01:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 13:20:40.393 +01:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 13:20:40.393 +01:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 13:20:40.393 +01:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 13:20:40.393 +01:00 [INF]             - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 13:20:40.393 +01:00 [INF]             - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.Http.AbpHttpModule
+2022-11-27 13:20:40.393 +01:00 [INF]             - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-11-27 13:20:40.393 +01:00 [INF]             - Volo.Abp.Minify.AbpMinifyModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 13:20:40.393 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 13:20:40.393 +01:00 [INF]       - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-11-27 13:20:40.393 +01:00 [INF]         - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-11-27 13:20:40.393 +01:00 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-11-27 13:20:40.393 +01:00 [INF]             - Volo.Abp.UI.AbpUiModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-11-27 13:20:40.393 +01:00 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2022-11-27 13:20:40.393 +01:00 [INF]             - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 13:20:40.393 +01:00 [INF]               - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 13:20:40.393 +01:00 [INF]                 - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 13:20:40.393 +01:00 [INF]                 - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 13:20:40.393 +01:00 [INF]                 - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 13:20:40.393 +01:00 [INF]               - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 13:20:40.393 +01:00 [INF]               - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 13:20:40.393 +01:00 [INF]             - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 13:20:40.477 +01:00 [INF] Loading proxy data from config.
+2022-11-27 13:20:40.530 +01:00 [INF] User profile is available. Using 'C:\Users\cangu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-27 13:20:40.609 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:20:40.612 +01:00 [DBG] New client created for cluster 'abpCluster'.
+2022-11-27 13:20:40.612 +01:00 [DBG] Cluster 'abpCluster' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] New client created for cluster 'accountCluster'.
+2022-11-27 13:20:40.613 +01:00 [DBG] Cluster 'accountCluster' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] New client created for cluster 'aggregateCluster'.
+2022-11-27 13:20:40.613 +01:00 [DBG] Cluster 'aggregateCluster' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] New client created for cluster 'feature-management-cluster'.
+2022-11-27 13:20:40.613 +01:00 [DBG] Cluster 'feature-management-cluster' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] New client created for cluster 'identityCluster'.
+2022-11-27 13:20:40.613 +01:00 [DBG] Cluster 'identityCluster' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] New client created for cluster 'inventoryCluster'.
+2022-11-27 13:20:40.613 +01:00 [DBG] Cluster 'inventoryCluster' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] New client created for cluster 'marketingCluster'.
+2022-11-27 13:20:40.613 +01:00 [DBG] Cluster 'marketingCluster' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] New client created for cluster 'permission-management-cluster'.
+2022-11-27 13:20:40.613 +01:00 [DBG] Cluster 'permission-management-cluster' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] New client created for cluster 'salesCluster'.
+2022-11-27 13:20:40.613 +01:00 [DBG] Cluster 'salesCluster' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] Destination 'destination1' has been added.
+2022-11-27 13:20:40.613 +01:00 [DBG] New client created for cluster 'setting-management-cluster'.
+2022-11-27 13:20:40.613 +01:00 [DBG] Cluster 'setting-management-cluster' has been added.
+2022-11-27 13:20:40.618 +01:00 [DBG] Route 'Abp Service' has been added.
+2022-11-27 13:20:40.618 +01:00 [DBG] Route 'Account Service' has been added.
+2022-11-27 13:20:40.618 +01:00 [DBG] Route 'Aggregate Service' has been added.
+2022-11-27 13:20:40.618 +01:00 [DBG] Route 'feature-management-route' has been added.
+2022-11-27 13:20:40.618 +01:00 [DBG] Route 'Identity Service' has been added.
+2022-11-27 13:20:40.618 +01:00 [DBG] Route 'Inventory Service' has been added.
+2022-11-27 13:20:40.618 +01:00 [DBG] Route 'Marketing Service' has been added.
+2022-11-27 13:20:40.618 +01:00 [DBG] Route 'permission-management-route' has been added.
+2022-11-27 13:20:40.618 +01:00 [DBG] Route 'Sales Service' has been added.
+2022-11-27 13:20:40.618 +01:00 [DBG] Route 'setting-management-route' has been added.
+2022-11-27 13:20:40.696 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 13:20:40.821 +01:00 [INF] Now listening on: https://localhost:44354
+2022-11-27 13:20:40.821 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-27 13:20:40.821 +01:00 [INF] Hosting environment: Development
+2022-11-27 13:20:40.821 +01:00 [INF] Content root path: C:\Development\Projects\Tribulus.MarketPlace\gateways\admin-gateway\
+2022-11-27 13:22:50.261 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44354/ - -
+2022-11-27 13:22:50.429 +01:00 [INF] Request was redirected to /swagger
+2022-11-27 13:22:50.436 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44354/ - - - 302 0 - 175.7469ms
+2022-11-27 13:22:50.438 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44354/swagger - -
+2022-11-27 13:22:50.439 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44354/swagger - - - 301 0 - 0.7425ms
+2022-11-27 13:22:50.442 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44354/swagger/index.html - -
+2022-11-27 13:22:50.482 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44354/swagger/index.html - - - 200 - text/html;charset=utf-8 39.4098ms
+2022-11-27 13:22:50.489 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44354/swagger/swagger-ui-standalone-preset.js - -
+2022-11-27 13:22:50.489 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44354/swagger/swagger-ui-bundle.js - -
+2022-11-27 13:22:50.489 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44354/swagger/swagger-ui.css - -
+2022-11-27 13:22:50.498 +01:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-11-27 13:22:50.503 +01:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-11-27 13:22:50.504 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44354/swagger/swagger-ui.css - - - 200 143943 text/css 14.9176ms
+2022-11-27 13:22:50.505 +01:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-11-27 13:22:50.505 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44354/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 15.8403ms
+2022-11-27 13:22:50.505 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44354/swagger/swagger-ui-bundle.js - - - 200 1095087 application/javascript 15.8561ms
+2022-11-27 13:23:23.057 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44354/swagger/oauth2-redirect.html?code=T-cQ2eVoHJ7-7slgCxFuyymvNgSGYLpa7Gd73rBCHGk&state=U3VuIE5vdiAyNyAyMDIyIDEzOjIzOjE1IEdNVCswMTAwIChDZW50cmFsIEV1cm9wZWFuIFN0YW5kYXJkIFRpbWUp - -
+2022-11-27 13:23:23.057 +01:00 [INF] Sending file. Request path: '/oauth2-redirect.html'. Physical path: 'N/A'
+2022-11-27 13:23:23.057 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44354/swagger/oauth2-redirect.html?code=T-cQ2eVoHJ7-7slgCxFuyymvNgSGYLpa7Gd73rBCHGk&state=U3VuIE5vdiAyNyAyMDIyIDEzOjIzOjE1IEdNVCswMTAwIChDZW50cmFsIEV1cm9wZWFuIFN0YW5kYXJkIFRpbWUp - - - 200 2690 text/html 0.4923ms
+2022-11-27 13:23:55.096 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44354/swagger/oauth2-redirect.html?code=p8k-D8SFuTjOPiLxgn3MRXQuEbBB8olJj39fpMykVBI&state=U3VuIE5vdiAyNyAyMDIyIDEzOjIzOjU0IEdNVCswMTAwIChDZW50cmFsIEV1cm9wZWFuIFN0YW5kYXJkIFRpbWUp - -
+2022-11-27 13:23:55.097 +01:00 [INF] Sending file. Request path: '/oauth2-redirect.html'. Physical path: 'N/A'
+2022-11-27 13:23:55.097 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44354/swagger/oauth2-redirect.html?code=p8k-D8SFuTjOPiLxgn3MRXQuEbBB8olJj39fpMykVBI&state=U3VuIE5vdiAyNyAyMDIyIDEzOjIzOjU0IEdNVCswMTAwIChDZW50cmFsIEV1cm9wZWFuIFN0YW5kYXJkIFRpbWUp - - - 200 2690 text/html 0.3762ms

@@ -1,0 +1,636 @@
+2022-11-27 12:54:20.209 +01:00 [INF] Loaded ABP modules:
+2022-11-27 12:54:20.213 +01:00 [INF] - Tribulus.MarketPlace.DbMigrator.MarketPlaceDbMigratorModule
+2022-11-27 12:54:20.213 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.Data.AbpDataModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 12:54:20.213 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.EntityFrameworkCore.AbpServiceEntityFrameworkCoreModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Tribulus.MarketPlace.AbpService.AbpServiceDomainModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 12:54:20.213 +01:00 [INF]           - Volo.Abp.Json.AbpJsonModule
+2022-11-27 12:54:20.213 +01:00 [INF]             - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 12:54:20.213 +01:00 [INF]               - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 12:54:20.213 +01:00 [INF]                 - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 12:54:20.213 +01:00 [INF]                 - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 12:54:20.213 +01:00 [INF]                   - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 12:54:20.213 +01:00 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 12:54:20.213 +01:00 [INF]           - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 12:54:20.213 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 12:54:20.213 +01:00 [INF]           - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 12:54:20.213 +01:00 [INF]           - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 12:54:20.213 +01:00 [INF]           - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Tribulus.MarketPlace.AbpService.AbpServiceDomainSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]           - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 12:54:20.213 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2022-11-27 12:54:20.213 +01:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2022-11-27 12:54:20.213 +01:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-11-27 12:54:20.213 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.AbpServiceApplicationContractsModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2022-11-27 12:54:20.213 +01:00 [INF]   - Tribulus.MarketPlace.AggregateService.EntityFrameworkCore.AggregateServiceEntityFrameworkCoreModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Tribulus.MarketPlace.AggregateService.AggregateServiceDomainModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Tribulus.MarketPlace.AggregateService.AggregateServiceDomainSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2022-11-27 12:54:20.213 +01:00 [INF]   - Tribulus.MarketPlace.AggregateService.AggregateServiceApplicationContractsModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Marketing.AdminMarketingApplicationContractsModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Tribulus.MarketPlace.Marketing.Application.Contracts.Shared.MarketingApplicationContractsSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Tribulus.MarketPlace.Marketing.MarketingDomainSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Sales.AdminSalesApplicationContractsModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Tribulus.MarketPlace.Sales.Application.Contracts.Shared.SalesApplicationContractsSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Tribulus.MarketPlace.Sales.SalesDomainSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Inventory.AdminInventoryApplicationContractsModule
+2022-11-27 12:54:20.213 +01:00 [INF]       - Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.InventoryApplicationContractsSharedModule
+2022-11-27 12:54:20.213 +01:00 [INF]         - Tribulus.MarketPlace.Inventory.InventoryDomainSharedModule
+2022-11-27 12:54:20.214 +01:00 [INF]     - Tribulus.MarketPlace.SharedContractsModule
+2022-11-27 12:54:20.214 +01:00 [INF]   - Tribulus.MarketPlace.Marketing.EntityFrameworkCore.MarketingEntityFrameworkCoreModule
+2022-11-27 12:54:20.214 +01:00 [INF]     - Tribulus.MarketPlace.Marketing.MarketingDomainModule
+2022-11-27 12:54:20.214 +01:00 [INF]   - Tribulus.MarketPlace.Sales.EntityFrameworkCore.SalesEntityFrameworkCoreModule
+2022-11-27 12:54:20.214 +01:00 [INF]     - Tribulus.MarketPlace.Sales.SalesDomainModule
+2022-11-27 12:54:20.214 +01:00 [INF]   - Tribulus.MarketPlace.Inventory.EntityFrameworkCore.InventoryEntityFrameworkCoreModule
+2022-11-27 12:54:20.214 +01:00 [INF]     - Tribulus.MarketPlace.Inventory.InventoryDomainModule
+2022-11-27 12:54:20.376 +01:00 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-27 12:54:20.378 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 12:54:20.442 +01:00 [INF] Migrating Host side...
+2022-11-27 12:54:20.455 +01:00 [INF] Migrating AbpService database...
+2022-11-27 12:54:23.377 +01:00 [INF] Migrating AggregateService database...
+2022-11-27 12:54:23.456 +01:00 [INF] Migrating Marketing database...
+2022-11-27 12:54:23.581 +01:00 [INF] Migrating Inventory database...
+2022-11-27 12:54:23.653 +01:00 [INF] Migrating Sales database...
+2022-11-27 12:54:23.675 +01:00 [WRN] No store type was specified for the decimal property 'TotalValue' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:23.675 +01:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:23.675 +01:00 [WRN] No store type was specified for the decimal property 'SubTotal' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:23.675 +01:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'ProductPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:23.867 +01:00 [INF] All databases have been successfully migrated (HOST).
+2022-11-27 12:54:25.028 +01:00 [INF] Migrating tenants...
+2022-11-27 12:54:25.271 +01:00 [INF] Migration completed!
+2022-11-27 12:54:25.277 +01:00 [DBG] Stopped background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-27 12:54:26.268 +01:00 [INF] Loaded ABP modules:
+2022-11-27 12:54:26.272 +01:00 [INF] - Tribulus.MarketPlace.DbMigrator.MarketPlaceDbMigratorModule
+2022-11-27 12:54:26.272 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 12:54:26.272 +01:00 [INF]     - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 12:54:26.272 +01:00 [INF]     - Volo.Abp.Data.AbpDataModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 12:54:26.272 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.EntityFrameworkCore.AbpServiceEntityFrameworkCoreModule
+2022-11-27 12:54:26.272 +01:00 [INF]     - Tribulus.MarketPlace.AbpService.AbpServiceDomainModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 12:54:26.272 +01:00 [INF]           - Volo.Abp.Json.AbpJsonModule
+2022-11-27 12:54:26.272 +01:00 [INF]             - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 12:54:26.272 +01:00 [INF]               - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 12:54:26.272 +01:00 [INF]                 - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 12:54:26.272 +01:00 [INF]                 - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 12:54:26.272 +01:00 [INF]                   - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 12:54:26.272 +01:00 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 12:54:26.272 +01:00 [INF]           - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 12:54:26.272 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 12:54:26.272 +01:00 [INF]           - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 12:54:26.272 +01:00 [INF]           - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 12:54:26.272 +01:00 [INF]           - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Tribulus.MarketPlace.AbpService.AbpServiceDomainSharedModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-11-27 12:54:26.272 +01:00 [INF]           - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 12:54:26.272 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-11-27 12:54:26.272 +01:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2022-11-27 12:54:26.272 +01:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-11-27 12:54:26.272 +01:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2022-11-27 12:54:26.272 +01:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-11-27 12:54:26.272 +01:00 [INF]       - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.AbpServiceApplicationContractsModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2022-11-27 12:54:26.273 +01:00 [INF]   - Tribulus.MarketPlace.AggregateService.EntityFrameworkCore.AggregateServiceEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Tribulus.MarketPlace.AggregateService.AggregateServiceDomainModule
+2022-11-27 12:54:26.273 +01:00 [INF]       - Tribulus.MarketPlace.AggregateService.AggregateServiceDomainSharedModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2022-11-27 12:54:26.273 +01:00 [INF]   - Tribulus.MarketPlace.AggregateService.AggregateServiceApplicationContractsModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Marketing.AdminMarketingApplicationContractsModule
+2022-11-27 12:54:26.273 +01:00 [INF]       - Tribulus.MarketPlace.Marketing.Application.Contracts.Shared.MarketingApplicationContractsSharedModule
+2022-11-27 12:54:26.273 +01:00 [INF]         - Tribulus.MarketPlace.Marketing.MarketingDomainSharedModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Sales.AdminSalesApplicationContractsModule
+2022-11-27 12:54:26.273 +01:00 [INF]       - Tribulus.MarketPlace.Sales.Application.Contracts.Shared.SalesApplicationContractsSharedModule
+2022-11-27 12:54:26.273 +01:00 [INF]         - Tribulus.MarketPlace.Sales.SalesDomainSharedModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Inventory.AdminInventoryApplicationContractsModule
+2022-11-27 12:54:26.273 +01:00 [INF]       - Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.InventoryApplicationContractsSharedModule
+2022-11-27 12:54:26.273 +01:00 [INF]         - Tribulus.MarketPlace.Inventory.InventoryDomainSharedModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Tribulus.MarketPlace.SharedContractsModule
+2022-11-27 12:54:26.273 +01:00 [INF]   - Tribulus.MarketPlace.Marketing.EntityFrameworkCore.MarketingEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Tribulus.MarketPlace.Marketing.MarketingDomainModule
+2022-11-27 12:54:26.273 +01:00 [INF]   - Tribulus.MarketPlace.Sales.EntityFrameworkCore.SalesEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Tribulus.MarketPlace.Sales.SalesDomainModule
+2022-11-27 12:54:26.273 +01:00 [INF]   - Tribulus.MarketPlace.Inventory.EntityFrameworkCore.InventoryEntityFrameworkCoreModule
+2022-11-27 12:54:26.273 +01:00 [INF]     - Tribulus.MarketPlace.Inventory.InventoryDomainModule
+2022-11-27 12:54:26.302 +01:00 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-27 12:54:26.303 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 12:54:26.356 +01:00 [INF] Migrating Host side...
+2022-11-27 12:54:26.363 +01:00 [INF] Migrating AbpService database...
+2022-11-27 12:54:27.382 +01:00 [INF] Migrating AggregateService database...
+2022-11-27 12:54:27.389 +01:00 [INF] Migrating Marketing database...
+2022-11-27 12:54:27.441 +01:00 [INF] Migrating Inventory database...
+2022-11-27 12:54:27.455 +01:00 [INF] Migrating Sales database...
+2022-11-27 12:54:27.473 +01:00 [WRN] No store type was specified for the decimal property 'TotalValue' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:27.474 +01:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:27.474 +01:00 [WRN] No store type was specified for the decimal property 'SubTotal' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:27.474 +01:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'ProductPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:27.554 +01:00 [INF] All databases have been successfully migrated (HOST).
+2022-11-27 12:54:28.481 +01:00 [INF] Migrating tenants...
+2022-11-27 12:54:28.604 +01:00 [INF] Migration completed!
+2022-11-27 12:54:28.611 +01:00 [DBG] Stopped background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-27 12:54:29.552 +01:00 [INF] Loaded ABP modules:
+2022-11-27 12:54:29.557 +01:00 [INF] - Tribulus.MarketPlace.DbMigrator.MarketPlaceDbMigratorModule
+2022-11-27 12:54:29.557 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.Data.AbpDataModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 12:54:29.557 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.EntityFrameworkCore.AbpServiceEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Tribulus.MarketPlace.AbpService.AbpServiceDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 12:54:29.557 +01:00 [INF]           - Volo.Abp.Json.AbpJsonModule
+2022-11-27 12:54:29.557 +01:00 [INF]             - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 12:54:29.557 +01:00 [INF]               - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 12:54:29.557 +01:00 [INF]                 - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 12:54:29.557 +01:00 [INF]                 - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 12:54:29.557 +01:00 [INF]                   - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 12:54:29.557 +01:00 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 12:54:29.557 +01:00 [INF]           - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 12:54:29.557 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 12:54:29.557 +01:00 [INF]           - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 12:54:29.557 +01:00 [INF]           - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 12:54:29.557 +01:00 [INF]           - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Tribulus.MarketPlace.AbpService.AbpServiceDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]           - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 12:54:29.557 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2022-11-27 12:54:29.557 +01:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.AbpServiceApplicationContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]   - Tribulus.MarketPlace.AggregateService.EntityFrameworkCore.AggregateServiceEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Tribulus.MarketPlace.AggregateService.AggregateServiceDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Tribulus.MarketPlace.AggregateService.AggregateServiceDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2022-11-27 12:54:29.557 +01:00 [INF]   - Tribulus.MarketPlace.AggregateService.AggregateServiceApplicationContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Marketing.AdminMarketingApplicationContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Tribulus.MarketPlace.Marketing.Application.Contracts.Shared.MarketingApplicationContractsSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Tribulus.MarketPlace.Marketing.MarketingDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Sales.AdminSalesApplicationContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Tribulus.MarketPlace.Sales.Application.Contracts.Shared.SalesApplicationContractsSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Tribulus.MarketPlace.Sales.SalesDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Inventory.AdminInventoryApplicationContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]       - Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.InventoryApplicationContractsSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]         - Tribulus.MarketPlace.Inventory.InventoryDomainSharedModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Tribulus.MarketPlace.SharedContractsModule
+2022-11-27 12:54:29.557 +01:00 [INF]   - Tribulus.MarketPlace.Marketing.EntityFrameworkCore.MarketingEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Tribulus.MarketPlace.Marketing.MarketingDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]   - Tribulus.MarketPlace.Sales.EntityFrameworkCore.SalesEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Tribulus.MarketPlace.Sales.SalesDomainModule
+2022-11-27 12:54:29.557 +01:00 [INF]   - Tribulus.MarketPlace.Inventory.EntityFrameworkCore.InventoryEntityFrameworkCoreModule
+2022-11-27 12:54:29.557 +01:00 [INF]     - Tribulus.MarketPlace.Inventory.InventoryDomainModule
+2022-11-27 12:54:29.592 +01:00 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-27 12:54:29.593 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 12:54:29.647 +01:00 [INF] Migrating Host side...
+2022-11-27 12:54:29.655 +01:00 [INF] Migrating AbpService database...
+2022-11-27 12:54:30.666 +01:00 [INF] Migrating AggregateService database...
+2022-11-27 12:54:30.673 +01:00 [INF] Migrating Marketing database...
+2022-11-27 12:54:30.724 +01:00 [INF] Migrating Inventory database...
+2022-11-27 12:54:30.738 +01:00 [INF] Migrating Sales database...
+2022-11-27 12:54:30.759 +01:00 [WRN] No store type was specified for the decimal property 'TotalValue' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:30.759 +01:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:30.759 +01:00 [WRN] No store type was specified for the decimal property 'SubTotal' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:30.759 +01:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'ProductPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:30.839 +01:00 [INF] All databases have been successfully migrated (HOST).
+2022-11-27 12:54:31.748 +01:00 [INF] Migrating tenants...
+2022-11-27 12:54:31.867 +01:00 [INF] Migration completed!
+2022-11-27 12:54:31.874 +01:00 [DBG] Stopped background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-27 12:54:32.816 +01:00 [INF] Loaded ABP modules:
+2022-11-27 12:54:32.820 +01:00 [INF] - Tribulus.MarketPlace.DbMigrator.MarketPlaceDbMigratorModule
+2022-11-27 12:54:32.820 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.Data.AbpDataModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 12:54:32.820 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.EntityFrameworkCore.AbpServiceEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Tribulus.MarketPlace.AbpService.AbpServiceDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 12:54:32.820 +01:00 [INF]           - Volo.Abp.Json.AbpJsonModule
+2022-11-27 12:54:32.820 +01:00 [INF]             - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 12:54:32.820 +01:00 [INF]               - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 12:54:32.820 +01:00 [INF]                 - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 12:54:32.820 +01:00 [INF]                 - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 12:54:32.820 +01:00 [INF]                   - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 12:54:32.820 +01:00 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 12:54:32.820 +01:00 [INF]           - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 12:54:32.820 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 12:54:32.820 +01:00 [INF]           - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 12:54:32.820 +01:00 [INF]           - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 12:54:32.820 +01:00 [INF]           - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Tribulus.MarketPlace.AbpService.AbpServiceDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]           - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 12:54:32.820 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2022-11-27 12:54:32.820 +01:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.AbpServiceApplicationContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]   - Tribulus.MarketPlace.AggregateService.EntityFrameworkCore.AggregateServiceEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Tribulus.MarketPlace.AggregateService.AggregateServiceDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Tribulus.MarketPlace.AggregateService.AggregateServiceDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2022-11-27 12:54:32.820 +01:00 [INF]   - Tribulus.MarketPlace.AggregateService.AggregateServiceApplicationContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Marketing.AdminMarketingApplicationContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Tribulus.MarketPlace.Marketing.Application.Contracts.Shared.MarketingApplicationContractsSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Tribulus.MarketPlace.Marketing.MarketingDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Sales.AdminSalesApplicationContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Tribulus.MarketPlace.Sales.Application.Contracts.Shared.SalesApplicationContractsSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Tribulus.MarketPlace.Sales.SalesDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Inventory.AdminInventoryApplicationContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]       - Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.InventoryApplicationContractsSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]         - Tribulus.MarketPlace.Inventory.InventoryDomainSharedModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Tribulus.MarketPlace.SharedContractsModule
+2022-11-27 12:54:32.820 +01:00 [INF]   - Tribulus.MarketPlace.Marketing.EntityFrameworkCore.MarketingEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Tribulus.MarketPlace.Marketing.MarketingDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]   - Tribulus.MarketPlace.Sales.EntityFrameworkCore.SalesEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Tribulus.MarketPlace.Sales.SalesDomainModule
+2022-11-27 12:54:32.820 +01:00 [INF]   - Tribulus.MarketPlace.Inventory.EntityFrameworkCore.InventoryEntityFrameworkCoreModule
+2022-11-27 12:54:32.820 +01:00 [INF]     - Tribulus.MarketPlace.Inventory.InventoryDomainModule
+2022-11-27 12:54:32.851 +01:00 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-27 12:54:32.851 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 12:54:32.902 +01:00 [INF] Migrating Host side...
+2022-11-27 12:54:32.910 +01:00 [INF] Migrating AbpService database...
+2022-11-27 12:54:33.942 +01:00 [INF] Migrating AggregateService database...
+2022-11-27 12:54:33.949 +01:00 [INF] Migrating Marketing database...
+2022-11-27 12:54:34.000 +01:00 [INF] Migrating Inventory database...
+2022-11-27 12:54:34.014 +01:00 [INF] Migrating Sales database...
+2022-11-27 12:54:34.033 +01:00 [WRN] No store type was specified for the decimal property 'TotalValue' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:34.033 +01:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:34.033 +01:00 [WRN] No store type was specified for the decimal property 'SubTotal' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:34.033 +01:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'ProductPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-11-27 12:54:34.114 +01:00 [INF] All databases have been successfully migrated (HOST).
+2022-11-27 12:54:35.034 +01:00 [INF] Migrating tenants...
+2022-11-27 12:54:35.151 +01:00 [INF] Migration completed!
+2022-11-27 12:54:35.158 +01:00 [DBG] Stopped background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-27 12:54:36.287 +01:00 [INF] Loaded ABP modules:
+2022-11-27 12:54:36.294 +01:00 [INF] - Tribulus.MarketPlace.DbMigrator.MarketPlaceDbMigratorModule
+2022-11-27 12:54:36.294 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.Data.AbpDataModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 12:54:36.294 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.EntityFrameworkCore.AbpServiceEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Tribulus.MarketPlace.AbpService.AbpServiceDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 12:54:36.294 +01:00 [INF]           - Volo.Abp.Json.AbpJsonModule
+2022-11-27 12:54:36.294 +01:00 [INF]             - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 12:54:36.294 +01:00 [INF]               - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 12:54:36.294 +01:00 [INF]                 - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 12:54:36.294 +01:00 [INF]                 - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 12:54:36.294 +01:00 [INF]                   - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 12:54:36.294 +01:00 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 12:54:36.294 +01:00 [INF]           - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 12:54:36.294 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 12:54:36.294 +01:00 [INF]           - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 12:54:36.294 +01:00 [INF]           - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 12:54:36.294 +01:00 [INF]           - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Tribulus.MarketPlace.AbpService.AbpServiceDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]           - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 12:54:36.294 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2022-11-27 12:54:36.294 +01:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.AbpServiceApplicationContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]   - Tribulus.MarketPlace.AggregateService.EntityFrameworkCore.AggregateServiceEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Tribulus.MarketPlace.AggregateService.AggregateServiceDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Tribulus.MarketPlace.AggregateService.AggregateServiceDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2022-11-27 12:54:36.294 +01:00 [INF]   - Tribulus.MarketPlace.AggregateService.AggregateServiceApplicationContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Marketing.AdminMarketingApplicationContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Tribulus.MarketPlace.Marketing.Application.Contracts.Shared.MarketingApplicationContractsSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Tribulus.MarketPlace.Marketing.MarketingDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Sales.AdminSalesApplicationContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Tribulus.MarketPlace.Sales.Application.Contracts.Shared.SalesApplicationContractsSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Tribulus.MarketPlace.Sales.SalesDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Inventory.AdminInventoryApplicationContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]       - Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.InventoryApplicationContractsSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]         - Tribulus.MarketPlace.Inventory.InventoryDomainSharedModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Tribulus.MarketPlace.SharedContractsModule
+2022-11-27 12:54:36.294 +01:00 [INF]   - Tribulus.MarketPlace.Marketing.EntityFrameworkCore.MarketingEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Tribulus.MarketPlace.Marketing.MarketingDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]   - Tribulus.MarketPlace.Sales.EntityFrameworkCore.SalesEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Tribulus.MarketPlace.Sales.SalesDomainModule
+2022-11-27 12:54:36.294 +01:00 [INF]   - Tribulus.MarketPlace.Inventory.EntityFrameworkCore.InventoryEntityFrameworkCoreModule
+2022-11-27 12:54:36.294 +01:00 [INF]     - Tribulus.MarketPlace.Inventory.InventoryDomainModule
+2022-11-27 12:54:36.332 +01:00 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-27 12:54:36.333 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 12:54:36.411 +01:00 [INF] Migrating Host side...
+2022-11-27 12:54:36.420 +01:00 [INF] Migrating AbpService database...
+2022-11-27 12:54:44.264 +01:00 [INF] Loaded ABP modules:
+2022-11-27 12:54:44.268 +01:00 [INF] - Tribulus.MarketPlace.DbMigrator.MarketPlaceDbMigratorModule
+2022-11-27 12:54:44.268 +01:00 [INF]   - Tribulus.MarketPlace.Shared.Hosting.MarketPlaceSharedHostingModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.Autofac.AbpAutofacModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.Castle.AbpCastleCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.Data.AbpDataModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-11-27 12:54:44.268 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.EntityFrameworkCore.AbpServiceEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Tribulus.MarketPlace.AbpService.AbpServiceDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.Domain.AbpDddDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.Auditing.AbpAuditingModule
+2022-11-27 12:54:44.268 +01:00 [INF]           - Volo.Abp.Json.AbpJsonModule
+2022-11-27 12:54:44.268 +01:00 [INF]             - Volo.Abp.Timing.AbpTimingModule
+2022-11-27 12:54:44.268 +01:00 [INF]               - Volo.Abp.Localization.AbpLocalizationModule
+2022-11-27 12:54:44.268 +01:00 [INF]                 - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-11-27 12:54:44.268 +01:00 [INF]                 - Volo.Abp.Settings.AbpSettingsModule
+2022-11-27 12:54:44.268 +01:00 [INF]                   - Volo.Abp.Security.AbpSecurityModule
+2022-11-27 12:54:44.268 +01:00 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-11-27 12:54:44.268 +01:00 [INF]           - Volo.Abp.Threading.AbpThreadingModule
+2022-11-27 12:54:44.268 +01:00 [INF]           - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.EventBus.AbpEventBusModule
+2022-11-27 12:54:44.268 +01:00 [INF]           - Volo.Abp.Guids.AbpGuidsModule
+2022-11-27 12:54:44.268 +01:00 [INF]           - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-11-27 12:54:44.268 +01:00 [INF]           - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Tribulus.MarketPlace.AbpService.AbpServiceDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.Validation.AbpValidationModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]           - Volo.Abp.Features.AbpFeaturesModule
+2022-11-27 12:54:44.268 +01:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2022-11-27 12:54:44.268 +01:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]   - Tribulus.MarketPlace.AbpService.AbpServiceApplicationContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]   - Tribulus.MarketPlace.AggregateService.EntityFrameworkCore.AggregateServiceEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Tribulus.MarketPlace.AggregateService.AggregateServiceDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Tribulus.MarketPlace.AggregateService.AggregateServiceDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2022-11-27 12:54:44.268 +01:00 [INF]   - Tribulus.MarketPlace.AggregateService.AggregateServiceApplicationContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Marketing.AdminMarketingApplicationContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Tribulus.MarketPlace.Marketing.Application.Contracts.Shared.MarketingApplicationContractsSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Tribulus.MarketPlace.Marketing.MarketingDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Sales.AdminSalesApplicationContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Tribulus.MarketPlace.Sales.Application.Contracts.Shared.SalesApplicationContractsSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Tribulus.MarketPlace.Sales.SalesDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Tribulus.MarketPlace.Admin.Inventory.AdminInventoryApplicationContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]       - Tribulus.MarketPlace.Inventory.Application.Contracts.Shared.InventoryApplicationContractsSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]         - Tribulus.MarketPlace.Inventory.InventoryDomainSharedModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Tribulus.MarketPlace.SharedContractsModule
+2022-11-27 12:54:44.268 +01:00 [INF]   - Tribulus.MarketPlace.Marketing.EntityFrameworkCore.MarketingEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Tribulus.MarketPlace.Marketing.MarketingDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]   - Tribulus.MarketPlace.Sales.EntityFrameworkCore.SalesEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Tribulus.MarketPlace.Sales.SalesDomainModule
+2022-11-27 12:54:44.268 +01:00 [INF]   - Tribulus.MarketPlace.Inventory.EntityFrameworkCore.InventoryEntityFrameworkCoreModule
+2022-11-27 12:54:44.268 +01:00 [INF]     - Tribulus.MarketPlace.Inventory.InventoryDomainModule
+2022-11-27 12:54:44.297 +01:00 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2022-11-27 12:54:44.298 +01:00 [INF] Initialized all ABP modules.
+2022-11-27 12:54:44.349 +01:00 [INF] Migrating Host side...
+2022-11-27 12:54:44.357 +01:00 [INF] Migrating AbpService database...

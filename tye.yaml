@@ -1,0 +1,50 @@
+# tye application configuration file
+# read all about it at https://github.com/dotnet/tye
+#
+# when you've given us a try, we'd love to know what you think:
+#    https://aka.ms/AA7q20u
+#
+name: tribulus.marketplace
+services:
+
+- name: tribulus-marketplace-authserver
+  project: apps/auth-server/Tribulus.MarketPlace.AuthServer.csproj
+  bindings:
+    - protocol: https
+      port: 44351
+- name: tribulus-marketplace-admingateway
+  project: gateways/admin-gateway/Tribulus.MarketPlace.AdminGateway.csproj
+  bindings:
+    - protocol: https
+      port: 44354
+- name: tribulus-marketplace-publicgateway
+  project: gateways/public-gateway/Tribulus.MarketPlace.PublicGateway.csproj
+  bindings:
+    - protocol: https
+      port: 44311
+- name: tribulus-marketplace-abpservice-httpapi-host
+  project: modules/abp/host/Tribulus.MarketPlace.AbpService.HttpApi.Host/Tribulus.MarketPlace.AbpService.HttpApi.Host.csproj
+  bindings:
+    - protocol: https
+      port: 44373
+- name: tribulus-marketplace-admin-inventory-httpapi-host
+  project: modules/inventory/host/Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host/Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host.csproj
+  bindings:
+    - protocol: https
+      port: 44393
+- name: tribulus-marketplace-admin-marketing-httpapi-host
+  project: modules/marketing/host/Tribulus.MarketPlace.Admin.Marketing.HttpApi.Host/Tribulus.MarketPlace.Admin.Marketing.HttpApi.Host.csproj
+  bindings:
+    - protocol: https
+      port: 44361
+- name: tribulus-marketplace-admin-sales-httpapi-host
+  project: modules/sales/host/Tribulus.MarketPlace.Admin.Sales.HttpApi.Host/Tribulus.MarketPlace.Admin.Sales.HttpApi.Host.csproj
+  bindings:
+    - protocol: https
+      port: 44371
+- name: tribulus-marketplace-aggregateservice-httpapi-host
+  project: modules/aggregate/host/Tribulus.MarketPlace.AggregateService.HttpApi.Host/Tribulus.MarketPlace.AggregateService.HttpApi.Host.csproj
+  bindings:
+    - protocol: https
+      port: 44397
+

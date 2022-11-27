@@ -31,10 +31,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Aggreg
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.AbpService.HttpApi.Host", "modules\abp\host\Tribulus.MarketPlace.AbpService.HttpApi.Host\Tribulus.MarketPlace.AbpService.HttpApi.Host.csproj", "{AE9430F6-3DA9-47F4-9A90-D2DF6BF69A4D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Blazor", "apps\admin-blazor\Tribulus.MarketPlace.Admin.Blazor.csproj", "{EBE08453-437A-41BE-A921-FA847DE4045D}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Public.Blazor", "apps\public-blazor\Tribulus.MarketPlace.Public.Blazor.csproj", "{901C4C9E-746D-4576-BE94-413BA419E1FF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Shared.DbMigrator", "shared\Tribulus.MarketPlace.Shared.DbMigrator\Tribulus.MarketPlace.Shared.DbMigrator.csproj", "{1F371018-26EC-4D41-8E0C-3D54E09078E3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.AdminGateway", "gateways\admin-gateway\Tribulus.MarketPlace.AdminGateway.csproj", "{47CD19D7-E210-488B-9131-1EE6A6299ABB}"
@@ -47,7 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Sales.HttpApi.Host", "modules\sales\host\Tribulus.MarketPlace.Admin.Sales.HttpApi.Host\Tribulus.MarketPlace.Admin.Sales.HttpApi.Host.csproj", "{E1C9682F-8458-4729-BC04-BF7EEFD29D87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tribulus.MarketPlace.Shared.MassTransit", "shared\Tribulus.MarketPlace.Shared.MassTransit\Tribulus.MarketPlace.Shared.MassTransit.csproj", "{9C47E92D-7AA9-4EEB-9653-9DF832EAA598}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Shared.MassTransit", "shared\Tribulus.MarketPlace.Shared.MassTransit\Tribulus.MarketPlace.Shared.MassTransit.csproj", "{9C47E92D-7AA9-4EEB-9653-9DF832EAA598}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -167,30 +163,6 @@ Global
 		{AE9430F6-3DA9-47F4-9A90-D2DF6BF69A4D}.Release|x64.Build.0 = Release|Any CPU
 		{AE9430F6-3DA9-47F4-9A90-D2DF6BF69A4D}.Release|x86.ActiveCfg = Release|Any CPU
 		{AE9430F6-3DA9-47F4-9A90-D2DF6BF69A4D}.Release|x86.Build.0 = Release|Any CPU
-		{EBE08453-437A-41BE-A921-FA847DE4045D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBE08453-437A-41BE-A921-FA847DE4045D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBE08453-437A-41BE-A921-FA847DE4045D}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{EBE08453-437A-41BE-A921-FA847DE4045D}.Debug|x64.Build.0 = Debug|Any CPU
-		{EBE08453-437A-41BE-A921-FA847DE4045D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{EBE08453-437A-41BE-A921-FA847DE4045D}.Debug|x86.Build.0 = Debug|Any CPU
-		{EBE08453-437A-41BE-A921-FA847DE4045D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBE08453-437A-41BE-A921-FA847DE4045D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EBE08453-437A-41BE-A921-FA847DE4045D}.Release|x64.ActiveCfg = Release|Any CPU
-		{EBE08453-437A-41BE-A921-FA847DE4045D}.Release|x64.Build.0 = Release|Any CPU
-		{EBE08453-437A-41BE-A921-FA847DE4045D}.Release|x86.ActiveCfg = Release|Any CPU
-		{EBE08453-437A-41BE-A921-FA847DE4045D}.Release|x86.Build.0 = Release|Any CPU
-		{901C4C9E-746D-4576-BE94-413BA419E1FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{901C4C9E-746D-4576-BE94-413BA419E1FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{901C4C9E-746D-4576-BE94-413BA419E1FF}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{901C4C9E-746D-4576-BE94-413BA419E1FF}.Debug|x64.Build.0 = Debug|Any CPU
-		{901C4C9E-746D-4576-BE94-413BA419E1FF}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{901C4C9E-746D-4576-BE94-413BA419E1FF}.Debug|x86.Build.0 = Debug|Any CPU
-		{901C4C9E-746D-4576-BE94-413BA419E1FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{901C4C9E-746D-4576-BE94-413BA419E1FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{901C4C9E-746D-4576-BE94-413BA419E1FF}.Release|x64.ActiveCfg = Release|Any CPU
-		{901C4C9E-746D-4576-BE94-413BA419E1FF}.Release|x64.Build.0 = Release|Any CPU
-		{901C4C9E-746D-4576-BE94-413BA419E1FF}.Release|x86.ActiveCfg = Release|Any CPU
-		{901C4C9E-746D-4576-BE94-413BA419E1FF}.Release|x86.Build.0 = Release|Any CPU
 		{1F371018-26EC-4D41-8E0C-3D54E09078E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1F371018-26EC-4D41-8E0C-3D54E09078E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F371018-26EC-4D41-8E0C-3D54E09078E3}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -289,8 +261,6 @@ Global
 		{D5134C93-BBC9-4173-9A51-A9D05E5AA135} = {916668CB-3A8F-49B6-8FA0-86344D2CB1BD}
 		{F50D8B97-160F-47AC-B5B4-4C5B4DDEDA48} = {86D7F0EE-F3B5-4382-9727-CD88E5344C68}
 		{AE9430F6-3DA9-47F4-9A90-D2DF6BF69A4D} = {86D7F0EE-F3B5-4382-9727-CD88E5344C68}
-		{EBE08453-437A-41BE-A921-FA847DE4045D} = {52311AA7-30BD-4978-8D8D-9C5AF924B29A}
-		{901C4C9E-746D-4576-BE94-413BA419E1FF} = {52311AA7-30BD-4978-8D8D-9C5AF924B29A}
 		{1F371018-26EC-4D41-8E0C-3D54E09078E3} = {39867401-7C86-4A06-BB94-07878F6EEB16}
 		{47CD19D7-E210-488B-9131-1EE6A6299ABB} = {366CF850-9710-4293-89DF-754793A02CF8}
 		{383FD0D4-DE50-45E6-8416-9D9625225D34} = {366CF850-9710-4293-89DF-754793A02CF8}
