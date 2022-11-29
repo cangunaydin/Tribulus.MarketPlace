@@ -17,7 +17,6 @@ using Tribulus.MarketPlace.Shared.Hosting.Microservices;
 using Tribulus.MarketPlace.Shared.MassTransit;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
-using Volo.Abp.Http.Client.IdentityModel;
 using Volo.Abp.Modularity;
 
 namespace Tribulus.MarketPlace.AggregateService;
@@ -27,7 +26,7 @@ typeof(MarketPlaceSharedHostingMicroservicesModule),
     typeof(AggregateServiceApplicationModule),
     typeof(AggregateServiceHttpApiModule),
     typeof(AggregateServiceEntityFrameworkCoreModule),
-    typeof(AbpHttpClientIdentityModelModule),
+    //typeof(AbpHttpClientIdentityModelModule),
     typeof(MarketPlaceSharedMassTransitModule)
 )]
 public class AggregateServiceHttpApiHostModule : AbpModule

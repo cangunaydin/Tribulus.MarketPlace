@@ -6,6 +6,7 @@ using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Sales;
 using Volo.Abp.Application;
 using Volo.Abp.AutoMapper;
+using Volo.Abp.Dapr;
 using Volo.Abp.Http.Client.Dapr;
 using Volo.Abp.Modularity;
 
@@ -23,6 +24,7 @@ namespace Tribulus.MarketPlace.AggregateService;
     typeof(AdminSalesHttpApiClientModule),
     typeof(AdminMarketingHttpApiClientModule),
     typeof(AdminInventoryHttpApiClientModule),
+    typeof(AbpDaprModule),
     typeof(AbpHttpClientDaprModule)
     )]
 public class AggregateServiceApplicationModule : AbpModule
