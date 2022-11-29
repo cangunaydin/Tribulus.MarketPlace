@@ -1,12 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.AutoMapper;
-using Volo.Abp.Modularity;
-using Volo.Abp.Application;
-using Tribulus.MarketPlace.Admin.Sales;
-using Tribulus.MarketPlace.Admin.Marketing;
+﻿using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using Tribulus.MarketPlace.Admin.Inventory;
-using MediatR;
 using Tribulus.MarketPlace.Admin.Inventory.Composition;
+using Tribulus.MarketPlace.Admin.Marketing;
+using Tribulus.MarketPlace.Admin.Sales;
+using Volo.Abp.Application;
+using Volo.Abp.AutoMapper;
+using Volo.Abp.Http.Client.Dapr;
+using Volo.Abp.Modularity;
 
 namespace Tribulus.MarketPlace.AggregateService;
 
@@ -21,7 +22,8 @@ namespace Tribulus.MarketPlace.AggregateService;
     typeof(AdminSalesCompositionModule),
     typeof(AdminSalesHttpApiClientModule),
     typeof(AdminMarketingHttpApiClientModule),
-    typeof(AdminInventoryHttpApiClientModule)
+    typeof(AdminInventoryHttpApiClientModule),
+    typeof(AbpHttpClientDaprModule)
     )]
 public class AggregateServiceApplicationModule : AbpModule
 {
@@ -36,6 +38,5 @@ public class AggregateServiceApplicationModule : AbpModule
         context.Services.AddMediatR(typeof(AdminMarketingCompositionModule));
         context.Services.AddMediatR(typeof(AdminInventoryCompositionModule));
         context.Services.AddMediatR(typeof(AdminSalesCompositionModule));
-
     }
 }

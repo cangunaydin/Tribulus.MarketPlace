@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Inventory.Permissions;
 using Tribulus.MarketPlace.Inventory.Products;
+using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Repositories;
 

@@ -80,6 +80,7 @@ public class InventoryHttpApiHostModule : AbpModule
         {
             conf.AddActivitiesFromNamespaceContaining<CreateProductStockActivity>();
         });
+        
     }
 
     public override void OnApplicationInitialization(ApplicationInitializationContext context)

@@ -47,7 +47,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Sales.HttpApi.Host", "modules\sales\host\Tribulus.MarketPlace.Admin.Sales.HttpApi.Host\Tribulus.MarketPlace.Admin.Sales.HttpApi.Host.csproj", "{E1C9682F-8458-4729-BC04-BF7EEFD29D87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tribulus.MarketPlace.Shared.MassTransit", "shared\Tribulus.MarketPlace.Shared.MassTransit\Tribulus.MarketPlace.Shared.MassTransit.csproj", "{9C47E92D-7AA9-4EEB-9653-9DF832EAA598}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Shared.MassTransit", "shared\Tribulus.MarketPlace.Shared.MassTransit\Tribulus.MarketPlace.Shared.MassTransit.csproj", "{9C47E92D-7AA9-4EEB-9653-9DF832EAA598}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

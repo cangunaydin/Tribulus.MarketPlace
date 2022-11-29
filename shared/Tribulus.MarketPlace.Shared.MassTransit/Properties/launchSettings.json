@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Tribulus.MarketPlace.Shared.MassTransit": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:55624;http://localhost:55625"
+    }
+  }
+}

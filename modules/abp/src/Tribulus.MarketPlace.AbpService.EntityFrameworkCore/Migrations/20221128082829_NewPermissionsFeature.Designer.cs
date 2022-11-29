@@ -13,8 +13,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Tribulus.MarketPlace.AbpService.Migrations
 {
     [DbContext(typeof(AbpServiceDbContext))]
-    [Migration("20221125100929_NewPermissiosFeature")]
-    partial class NewPermissiosFeature
+    [Migration("20221128082829_NewPermissionsFeature")]
+    partial class NewPermissionsFeature
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Tribulus.MarketPlace.AbpService.Migrations
 {
     /// <inheritdoc />
-    public partial class NewPermissiosFeature : Migration
+    public partial class NewPermissionsFeature : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
