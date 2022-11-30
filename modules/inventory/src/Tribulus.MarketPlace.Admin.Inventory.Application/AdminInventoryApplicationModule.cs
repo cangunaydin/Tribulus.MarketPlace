@@ -2,8 +2,6 @@
 using Tribulus.MarketPlace.Inventory;
 using Volo.Abp.Application;
 using Volo.Abp.AutoMapper;
-using Volo.Abp.Dapr;
-using Volo.Abp.Http.Client.Dapr;
 using Volo.Abp.Modularity;
 
 namespace Tribulus.MarketPlace.Admin.Inventory;
@@ -12,9 +10,7 @@ namespace Tribulus.MarketPlace.Admin.Inventory;
     typeof(InventoryDomainModule),
     typeof(AdminInventoryApplicationContractsModule),
     typeof(AbpDddApplicationModule),
-    typeof(AbpAutoMapperModule),
-    typeof(AbpDaprModule),
-    typeof(AbpHttpClientDaprModule)
+    typeof(AbpAutoMapperModule)
     )]
 public class AdminInventoryApplicationModule : AbpModule
 {
@@ -25,7 +21,6 @@ public class AdminInventoryApplicationModule : AbpModule
         {
             options.AddMaps<AdminInventoryApplicationModule>(validate: true);
         });
-        //context.Services.AddHttpClientProxies(typeof(AdminInventoryApplicationContractsModule).Assembly, "Default");
 
     }
 }

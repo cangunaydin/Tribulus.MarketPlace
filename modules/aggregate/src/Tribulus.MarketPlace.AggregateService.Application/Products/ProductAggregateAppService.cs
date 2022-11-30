@@ -83,28 +83,6 @@ public class ProductAggregateAppService : AggregateServiceAppService, IProductAg
         {
 
             var inventoryResult = await _productStockAppService.GetAsync(id);
-            //CancellationTokenSource source = new CancellationTokenSource();
-            //CancellationToken cancellationToken = source.Token;
-
-            // Using Dapr's HttpClient
-            //var inventoryHttpClient = _daprClientFactory.CreateHttpClient("dapr-inventory-httpapi");
-            //var result = await inventoryHttpClient.GetStringAsync("api/admin-inventory/product-stock");
-
-
-            //Logger.LogInformation("HttpClient result: " + result);
-            ////var salesHttpClient = _daprClientFactory.CreateHttpClient("dapr-sales-httpapi");
-
-            //// Using Dapr's client
-            //var daprClient = _daprClientFactory.Create();
-            //var request = _daprClient.CreateInvokeMethodRequest(HttpMethod.Get, "dapr-inventory-httpapi", "api/admin-inventory/product-stock");
-            ////request.Headers.Authorization = new AuthenticationHeaderValue("bearer", cancellationToken.ToString());
-            //var inventoryResult = await _daprClient.InvokeMethodWithResponseAsync(request);
-            //inventoryResult.EnsureSuccessStatusCode();
-
-            //var orderConfirmation = response.Content.ReadFromJsonAsync<OrderConfirmation>();
-
-            //var inventoryResult = await daprClient.InvokeMethodAsync<ProductAggregateDto>(HttpMethod.Get, "dapr-inventory-httpapi", "api/admin-inventory/product-stock", cancellationToken);
-            //var salesResult = await daprClient.InvokeMethodAsync<ProductAggregateDto>(HttpMethod.Get, "dapr-sales-httpapi", "api/admin-sales/product-stock/");
 
             Logger.LogInformation("***DaprClient inventoryResult***: " + inventoryResult);
         }
