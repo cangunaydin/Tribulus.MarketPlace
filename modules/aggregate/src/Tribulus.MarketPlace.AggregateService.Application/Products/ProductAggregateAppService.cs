@@ -1,16 +1,7 @@
-﻿
-using Dapr.Client;
-using MassTransit;
+﻿using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using NUglify.JavaScript;
 using System;
-using System.Linq.Dynamic.Core.Tokenizer;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Net.Http.Json;
-using System.Text.Json;
-using System.Threading;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Inventory.Products;
 using Tribulus.MarketPlace.AggregateService.Products.Commands;
@@ -19,7 +10,6 @@ using Tribulus.MarketPlace.Products;
 using Tribulus.MarketPlace.Products.LocalEvents;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
-using Volo.Abp.Dapr;
 
 namespace Tribulus.MarketPlace.AggregateService.Products;
 
@@ -28,18 +18,13 @@ public class ProductAggregateAppService : AggregateServiceAppService, IProductAg
     private readonly IMediator _mediatr;
     private readonly IRequestClient<CreateProduct> _createProductRequestClient;
     private readonly IProductStockAppService _productStockAppService;
-    //private readonly IAbpDaprClientFactory _daprClientFactory;
-    private readonly DaprClient _daprClient;
 
     public ProductAggregateAppService(
-        IMediator mediatr, IRequestClient<CreateProduct> createProductRequestClient, DaprClient daprClient, IProductStockAppService productStockAppService)//IAbpDaprClientFactory daprClientFactory,
+        IMediator mediatr, IRequestClient<CreateProduct> createProductRequestClient, IProductStockAppService productStockAppService)
     {
         _mediatr = mediatr;
         _createProductRequestClient = createProductRequestClient;
-        //_daprClientFactory = daprClientFactory;
-        _daprClient = daprClient;
         _productStockAppService = productStockAppService;
-        //_daprClientFactory = daprClientFactory;
     }
 
     public async Task<ProductAggregateDto> CreateAsync(CreateProductAggregateDto input)
@@ -81,9 +66,7 @@ public class ProductAggregateAppService : AggregateServiceAppService, IProductAg
 
         try
         {
-
             var inventoryResult = await _productStockAppService.GetAsync(id);
-
             Logger.LogInformation("***DaprClient inventoryResult***: " + inventoryResult);
         }
         catch (Exception ex)
