@@ -1,5 +1,7 @@
-﻿using MediatR;
+﻿using MassTransit;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using Tribulus.MarketPlace.Extensions;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 
@@ -18,6 +20,10 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Composition
             {
                 options.AddMaps<AdminInventoryCompositionModule>(validate: true);
             });
+
+          
         }
+
+     
     }
 }

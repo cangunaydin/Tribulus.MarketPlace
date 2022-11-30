@@ -79,6 +79,8 @@ public class InventoryHttpApiHostModule : AbpModule
         MassTransitConfigurationHelper.Configure(context, conf =>
         {
             conf.AddActivitiesFromNamespaceContaining<CreateProductStockActivity>();
+            conf.AddConsumersFromNamespaceContaining<GetProductStockConsumer>();
+
         });
     }
 

@@ -8,6 +8,7 @@ public interface IProductAggregateAppService : IApplicationService
 {
     Task<ProductAggregateDto> GetAsync(Guid id);
 
+    Task<ProductAggregateDto> GetRequestReplyAsync(Guid id);
     Task<PagedResultDto<ProductAggregateDto>> GetProducts(ProductFilterDto input);
 
     Task<ProductAggregateDto> CreateAsync(CreateProductAggregateDto input);

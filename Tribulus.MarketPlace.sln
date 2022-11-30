@@ -47,7 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Sales.HttpApi.Host", "modules\sales\host\Tribulus.MarketPlace.Admin.Sales.HttpApi.Host\Tribulus.MarketPlace.Admin.Sales.HttpApi.Host.csproj", "{E1C9682F-8458-4729-BC04-BF7EEFD29D87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tribulus.MarketPlace.Shared.MassTransit", "shared\Tribulus.MarketPlace.Shared.MassTransit\Tribulus.MarketPlace.Shared.MassTransit.csproj", "{9C47E92D-7AA9-4EEB-9653-9DF832EAA598}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Shared.MassTransit", "shared\Tribulus.MarketPlace.Shared.MassTransit\Tribulus.MarketPlace.Shared.MassTransit.csproj", "{9C47E92D-7AA9-4EEB-9653-9DF832EAA598}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.AggregateService.Application", "modules\aggregate\src\Tribulus.MarketPlace.AggregateService.Application\Tribulus.MarketPlace.AggregateService.Application.csproj", "{EBEADF40-A880-4828-B63E-60E9148F5DEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -275,6 +277,18 @@ Global
 		{9C47E92D-7AA9-4EEB-9653-9DF832EAA598}.Release|x64.Build.0 = Release|Any CPU
 		{9C47E92D-7AA9-4EEB-9653-9DF832EAA598}.Release|x86.ActiveCfg = Release|Any CPU
 		{9C47E92D-7AA9-4EEB-9653-9DF832EAA598}.Release|x86.Build.0 = Release|Any CPU
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA}.Debug|x64.Build.0 = Debug|Any CPU
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA}.Debug|x86.Build.0 = Debug|Any CPU
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA}.Release|x64.ActiveCfg = Release|Any CPU
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA}.Release|x64.Build.0 = Release|Any CPU
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA}.Release|x86.ActiveCfg = Release|Any CPU
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -298,6 +312,7 @@ Global
 		{A984AB7C-C23F-4CC5-8783-915B40613579} = {86D7F0EE-F3B5-4382-9727-CD88E5344C68}
 		{E1C9682F-8458-4729-BC04-BF7EEFD29D87} = {86D7F0EE-F3B5-4382-9727-CD88E5344C68}
 		{9C47E92D-7AA9-4EEB-9653-9DF832EAA598} = {39867401-7C86-4A06-BB94-07878F6EEB16}
+		{EBEADF40-A880-4828-B63E-60E9148F5DEA} = {86D7F0EE-F3B5-4382-9727-CD88E5344C68}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EA19761-8B30-6D6D-C337-462DE3A08DD5}

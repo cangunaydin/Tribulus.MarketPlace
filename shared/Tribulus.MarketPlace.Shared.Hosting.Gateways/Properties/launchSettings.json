@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Tribulus.MarketPlace.Shared.Hosting.Gateways": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:51951;http://localhost:51952"
+    }
+  }
+}

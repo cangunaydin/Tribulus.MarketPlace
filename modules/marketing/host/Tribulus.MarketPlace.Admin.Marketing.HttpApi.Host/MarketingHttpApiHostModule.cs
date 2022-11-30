@@ -78,6 +78,8 @@ public class MarketingHttpApiHostModule : AbpModule
         MassTransitConfigurationHelper.Configure(context, conf =>
         {
             conf.AddActivitiesFromNamespaceContaining<CreateProductActivity>();
+            conf.AddConsumersFromNamespaceContaining<GetProductConsumer>();
+
         });
     }
 

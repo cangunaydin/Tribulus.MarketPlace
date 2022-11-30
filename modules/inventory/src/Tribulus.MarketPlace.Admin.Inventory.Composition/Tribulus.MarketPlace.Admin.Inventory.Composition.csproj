@@ -10,9 +10,16 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\shared\Tribulus.MarketPlace.Shared.Contracts\Tribulus.MarketPlace.Shared.Contracts.csproj" />
     <ProjectReference Include="..\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts.csproj" />
+    <PackageReference Include="MassTransit" Version="8.0.8" />
     
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Volo.Abp.AutoMapper" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Tribulus.MarketPlace.Shared.MassTransit">
+      <HintPath>..\..\..\..\shared\Tribulus.MarketPlace.Shared.MassTransit\obj\Debug\net6.0\ref\Tribulus.MarketPlace.Shared.MassTransit.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

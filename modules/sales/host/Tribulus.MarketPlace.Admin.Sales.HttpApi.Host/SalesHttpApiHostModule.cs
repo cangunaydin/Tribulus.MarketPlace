@@ -77,6 +77,8 @@ public class SalesHttpApiHostModule : AbpModule
         MassTransitConfigurationHelper.Configure(context, conf =>
         {
             conf.AddActivitiesFromNamespaceContaining<CreateProductPriceActivity>();
+            conf.AddConsumersFromNamespaceContaining<GetProductPriceConsumer>();
+
         });
     }
 
