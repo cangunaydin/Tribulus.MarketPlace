@@ -4,10 +4,15 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Admin.Inventory.Products;
+using Tribulus.MarketPlace.Admin.Marketing.Products;
+using Tribulus.MarketPlace.Admin.Sales.Products;
 using Tribulus.MarketPlace.AggregateService.Products.Commands;
 using Tribulus.MarketPlace.AggregateService.Products.Events;
+using Tribulus.MarketPlace.Inventory.Products;
+using Tribulus.MarketPlace.Marketing.Products;
 using Tribulus.MarketPlace.Products;
 using Tribulus.MarketPlace.Products.LocalEvents;
+using Tribulus.MarketPlace.Sales.Products;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
@@ -18,13 +23,21 @@ public class ProductAggregateAppService : AggregateServiceAppService, IProductAg
     private readonly IMediator _mediatr;
     private readonly IRequestClient<CreateProduct> _createProductRequestClient;
     private readonly IProductStockAppService _productStockAppService;
+    private readonly IProductPriceAppService _productPriceAppService;
+    private readonly IProductAppService _productAppService;
 
     public ProductAggregateAppService(
-        IMediator mediatr, IRequestClient<CreateProduct> createProductRequestClient, IProductStockAppService productStockAppService)
+        IMediator mediatr,
+        IRequestClient<CreateProduct> createProductRequestClient,
+        IProductStockAppService productStockAppService,
+        IProductPriceAppService productPriceAppService,
+        IProductAppService productAppService)
     {
         _mediatr = mediatr;
         _createProductRequestClient = createProductRequestClient;
         _productStockAppService = productStockAppService;
+        _productPriceAppService = productPriceAppService;
+        _productAppService = productAppService;
     }
 
     public async Task<ProductAggregateDto> CreateAsync(CreateProductAggregateDto input)
@@ -67,7 +80,16 @@ public class ProductAggregateAppService : AggregateServiceAppService, IProductAg
         try
         {
             var inventoryResult = await _productStockAppService.GetAsync(id);
-            Logger.LogInformation("***DaprClient inventoryResult***: " + inventoryResult);
+            var marketingResult = await _productAppService.GetAsync(id);
+            var salesResult = await _productPriceAppService.GetAsync(id);
+
+            Logger.LogInformation("***DaprClient inventoryResult***: " + inventoryResult.StockCount);
+            Logger.LogInformation("***DaprClient marketingResult***: " + marketingResult.Name);
+            Logger.LogInformation("***DaprClient marketingResult***: " + marketingResult.Description);
+            Logger.LogInformation("***DaprClient salesResult***: " + salesResult.Price);
+            ObjectMapper.Map<ProductStockDto, ProductAggregateDto>(inventoryResult, productDetailEto.Product);
+            ObjectMapper.Map<ProductDto, ProductAggregateDto>(marketingResult, productDetailEto.Product);
+            ObjectMapper.Map<ProductPriceDto, ProductAggregateDto>(salesResult, productDetailEto.Product);
         }
         catch (Exception ex)
         {
