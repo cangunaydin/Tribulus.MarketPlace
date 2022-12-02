@@ -4,6 +4,7 @@ using Tribulus.MarketPlace.Admin.Inventory;
 using Tribulus.MarketPlace.Admin.Inventory.Composition;
 using Tribulus.MarketPlace.Admin.Marketing;
 using Tribulus.MarketPlace.Admin.Sales;
+using Tribulus.MarketPlace.AggregateService.Actors.Products;
 using Volo.Abp.Application;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Dapr;
@@ -40,5 +41,10 @@ public class AggregateServiceApplicationModule : AbpModule
         context.Services.AddMediatR(typeof(AdminMarketingCompositionModule));
         context.Services.AddMediatR(typeof(AdminInventoryCompositionModule));
         context.Services.AddMediatR(typeof(AdminSalesCompositionModule));
+
+        context.Services.AddActors(options =>
+        {
+            options.Actors.RegisterActor<ProductProcessActor>();
+        });
     }
 }

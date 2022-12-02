@@ -52,8 +52,8 @@ services:
   bindings:
     - protocol: https
       port: 44371
-- name: tribulus-marketplace-aggregateservice-httpapi-host
-  project: modules/aggregate/host/Tribulus.MarketPlace.AggregateService.HttpApi.Host/Tribulus.MarketPlace.AggregateService.HttpApi.Host.csproj
-  bindings:
-    - protocol: https
-      port: 44397
+#- name: tribulus-marketplace-aggregateservice-httpapi-host
+#  project: modules/aggregate/host/Tribulus.MarketPlace.AggregateService.HttpApi.Host/Tribulus.MarketPlace.AggregateService.HttpApi.Host.csproj
+#  bindings:
+#    - protocol: https
+#      port: 44397

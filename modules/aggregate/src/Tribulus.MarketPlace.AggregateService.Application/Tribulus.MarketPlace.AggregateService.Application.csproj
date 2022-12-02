@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapr.Actors" Version="1.9.0" />
+    <PackageReference Include="Dapr.Actors.AspNetCore" Version="1.9.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Volo.Abp.AutoMapper" Version="7.0.0-rc.2" />
     <PackageReference Include="Volo.Abp.Dapr" Version="7.0.0-rc.2" />
@@ -25,6 +27,13 @@
     <ProjectReference Include="..\..\..\sales\src\Tribulus.MarketPlace.Admin.Sales.HttpApi.Client\Tribulus.MarketPlace.Admin.Sales.HttpApi.Client.csproj" />
 
     <ProjectReference Include="..\..\..\..\shared\Tribulus.MarketPlace.Shared.MassTransit\Tribulus.MarketPlace.Shared.MassTransit.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Fody" Version="6.6.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

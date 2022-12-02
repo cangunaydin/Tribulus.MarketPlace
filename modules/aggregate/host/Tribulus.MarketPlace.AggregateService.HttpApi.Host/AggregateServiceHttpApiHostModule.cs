@@ -105,6 +105,8 @@ public class AggregateServiceHttpApiHostModule : AbpModule
         app.UseAbpSecurityHeaders();
         app.UseStaticFiles();
         app.UseRouting();
+
+    
         app.UseCors();
         app.UseAuthentication();
         app.UseAbpClaimsMap();
@@ -121,6 +123,10 @@ public class AggregateServiceHttpApiHostModule : AbpModule
         app.UseAuditing();
         app.UseUnitOfWork();
         app.UseConfiguredEndpoints();
+        app.UseEndpoints(config =>
+        {
+            config.MapActorsHandlers();
+        });
     }
 
     public async override Task OnPostApplicationInitializationAsync(ApplicationInitializationContext context)
