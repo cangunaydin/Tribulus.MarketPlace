@@ -21,7 +21,7 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Products
             _productStockRepository = productStockRepository;
         }
 
-        [Authorize(InventoryPermissions.ProductStocks.Create)]
+        //[Authorize(InventoryPermissions.ProductStocks.Create)]
         public async Task<ProductStockDto> CreateAsync(Guid id, CreateProductStockDto input)
         {
             var productStock = new ProductStock(id, input.StockCount); //todo change the guid generation
@@ -30,6 +30,7 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Products
             return ObjectMapper.Map<ProductStock, ProductStockDto>(productStock);
         }
 
+        [Authorize(InventoryPermissions.ProductStocks.Update)]
         public async Task<ProductStockDto> GetAsync(Guid id)
         {
             var productStock = await _productStockRepository.GetAsync(id);

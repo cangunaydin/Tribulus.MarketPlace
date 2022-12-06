@@ -119,6 +119,7 @@ public class ProductAggregateAppService : AggregateServiceAppService, IProductAg
 
         try
         {
+            var userId = CurrentUser.Id;
             var inventoryResult = await _productStockAppService.GetAsync(id);
             var marketingResult = await _productAppService.GetAsync(id);
             var salesResult = await _productPriceAppService.GetAsync(id);

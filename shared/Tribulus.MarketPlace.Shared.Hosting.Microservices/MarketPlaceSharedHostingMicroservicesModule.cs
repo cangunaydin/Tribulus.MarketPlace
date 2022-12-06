@@ -27,7 +27,7 @@ namespace Tribulus.MarketPlace.Shared.Hosting.Microservices;
     typeof(AbpCachingStackExchangeRedisModule),
     typeof(AbpServiceEntityFrameworkCoreModule)
 )]
-public class MarketPlaceSharedHostingMicroservicesModule:AbpModule
+public class MarketPlaceSharedHostingMicroservicesModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

@@ -58,20 +58,20 @@ namespace Tribulus.MarketPlace.AggregateService.Actors.Products
             switch (reminderName)
             {
                 case InventoryConfirmedReminder:
-                    return OnInventoryConfirmedSimulatedWorkDone();
+                    return Task.Run(() => OnInventoryConfirmedSimulatedWorkDone());
                 case InventoryRejectedReminder:
-                    return OnInventoryRejectedSimulatedWorkDone();
+                    return Task.Run(() => OnInventoryRejectedSimulatedWorkDone());
                 case MarketingSucceededReminder:
-                    return OnMarketingSucceededSimulatedWorkDone();
+                    return Task.Run(() => OnMarketingSucceededSimulatedWorkDone());
                 case MarketingFailedReminder:
-                    OnMarketingFailedSimulatedWorkDone();
-                    return OnInventoryRejectedSimulatedWorkDone();
+                    Task.Run(() => OnMarketingFailedSimulatedWorkDone());
+                    return Task.Run(() => OnInventoryRejectedSimulatedWorkDone());
                 case SalesSucceededReminder:
-                    return OnSalesSucceededSimulatedWorkDone();
+                    return Task.Run(() => OnSalesSucceededSimulatedWorkDone());
                 case SalesFailedReminder:
-                    OnSalesFailedSimulatedWorkDone();
-                    OnMarketingFailedSimulatedWorkDone();
-                    return OnInventoryRejectedSimulatedWorkDone();
+                    Task.Run(() => OnSalesFailedSimulatedWorkDone());
+                    Task.Run(() => OnMarketingFailedSimulatedWorkDone());
+                    return Task.Run(() => OnInventoryRejectedSimulatedWorkDone());
             }
 
             _logger.LogError("Unknown actor reminder {ReminderName}", reminderName);
