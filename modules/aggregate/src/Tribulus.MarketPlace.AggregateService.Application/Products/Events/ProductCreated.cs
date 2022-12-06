@@ -1,4 +1,4 @@
-﻿using Tribulus.MarketPlace.Products;
+﻿
 
 namespace Tribulus.MarketPlace.AggregateService.Products.Events;
 

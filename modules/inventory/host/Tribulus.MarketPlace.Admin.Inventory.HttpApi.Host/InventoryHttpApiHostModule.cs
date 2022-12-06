@@ -17,12 +17,13 @@ using Tribulus.MarketPlace.Shared.Hosting.Microservices;
 using Tribulus.MarketPlace.Shared.MassTransit;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
+using Volo.Abp.Dapr;
 using Volo.Abp.Modularity;
 
 namespace Tribulus.MarketPlace.Admin.Inventory;
 
 [DependsOn(
-typeof(MarketPlaceSharedHostingMicroservicesModule),
+    typeof(MarketPlaceSharedHostingMicroservicesModule),
     typeof(AdminInventoryApplicationModule),
     typeof(AdminInventoryHttpApiModule),
     typeof(InventoryEntityFrameworkCoreModule),

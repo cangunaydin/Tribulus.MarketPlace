@@ -86,8 +86,6 @@ public class AggregateServiceHttpApiHostModule : AbpModule
             conf.AddFuturesFromNamespaceContaining<CreateProductFuture>();
         });
 
-
-
     }
 
     public override void OnApplicationInitialization(ApplicationInitializationContext context)

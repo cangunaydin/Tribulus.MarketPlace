@@ -12,6 +12,7 @@ namespace Tribulus.MarketPlace.Admin.Marketing.Products
 
         Task<ProductDto> GetAsync(Guid id);
 
+
         Task UpdateAsync(Guid id, UpdateProductDto input);
 
         Task<ProductDto> CreateAsync(Guid id,CreateProductDto input);

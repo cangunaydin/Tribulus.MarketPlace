@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  rabbitmq:
+    container_name: rabbitmq-marketplace
+    image: rabbitmq:3.8.11-management-alpine
+    networks:
+      - marketplace-network
+      
+  redis:
+    container_name: redis-marketplace
+    image: redis:6.0.10-alpine
+    networks:
+      - marketplace-network
+      
+      
+networks:
+  marketplace-network:
+    external: true

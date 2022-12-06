@@ -8,13 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="6.0.1" />
-    <PackageReference Include="Volo.Abp.Authorization" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="7.0.0-rc.2" />
+    <PackageReference Include="Volo.Abp.Authorization" Version="7.0.0-rc.2" />
     <ProjectReference Include="..\Tribulus.MarketPlace.AggregateService.Domain.Shared\Tribulus.MarketPlace.AggregateService.Domain.Shared.csproj" />
     <ProjectReference Include="..\..\..\marketing\src\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts\Tribulus.MarketPlace.Admin.Marketing.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\..\inventory\src\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts\Tribulus.MarketPlace.Admin.Inventory.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\..\sales\src\Tribulus.MarketPlace.Admin.Sales.Application.Contracts\Tribulus.MarketPlace.Admin.Sales.Application.Contracts.csproj" />
-    <ProjectReference Include="..\..\..\..\shared\Tribulus.MarketPlace.Shared.Contracts\Tribulus.MarketPlace.Shared.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Products\" />
   </ItemGroup>
 
 </Project>

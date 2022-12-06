@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Tribulus.MarketPlace.Inventory.Permissions;
 using Tribulus.MarketPlace.Inventory.Products;
+using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Repositories;
 
@@ -24,7 +25,7 @@ namespace Tribulus.MarketPlace.Admin.Inventory.Products
         public async Task<ProductStockDto> CreateAsync(Guid id, CreateProductStockDto input)
         {
             var productStock = new ProductStock(id, input.StockCount); //todo change the guid generation
-           
+
             await _productStockRepository.InsertAsync(productStock, true);
             return ObjectMapper.Map<ProductStock, ProductStockDto>(productStock);
         }

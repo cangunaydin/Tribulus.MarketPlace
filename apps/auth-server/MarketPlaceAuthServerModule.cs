@@ -113,12 +113,13 @@ public class MarketPlaceAuthServerModule : AbpModule
 
         Configure<AbpDistributedCacheOptions>(options =>
         {
-            options.KeyPrefix = "SampleMicro:";
+            options.KeyPrefix = "MarketPlace:";
         });
 
-        var dataProtectionBuilder = context.Services.AddDataProtection().SetApplicationName("SampleMicro");
+        var dataProtectionBuilder = context.Services.AddDataProtection().SetApplicationName("MarketPlace");
+        //var redis = ConnectionMultiplexer.Connect(configuration.GetConnectionString("redis"));
         var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
-        dataProtectionBuilder.PersistKeysToStackExchangeRedis(redis, "SampleMicro-Protection-Keys");
+        dataProtectionBuilder.PersistKeysToStackExchangeRedis(redis, "MarketPlace-Protection-Keys");
 
         context.Services.AddCors(options =>
         {

@@ -42,8 +42,8 @@ public class PermissionDataSeeder : ITransientDependency
                     ? MultiTenancySides.Host
                     : MultiTenancySides.Tenant;
 
-                var permissionNames = _permissionDefinitionManager
-                    .GetPermissions()
+                var permissionNames = (await _permissionDefinitionManager
+                    .GetPermissionsAsync())
                     .Where(p => p.MultiTenancySide.HasFlag(multiTenancySide))
                     .Where(p => !p.Providers.Any() || p.Providers.Contains(RolePermissionValueProvider.ProviderName))
                     .Select(p => p.Name)

@@ -3,6 +3,7 @@ using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
 using Tribulus.MarketPlace.Marketing;
+using Volo.Abp.Dapr;
 
 namespace Tribulus.MarketPlace.Admin.Marketing;
 
@@ -10,7 +11,8 @@ namespace Tribulus.MarketPlace.Admin.Marketing;
     typeof(MarketingDomainModule),
     typeof(AdminMarketingApplicationContractsModule),
     typeof(AbpDddApplicationModule),
-    typeof(AbpAutoMapperModule)
+    typeof(AbpAutoMapperModule),
+    typeof(AbpDaprModule)
     )]
 public class AdminMarketingApplicationModule : AbpModule
 {

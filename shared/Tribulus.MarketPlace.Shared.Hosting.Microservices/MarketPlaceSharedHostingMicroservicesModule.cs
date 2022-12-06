@@ -1,6 +1,7 @@
 ﻿using Medallion.Threading;
 using Medallion.Threading.Redis;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
 using Tribulus.MarketPlace.AbpService.EntityFrameworkCore;
@@ -44,6 +45,7 @@ public class MarketPlaceSharedHostingMicroservicesModule:AbpModule
             options.KeyPrefix = "MarketPlace:";
         });
 
+        //var redis = ConnectionMultiplexer.Connect(configuration.GetConnectionString("redis"));
         var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
 
         context.Services

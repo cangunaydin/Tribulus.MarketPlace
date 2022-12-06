@@ -6,45 +6,53 @@
 #
 name: tribulus.marketplace
 services:
-
-- name: tribulus-marketplace-authserver
+- name: authserver
   project: apps/auth-server/Tribulus.MarketPlace.AuthServer.csproj
   bindings:
-    - protocol: https
-      port: 44351
-- name: tribulus-marketplace-admingateway
+     - protocol: https
+       port: 44351
+- name: admingateway
   project: gateways/admin-gateway/Tribulus.MarketPlace.AdminGateway.csproj
   bindings:
-    - protocol: https
-      port: 44354
-- name: tribulus-marketplace-publicgateway
+     - protocol: https
+       port: 44354
+- name: publicgateway
   project: gateways/public-gateway/Tribulus.MarketPlace.PublicGateway.csproj
   bindings:
-    - protocol: https
-      port: 44311
-- name: tribulus-marketplace-abpservice-httpapi-host
+     - protocol: https
+       port: 44311
+- name: abp-service
   project: modules/abp/host/Tribulus.MarketPlace.AbpService.HttpApi.Host/Tribulus.MarketPlace.AbpService.HttpApi.Host.csproj
   bindings:
-    - protocol: https
-      port: 44373
-- name: tribulus-marketplace-admin-inventory-httpapi-host
+     - protocol: https
+       port: 44373
+- name: admin-inventory-service
   project: modules/inventory/host/Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host/Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host.csproj
   bindings:
     - protocol: https
       port: 44393
-- name: tribulus-marketplace-admin-marketing-httpapi-host
+- name: admin-marketing-service
   project: modules/marketing/host/Tribulus.MarketPlace.Admin.Marketing.HttpApi.Host/Tribulus.MarketPlace.Admin.Marketing.HttpApi.Host.csproj
   bindings:
-    - protocol: https
-      port: 44361
-- name: tribulus-marketplace-admin-sales-httpapi-host
+     - protocol: https
+       port: 44361
+- name: admin-sales-service
   project: modules/sales/host/Tribulus.MarketPlace.Admin.Sales.HttpApi.Host/Tribulus.MarketPlace.Admin.Sales.HttpApi.Host.csproj
   bindings:
-    - protocol: https
-      port: 44371
-- name: tribulus-marketplace-aggregateservice-httpapi-host
+     - protocol: https
+       port: 44371
+- name: aggregate-service
   project: modules/aggregate/host/Tribulus.MarketPlace.AggregateService.HttpApi.Host/Tribulus.MarketPlace.AggregateService.HttpApi.Host.csproj
   bindings:
-    - protocol: https
-      port: 44397
+       - protocol: https
+         port: 44397
+- name: redis
+  image: redis
+  bindings:
+  - port: 6380
+    containerPort: 6379
+    connectionString: "${host}:${port}" 
+- name: redis-cli
+  image: redis
+  args: "redis-cli -h redis MONITOR"
 

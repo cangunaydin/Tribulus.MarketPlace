@@ -13,8 +13,7 @@ namespace Tribulus.MarketPlace.AggregateService;
     typeof(AbpAuthorizationModule),
     typeof(AdminMarketingApplicationContractsModule),
     typeof(AdminSalesApplicationContractsModule),
-    typeof(AdminInventoryApplicationContractsModule),
-    typeof(SharedContractsModule)
+    typeof(AdminInventoryApplicationContractsModule)
     )]
 public class AggregateServiceApplicationContractsModule : AbpModule
 {

@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "account", "account", "{9166
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{86D7F0EE-F3B5-4382-9727-CD88E5344C68}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Shared.Contracts", "shared\Tribulus.MarketPlace.Shared.Contracts\Tribulus.MarketPlace.Shared.Contracts.csproj", "{8820873B-0FB5-454D-A1A8-67A314C7612A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{39867401-7C86-4A06-BB94-07878F6EEB16}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Shared.Localization", "shared\Tribulus.MarketPlace.Shared.Localization\Tribulus.MarketPlace.Shared.Localization.csproj", "{15FC5FFC-1A1F-465E-8400-2B21F865F045}"
@@ -55,18 +53,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8820873B-0FB5-454D-A1A8-67A314C7612A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8820873B-0FB5-454D-A1A8-67A314C7612A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8820873B-0FB5-454D-A1A8-67A314C7612A}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{8820873B-0FB5-454D-A1A8-67A314C7612A}.Debug|x64.Build.0 = Debug|Any CPU
-		{8820873B-0FB5-454D-A1A8-67A314C7612A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{8820873B-0FB5-454D-A1A8-67A314C7612A}.Debug|x86.Build.0 = Debug|Any CPU
-		{8820873B-0FB5-454D-A1A8-67A314C7612A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8820873B-0FB5-454D-A1A8-67A314C7612A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8820873B-0FB5-454D-A1A8-67A314C7612A}.Release|x64.ActiveCfg = Release|Any CPU
-		{8820873B-0FB5-454D-A1A8-67A314C7612A}.Release|x64.Build.0 = Release|Any CPU
-		{8820873B-0FB5-454D-A1A8-67A314C7612A}.Release|x86.ActiveCfg = Release|Any CPU
-		{8820873B-0FB5-454D-A1A8-67A314C7612A}.Release|x86.Build.0 = Release|Any CPU
 		{15FC5FFC-1A1F-465E-8400-2B21F865F045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{15FC5FFC-1A1F-465E-8400-2B21F865F045}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15FC5FFC-1A1F-465E-8400-2B21F865F045}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -252,7 +238,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8820873B-0FB5-454D-A1A8-67A314C7612A} = {39867401-7C86-4A06-BB94-07878F6EEB16}
 		{15FC5FFC-1A1F-465E-8400-2B21F865F045} = {39867401-7C86-4A06-BB94-07878F6EEB16}
 		{6DAB971C-B0A9-4F93-8AEF-9C035E4A81D0} = {39867401-7C86-4A06-BB94-07878F6EEB16}
 		{95F337CC-ED51-44F2-A3C7-5FE5027F6D8A} = {39867401-7C86-4A06-BB94-07878F6EEB16}

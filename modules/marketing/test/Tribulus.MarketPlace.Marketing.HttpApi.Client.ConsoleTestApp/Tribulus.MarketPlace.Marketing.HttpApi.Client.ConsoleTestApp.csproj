@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>Tribulus.MarketPlace.Marketing</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Http.Client.IdentityModel" Version="6.0.1" />
-    <PackageReference Include="Volo.Abp.Autofac" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.Http.Client.IdentityModel" Version="7.0.0-rc.2" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="7.0.0-rc.2" />
     <ProjectReference Include="..\..\src\Tribulus.MarketPlace.Marketing.HttpApi.Client\Tribulus.MarketPlace.Marketing.HttpApi.Client.csproj" />
   </ItemGroup>
 
@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
   </ItemGroup>
 
 </Project>

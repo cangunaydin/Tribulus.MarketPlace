@@ -59,8 +59,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Inventory.HttpApi.Client", "src\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Client\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Client.csproj", "{C926DF7F-5E50-437B-8875-0E822BA15DD3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Inventory.Composition", "src\Tribulus.MarketPlace.Admin.Inventory.Composition\Tribulus.MarketPlace.Admin.Inventory.Composition.csproj", "{5FF01AB5-8694-4D88-B689-B90BEC3FA5D3}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "host", "host", "{D1567F3E-89CC-4473-A95E-04D4E166DA86}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host", "host\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host\Tribulus.MarketPlace.Admin.Inventory.HttpApi.Host.csproj", "{98A3E98C-25B9-4050-95ED-C9535011932A}"
@@ -143,10 +141,6 @@ Global
 		{C926DF7F-5E50-437B-8875-0E822BA15DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C926DF7F-5E50-437B-8875-0E822BA15DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C926DF7F-5E50-437B-8875-0E822BA15DD3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5FF01AB5-8694-4D88-B689-B90BEC3FA5D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FF01AB5-8694-4D88-B689-B90BEC3FA5D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FF01AB5-8694-4D88-B689-B90BEC3FA5D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FF01AB5-8694-4D88-B689-B90BEC3FA5D3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{98A3E98C-25B9-4050-95ED-C9535011932A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{98A3E98C-25B9-4050-95ED-C9535011932A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98A3E98C-25B9-4050-95ED-C9535011932A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -182,7 +176,6 @@ Global
 		{E3F2CEB3-E0EF-428C-A78E-027559830A71} = {1CB8E476-84DD-41F8-8CCF-CDFDFE622369}
 		{F4F6FE06-5AD4-44A0-B82C-FA628B2798ED} = {1CB8E476-84DD-41F8-8CCF-CDFDFE622369}
 		{C926DF7F-5E50-437B-8875-0E822BA15DD3} = {1CB8E476-84DD-41F8-8CCF-CDFDFE622369}
-		{5FF01AB5-8694-4D88-B689-B90BEC3FA5D3} = {1CB8E476-84DD-41F8-8CCF-CDFDFE622369}
 		{D1567F3E-89CC-4473-A95E-04D4E166DA86} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{98A3E98C-25B9-4050-95ED-C9535011932A} = {D1567F3E-89CC-4473-A95E-04D4E166DA86}
 	EndGlobalSection

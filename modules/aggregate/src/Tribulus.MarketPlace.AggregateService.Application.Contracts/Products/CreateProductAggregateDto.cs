@@ -1,4 +1,4 @@
-﻿namespace Tribulus.MarketPlace.Products;
+﻿namespace Tribulus.MarketPlace.AggregateService.Products;
 
 public class CreateProductAggregateDto
 {

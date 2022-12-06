@@ -6,7 +6,6 @@ using Tribulus.MarketPlace.AggregateService.Products.Commands;
 using Tribulus.MarketPlace.AggregateService.Products.Events;
 using Tribulus.MarketPlace.Inventory.Products;
 using Tribulus.MarketPlace.Marketing.Products;
-using Tribulus.MarketPlace.Products;
 using Tribulus.MarketPlace.Sales.Products;
 
 namespace Tribulus.MarketPlace.AggregateService.Products.Futures;

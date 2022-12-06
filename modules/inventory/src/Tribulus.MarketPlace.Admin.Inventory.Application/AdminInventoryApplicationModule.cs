@@ -3,6 +3,7 @@ using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
 using Tribulus.MarketPlace.Inventory;
+using Volo.Abp.Dapr;
 
 namespace Tribulus.MarketPlace.Admin.Inventory;
 
@@ -10,7 +11,8 @@ namespace Tribulus.MarketPlace.Admin.Inventory;
     typeof(InventoryDomainModule),
     typeof(AdminInventoryApplicationContractsModule),
     typeof(AbpDddApplicationModule),
-    typeof(AbpAutoMapperModule)
+    typeof(AbpAutoMapperModule),
+    typeof(AbpDaprModule)
     )]
 public class AdminInventoryApplicationModule : AbpModule
 {

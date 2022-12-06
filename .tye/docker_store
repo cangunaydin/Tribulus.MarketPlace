@@ -1,0 +1,10 @@
+{"container":"redis_7866c308-7"}
+{"container":"redis-cli_349b5e56-3"}
+{"container":"authserver-proxy_8006961c-b"}
+{"container":"admingateway-proxy_0c2644e7-b"}
+{"container":"publicgateway-proxy_e8ee5949-9"}
+{"container":"abp-service-proxy_175b277b-3"}
+{"container":"admin-inventory-service-proxy_cbf7a3f5-f"}
+{"container":"admin-marketing-service-proxy_2e3f3a37-9"}
+{"container":"admin-sales-service-proxy_cd818706-5"}
+{"container":"aggregate-service-proxy_76476d44-a"}
