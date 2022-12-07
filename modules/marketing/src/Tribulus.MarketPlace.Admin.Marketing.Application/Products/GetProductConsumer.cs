@@ -11,11 +11,11 @@ using Volo.Abp.Domain.Repositories;
 
 namespace Tribulus.MarketPlace.Admin.Marketing.Products
 {
-    public class GetProductConsumer : IConsumer<GetProductRequest>
+    public class GetProductPriceConsumer : IConsumer<GetProductRequest>
     {
-        private readonly ILogger<GetProductConsumer> _logger;
+        private readonly ILogger<GetProductPriceConsumer> _logger;
         private readonly IRepository<Product, Guid> _productRepository;
-        public GetProductConsumer(IProductAppService productStockAppService, ILogger<GetProductConsumer> logger, IRepository<Product, Guid> productRepository)
+        public GetProductPriceConsumer(IProductAppService productStockAppService, ILogger<GetProductPriceConsumer> logger, IRepository<Product, Guid> productRepository)
         {
             _productRepository = productRepository;
             _logger = logger;

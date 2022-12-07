@@ -70,18 +70,14 @@ public class ProductAggregateAppService : AggregateServiceAppService, IProductAg
 
     public async Task<ProductAggregateDto> GetAsync(Guid id)
     {
-        //var productDetailEto = new GetProductDetailEto()
-        //{
-        //    Id = id,
-        //    Product = new ProductAggregateDto()
-        //};
-        //await _mediatr.Publish(productDetailEto);
-        //return productDetailEto.Product;
+        var productDetailEto = new GetProductDetailEto()
+        {
+            Id = id,
+            Product = new ProductAggregateDto()
+        };
+        await _mediatr.Publish(productDetailEto);
+        return productDetailEto.Product;
 
-        var response = await _getProductRequestClient.GetResponse<ProductAggregateDto>(new { ProductId = id });
-
-        //return inventoryresponse.Message;
-        return response.Message;
     }
 
 
