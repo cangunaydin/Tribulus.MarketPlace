@@ -13,8 +13,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="7.0.0-rc.2" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="7.0.0-rc.2" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="7.0.1" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="7.0.1" />
     <ProjectReference Include="..\Tribulus.MarketPlace.Marketing.Domain\Tribulus.MarketPlace.Marketing.Domain.csproj" />
   </ItemGroup>
 

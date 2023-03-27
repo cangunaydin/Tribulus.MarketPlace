@@ -12,7 +12,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.0" />
     <ProjectReference Include="..\..\src\Tribulus.MarketPlace.AbpService.EntityFrameworkCore\Tribulus.MarketPlace.AbpService.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\Tribulus.MarketPlace.AbpService.TestBase\Tribulus.MarketPlace.AbpService.TestBase.csproj" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="7.0.0-rc.2" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="7.0.1" />
   </ItemGroup>
 
 </Project>
